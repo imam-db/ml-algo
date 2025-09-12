@@ -1,23 +1,23 @@
 # XGBoost (eXtreme Gradient Boosting)
 
-## 📖 Teori dan Konsep
+## 📖 Theory and Concepts
 
-### Apa itu XGBoost?
-XGBoost (eXtreme Gradient Boosting) adalah implementasi advanced dari gradient boosting yang dioptimalkan untuk kecepatan dan performa. XGBoost adalah salah satu algoritma yang paling populer dan sukses dalam kompetisi machine learning, terutama untuk data tabular.
+### What is XGBoost?
+XGBoost (eXtreme Gradient Boosting) is an advanced implementation of gradient boosting optimized for speed and performance. XGBoost is one of the most popular and successful algorithms in machine learning competitions, especially for tabular data.
 
-### Konsep Gradient Boosting
-**Gradient Boosting** adalah ensemble method yang:
-1. Membangun model secara sekuential
-2. Setiap model baru mencoba memperbaiki kesalahan model sebelumnya
-3. Menggunakan gradient descent untuk meminimalkan loss function
+### Gradient Boosting Concept
+**Gradient Boosting** is an ensemble method that:
+1. Builds models sequentially
+2. Each new model tries to correct the errors of previous models
+3. Uses gradient descent to minimize the loss function
 
-### Rumus Matematika
+### Mathematical Formula
 **Objective Function:**
 ```
 Obj(θ) = Σ L(yi, ŷi) + Σ Ω(fk)
 ```
 
-Dimana:
+Where:
 - `L(yi, ŷi)` = Loss function (training loss)
 - `Ω(fk)` = Regularization term
 - `ŷi = Σ fk(xi)` = Prediction (sum of trees)

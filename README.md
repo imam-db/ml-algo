@@ -1,8 +1,8 @@
 # Machine Learning Algorithms Learning Repository
 
-Selamat datang di repository pembelajaran algoritma machine learning! 🤖📚
+Welcome to the machine learning algorithms learning repository! 🤖📚
 
-## 📋 Struktur Repository
+## 📋 Repository Structure
 
 ### 1. **Supervised Learning** (`01_supervised_learning/`)
 - **01_linear_regression** - Linear Regression
@@ -33,52 +33,52 @@ Selamat datang di repository pembelajaran algoritma machine learning! 🤖📚
 - **04_xgboost** - XGBoost (eXtreme Gradient Boosting)
 
 ### 5. **Datasets** (`05_datasets/`)
-Dataset yang digunakan untuk pembelajaran
+Datasets used for learning
 
 ### 6. **Utils** (`06_utils/`)
-Utility functions dan helper code
+Utility functions and helper code
 
 ## 🚀 Quick Start
 
-1. **Instalasi Dependencies:**
+1. **Install Dependencies:**
    ```bash
    uv sync
    ```
 
-2. **Aktivasi Virtual Environment:**
+2. **Activate Virtual Environment:**
    ```bash
    uv run python
    ```
 
-3. **Jalankan Jupyter Lab:**
+3. **Run Jupyter Lab:**
    ```bash
    uv run jupyter lab
    ```
 
-## 📚 Cara Belajar
+## 📚 How to Learn
 
-Setiap algoritma memiliki struktur folder yang sama:
-- `README.md` - Penjelasan teori dan konsep
-- `implementation.py` - Implementasi dari scratch
-- `sklearn_example.py` - Contoh menggunakan scikit-learn
-- `exercise.ipynb` - Latihan praktis
-- `datasets/` - Dataset khusus untuk algoritma
+Each algorithm has the same folder structure:
+- `README.md` - Theory and concept explanations
+- `implementation.py` - Implementation from scratch
+- `sklearn_example.py` - Examples using scikit-learn
+- `exercise.ipynb` - Practical exercises
+- `datasets/` - Specific datasets for the algorithm
 
 ## 🎯 Learning Path
 
-### Pemula (Beginner)
+### Beginner
 1. Linear Regression
 2. Logistic Regression
 3. Decision Trees
 4. K-Means Clustering
 
-### Menengah (Intermediate)
+### Intermediate
 1. Random Forest
 2. SVM
 3. Naive Bayes
 4. PCA
 
-### Lanjutan (Advanced)
+### Advanced
 1. Neural Networks
 2. Ensemble Methods
 3. XGBoost (Gradient Boosting)
@@ -93,7 +93,7 @@ Setiap algoritma memiliki struktur folder yang sama:
 
 ## 🤝 Contributing
 
-Feel free to contribute dengan menambahkan algoritma baru atau memperbaiki implementasi yang ada!
+Feel free to contribute by adding new algorithms or improving existing implementations!
 
 ---
 Happy Learning! 🎉

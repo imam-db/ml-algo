@@ -1,11 +1,11 @@
 # Linear Regression
 
-## 📖 Teori dan Konsep
+## 📖 Theory and Concepts
 
-### Apa itu Linear Regression?
-Linear Regression adalah algoritma supervised learning yang digunakan untuk memprediksi nilai target (continuous) berdasarkan satu atau lebih fitur input. Algoritma ini mencari hubungan linear terbaik antara input dan output.
+### What is Linear Regression?
+Linear Regression is a supervised learning algorithm used to predict target values (continuous) based on one or more input features. This algorithm finds the best linear relationship between input and output.
 
-### Rumus Matematika
+### Mathematical Formula
 **Simple Linear Regression (1 variable):**
 ```
 y = β₀ + β₁x + ε
@@ -16,11 +16,11 @@ y = β₀ + β₁x + ε
 y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
 ```
 
-Dimana:
-- `y` = variabel target (dependent)
-- `x` = variabel fitur (independent) 
+Where:
+- `y` = target variable (dependent)
+- `x` = feature variable (independent) 
 - `β₀` = intercept (bias)
-- `β₁, β₂, ..., βₙ` = koefisien (slope)
+- `β₁, β₂, ..., βₙ` = coefficients (slope)
 - `ε` = error/noise
 
 ### Cost Function
@@ -29,76 +29,76 @@ Linear regression menggunakan **Mean Squared Error (MSE)** sebagai cost function
 MSE = (1/n) * Σ(yi - ŷi)²
 ```
 
-### Optimasi
-Untuk mencari parameter terbaik, dapat menggunakan:
+### Optimization
+To find the best parameters, you can use:
 1. **Normal Equation** (Closed-form solution)
 2. **Gradient Descent** (Iterative approach)
 
-## 🎯 Kapan Menggunakan Linear Regression?
+## 🎯 When to Use Linear Regression?
 
-### ✅ Cocok untuk:
-- Prediksi nilai kontinu (harga rumah, suhu, gaji, dll)
-- Data dengan hubungan linear
-- Interpretasi model yang mudah dipahami
-- Baseline model untuk perbandingan
-- Dataset berukuran kecil hingga menengah
+### ✅ Suitable for:
+- Predicting continuous values (house prices, temperature, salary, etc.)
+- Data with linear relationships
+- Model interpretation that is easy to understand
+- Baseline model for comparison
+- Small to medium-sized datasets
 
-### ❌ Tidak cocok untuk:
-- Data dengan hubungan non-linear kompleks
-- Outliers yang banyak
-- Target variable yang categorical
-- Multicollinearity yang tinggi
+### ❌ Not suitable for:
+- Data with complex non-linear relationships
+- Many outliers
+- Categorical target variables
+- High multicollinearity
 
-## 📊 Asumsi Linear Regression
+## 📊 Linear Regression Assumptions
 
-1. **Linearity**: Hubungan linear antara X dan y
-2. **Independence**: Observasi saling independen
-3. **Homoscedasticity**: Variance error konstan
-4. **Normal Distribution**: Error terdistribusi normal
-5. **No Multicollinearity**: Fitur tidak berkorelasi tinggi
+1. **Linearity**: Linear relationship between X and y
+2. **Independence**: Observations are independent
+3. **Homoscedasticity**: Constant error variance
+4. **Normal Distribution**: Errors are normally distributed
+5. **No Multicollinearity**: Features are not highly correlated
 
-## 📈 Evaluasi Model
+## 📈 Model Evaluation
 
-### Metrics untuk Regression:
-- **R² (Coefficient of Determination)**: Proporsi variance yang dijelaskan
-- **MSE (Mean Squared Error)**: Rata-rata kuadrat error
-- **RMSE (Root Mean Squared Error)**: Akar kuadrat MSE
-- **MAE (Mean Absolute Error)**: Rata-rata absolute error
+### Metrics for Regression:
+- **R² (Coefficient of Determination)**: Proportion of variance explained
+- **MSE (Mean Squared Error)**: Average squared error
+- **RMSE (Root Mean Squared Error)**: Square root of MSE
+- **MAE (Mean Absolute Error)**: Average absolute error
 
-## 🔍 Kelebihan dan Kekurangan
+## 🔍 Advantages and Disadvantages
 
-### Kelebihan:
-- ✅ Sederhana dan cepat
-- ✅ Mudah diinterpretasi
-- ✅ Tidak memerlukan tuning parameter yang kompleks
-- ✅ Baseline yang baik
-- ✅ Tidak prone terhadap overfitting
+### Advantages:
+- ✅ Simple and fast
+- ✅ Easy to interpret
+- ✅ No complex parameter tuning required
+- ✅ Good baseline
+- ✅ Not prone to overfitting
 
-### Kekurangan:
-- ❌ Hanya bisa menangkap hubungan linear
-- ❌ Sensitif terhadap outliers
-- ❌ Asumsi yang ketat
-- ❌ Performa buruk untuk data non-linear
+### Disadvantages:
+- ❌ Can only capture linear relationships
+- ❌ Sensitive to outliers
+- ❌ Strict assumptions
+- ❌ Poor performance on non-linear data
 
-## 📝 Implementasi
+## 📝 Implementation
 
-Dalam folder ini, Anda akan menemukan:
-- `implementation.py` - Implementasi dari scratch menggunakan NumPy
-- `sklearn_example.py` - Contoh menggunakan scikit-learn
-- `exercise.ipynb` - Latihan praktis dengan dataset real
+In this folder, you will find:
+- `implementation.py` - From-scratch implementation using NumPy
+- `sklearn_example.py` - Examples using scikit-learn
+- `exercise.ipynb` - Practical exercises with real datasets
 
-## 🎓 Tips untuk Praktik
+## 🎓 Tips for Practice
 
-1. **Selalu visualisasikan data** sebelum modeling
-2. **Check asumsi** linear regression
-3. **Handle outliers** jika diperlukan
-4. **Feature scaling** untuk multiple regression
-5. **Validate model** menggunakan cross-validation
+1. **Always visualize data** before modeling
+2. **Check assumptions** of linear regression
+3. **Handle outliers** if necessary
+4. **Feature scaling** for multiple regression
+5. **Validate model** using cross-validation
 
-## 📚 Referensi
+## 📚 References
 
 - [Scikit-learn Linear Regression](https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares)
 - [Introduction to Statistical Learning - Chapter 3](https://www.statlearning.com/)
 
 ---
-**Next Step**: Setelah memahami Linear Regression, lanjutkan ke **Logistic Regression** untuk classification problems!
+**Next Step**: After understanding Linear Regression, continue to **Logistic Regression** for classification problems!

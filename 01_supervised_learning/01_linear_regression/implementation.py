@@ -2,7 +2,7 @@
 Linear Regression Implementation from Scratch
 ============================================
 
-Implementasi Linear Regression menggunakan NumPy dengan dua metode optimasi:
+Linear Regression implementation using NumPy with two optimization methods:
 1. Normal Equation (Closed-form solution)
 2. Gradient Descent (Iterative approach)
 """
@@ -18,11 +18,11 @@ class LinearRegressionFromScratch:
     Parameters:
     -----------
     learning_rate : float, default=0.01
-        Learning rate untuk gradient descent
+        Learning rate for gradient descent
     n_iterations : int, default=1000
-        Jumlah iterasi untuk gradient descent
+        Number of iterations for gradient descent
     method : str, default='normal_equation'
-        Metode optimasi: 'normal_equation' atau 'gradient_descent'
+        Optimization method: 'normal_equation' or 'gradient_descent'
     """
     
     def __init__(self, learning_rate: float = 0.01, n_iterations: int = 1000, 
@@ -35,11 +35,11 @@ class LinearRegressionFromScratch:
         self.cost_history = []
     
     def _add_bias_term(self, X: np.ndarray) -> np.ndarray:
-        """Menambahkan bias term (intercept) ke feature matrix"""
+        """Add bias term (intercept) to feature matrix"""
         return np.column_stack([np.ones(X.shape[0]), X])
     
     def _compute_cost(self, X: np.ndarray, y: np.ndarray) -> float:
-        """Menghitung Mean Squared Error cost function"""
+        """Compute Mean Squared Error cost function"""
         n_samples = X.shape[0]
         predictions = self.predict(X)
         cost = (1 / (2 * n_samples)) * np.sum((predictions - y) ** 2)
@@ -47,10 +47,10 @@ class LinearRegressionFromScratch:
     
     def fit_normal_equation(self, X: np.ndarray, y: np.ndarray) -> None:
         """
-        Training menggunakan Normal Equation (Closed-form solution)
+        Training using Normal Equation (Closed-form solution)
         θ = (X^T * X)^(-1) * X^T * y
         """
-        # Menambahkan bias term
+        # Add bias term
         X_with_bias = self._add_bias_term(X)
         
         # Normal Equation formula
@@ -58,10 +58,10 @@ class LinearRegressionFromScratch:
         try:
             theta = np.linalg.inv(X_with_bias.T @ X_with_bias) @ X_with_bias.T @ y
         except np.linalg.LinAlgError:
-            # Jika matrix singular, gunakan pseudo-inverse
+            # If matrix is singular, use pseudo-inverse
             theta = np.linalg.pinv(X_with_bias.T @ X_with_bias) @ X_with_bias.T @ y
         
-        # Pisahkan bias dan weights
+        # Separate bias and weights
         self.bias = theta[0]
         self.weights = theta[1:] if len(theta) > 1 else np.array([theta[1]])
     
