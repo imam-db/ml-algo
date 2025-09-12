@@ -8,10 +8,13 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 |----------|------------------|--------------|----------|
 | **Supervised** | [Linear Regression](./01_supervised_learning/01_linear_regression/) | [Random Forest](./01_supervised_learning/04_random_forest/) | [Neural Networks](./01_supervised_learning/08_neural_networks/) |
 | **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [t-SNE](./02_unsupervised_learning/05_tsne/) |
-| **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+|| **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+|| **🎮 Interactive** | [Algorithm Racing](./06_playground/) | [Parameter Playground](./06_playground/) | [Feature Engineering](./06_playground/) |
 
-**🤔 Not sure which algorithm to choose?** ➡️ [**Algorithm Selection Guide**](./ALGORITHM_COMPARISON.md)  
-**🎯 Want to track your learning progress?** ➡️ [**Progress Tracker**](./PROGRESS_TRACKER.md)
+**🤔 Not sure which algorithm to choose?** ➡️ [**Algorithm Selection Guide**](./ALGORITHM_COMPARISON.md)
+**🎆 Want to track your learning progress?** ➡️ [**Progress Tracker**](./PROGRESS_TRACKER.md)  
+**🎮 Want to experiment interactively?** ➡️ [**Algorithm Playground**](./06_playground/)
+**🧾 Need quick references?** ➡️ [**Cheat Sheets Collection**](./08_cheat_sheets/README.md)
 
 **Essential Files:**
 - 📝 [WARP.md](./WARP.md) - Development guidance for Warp terminal
@@ -54,8 +57,27 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 ### 5. **Datasets** ([`05_datasets/`](./05_datasets/))
 Datasets used for learning
 
-### 6. **Utils** ([`06_utils/`](./06_utils/))
+### 6. **🎮 Algorithm Playground** ([`06_playground/`](./06_playground/))
+Interactive tools for experimenting with ML algorithms:
+- **🏁 Algorithm Racing** - Compare multiple algorithms side-by-side
+- **🎛️ Parameter Playground** - Interactive hyperparameter tuning
+- **📊 Model Visualizer** - Visualize decision boundaries and model behavior
+- **📈 Learning Curves** - Analyze how algorithms learn over time
+- **🧪 Feature Engineering Lab** - Experiment with feature transformations
+- **🎬 Algorithm Animator** - Step-by-step visual animations
+- **🎲 Data Generator** - Create synthetic datasets for testing
+
+### 7. **Utils** ([`07_utils/`](./07_utils/))
 Utility functions and helper code
+
+### 8. **Cheat Sheets** ([`08_cheat_sheets/`](./08_cheat_sheets/))
+Quick references to accelerate learning and implementation:
+- 🐍 [Scikit-Learn Quick Reference](./08_cheat_sheets/02_python_sklearn/sklearn_quick_reference.md)
+- 🐼 [Pandas & NumPy Essentials](./08_cheat_sheets/02_python_sklearn/pandas_numpy_essentials.md)
+- 🧭 [Algorithm Selection Flowchart](./08_cheat_sheets/01_algorithms/algorithm_selection_flowchart.md)
+- 🤖 [Algorithms Quick Reference](./08_cheat_sheets/01_algorithms/algorithms_quick_reference.md)
+- 📊 [Classification Metrics](./08_cheat_sheets/04_model_evaluation/classification_metrics.md)
+- 🧮 [Essential Math & Statistics](./08_cheat_sheets/03_math_statistics/essential_formulas.md)
 
 ## 🚀 Quick Start
 
@@ -72,6 +94,22 @@ Utility functions and helper code
 3. **Run Jupyter Lab:**
    ```bash
    uv run jupyter lab
+   ```
+
+4. **🎮 Launch Algorithm Playground:**
+   ```bash
+   uv run python 06_playground/playground_launcher.py
+   ```
+   Or try individual tools:
+   ```bash
+   # Quick algorithm comparison
+   uv run python 06_playground/algorithm_race.py --quick_test
+   
+   # Interactive parameter tuning
+   uv run python 06_playground/parameter_playground.py
+   
+   # Visualize decision boundaries
+   uv run python 06_playground/model_visualizer.py --algorithm svm
    ```
 
 ## 📚 How to Learn
