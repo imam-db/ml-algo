@@ -1,5 +1,16 @@
 # XGBoost (eXtreme Gradient Boosting)
 
+**🏠 [Back to Main](../../README.md)** | **📁 [Advanced Topics](../README.md)** | **⬅️ [Previous: Model Evaluation](../03_model_evaluation/README.md)**
+
+## 🗺️ Quick Access
+
+| File | Description | Quick Run |
+|------|-------------|----------|
+| [`implementation.py`](./implementation.py) | Basic XGBoost usage | `uv run python implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Comprehensive examples | `uv run python sklearn_example.py` |
+| [`hyperparameter_tuning.py`](./hyperparameter_tuning.py) | Advanced tuning | `uv run python hyperparameter_tuning.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `uv run jupyter lab exercise.ipynb` |
+
 ## 📖 Theory and Concepts
 
 ### What is XGBoost?
@@ -177,24 +188,137 @@ cv_results = xgb.cv(
 6. **Model Interpretation** → SHAP, partial dependence
 7. **Final Evaluation** → Test set performance
 
-## 📝 Implementasi
+## 🎯 Real-World Scenarios
 
-Dalam folder ini, Anda akan menemukan:
-- `implementation.py` - Basic XGBoost implementation dan tuning
-- `sklearn_example.py` - Comprehensive examples dengan berbagai datasets
-- `exercise.ipynb` - Hands-on exercises dengan real data
-- `hyperparameter_tuning.py` - Advanced tuning techniques
+### 🏆 Scenario 1: Kaggle Competition Style
+**Dataset**: Tabular competition data (Titanic, House Prices)
+**Goal**: Maximize leaderboard score
+**Run**: `uv run python sklearn_example.py --scenario kaggle`
 
-## 🏆 Tips untuk Kompetisi
+**What you'll master:**
+- Feature engineering techniques
+- Cross-validation strategies
+- Ensemble methods with multiple models
+- Hyperparameter optimization
+
+### 💳 Scenario 2: Credit Risk Assessment
+**Dataset**: Customer financial data
+**Goal**: Predict loan default probability
+**Run**: `uv run python sklearn_example.py --scenario credit_risk`
+
+**What you'll master:**
+- Handling imbalanced datasets
+- Feature importance analysis
+- Business-oriented metrics (precision/recall)
+- Model interpretability with SHAP
+
+### 🏭 Scenario 3: E-commerce Sales Forecasting
+**Dataset**: Historical sales, seasonal data
+**Goal**: Predict monthly sales volume
+**Run**: `uv run python sklearn_example.py --scenario sales_forecast`
+
+**What you'll master:**
+- Time series feature engineering
+- Seasonal decomposition
+- Multi-step forecasting
+- Business impact evaluation
+
+### 🎭 Scenario 4: Customer Churn Prediction
+**Dataset**: Customer behavior, usage patterns
+**Goal**: Identify customers likely to churn
+**Run**: `uv run python sklearn_example.py --scenario churn`
+
+**What you'll master:**
+- Behavioral feature engineering
+- Cost-sensitive learning
+- Actionable insights generation
+- Model monitoring strategies
+
+### 🏏 Scenario 5: Medical Diagnosis Support
+**Dataset**: Patient symptoms, medical history
+**Goal**: Assist in disease diagnosis
+**Run**: `uv run python sklearn_example.py --scenario medical`
+
+**What you'll master:**
+- High-stakes prediction scenarios
+- Confidence interval estimation
+- False positive/negative trade-offs
+- Regulatory compliance considerations
+
+### 🔍 Hyperparameter Tuning Scenarios
+
+#### Quick Tuning (5-10 minutes)
+```bash
+uv run python hyperparameter_tuning.py --method random_search --budget small
+```
+
+#### Production Tuning (30-60 minutes)
+```bash
+uv run python hyperparameter_tuning.py --method optuna --budget production
+```
+
+#### Competition Tuning (2-4 hours)
+```bash
+uv run python hyperparameter_tuning.py --method bayesian --budget competition
+```
+
+### [`implementation.py`](./implementation.py)
+- **Basic XGBoost workflows** for beginners
+- **Quick start examples** for each scenario
+- **Baseline model setup**
+- **Performance comparison** with other algorithms
+
+### [`sklearn_example.py`](./sklearn_example.py)
+- **Production-ready implementations** for all 5 scenarios
+- **Advanced preprocessing** pipelines
+- **Feature engineering** automation
+- **Model evaluation** and **business metrics**
+- **SHAP interpretability** integration
+
+### [`hyperparameter_tuning.py`](./hyperparameter_tuning.py)
+- **Multiple tuning strategies**: Random Search, Bayesian, Optuna
+- **Budget-aware optimization**
+- **Parallel processing** for faster tuning
+- **Competition-grade** parameter spaces
+
+### [`exercise.ipynb`](./exercise.ipynb)
+- **Interactive step-by-step** tutorials
+- **Real dataset exploration** and **EDA**
+- **Hyperparameter sensitivity** analysis
+- **Model interpretation** exercises
+
+## 🎓 Learning Progression
+
+### Prerequisites
+- **Machine Learning Basics**: [Linear Regression](../../01_supervised_learning/01_linear_regression/), [Decision Trees](../../01_supervised_learning/03_decision_trees/)
+- **Ensemble Methods**: [Random Forest](../../01_supervised_learning/04_random_forest/)
+- **Model Evaluation**: [Evaluation Techniques](../03_model_evaluation/)
+
+### Recommended Learning Path
+1. **Start** with [`implementation.py`](./implementation.py) - Basic concepts
+2. **Practice** with [`exercise.ipynb`](./exercise.ipynb) - Interactive learning
+3. **Explore** [`sklearn_example.py`](./sklearn_example.py) - Real scenarios
+4. **Master** [`hyperparameter_tuning.py`](./hyperparameter_tuning.py) - Advanced techniques
+
+## 🏆 Competition Tips
 
 1. **Feature Engineering** is king
-2. **Ensemble** dengan different seeds
-3. **Blend** XGBoost dengan LightGBM/CatBoost
-4. **Pseudo-labeling** untuk semi-supervised learning
-5. **Target encoding** untuk high-cardinality categorical
-6. **Stratified K-Fold** untuk robust CV
+2. **Ensemble** with different seeds
+3. **Blend** XGBoost with LightGBM/CatBoost
+4. **Pseudo-labeling** for semi-supervised learning
+5. **Target encoding** for high-cardinality categorical
+6. **Stratified K-Fold** for robust CV
 
-## 📚 Referensi
+### Related Advanced Algorithms
+
+| Algorithm | Comparison | Use Case |
+|-----------|------------|----------|
+| [**LightGBM**](../05_lightgbm/) | Faster training | Large datasets |
+| [**CatBoost**](../06_catboost/) | Better categorical handling | Mixed data types |
+| [**Random Forest**](../../01_supervised_learning/04_random_forest/) | More interpretable | Feature importance |
+| [**Neural Networks**](../../01_supervised_learning/08_neural_networks/) | More flexible | Complex patterns |
+
+## 📚 References
 
 - [XGBoost Documentation](https://xgboost.readthedocs.io/)
 - [XGBoost Paper](https://arxiv.org/abs/1603.02754)
@@ -202,4 +326,4 @@ Dalam folder ini, Anda akan menemukan:
 - [Interpretable ML - XGBoost](https://christophm.github.io/interpretable-ml-book/)
 
 ---
-**Next Step**: Setelah menguasai XGBoost, explore **LightGBM** dan **CatBoost** untuk ensemble methods yang lebih powerful!
+**➡️ Next Step**: After mastering XGBoost, explore **LightGBM** and **CatBoost** for even more powerful ensemble methods!

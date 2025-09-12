@@ -95,10 +95,36 @@ Progress to: Neural Networks → Ensemble Methods → XGBoost → Deep Learning 
 ## Development Notes
 
 ### Working with Algorithms
-- Always read the README.md first for theoretical understanding
-- Run the from-scratch implementation to understand the mathematics
-- Compare with sklearn_example.py to see production usage
-- Use exercise.ipynb for hands-on practice
+- **Start with README.md** for theoretical understanding and scenario overview
+- **Run scenarios** using the provided commands (e.g., `uv run python sklearn_example.py --scenario house_prices`)
+- **Compare implementations**: from-scratch vs production (sklearn)
+- **Use exercise.ipynb** for interactive hands-on practice
+- **Follow navigation links** between related algorithms
+
+### Navigation Patterns
+- **Main README.md** has quick navigation table for different skill levels
+- **Algorithm READMEs** include "Quick Access" tables with run commands
+- **Cross-references** link related algorithms and prerequisites
+- **Learning progression** sections guide the next steps
+
+### Running Scenarios
+Each algorithm includes multiple real-world scenarios:
+
+**Linear Regression scenarios:**
+```powershell
+uv run python sklearn_example.py --scenario house_prices
+uv run python sklearn_example.py --scenario temperature
+uv run python sklearn_example.py --scenario salary
+uv run python implementation.py --scenario stocks
+```
+
+**XGBoost scenarios:**
+```powershell
+uv run python sklearn_example.py --scenario kaggle
+uv run python sklearn_example.py --scenario credit_risk
+uv run python sklearn_example.py --scenario sales_forecast
+uv run python hyperparameter_tuning.py --method optuna --budget production
+```
 
 ### Adding New Algorithms
 - Follow the established directory structure pattern

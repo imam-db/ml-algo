@@ -1,5 +1,15 @@
 # Linear Regression
 
+**🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)** | **➡️ [Next: Logistic Regression](../02_logistic_regression/README.md)**
+
+## 🗺️ Quick Access
+
+| File | Description | Quick Run |
+|------|-------------|----------|
+| [`implementation.py`](./implementation.py) | From-scratch implementation | `uv run python implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `uv run python sklearn_example.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `uv run jupyter lab exercise.ipynb` |
+
 ## 📖 Theory and Concepts
 
 ### What is Linear Regression?
@@ -80,12 +90,73 @@ To find the best parameters, you can use:
 - ❌ Strict assumptions
 - ❌ Poor performance on non-linear data
 
-## 📝 Implementation
+## 🎯 Practical Scenarios
 
-In this folder, you will find:
-- `implementation.py` - From-scratch implementation using NumPy
-- `sklearn_example.py` - Examples using scikit-learn
-- `exercise.ipynb` - Practical exercises with real datasets
+### 🏠 Scenario 1: House Price Prediction
+**Dataset**: House features (size, bedrooms, location)
+**Goal**: Predict house prices
+**Run**: `uv run python sklearn_example.py --scenario house_prices`
+
+**What you'll learn:**
+- Feature scaling for multiple variables
+- Handling categorical variables
+- Model interpretation with coefficients
+
+### 🌡️ Scenario 2: Temperature Prediction
+**Dataset**: Weather features (humidity, pressure, wind speed)
+**Goal**: Predict daily temperature
+**Run**: `uv run python sklearn_example.py --scenario temperature`
+
+**What you'll learn:**
+- Time series data preparation
+- Feature correlation analysis
+- Seasonal trend modeling
+
+### 💰 Scenario 3: Salary Estimation
+**Dataset**: Employee data (experience, education, skills)
+**Goal**: Estimate salary ranges
+**Run**: `uv run python sklearn_example.py --scenario salary`
+
+**What you'll learn:**
+- Polynomial features
+- Cross-validation techniques
+- Confidence intervals
+
+### 📈 Scenario 4: Stock Price Trend
+**Dataset**: Historical stock data
+**Goal**: Simple trend analysis
+**Run**: `uv run python implementation.py --scenario stocks`
+
+**What you'll learn:**
+- Gradient descent vs Normal equation
+- Learning rate optimization
+- Cost function visualization
+
+### 🔬 Compare Methods
+**Compare Normal Equation vs Gradient Descent:**
+```bash
+uv run python implementation.py --compare-methods
+```
+
+## 📝 Implementation Files
+
+### [`implementation.py`](./implementation.py)
+- **LinearRegressionFromScratch** class
+- **Two optimization methods**: Normal Equation & Gradient Descent
+- **Built-in scenarios**: All 4 practical examples above
+- **Visualization tools**: Cost history, prediction plots
+
+### [`sklearn_example.py`](./sklearn_example.py)
+- **Production-ready examples** using scikit-learn
+- **Advanced techniques**: Polynomial features, regularization
+- **Model evaluation**: R², RMSE, MAE metrics
+- **Cross-validation** and **hyperparameter tuning**
+
+### [`exercise.ipynb`](./exercise.ipynb)
+- **Interactive Jupyter notebook**
+- **Step-by-step tutorials** for each scenario
+- **Visualization exercises**
+- **Real dataset exploration**
 
 ## 🎓 Tips for Practice
 
@@ -100,5 +171,28 @@ In this folder, you will find:
 - [Scikit-learn Linear Regression](https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares)
 - [Introduction to Statistical Learning - Chapter 3](https://www.statlearning.com/)
 
+## 🎓 Learning Progression
+
+### Prerequisites
+- Basic Python knowledge
+- NumPy fundamentals ([NumPy Tutorial](https://numpy.org/doc/stable/user/quickstart.html))
+- Basic statistics (mean, variance)
+
+### After Linear Regression, explore:
+
+1. **[Logistic Regression](../02_logistic_regression/)** - Classification extension
+2. **[Polynomial Features](../../06_utils/)** - Non-linear relationships  
+3. **[Model Evaluation](../../04_advanced_topics/03_model_evaluation/)** - Advanced metrics
+4. **[Regularization](../05_svm/)** - Ridge/Lasso regression
+
+### Related Algorithms
+
+| Algorithm | Similarity | When to Use |
+|-----------|------------|-------------|
+| [**Logistic Regression**](../02_logistic_regression/) | Same math, different output | Classification problems |
+| [**SVM Regression**](../05_svm/) | Linear boundary | Robust to outliers |
+| [**Neural Networks**](../08_neural_networks/) | Extension | Complex non-linear patterns |
+| [**Random Forest**](../04_random_forest/) | Ensemble approach | Feature importance |
+
 ---
-**Next Step**: After understanding Linear Regression, continue to **Logistic Regression** for classification problems!
+**➡️ Next Step**: Continue to **[Logistic Regression](../02_logistic_regression/)** for classification problems!
