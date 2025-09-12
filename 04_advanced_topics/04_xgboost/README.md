@@ -2,6 +2,17 @@
 
 **🏠 [Back to Main](../../README.md)** | **📁 [Advanced Topics](../README.md)** | **⬅️ [Previous: Model Evaluation](../03_model_evaluation/README.md)**
 
+## 🔑 Key Terms
+**Quick definitions for this algorithm** - 📚 [Full Glossary](../../GLOSSARY.md)
+
+- **[XGBoost](../../GLOSSARY.md#boosting)** - eXtreme Gradient Boosting, advanced ensemble method
+- **[Ensemble Method](../../GLOSSARY.md#ensemble-method)** - Combining multiple models for better performance
+- **[Boosting](../../GLOSSARY.md#boosting)** - Sequential training where each model corrects previous errors
+- **[Hyperparameter Tuning](../../GLOSSARY.md#hyperparameter-tuning)** - Finding optimal algorithm configuration settings
+- **[Cross-Validation](../../GLOSSARY.md#cross-validation-cv)** - Technique to assess model performance robustly
+- **[Feature Importance](../../GLOSSARY.md#feature-importance)** - Measure of each feature's contribution to predictions
+- **[SHAP](../../GLOSSARY.md#shap-shapley-additive-explanations)** - Method to explain individual predictions
+
 ## 🗺️ Quick Access
 
 | File | Description | Quick Run |
@@ -14,13 +25,13 @@
 ## 📖 Theory and Concepts
 
 ### What is XGBoost?
-XGBoost (eXtreme Gradient Boosting) is an advanced implementation of gradient boosting optimized for speed and performance. XGBoost is one of the most popular and successful algorithms in machine learning competitions, especially for tabular data.
+[**XGBoost**](../../GLOSSARY.md#boosting) (eXtreme Gradient Boosting) is an advanced implementation of [**gradient boosting**](../../GLOSSARY.md#boosting) optimized for speed and performance. XGBoost is one of the most popular and successful [**algorithms**](../../GLOSSARY.md#algorithm) in machine learning competitions, especially for tabular data.
 
 ### Gradient Boosting Concept
-**Gradient Boosting** is an ensemble method that:
-1. Builds models sequentially
+[**Gradient Boosting**](../../GLOSSARY.md#boosting) is an [**ensemble method**](../../GLOSSARY.md#ensemble-method) that:
+1. Builds [**models**](../../GLOSSARY.md#model) sequentially
 2. Each new model tries to correct the errors of previous models
-3. Uses gradient descent to minimize the loss function
+3. Uses [**gradient descent**](../../GLOSSARY.md#gradient-descent) to minimize the [**loss function**](../../GLOSSARY.md#cost-function-loss-function)
 
 ### Mathematical Formula
 **Objective Function:**

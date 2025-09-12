@@ -12,6 +12,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 
 **Essential Files:**
 - 📝 [WARP.md](./WARP.md) - Development guidance for Warp terminal
+- 📚 [GLOSSARY.md](./GLOSSARY.md) - Complete ML terminology reference
 - 📁 [Project Structure](#-repository-structure) - Detailed folder organization
 - 🚀 [Quick Start](#-quick-start) - Get running in 3 steps
 

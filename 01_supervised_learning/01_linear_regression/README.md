@@ -2,6 +2,16 @@
 
 **🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)** | **➡️ [Next: Logistic Regression](../02_logistic_regression/README.md)**
 
+## 🔑 Key Terms
+**Quick definitions for this algorithm** - 📚 [Full Glossary](../../GLOSSARY.md)
+
+- **[Linear Regression](../../GLOSSARY.md#linear-model)** - Algorithm assuming linear relationship between features and target
+- **[Overfitting](../../GLOSSARY.md#overfitting)** - When model learns training data too well, performs poorly on new data  
+- **[MSE](../../GLOSSARY.md#mse-mean-squared-error)** - Mean Squared Error, measures average squared prediction errors
+- **[R²](../../GLOSSARY.md#r²-r-squared--coefficient-of-determination)** - Proportion of variance explained by model (0-1, higher better)
+- **[Gradient Descent](../../GLOSSARY.md#gradient-descent)** - Optimization algorithm that minimizes cost function iteratively
+- **[Normal Equation](../../GLOSSARY.md#normal-equation)** - Analytical solution: θ = (X^T × X)^(-1) × X^T × y
+
 ## 🗺️ Quick Access
 
 | File | Description | Quick Run |
@@ -13,7 +23,7 @@
 ## 📖 Theory and Concepts
 
 ### What is Linear Regression?
-Linear Regression is a supervised learning algorithm used to predict target values (continuous) based on one or more input features. This algorithm finds the best linear relationship between input and output.
+[**Linear Regression**](../../GLOSSARY.md#linear-model) is a [**supervised learning**](../../GLOSSARY.md#supervised-learning) [**algorithm**](../../GLOSSARY.md#algorithm) used to predict [**target values**](../../GLOSSARY.md#target-variable) (continuous) based on one or more input [**features**](../../GLOSSARY.md#feature). This algorithm finds the best linear relationship between input and output.
 
 ### Mathematical Formula
 **Simple Linear Regression (1 variable):**

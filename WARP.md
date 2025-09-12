@@ -96,6 +96,8 @@ Progress to: Neural Networks → Ensemble Methods → XGBoost → Deep Learning 
 
 ### Working with Algorithms
 - **Start with README.md** for theoretical understanding and scenario overview
+- **Check Key Terms section** in each README for algorithm-specific terminology
+- **Use GLOSSARY.md** for comprehensive term definitions and cross-references
 - **Run scenarios** using the provided commands (e.g., `uv run python sklearn_example.py --scenario house_prices`)
 - **Compare implementations**: from-scratch vs production (sklearn)
 - **Use exercise.ipynb** for interactive hands-on practice
@@ -124,6 +126,30 @@ uv run python sklearn_example.py --scenario kaggle
 uv run python sklearn_example.py --scenario credit_risk
 uv run python sklearn_example.py --scenario sales_forecast
 uv run python hyperparameter_tuning.py --method optuna --budget production
+```
+
+### Understanding Terminology
+This repository includes comprehensive terminology support:
+
+**GLOSSARY.md features:**
+- **Comprehensive definitions** for 80+ ML terms
+- **Categorized sections**: Core ML, Evaluation Metrics, Mathematical Terms, etc.
+- **Cross-references** between related concepts
+- **Quick search** functionality with Ctrl+F
+- **Algorithm-specific** quick references
+
+**In-context learning:**
+- **Key Terms sections** in each algorithm README
+- **Inline links** to glossary definitions
+- **Contextual explanations** within scenarios
+
+**Usage patterns:**
+```powershell
+# Open glossary for reference
+code GLOSSARY.md
+
+# Search for specific term
+# Use Ctrl+F in GLOSSARY.md to find terms like "overfitting", "MSE", etc.
 ```
 
 ### Adding New Algorithms
