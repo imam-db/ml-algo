@@ -10,9 +10,12 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 | **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [t-SNE](./02_unsupervised_learning/05_tsne/) |
 | **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
 
+**🤔 Not sure which algorithm to choose?** ➡️ [**Algorithm Selection Guide**](./ALGORITHM_COMPARISON.md)
+
 **Essential Files:**
 - 📝 [WARP.md](./WARP.md) - Development guidance for Warp terminal
 - 📚 [GLOSSARY.md](./GLOSSARY.md) - Complete ML terminology reference
+- 🔬 [ALGORITHM_COMPARISON.md](./ALGORITHM_COMPARISON.md) - Algorithm selection guide
 - 📁 [Project Structure](#-repository-structure) - Detailed folder organization
 - 🚀 [Quick Start](#-quick-start) - Get running in 3 steps
 
