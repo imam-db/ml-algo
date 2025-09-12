@@ -19,6 +19,7 @@ import xgboost as xgb
 from xgboost import XGBClassifier, XGBRegressor
 import warnings
 warnings.filterwarnings('ignore')
+import argparse
 
 # Set plotting style
 plt.style.use('seaborn-v0_8')
@@ -48,7 +49,7 @@ def create_synthetic_datasets():
     
     return (X_clf, y_clf), (X_reg, y_reg)
 
-def xgboost_classification_demo():
+def xgboost_classification_demo(show: bool = True):
     """
     Comprehensive XGBoost Classification Demo
     """
@@ -163,11 +164,12 @@ def xgboost_classification_demo():
     axes[1, 1].grid(True)
     
     plt.tight_layout()
-    plt.show()
+    if show:
+        plt.show()
     
     return xgb_clf, feature_importance
 
-def xgboost_regression_demo():
+def xgboost_regression_demo(show: bool = True):
     """
     Comprehensive XGBoost Regression Demo
     """
@@ -275,11 +277,12 @@ def xgboost_regression_demo():
     axes[1, 1].grid(True)
     
     plt.tight_layout()
-    plt.show()
+    if show:
+        plt.show()
     
     return xgb_reg, feature_importance
 
-def hyperparameter_tuning_demo():
+def hyperparameter_tuning_demo(show: bool = True):
     """
     Demonstrate hyperparameter tuning for XGBoost
     """
@@ -392,11 +395,12 @@ def hyperparameter_tuning_demo():
     plt.title('L1 Regularization Impact')
     
     plt.tight_layout()
-    plt.show()
+    if show:
+        plt.show()
     
     return random_search.best_estimator_, random_search.best_params_
 
-def cross_validation_demo():
+def cross_validation_demo(show: bool = True):
     """
     Demonstrate XGBoost cross-validation
     """
@@ -477,7 +481,8 @@ def cross_validation_demo():
     plt.grid(True)
     
     plt.tight_layout()
-    plt.show()
+    if show:
+        plt.show()
     
     return cv_results
 
@@ -485,6 +490,10 @@ def main():
     """
     Main function to run all XGBoost demonstrations
     """
+    parser = argparse.ArgumentParser(description="XGBoost comprehensive tutorial")
+    parser.add_argument("--no_show", action="store_true", help="Run without opening plots (headless)")
+    args = parser.parse_args()
+    show = not args.no_show
     print("🤖 XGBoost Comprehensive Tutorial")
     print("=" * 80)
     print("""
@@ -499,16 +508,16 @@ def main():
     print("\\n🎬 Starting XGBoost Tutorial...")
     
     # Classification demo
-    clf_model, clf_importance = xgboost_classification_demo()
+    clf_model, clf_importance = xgboost_classification_demo(show=show)
     
     # Regression demo
-    reg_model, reg_importance = xgboost_regression_demo()
+    reg_model, reg_importance = xgboost_regression_demo(show=show)
     
     # Hyperparameter tuning demo
-    tuned_model, best_params = hyperparameter_tuning_demo()
+    tuned_model, best_params = hyperparameter_tuning_demo(show=show)
     
     # Cross-validation demo
-    cv_results = cross_validation_demo()
+    cv_results = cross_validation_demo(show=show)
     
     # Summary and tips
     print("\\n" + "="*80)

@@ -414,7 +414,7 @@ class LearningCurveExplorer:
         ax.legend(loc='best')
         ax.grid(True, alpha=0.3)
     
-    def create_comprehensive_learning_analysis(self, algorithm, save_path=None, **model_params):
+    def create_comprehensive_learning_analysis(self, algorithm, save_path=None, show=True, **model_params):
         """Create comprehensive learning curve analysis"""
         fig = plt.figure(figsize=(16, 12))
         fig.suptitle(f'{algorithm.replace("_", " ").title()} - Learning Analysis', 
@@ -467,7 +467,8 @@ class LearningCurveExplorer:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
             print(f"✅ Learning analysis saved to {save_path}")
         
-        plt.show()
+        if show:
+            plt.show()
     
     def _plot_learning_summary(self, algorithm, ax, **model_params):
         """Plot learning summary and recommendations"""
@@ -580,6 +581,8 @@ def main():
                        help='Save visualization to file')
     parser.add_argument('--quick', action='store_true',
                        help='Quick learning curve only')
+    parser.add_argument('--no_show', action='store_true',
+                       help='Run without opening plots (headless)')
     
     args = parser.parse_args()
     
@@ -599,11 +602,12 @@ def main():
         fig, ax = plt.subplots(figsize=(10, 6))
         explorer.plot_learning_curve(args.algorithm, ax=ax)
         plt.tight_layout()
-        plt.show()
+        if not args.no_show:
+            plt.show()
     else:
         # Comprehensive analysis
         print(f"📊 Creating comprehensive learning analysis for {args.algorithm}...")
-        explorer.create_comprehensive_learning_analysis(args.algorithm, save_path=args.save)
+        explorer.create_comprehensive_learning_analysis(args.algorithm, save_path=args.save, show=not args.no_show)
 
 if __name__ == "__main__":
     main()

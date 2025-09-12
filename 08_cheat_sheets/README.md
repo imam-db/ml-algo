@@ -10,25 +10,25 @@ Quick reference guides and cheat sheets for machine learning algorithms, Python 
 
 | Category | Description | Quick Access |
 |----------|-------------|--------------|
-| **🤖 [Algorithms](./01_algorithms/)** | ML algorithm formulas, concepts, and implementations | [Linear Regression](./01_algorithms/linear_regression.md) • [Random Forest](./01_algorithms/random_forest.md) |
-| **🐍 [Python/Sklearn](./02_python_sklearn/)** | Python syntax, scikit-learn, pandas, numpy | [Sklearn Cheat Sheet](./02_python_sklearn/sklearn_quick_reference.md) |
-| **📊 [Math & Stats](./03_math_statistics/)** | Essential formulas and statistical concepts | [Linear Algebra](./03_math_statistics/linear_algebra.md) |
-| **📈 [Model Evaluation](./04_model_evaluation/)** | Metrics, validation, and performance analysis | [Classification Metrics](./04_model_evaluation/classification_metrics.md) |
-| **🔧 [Data Preprocessing](./05_data_preprocessing/)** | Data cleaning, feature engineering techniques | [Feature Engineering](./05_data_preprocessing/feature_engineering.md) |
-| **📊 [Visualization](./06_visualization/)** | Plotting libraries and visualization patterns | [Matplotlib Quick Ref](./06_visualization/matplotlib_reference.md) |
-| **🐛 [Troubleshooting](./07_troubleshooting/)** | Common errors, debugging, and solutions | [Error Solutions](./07_troubleshooting/common_errors.md) |
-| **📝 [Templates](./08_templates/)** | Ready-to-use code templates and patterns | [Project Template](./08_templates/ml_project_template.py) |
-| **⚡ [Interactive Generator](./09_interactive_generator/)** | Tool to create custom cheat sheets | [Cheat Sheet Generator](./09_interactive_generator/generator.py) |
+| **🤖 [Algorithms](./01_algorithms/)** | Algorithms overview and selection | [Algorithm Selection Flowchart](./01_algorithms/algorithm_selection_flowchart.md) • [Algorithms Quick Reference](./01_algorithms/algorithms_quick_reference.md) |
+| **🐍 [Python/Sklearn](./02_python_sklearn/)** | Python, pandas, NumPy, scikit-learn | [Sklearn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md) • [Pandas & NumPy Essentials](./02_python_sklearn/pandas_numpy_essentials.md) |
+| **📊 [Math & Stats](./03_math_statistics/)** | Essential formulas | [Essential Formulas](./03_math_statistics/essential_formulas.md) |
+| **📈 [Model Evaluation](./04_model_evaluation/)** | Metrics & validation | [Classification Metrics](./04_model_evaluation/classification_metrics.md) |
+| **🔧 [Data Preprocessing](./05_data_preprocessing/)** | Cleaning & features | [Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md) |
+| **📊 [Visualization](./06_visualization/)** | Plotting references | Coming soon |
+| **🐛 [Troubleshooting](./07_troubleshooting/)** | Common errors & fixes | [Common Errors & Solutions](./07_troubleshooting/common_errors_solutions.md) |
+| **📝 [Templates](./08_templates/)** | Reusable templates | Coming soon |
+| **⚡ [Interactive Generator](./09_interactive_generator/)** | Generate sheets | Coming soon |
 
 ---
 
 ## 🚀 Quick Navigation
 
 ### **🔥 Most Popular Cheat Sheets**
-1. **[Scikit-learn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md)** - Essential sklearn syntax
-2. **[Model Evaluation Metrics](./04_model_evaluation/classification_metrics.md)** - All metrics in one place
-3. **[Data Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md)** - Complete preprocessing workflow
-4. **[Algorithm Selection Guide](./01_algorithms/algorithm_selection_flowchart.md)** - Choose the right algorithm
+1. **[Scikit-learn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md)**
+2. **[Classification Metrics](./04_model_evaluation/classification_metrics.md)**
+3. **[Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md)**
+4. **[Algorithm Selection Flowchart](./01_algorithms/algorithm_selection_flowchart.md)**
 
 ### **📚 By Learning Level**
 
@@ -63,16 +63,7 @@ ls 08_cheat_sheets/02_python_sklearn/
 ```
 
 ### **📱 Interactive Generation**
-```bash
-# Generate custom cheat sheet
-uv run python 08_cheat_sheets/09_interactive_generator/generator.py
-
-# Create algorithm-specific sheet
-uv run python 08_cheat_sheets/09_interactive_generator/generator.py --algorithm random_forest
-
-# Generate project template
-uv run python 08_cheat_sheets/08_templates/template_generator.py
-```
+Coming soon (generator scripts in development).
 
 ### **📖 Print-Friendly Versions**
 All cheat sheets are designed to be:

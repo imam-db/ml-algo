@@ -331,7 +331,7 @@ class FeatureEngineeringLab:
             print(f"Error training {algorithm}: {str(e)}")
             return 0.0
     
-    def plot_transformation_comparison(self, save_path=None):
+    def plot_transformation_comparison(self, save_path=None, show=True):
         """Plot comparison of original vs transformed data"""
         fig, axes = plt.subplots(2, 3, figsize=(18, 12))
         fig.suptitle('Feature Engineering Impact Analysis', fontsize=16, y=0.95)
@@ -360,7 +360,8 @@ class FeatureEngineeringLab:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
             print(f"✅ Analysis saved to {save_path}")
         
-        plt.show()
+        if show:
+            plt.show()
     
     def _plot_performance_comparison(self, ax):
         """Plot performance comparison between original and transformed data"""
@@ -720,6 +721,8 @@ def main():
                        help='Launch interactive mode')
     parser.add_argument('--demo', action='store_true',
                        help='Run automatic demo')
+    parser.add_argument('--no_show', action='store_true',
+                       help='Run without opening plots (headless)')
     
     args = parser.parse_args()
     
@@ -755,13 +758,13 @@ def main():
         lab.evaluate_performance()
         
         print("\n📊 Final analysis:")
-        lab.plot_transformation_comparison()
+        lab.plot_transformation_comparison(show=not args.no_show)
         
     else:
         print("💡 Use --interactive for interactive mode or --demo for automatic demo")
         print("📊 Showing baseline analysis...")
         lab.evaluate_performance()
-        lab.plot_transformation_comparison()
+        lab.plot_transformation_comparison(show=not args.no_show)
 
 if __name__ == "__main__":
     main()

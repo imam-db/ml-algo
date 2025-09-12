@@ -18,7 +18,9 @@
 |------|-------------|----------|
 | [`implementation.py`](./implementation.py) | From-scratch implementation | `uv run python implementation.py` |
 | [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `uv run python sklearn_example.py` |
-| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `uv run jupyter lab exercise.ipynb` |
+| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises (Bahasa Indonesia) | `uv run jupyter lab exercise.ipynb` |
+| [`exercise_en.ipynb`](./exercise_en.ipynb) | Interactive exercises (English) | `uv run jupyter lab exercise_en.ipynb` |
+| [`exercise_EN.md`](./exercise_EN.md) | Exercises (English, Markdown) | Open and follow instructions |
 
 ## 📖 Theory and Concepts
 

@@ -80,27 +80,30 @@ class AlgorithmRacer:
                 self.feature_names = df.columns[:-1].tolist()
             else:
                 raise ValueError("Only CSV files are supported")
-        
+
         elif X is not None and y is not None:
             X = np.array(X)
             y = np.array(y)
             self.feature_names = [f'feature_{i+1}' for i in range(X.shape[1])]
-        
+
         else:
             raise ValueError("Either data_path or X,y arrays must be provided")
-        
+
         # Determine if classification or regression
         unique_values = len(np.unique(y))
         self.is_classification = unique_values <= 20 and (
             np.issubdtype(y.dtype, np.integer) or 
             isinstance(y[0], (str, bool))
         )
-        
+
         # Encode labels for classification if needed
         if self.is_classification and not np.issubdtype(y.dtype, np.number):
             le = LabelEncoder()
             y = le.fit_transform(y)
-        
+
+        # Store on instance for later use (e.g., statistical tests)
+        self.X, self.y = X, y
+
         return X, y
     
     def prepare_data(self, X: np.ndarray, y: np.ndarray, test_size: float = 0.2, 
@@ -355,12 +358,17 @@ class AlgorithmRacer:
         if not self.results or len(self.results) < 2:
             print("❌ Need at least 2 algorithms for statistical testing")
             return
-        
+
         print("\n📊 STATISTICAL SIGNIFICANCE TESTING")
         print("=" * 50)
-        
+
         algorithms = list(self.results.keys())
-        
+
+        # Ensure data is available
+        if not hasattr(self, 'X') or not hasattr(self, 'y') or self.X is None or self.y is None:
+            print("❌ Original dataset not available on this racer instance.")
+            return
+
         # Get cross-validation scores for each algorithm
         cv_scores = {}
         for algo in algorithms:
@@ -369,8 +377,8 @@ class AlgorithmRacer:
             scores = cross_val_score(
                 model, 
                 # Use the same data preparation
-                StandardScaler().fit_transform(self.X) if hasattr(self, 'X') else self.X,
-                self.y if hasattr(self, 'y') else None,
+                StandardScaler().fit_transform(self.X),
+                self.y,
                 cv=5,
                 scoring='accuracy' if self.is_classification else 'r2'
             )

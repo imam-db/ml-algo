@@ -3,8 +3,8 @@
 Quick Start Script for ML Algorithms Learning Repository
 =======================================================
 
-Script ini untuk testing instalasi dependencies dan environment setup.
-Jalankan script ini untuk memastikan everything is working correctly.
+Use this script to test your dependency installation and environment setup.
+Run it to ensure everything is working correctly.
 """
 
 import sys
@@ -149,10 +149,10 @@ def print_next_steps():
     print("="*60)
     print("""
 Getting Started:
-1. 📚 Read the main README.md for overview
+1. 📚 Read the main README.md for an overview
 2. 📂 Navigate to 01_supervised_learning/01_linear_regression/
 3. 📖 Start with README.md for theory
-4. 💻 Run implementation.py to see from-scratch implementation
+4. 💻 Run implementation.py to see the from-scratch implementation
 5. 📊 Try sklearn_example.py for practical examples  
 6. 🧪 Open exercise.ipynb in Jupyter for hands-on practice
 

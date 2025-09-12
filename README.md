@@ -8,8 +8,8 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 |----------|------------------|--------------|----------|
 | **Supervised** | [Linear Regression](./01_supervised_learning/01_linear_regression/) | [Random Forest](./01_supervised_learning/04_random_forest/) | [Neural Networks](./01_supervised_learning/08_neural_networks/) |
 | **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [t-SNE](./02_unsupervised_learning/05_tsne/) |
-|| **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
-|| **🎮 Interactive** | [Algorithm Racing](./06_playground/) | [Parameter Playground](./06_playground/) | [Feature Engineering](./06_playground/) |
+| **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+| **🎮 Interactive** | [Algorithm Racing](./06_playground/) | [Parameter Playground](./06_playground/) | [Feature Engineering](./06_playground/) |
 
 **🤔 Not sure which algorithm to choose?** ➡️ [**Algorithm Selection Guide**](./ALGORITHM_COMPARISON.md)
 **🎆 Want to track your learning progress?** ➡️ [**Progress Tracker**](./PROGRESS_TRACKER.md)  
@@ -67,7 +67,7 @@ Interactive tools for experimenting with ML algorithms:
 - **🎬 Algorithm Animator** - Step-by-step visual animations
 - **🎲 Data Generator** - Create synthetic datasets for testing
 
-### 7. **Utils** ([`07_utils/`](./07_utils/))
+### 7. **Utils** ([`06_utils/`](./06_utils/))
 Utility functions and helper code
 
 ### 8. **Cheat Sheets** ([`08_cheat_sheets/`](./08_cheat_sheets/))
@@ -111,6 +111,16 @@ Quick references to accelerate learning and implementation:
    # Visualize decision boundaries
    uv run python 06_playground/model_visualizer.py --algorithm svm
    ```
+
+### Headless Mode (no GUI windows)
+Use these flags in environments without a display or when running in CI:
+- Model Visualizer: `--no_show`
+- Parameter Playground: `--no_show`
+- Learning Curves: `--no_show`
+- Algorithm Animator: `--no_show`
+- Data Generator: `--no_show`
+- XGBoost Tutorial: `--no_show`
+- Algorithm Race: `--no_plots`
 
 ## 📚 How to Learn
 

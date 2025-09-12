@@ -63,11 +63,11 @@ class LinearRegressionFromScratch:
         
         # Separate bias and weights
         self.bias = theta[0]
-        self.weights = theta[1:] if len(theta) > 1 else np.array([theta[1]])
+        self.weights = theta[1:]
     
     def fit_gradient_descent(self, X: np.ndarray, y: np.ndarray) -> None:
         """
-        Training menggunakan Gradient Descent
+        Training using Gradient Descent
         """
         n_samples, n_features = X.shape
         
@@ -95,8 +95,8 @@ class LinearRegressionFromScratch:
     
     def fit(self, X: np.ndarray, y: np.ndarray) -> 'LinearRegressionFromScratch':
         """
-        Training model dengan metode yang dipilih
-        
+        Train the model using the selected method
+
         Parameters:
         -----------
         X : np.ndarray, shape (n_samples, n_features)
@@ -104,7 +104,7 @@ class LinearRegressionFromScratch:
         y : np.ndarray, shape (n_samples,)
             Target values
         """
-        # Validasi input
+        # Validate input
         X = np.asarray(X)
         y = np.asarray(y)
         
@@ -116,26 +116,26 @@ class LinearRegressionFromScratch:
         elif self.method == 'gradient_descent':
             self.fit_gradient_descent(X, y)
         else:
-            raise ValueError("Method harus 'normal_equation' atau 'gradient_descent'")
+            raise ValueError("Method must be 'normal_equation' or 'gradient_descent'")
         
         return self
     
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
-        Membuat prediksi
-        
+        Make predictions
+
         Parameters:
         -----------
         X : np.ndarray, shape (n_samples, n_features)
             Input data
-            
+
         Returns:
         --------
         predictions : np.ndarray, shape (n_samples,)
             Predicted values
         """
         if self.weights is None or self.bias is None:
-            raise ValueError("Model belum di-training. Panggil fit() terlebih dahulu.")
+            raise ValueError("Model is not fitted. Call fit() first.")
         
         X = np.asarray(X)
         if X.ndim == 1:
@@ -145,8 +145,8 @@ class LinearRegressionFromScratch:
     
     def score(self, X: np.ndarray, y: np.ndarray) -> float:
         """
-        Menghitung R² score (coefficient of determination)
-        
+        Compute R² score (coefficient of determination)
+
         R² = 1 - (SS_res / SS_tot)
         """
         y_pred = self.predict(X)
@@ -155,9 +155,9 @@ class LinearRegressionFromScratch:
         return 1 - (ss_res / ss_tot)
     
     def plot_cost_history(self) -> None:
-        """Plot cost function history untuk gradient descent"""
+        """Plot cost function history for gradient descent"""
         if not self.cost_history:
-            print("Cost history tidak tersedia. Gunakan method='gradient_descent'")
+            print("Cost history is unavailable. Use method='gradient_descent'")
             return
         
         plt.figure(figsize=(10, 6))
@@ -171,7 +171,7 @@ class LinearRegressionFromScratch:
 def generate_sample_data(n_samples: int = 100, noise: float = 0.1, 
                         random_state: int = 42) -> Tuple[np.ndarray, np.ndarray]:
     """
-    Generate sample data untuk testing
+    Generate sample data for testing
     """
     np.random.seed(random_state)
     X = np.linspace(0, 10, n_samples).reshape(-1, 1)
@@ -180,7 +180,7 @@ def generate_sample_data(n_samples: int = 100, noise: float = 0.1,
 
 def compare_methods():
     """
-    Membandingkan Normal Equation vs Gradient Descent
+    Compare Normal Equation vs Gradient Descent
     """
     # Generate sample data
     X, y = generate_sample_data(n_samples=100, noise=1.0)

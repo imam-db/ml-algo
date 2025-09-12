@@ -160,7 +160,7 @@ class DataGenerator:
         
         return generators[data_type](**kwargs)
     
-    def visualize_dataset(self, X: np.ndarray, y: np.ndarray, title: str = "Generated Dataset"):
+    def visualize_dataset(self, X: np.ndarray, y: np.ndarray, title: str = "Generated Dataset", show: bool = True):
         """Visualize generated dataset"""
         plt.figure(figsize=(10, 6))
         
@@ -212,7 +212,8 @@ class DataGenerator:
             plt.grid(True, alpha=0.3)
         
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
     
     def save_dataset(self, X: np.ndarray, y: np.ndarray, filename: str):
         """Save dataset to CSV file"""
@@ -397,6 +398,7 @@ def main():
     parser.add_argument('--factor', type=float, default=0.5, help='Inner circle factor (for circles type)')
     parser.add_argument('--save', type=str, help='Save dataset to file')
     parser.add_argument('--visualize', action='store_true', help='Show visualization')
+    parser.add_argument('--no_show', action='store_true', help='Run without opening plots (headless)')
     parser.add_argument('--interactive', action='store_true', help='Launch interactive mode')
     parser.add_argument('--show_all', action='store_true', help='Generate and show all dataset types')
     
@@ -452,7 +454,8 @@ def main():
         
         plt.tight_layout()
         plt.suptitle('Dataset Types Showcase', y=1.02, fontsize=16)
-        plt.show()
+        if not args.no_show:
+            plt.show()
         return
     
     if not args.type:
@@ -482,7 +485,7 @@ def main():
         print(f"   Target classes: {len(np.unique(y))}")
         
         if args.visualize:
-            generator.visualize_dataset(X, y, f"{args.type.title()} Dataset")
+            generator.visualize_dataset(X, y, f"{args.type.title()} Dataset", show=not args.no_show)
         
         if args.save:
             filename = args.save if args.save.endswith('.csv') else f"{args.save}.csv"

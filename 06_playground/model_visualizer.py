@@ -399,7 +399,7 @@ class ModelVisualizer:
         
         return ax
     
-    def create_comprehensive_visualization(self, algorithm, save_path=None):
+    def create_comprehensive_visualization(self, algorithm, save_path=None, show=True):
         """Create comprehensive visualization dashboard"""
         if algorithm not in self.models:
             raise ValueError(f"Model '{algorithm}' not trained")
@@ -494,7 +494,8 @@ class ModelVisualizer:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
             print(f"✅ Visualization saved to {save_path}")
         
-        plt.show()
+        if show:
+            plt.show()
     
     def _plot_model_info(self, algorithm, ax):
         """Plot model information and parameters"""
@@ -614,6 +615,8 @@ def main():
                        help='Save visualization to file')
     parser.add_argument('--no_scaling', action='store_true',
                        help='Disable feature scaling')
+    parser.add_argument('--no_show', action='store_true',
+                       help='Do not display interactive window (use with --save)')
     
     args = parser.parse_args()
     
@@ -633,7 +636,11 @@ def main():
     
     # Create visualization
     print("📊 Creating comprehensive visualization...")
-    visualizer.create_comprehensive_visualization(args.algorithm, save_path=args.save)
+    visualizer.create_comprehensive_visualization(
+        args.algorithm,
+        save_path=args.save,
+        show=not args.no_show
+    )
 
 if __name__ == "__main__":
     main()

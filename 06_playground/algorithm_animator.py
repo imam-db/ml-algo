@@ -44,7 +44,7 @@ class AlgorithmAnimator:
         else:
             self.data['y'] = None
     
-    def animate_kmeans(self, n_clusters=3, max_iters=20, interval=1000, save_path=None):
+    def animate_kmeans(self, n_clusters=3, max_iters=20, interval=1000, save_path=None, show=True):
         """Animate K-Means clustering algorithm"""
         print(f"🎬 Animating K-Means with {n_clusters} clusters...")
         
@@ -137,11 +137,12 @@ class AlgorithmAnimator:
                 print(f"❌ Could not save animation: {e}")
         
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
         
         return self.animation
     
-    def animate_gradient_descent(self, learning_rate=0.01, max_iters=100, interval=200, save_path=None):
+    def animate_gradient_descent(self, learning_rate=0.01, max_iters=100, interval=200, save_path=None, show=True):
         """Animate gradient descent for linear regression"""
         print(f"🎬 Animating Gradient Descent (lr={learning_rate})...")
         
@@ -240,11 +241,12 @@ class AlgorithmAnimator:
                 print(f"❌ Could not save animation: {e}")
         
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
         
         return self.animation
     
-    def animate_knn_classification(self, k=5, query_point=None, interval=1500, save_path=None):
+    def animate_knn_classification(self, k=5, query_point=None, interval=1500, save_path=None, show=True):
         """Animate K-NN classification process"""
         print(f"🎬 Animating K-NN Classification (k={k})...")
         
@@ -364,11 +366,12 @@ class AlgorithmAnimator:
                 print(f"❌ Could not save animation: {e}")
         
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
         
         return self.animation
     
-    def animate_linear_regression_fitting(self, interval=500, save_path=None):
+    def animate_linear_regression_fitting(self, interval=500, save_path=None, show=True):
         """Animate linear regression line fitting process"""
         print("🎬 Animating Linear Regression Fitting...")
         
@@ -472,7 +475,8 @@ class AlgorithmAnimator:
                 print(f"❌ Could not save animation: {e}")
         
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
         
         return self.animation
 
@@ -516,6 +520,8 @@ def main():
                        help='Save animation as GIF file')
     parser.add_argument('--interval', type=int, default=1000,
                        help='Animation interval in milliseconds')
+    parser.add_argument('--no_show', action='store_true',
+                       help='Run without opening animation windows (headless)')
     
     # Algorithm-specific parameters
     parser.add_argument('--k', type=int, default=3,
@@ -540,20 +546,20 @@ def main():
     
     if args.algorithm == 'kmeans':
         animator.animate_kmeans(n_clusters=args.k, max_iters=args.max_iters, 
-                               interval=args.interval, save_path=args.save)
+                               interval=args.interval, save_path=args.save, show=not args.no_show)
     
     elif args.algorithm == 'gradient_descent':
         animator.animate_gradient_descent(learning_rate=args.learning_rate, 
                                         max_iters=args.max_iters,
-                                        interval=args.interval, save_path=args.save)
+                                        interval=args.interval, save_path=args.save, show=not args.no_show)
     
     elif args.algorithm == 'knn':
         animator.animate_knn_classification(k=args.k, interval=args.interval, 
-                                          save_path=args.save)
+                                          save_path=args.save, show=not args.no_show)
     
     elif args.algorithm == 'linear_regression':
         animator.animate_linear_regression_fitting(interval=args.interval, 
-                                                 save_path=args.save)
+                                                 save_path=args.save, show=not args.no_show)
     
     print("🎉 Animation complete! Close the window to exit.")
 

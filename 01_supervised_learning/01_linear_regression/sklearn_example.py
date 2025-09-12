@@ -1,9 +1,9 @@
 """
-Linear Regression dengan Scikit-learn
-=====================================
+Linear Regression with Scikit-learn
+===================================
 
-Contoh praktis menggunakan Linear Regression dari scikit-learn
-dengan berbagai dataset dan teknik evaluasi.
+Practical examples using scikit-learn's Linear Regression with
+multiple datasets and evaluation techniques.
 """
 
 import numpy as np
@@ -14,13 +14,13 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from sklearn.datasets import make_regression, load_boston
+from sklearn.datasets import make_regression
 import warnings
 warnings.filterwarnings('ignore')
 
 def create_synthetic_dataset():
     """
-    Membuat dataset sintetik untuk demonstrasi
+    Create synthetic datasets for demonstration
     """
     np.random.seed(42)
     
@@ -40,7 +40,7 @@ def create_synthetic_dataset():
 
 def simple_linear_regression_demo():
     """
-    Demo Simple Linear Regression
+    Simple Linear Regression demo
     """
     print("\\n" + "="*50)
     print("SIMPLE LINEAR REGRESSION DEMO")
@@ -111,7 +111,7 @@ def simple_linear_regression_demo():
 
 def multiple_linear_regression_demo():
     """
-    Demo Multiple Linear Regression
+    Multiple Linear Regression demo
     """
     print("\\n" + "="*50)
     print("MULTIPLE LINEAR REGRESSION DEMO")
@@ -126,7 +126,7 @@ def multiple_linear_regression_demo():
     df['target'] = y_multi
     
     print(f"Dataset shape: {df.shape}")
-    print(f"\\nDataset info:")
+    print(f"\nDataset info:")
     print(df.describe())
     
     # Split data
@@ -156,12 +156,12 @@ def multiple_linear_regression_demo():
     r2_unscaled = r2_score(y_test, y_pred_unscaled)
     r2_scaled = r2_score(y_test, y_pred_scaled)
     
-    print(f"\\nModel Coefficients (Unscaled):")
+    print(f"\nModel Coefficients (Unscaled):")
     for i, coef in enumerate(model_unscaled.coef_):
         print(f"  {feature_names[i]}: {coef:.4f}")
     print(f"  Intercept: {model_unscaled.intercept_:.4f}")
     
-    print(f"\\nModel Performance:")
+    print(f"\nModel Performance:")
     print(f"  Unscaled R²: {r2_unscaled:.4f}")
     print(f"  Scaled R²: {r2_scaled:.4f}")
     
@@ -192,7 +192,7 @@ def multiple_linear_regression_demo():
 
 def cross_validation_demo():
     """
-    Demo Cross Validation
+    Cross-validation demo
     """
     print("\\n" + "="*50)
     print("CROSS VALIDATION DEMO")
@@ -236,7 +236,7 @@ def cross_validation_demo():
 
 def polynomial_features_demo():
     """
-    Demo Linear Regression dengan Polynomial Features
+    Linear Regression with Polynomial Features demo
     """
     print("\\n" + "="*50)
     print("POLYNOMIAL FEATURES DEMO")
@@ -294,7 +294,7 @@ def polynomial_features_demo():
         
         plt.xlabel('X')
         plt.ylabel('y')
-        plt.title(f'Polynomial Degree {degree}\\nTrain R²: {train_score:.3f}, Test R²: {test_score:.3f}')
+        plt.title(f'Polynomial Degree {degree}\nTrain R²: {train_score:.3f}, Test R²: {test_score:.3f}')
         plt.legend()
         plt.grid(True)
     
@@ -302,15 +302,15 @@ def polynomial_features_demo():
     plt.show()
     
     # Print results
-    print(f"\\nPolynomial Regression Results:")
+    print(f"\nPolynomial Regression Results:")
     for degree in degrees:
         print(f"  Degree {degree}: Train R² = {scores[degree]['train']:.4f}, Test R² = {scores[degree]['test']:.4f}")
 
 def main():
     """
-    Main function untuk menjalankan semua demo
+    Main function to run all demos
     """
-    print("Linear Regression dengan Scikit-learn")
+    print("Linear Regression with Scikit-learn")
     print("="*60)
     
     # Run all demos
@@ -319,22 +319,22 @@ def main():
     cross_validation_demo()
     polynomial_features_demo()
     
-    print("\\n" + "="*60)
+    print("\n" + "="*60)
     print("SUMMARY & TIPS")
     print("="*60)
     print("""
     Key Takeaways:
-    1. Linear Regression cocok untuk hubungan linear
-    2. Feature scaling penting untuk interpretasi coefficients
-    3. Cross-validation memberikan estimasi performa yang robust
-    4. Polynomial features bisa menangkap hubungan non-linear
-    5. Perhatikan overfitting pada polynomial degree tinggi
+    1. Linear Regression suits linear relationships
+    2. Feature scaling helps coefficient interpretation
+    3. Cross-validation gives robust performance estimates
+    4. Polynomial features can capture non-linear patterns
+    5. Watch for overfitting at high polynomial degrees
     
     Best Practices:
-    - Selalu visualisasikan data sebelum modeling
+    - Always visualize data before modeling
     - Check assumptions (linearity, homoscedasticity, normality)
-    - Use cross-validation untuk model evaluation
-    - Consider regularization untuk high-dimensional data
+    - Use cross-validation for evaluation
+    - Consider regularization for high-dimensional data
     """)
 
 if __name__ == "__main__":

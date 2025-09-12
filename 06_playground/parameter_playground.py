@@ -257,7 +257,8 @@ class ParameterPlayground:
             return 0.0, 0.0, 'Error'
     
     def launch_interactive_playground(self, algorithm: str = 'random_forest', 
-                                   data_type: str = 'classification'):
+                                   data_type: str = 'classification',
+                                   show: bool = True):
         """Launch interactive parameter tuning interface"""
         self.current_algorithm = algorithm
         
@@ -461,7 +462,8 @@ class ParameterPlayground:
         print("  • Try different parameter combinations")
         print("  • Close window to exit")
         
-        plt.show()
+        if show:
+            plt.show()
 
 def quick_demo():
     """Quick demonstration of parameter playground"""
@@ -511,6 +513,8 @@ def main():
                        help='Type of problem')
     parser.add_argument('--demo', action='store_true',
                        help='Run quick demo')
+    parser.add_argument('--no_show', action='store_true',
+                       help='Run without opening interactive window')
     
     args = parser.parse_args()
     
@@ -518,7 +522,7 @@ def main():
         quick_demo()
     else:
         playground = ParameterPlayground()
-        playground.launch_interactive_playground(args.algorithm, args.data_type)
+        playground.launch_interactive_playground(args.algorithm, args.data_type, show=not args.no_show)
 
 if __name__ == "__main__":
     main()
