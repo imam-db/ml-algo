@@ -78,6 +78,10 @@ Quick references to accelerate learning and implementation:
 - 🤖 [Algorithms Quick Reference](./08_cheat_sheets/01_algorithms/algorithms_quick_reference.md)
 - 📊 [Classification Metrics](./08_cheat_sheets/04_model_evaluation/classification_metrics.md)
 - 🧮 [Essential Math & Statistics](./08_cheat_sheets/03_math_statistics/essential_formulas.md)
+- 📈 [Matplotlib Visualization](./cheat_sheets/visualization/matplotlib_quick_reference.md)
+- 📊 [Seaborn Visualization](./cheat_sheets/visualization/seaborn_quick_reference.md)
+- 📉 [Plotly Interactive Visualization](./cheat_sheets/visualization/plotly_quick_reference.md)
+- 🛠️ [Interactive Generator Tool](./cheat_sheets/interactive_generator.py)
 
 ## 🚀 Quick Start
 
