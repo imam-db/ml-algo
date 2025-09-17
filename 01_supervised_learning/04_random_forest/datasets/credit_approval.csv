@@ -1,0 +1,1001 @@
+age,income,employment_length,credit_score,debt_to_income,loan_amount,loan_purpose,previous_defaults,education,marital_status,approved
+40,111244,2.6,707,0.177,7144,auto,0,High School,Single,0
+33,76092,0.3,471,0.145,70258,home,0,College,Married,0
+42,38089,2.1,614,0.092,32930,home,0,College,Single,0
+53,21643,0.6,680,0.229,58189,home,1,High School,Single,0
+32,63486,8.3,668,0.111,33587,home,1,High School,Single,0
+32,49751,14.8,850,0.173,20877,business,0,High School,Married,1
+53,74321,0.4,684,0.148,43681,home,0,College,Married,1
+44,60363,15.5,549,0.087,27065,home,0,College,Single,0
+29,84089,3.7,640,0.312,55806,personal,0,High School,Single,0
+41,23666,1.8,472,0.484,23888,personal,0,College,Married,0
+29,104184,0.4,641,0.327,53298,home,0,High School,Married,0
+29,42534,3.5,566,0.185,19950,personal,0,Graduate,Single,0
+37,191034,7.9,741,0.331,68742,personal,0,Graduate,Single,0
+18,20923,6.1,595,0.321,76624,home,0,College,Divorced,0
+18,145622,0.3,638,0.479,15487,home,0,Graduate,Divorced,0
+28,42545,0.4,586,0.177,49441,business,1,Graduate,Divorced,0
+22,21565,2.6,823,0.139,11732,personal,1,Graduate,Married,0
+38,24658,1.7,617,0.226,61827,personal,0,College,Single,1
+24,28105,1.3,833,0.149,30118,home,0,College,Single,1
+18,50987,1.6,731,0.064,55124,auto,1,High School,Single,0
+52,55175,8.1,698,0.178,54158,personal,1,College,Single,0
+32,22949,13.2,686,0.305,92813,home,0,College,Divorced,0
+35,35614,2.6,689,0.064,57162,auto,0,High School,Married,0
+18,201554,11.8,457,0.289,60384,personal,0,High School,Married,0
+28,144644,1.9,622,0.15,43157,auto,0,College,Single,0
+36,51485,3.2,734,0.317,95162,personal,0,High School,Divorced,0
+21,37436,1.3,645,0.227,78832,personal,0,College,Married,1
+39,39975,5.1,509,0.349,32113,auto,1,Graduate,Single,0
+27,59326,19.3,644,0.114,85199,personal,1,College,Married,0
+31,20000,4.6,820,0.14,46077,home,0,College,Single,1
+27,29557,2.2,774,0.088,83723,personal,2,College,Single,0
+57,20000,5.2,643,0.121,83174,home,0,College,Married,1
+34,49980,0.7,745,0.16,22942,home,0,High School,Married,0
+22,60946,11.0,613,0.259,71608,personal,0,Graduate,Single,0
+44,24672,3.5,479,0.122,32611,auto,0,High School,Single,0
+20,127923,3.0,557,0.217,33261,business,0,High School,Divorced,0
+37,20000,4.4,806,0.388,33153,auto,2,College,Married,0
+18,20000,4.9,622,0.288,73928,home,0,High School,Married,0
+19,43458,0.4,625,0.157,26833,auto,1,College,Single,0
+37,83924,5.7,620,0.012,5086,auto,0,High School,Single,0
+43,139684,1.4,840,0.224,72947,auto,0,High School,Single,0
+37,25157,6.3,812,0.149,21262,personal,0,High School,Single,0
+33,86072,8.6,850,0.094,14925,personal,1,High School,Single,0
+31,35213,8.1,634,0.229,27564,business,0,College,Single,0
+18,31631,4.0,679,0.362,41090,business,0,Graduate,Married,0
+26,73638,3.7,498,0.137,50211,home,2,College,Single,0
+29,61197,0.8,797,0.336,9234,personal,0,Graduate,Married,0
+47,20000,7.5,533,0.187,97204,auto,0,High School,Single,0
+39,118329,1.6,671,0.274,73025,personal,0,College,Married,0
+18,109543,3.4,540,0.384,35703,auto,0,High School,Single,0
+38,22016,1.7,591,0.013,35276,business,0,College,Married,1
+30,49843,0.7,566,0.282,47611,personal,0,College,Single,0
+26,53918,5.0,589,0.526,64493,business,0,College,Divorced,0
+42,44736,0.3,596,0.43,18905,personal,0,College,Married,1
+47,23382,6.9,595,0.098,22948,business,1,College,Married,0
+46,21220,1.9,733,0.253,86646,personal,0,College,Single,0
+24,35580,0.0,539,0.575,29344,auto,1,Graduate,Married,0
+31,92798,3.6,672,0.168,41118,home,0,High School,Married,0
+38,56099,0.2,771,0.384,87770,auto,0,College,Single,0
+46,26997,1.6,598,0.241,67999,home,0,College,Married,1
+29,67329,6.1,578,0.176,37462,auto,0,College,Married,1
+32,20000,0.3,626,0.382,69951,auto,0,High School,Married,0
+21,91036,9.1,767,0.382,6869,auto,1,College,Married,0
+20,20000,0.0,669,0.104,74886,business,0,College,Married,1
+44,27174,1.4,596,0.424,51266,business,0,College,Divorced,0
+51,20000,6.8,698,0.004,82252,home,0,High School,Married,0
+34,20000,1.9,539,0.171,95690,auto,0,Graduate,Married,0
+47,91918,0.5,718,0.233,92949,auto,0,College,Married,0
+39,24980,2.2,690,0.169,91380,auto,0,College,Married,1
+27,47915,1.6,619,0.224,53656,personal,0,College,Divorced,1
+39,34977,9.2,566,0.147,39213,auto,1,Graduate,Single,0
+53,53190,1.9,561,0.211,49178,personal,1,High School,Single,0
+34,38617,7.8,703,0.336,70540,business,0,High School,Single,0
+53,20000,11.1,772,0.222,88979,personal,1,College,Single,0
+18,80580,2.8,586,0.499,24663,home,0,College,Single,0
+44,24464,12.0,695,0.22,92228,personal,0,High School,Married,0
+36,20000,2.4,441,0.185,82442,auto,0,Graduate,Single,0
+31,25783,16.6,591,0.6,97991,home,0,College,Married,0
+36,120645,0.5,646,0.39,88623,home,1,College,Married,0
+18,71695,5.8,559,0.309,31594,auto,1,High School,Single,0
+32,27476,3.4,556,0.054,15065,auto,0,High School,Single,0
+39,27462,2.5,583,0.464,15662,home,0,College,Married,0
+52,28076,5.0,679,0.338,32666,personal,2,Graduate,Married,0
+28,191261,6.1,631,0.086,63347,personal,0,College,Married,0
+25,49293,0.0,426,0.299,81410,home,0,Graduate,Married,1
+28,51227,0.9,437,0.11,90428,home,0,Graduate,Divorced,0
+45,82803,6.2,589,0.426,64256,personal,0,College,Married,0
+38,43959,5.5,695,0.44,5534,home,1,College,Divorced,0
+28,29518,16.9,375,0.362,22700,business,0,College,Married,0
+41,31036,7.2,600,0.149,14473,personal,0,College,Married,1
+36,34293,15.1,597,0.351,39515,auto,0,High School,Single,0
+46,35250,6.1,788,0.07,52628,home,0,College,Divorced,1
+26,64997,1.8,611,0.242,9122,home,0,High School,Married,0
+31,37856,0.6,688,0.182,38105,home,1,Graduate,Married,0
+30,65258,7.6,664,0.177,22022,home,0,Graduate,Single,0
+18,34044,5.2,436,0.075,66471,personal,0,High School,Single,0
+38,38673,0.2,726,0.234,49105,home,0,College,Single,0
+38,20000,2.2,671,0.103,52055,auto,0,College,Single,0
+35,75588,15.7,700,0.154,45630,personal,1,College,Single,0
+32,47915,3.5,850,0.307,95821,home,1,High School,Married,0
+18,80693,2.8,441,0.232,25399,home,0,College,Single,0
+29,20000,3.1,822,0.157,54083,home,1,High School,Single,0
+30,193049,1.2,621,0.105,74921,home,1,High School,Single,0
+25,32478,2.3,678,0.277,57900,personal,0,High School,Married,0
+33,88128,2.3,645,0.288,93256,auto,2,High School,Single,0
+39,20000,0.3,607,0.136,40906,personal,0,College,Single,0
+57,59291,7.3,593,0.166,49049,auto,0,Graduate,Married,0
+37,20000,2.7,682,0.238,13409,auto,1,College,Married,0
+38,22048,8.6,498,0.103,62854,auto,1,College,Single,0
+34,167916,9.5,725,0.261,32380,personal,0,High School,Single,0
+18,31177,1.2,608,0.089,20229,home,0,College,Single,0
+34,43215,5.4,536,0.116,56730,home,0,High School,Divorced,0
+35,72842,3.2,604,0.006,55569,personal,1,College,Single,0
+64,53989,10.6,775,0.111,12207,auto,1,Graduate,Married,0
+32,40959,1.2,596,0.037,71330,auto,0,High School,Single,0
+38,48628,5.7,685,0.161,64258,personal,1,College,Married,0
+34,248384,4.7,576,0.137,22956,auto,0,High School,Single,0
+20,34679,1.7,725,0.041,49596,personal,0,College,Single,0
+48,42654,0.7,718,0.216,73430,auto,1,High School,Married,0
+44,84164,5.3,834,0.422,55296,personal,0,College,Single,0
+44,87940,6.7,632,0.534,42571,personal,1,High School,Single,0
+24,93866,1.9,716,0.049,35622,auto,0,College,Married,1
+51,60535,5.2,659,0.247,62987,personal,1,College,Divorced,0
+18,20000,2.5,779,0.282,94215,business,1,College,Single,0
+42,134154,6.2,578,0.323,68815,auto,0,College,Married,0
+61,20000,1.1,724,0.172,12100,auto,0,Graduate,Divorced,0
+23,46263,11.0,630,0.273,48765,personal,0,College,Married,0
+28,20000,1.7,643,0.33,89628,personal,1,High School,Married,0
+36,34499,2.3,659,0.458,13973,home,0,High School,Married,0
+28,47240,0.3,675,0.234,98943,business,0,Graduate,Single,0
+18,46961,0.6,638,0.031,95161,home,0,College,Married,0
+35,50895,3.6,671,0.179,12436,personal,1,College,Single,0
+22,132054,1.6,807,0.272,93674,personal,0,High School,Single,0
+40,52199,9.0,748,0.147,39497,business,1,College,Married,0
+23,29871,0.1,736,0.311,85247,home,1,High School,Single,0
+53,78532,2.4,604,0.068,44746,personal,0,Graduate,Married,0
+25,94049,2.1,561,0.515,46881,auto,1,Graduate,Married,0
+31,20000,0.1,745,0.144,65253,auto,0,High School,Married,0
+44,58566,0.7,737,0.079,78575,home,0,College,Single,0
+20,63636,2.7,797,0.106,8209,personal,0,High School,Single,1
+37,28622,3.4,589,0.389,61349,auto,0,College,Married,0
+50,109159,2.6,627,0.114,22739,home,1,Graduate,Divorced,0
+18,32207,3.8,486,0.256,37865,personal,0,College,Single,0
+37,40153,4.5,610,0.467,38057,personal,1,College,Single,0
+38,31619,0.0,749,0.102,49560,personal,0,High School,Married,1
+44,36770,3.1,603,0.409,36742,business,1,Graduate,Single,0
+20,20000,16.6,714,0.327,15199,auto,0,College,Married,0
+19,20000,3.7,630,0.033,18834,business,0,College,Married,0
+41,130040,5.7,682,0.351,8176,business,0,High School,Married,0
+38,20000,1.9,535,0.355,49673,home,0,College,Single,0
+38,20000,7.4,658,0.029,95672,home,0,Graduate,Single,0
+39,20000,7.4,350,0.208,15989,auto,2,College,Single,0
+26,21781,3.7,631,0.231,94895,auto,0,College,Married,0
+37,20000,18.7,486,0.167,74669,personal,1,College,Married,0
+38,135078,0.7,770,0.148,65562,personal,0,College,Married,0
+26,81458,0.1,727,0.058,66301,personal,0,College,Married,0
+57,20941,7.4,696,0.278,83539,auto,0,High School,Single,0
+40,220124,8.2,802,0.007,15157,home,1,College,Married,0
+20,79651,0.6,555,0.217,52951,business,0,College,Married,0
+42,28004,1.5,824,0.165,71223,auto,1,College,Married,0
+23,20000,0.1,743,0.188,60747,business,1,Graduate,Single,0
+44,227011,1.7,626,0.296,84114,home,0,College,Married,0
+48,20000,7.4,763,0.166,11865,business,1,High School,Married,0
+25,20000,3.6,539,0.266,70616,home,0,Graduate,Married,1
+46,82294,2.1,567,0.195,55732,home,0,College,Single,0
+39,255710,2.3,589,0.146,41020,home,0,College,Married,0
+44,109910,0.0,597,0.212,37326,personal,0,College,Single,1
+57,57018,1.8,544,0.297,63979,business,0,College,Married,0
+32,58442,5.2,772,0.271,89644,auto,0,High School,Divorced,0
+25,71878,18.3,624,0.013,52136,business,1,College,Married,0
+24,66645,9.4,685,0.296,83348,personal,0,Graduate,Married,0
+25,45476,0.1,592,0.247,43204,personal,0,College,Married,0
+34,39472,11.4,467,0.028,14727,personal,2,College,Single,0
+39,34541,7.6,677,0.326,10843,home,1,High School,Single,0
+38,20000,7.6,458,0.23,9876,auto,0,High School,Divorced,1
+44,29011,3.1,643,0.502,41114,business,0,College,Married,0
+35,20000,2.5,513,0.104,37037,business,0,College,Single,0
+52,33567,1.8,848,0.295,73204,business,0,Graduate,Single,1
+31,20000,0.3,741,0.165,75568,business,0,College,Married,1
+67,20000,1.3,660,0.401,9831,home,2,College,Married,0
+42,41936,1.4,776,0.206,26006,personal,0,College,Married,0
+24,110591,3.3,565,0.483,31054,auto,0,High School,Single,0
+22,75709,6.9,704,0.063,57023,business,0,Graduate,Divorced,1
+40,20000,3.2,669,0.236,18728,auto,0,College,Married,0
+32,20000,0.3,676,0.295,17724,personal,0,High School,Married,0
+43,77081,15.8,777,0.314,94659,auto,0,College,Married,0
+40,20000,14.3,723,0.423,81399,auto,1,Graduate,Single,0
+34,30342,7.7,678,0.248,22162,home,0,Graduate,Divorced,0
+24,56389,23.7,484,0.045,43623,business,0,High School,Single,0
+18,20000,3.9,553,0.124,38784,personal,0,Graduate,Single,0
+29,39509,16.5,637,0.076,80145,home,1,High School,Married,0
+45,20000,0.4,659,0.528,53470,personal,2,High School,Married,0
+37,22446,2.3,536,0.188,17145,personal,0,Graduate,Married,0
+20,46902,1.3,850,0.162,75204,auto,2,Graduate,Married,0
+37,20000,1.1,801,0.273,42704,home,1,College,Single,0
+39,51656,0.8,710,0.297,29977,business,0,College,Divorced,0
+24,35749,4.9,657,0.206,40672,personal,0,Graduate,Single,0
+36,56499,7.6,628,0.263,52286,auto,1,College,Married,0
+35,43439,4.3,554,0.336,37595,personal,0,Graduate,Single,0
+21,108154,0.8,657,0.105,27981,home,0,College,Married,0
+39,40142,8.3,675,0.262,42857,auto,0,Graduate,Single,0
+41,25757,5.1,525,0.247,6821,home,0,Graduate,Married,1
+47,40048,2.5,683,0.355,78387,home,1,High School,Married,0
+47,56085,5.6,634,0.362,21239,personal,0,Graduate,Married,0
+18,37763,1.5,459,0.141,9170,business,0,College,Married,0
+23,37514,2.1,563,0.053,67101,auto,0,College,Married,0
+41,20710,12.5,608,0.213,78523,home,0,College,Married,0
+41,21368,1.7,838,0.28,82313,personal,0,High School,Divorced,0
+41,20000,3.2,705,0.413,51883,business,0,College,Married,0
+70,147216,11.0,516,0.088,24509,personal,0,Graduate,Single,0
+41,20000,6.2,698,0.05,75036,business,0,High School,Single,1
+48,20861,0.3,495,0.106,71472,auto,0,College,Single,1
+46,20440,0.8,758,0.047,28395,personal,1,Graduate,Single,0
+42,74305,0.0,602,0.26,90823,home,0,College,Married,0
+31,28682,5.0,640,0.231,14915,auto,0,College,Single,0
+44,98537,3.0,782,0.283,98355,auto,0,College,Single,1
+25,21188,0.7,521,0.107,86723,auto,0,College,Single,0
+32,45396,15.8,510,0.325,70350,business,0,College,Married,0
+29,20000,3.8,591,0.125,94181,business,0,Graduate,Married,0
+35,202019,1.4,753,0.238,73619,home,1,College,Single,0
+62,20000,3.5,498,0.515,23093,home,0,Graduate,Married,0
+18,46530,5.7,366,0.114,47004,auto,0,College,Single,0
+43,60296,0.4,604,0.134,11792,home,0,College,Divorced,0
+18,50566,1.6,705,0.104,42017,personal,2,College,Married,0
+29,31312,8.2,770,0.143,75452,business,0,College,Single,1
+48,32733,3.1,603,0.137,41712,business,0,College,Married,0
+35,37610,4.0,608,0.148,36377,personal,0,High School,Married,1
+22,32286,2.8,765,0.175,61558,personal,0,High School,Married,0
+26,78519,0.2,463,0.271,87859,auto,0,High School,Married,0
+43,212866,0.9,611,0.368,9520,home,0,High School,Single,0
+26,23248,2.9,669,0.241,41619,auto,2,College,Single,0
+37,20000,1.2,694,0.193,20032,personal,0,High School,Single,0
+35,33839,0.3,599,0.033,71058,personal,1,College,Single,0
+27,286005,9.3,653,0.519,15043,home,0,High School,Single,0
+60,20000,19.9,401,0.225,68156,auto,0,College,Divorced,1
+42,134765,7.9,584,0.233,32187,auto,0,College,Single,0
+18,138990,9.6,695,0.437,23897,business,0,High School,Married,0
+37,23321,1.4,551,0.152,93953,auto,0,Graduate,Married,0
+27,57250,16.2,655,0.199,6759,personal,0,High School,Married,0
+45,133614,1.1,694,0.351,46588,personal,0,College,Divorced,0
+25,26814,15.1,615,0.371,7054,home,0,Graduate,Married,0
+33,30857,26.3,667,0.214,50941,personal,0,College,Divorced,0
+41,22803,6.2,553,0.226,52599,business,1,High School,Married,0
+45,20000,19.9,629,0.455,35557,auto,0,College,Divorced,0
+20,21602,4.2,711,0.179,17555,business,0,College,Married,0
+30,20000,1.5,665,0.184,40756,home,0,Graduate,Single,1
+29,37319,2.9,591,0.283,68864,home,0,Graduate,Married,1
+27,20000,4.5,672,0.186,79327,business,1,College,Married,0
+56,43784,0.4,721,0.191,55421,personal,0,Graduate,Single,0
+39,20000,4.9,445,0.292,61034,business,0,High School,Single,0
+19,47320,19.9,765,0.331,24058,personal,0,High School,Married,0
+46,70744,1.1,616,0.113,32296,business,0,Graduate,Divorced,1
+60,20000,7.9,692,0.223,20380,personal,0,High School,Single,0
+47,48983,11.9,769,0.382,28683,personal,0,High School,Married,0
+18,96967,14.4,512,0.289,26364,personal,0,High School,Married,0
+29,20000,16.1,579,0.237,54347,auto,0,College,Divorced,0
+50,138421,3.7,621,0.277,58455,business,0,College,Divorced,0
+26,50777,18.9,571,0.087,94770,auto,0,College,Married,0
+40,20660,7.1,823,0.182,23579,auto,0,High School,Married,0
+44,34730,0.9,564,0.12,65959,auto,0,College,Single,1
+23,56764,3.2,594,0.236,82639,personal,0,Graduate,Married,0
+34,38592,6.3,670,0.429,58222,auto,0,Graduate,Married,0
+18,55882,1.4,529,0.11,29225,home,2,College,Married,0
+22,20000,5.1,610,0.211,29942,business,0,Graduate,Married,0
+31,41584,5.5,681,0.133,8729,auto,0,College,Single,0
+20,20000,0.9,616,0.103,34017,personal,0,High School,Married,0
+54,33223,4.2,640,0.261,75737,home,0,High School,Single,0
+18,20000,7.4,597,0.093,9514,home,0,High School,Single,0
+29,20162,3.5,498,0.271,25833,home,1,College,Single,0
+36,97623,0.1,682,0.288,72092,personal,0,High School,Single,0
+52,86946,0.0,825,0.139,79351,home,0,College,Married,0
+18,59119,2.2,651,0.223,48255,business,0,High School,Single,1
+48,20000,13.0,672,0.539,71317,home,1,Graduate,Single,0
+35,28194,1.3,719,0.029,41855,home,1,College,Divorced,0
+23,95844,5.0,523,0.18,20191,home,0,Graduate,Single,0
+40,40675,1.3,820,0.479,42824,home,0,Graduate,Single,0
+37,232225,1.9,670,0.277,60096,personal,0,High School,Single,0
+27,49744,9.4,813,0.323,95065,business,0,College,Single,0
+35,42346,6.5,576,0.422,11531,personal,0,High School,Single,0
+30,28359,0.5,831,0.368,53202,home,0,Graduate,Single,1
+36,40410,2.8,727,0.268,36247,home,0,College,Married,0
+42,32145,0.1,705,0.312,53289,auto,0,High School,Single,0
+54,63990,3.3,673,0.117,7277,business,0,High School,Single,0
+20,78070,5.4,625,0.187,34737,home,0,College,Married,0
+60,20000,0.6,770,0.428,82887,personal,0,Graduate,Married,0
+18,20000,1.7,664,0.437,57624,auto,0,College,Divorced,0
+33,20000,2.5,453,0.235,47805,home,0,Graduate,Married,0
+42,54523,12.6,538,0.208,32124,auto,0,College,Single,0
+38,20000,25.0,631,0.117,33314,home,1,High School,Married,0
+27,20000,0.2,680,0.307,41394,personal,0,Graduate,Single,0
+32,49556,7.2,644,0.03,84379,home,0,High School,Single,0
+29,266838,2.3,771,0.122,96885,personal,1,Graduate,Married,0
+27,36139,2.5,454,0.263,46672,home,0,College,Married,0
+45,71025,7.0,664,0.243,42368,business,0,High School,Married,0
+39,38772,12.5,468,0.213,85422,home,0,College,Divorced,0
+26,33553,15.1,725,0.191,45556,business,0,Graduate,Single,0
+45,75755,4.3,640,0.054,57441,personal,0,Graduate,Married,0
+38,28789,2.2,691,0.434,26939,business,2,High School,Married,0
+44,44977,7.7,563,0.134,75632,auto,0,High School,Divorced,0
+42,46974,1.4,777,0.25,55538,personal,0,College,Married,0
+25,21280,4.2,754,0.46,81858,auto,1,College,Divorced,0
+28,80308,2.2,708,0.34,79169,home,1,College,Single,0
+43,31572,5.3,637,0.483,25425,auto,0,High School,Married,0
+42,20000,1.4,707,0.132,72985,home,1,Graduate,Single,0
+34,55782,1.1,579,0.167,81005,business,0,College,Single,0
+36,20000,12.5,735,0.385,37880,home,0,Graduate,Divorced,0
+50,37143,0.5,814,0.201,21397,personal,0,College,Single,0
+27,36051,3.5,757,0.11,5250,personal,0,College,Divorced,0
+41,86570,1.2,577,0.5,47835,auto,0,Graduate,Single,0
+32,53090,0.2,686,0.153,38481,personal,0,College,Married,0
+32,35595,0.2,520,0.239,57716,home,2,Graduate,Single,0
+48,69857,1.0,707,0.215,22863,personal,0,Graduate,Single,0
+44,110433,10.1,695,0.252,86668,home,0,College,Single,0
+44,56740,1.7,463,0.133,29486,business,0,College,Married,0
+50,36617,15.0,533,0.028,26510,personal,0,High School,Single,1
+35,20000,4.4,621,0.277,50667,business,2,High School,Married,0
+43,20000,2.9,619,0.279,52390,home,0,High School,Single,0
+31,28447,4.3,529,0.066,25433,home,0,High School,Single,0
+38,22301,3.6,688,0.173,30826,home,0,High School,Single,0
+33,31270,7.1,675,0.066,21121,home,0,College,Married,0
+36,37999,1.7,630,0.333,73253,home,0,College,Married,1
+42,55478,2.2,574,0.07,78158,personal,1,College,Married,0
+25,34324,11.2,754,0.282,48921,home,1,High School,Single,0
+60,53594,14.6,815,0.306,72838,auto,0,High School,Married,0
+22,38237,11.2,601,0.203,74913,business,1,College,Married,0
+20,20000,2.7,588,0.485,18136,personal,0,College,Single,0
+48,20000,7.6,699,0.015,96786,auto,0,College,Married,0
+44,32361,3.2,614,0.335,82998,auto,1,College,Married,0
+42,20000,3.4,636,0.272,24425,auto,0,Graduate,Single,0
+42,58685,1.1,723,0.388,22685,home,0,College,Single,0
+34,123574,4.5,459,0.492,16937,personal,1,College,Single,0
+24,96279,1.0,781,0.226,18145,auto,1,Graduate,Married,0
+35,30615,2.0,657,0.191,76075,business,0,Graduate,Single,0
+26,119680,9.7,608,0.429,49617,personal,0,College,Single,0
+46,40901,1.2,641,0.135,79378,personal,1,College,Single,0
+33,27731,0.4,646,0.338,75894,auto,0,High School,Single,0
+25,22231,0.4,476,0.261,62438,home,0,College,Single,0
+31,28510,14.1,799,0.453,70204,personal,0,Graduate,Divorced,0
+39,26621,3.5,654,0.057,6743,auto,1,College,Single,0
+28,41619,2.6,694,0.049,34618,home,1,Graduate,Married,0
+25,41293,8.3,745,0.166,65593,home,1,College,Single,0
+37,36404,9.0,547,0.223,5887,home,0,Graduate,Married,0
+37,51510,2.0,697,0.31,8132,personal,1,College,Married,0
+28,94137,5.9,623,0.11,85929,home,2,High School,Single,0
+29,77624,7.4,734,0.034,69982,auto,0,College,Married,0
+37,20000,5.3,437,0.562,30210,auto,0,High School,Married,0
+18,20000,0.8,640,0.163,70356,personal,0,High School,Married,0
+18,76684,10.4,589,0.371,80283,business,0,Graduate,Married,0
+26,20000,3.9,693,0.096,34145,business,1,High School,Divorced,0
+32,30338,1.7,697,0.183,8423,auto,1,College,Married,0
+38,20000,2.8,579,0.072,93614,home,2,High School,Divorced,0
+52,20000,0.2,578,0.519,37792,auto,0,High School,Married,0
+45,56003,0.7,638,0.149,15115,personal,0,Graduate,Married,0
+33,66657,7.3,560,0.056,51726,personal,0,College,Married,0
+34,22897,0.0,734,0.436,78004,personal,0,College,Married,0
+22,20000,2.7,613,0.166,26056,home,0,College,Divorced,0
+34,23458,3.7,359,0.468,30601,personal,1,College,Single,0
+31,49684,0.3,612,0.274,28057,home,0,Graduate,Married,0
+38,20000,18.1,546,0.23,99208,personal,0,College,Single,1
+25,42053,1.3,486,0.336,23753,auto,2,College,Married,0
+41,35873,1.8,526,0.126,59674,personal,0,Graduate,Single,0
+53,57724,1.8,660,0.156,92900,home,0,High School,Single,0
+33,39961,1.3,782,0.241,18955,auto,1,College,Divorced,0
+39,20000,0.0,681,0.334,97231,personal,0,Graduate,Single,1
+43,94585,6.5,589,0.223,95010,home,0,College,Married,0
+30,31989,17.0,695,0.036,89034,personal,0,Graduate,Married,0
+37,35530,1.3,604,0.247,25382,personal,0,College,Single,0
+35,20000,5.4,580,0.176,65235,personal,0,Graduate,Single,0
+36,25472,6.8,534,0.222,77284,auto,0,Graduate,Married,0
+25,20000,9.4,474,0.198,98672,auto,0,High School,Single,0
+35,31623,2.7,611,0.195,22140,personal,0,High School,Married,0
+40,142823,1.8,665,0.229,77772,auto,0,College,Divorced,0
+52,20000,2.0,640,0.365,37186,personal,0,College,Single,0
+46,20000,6.2,608,0.093,21684,auto,0,High School,Single,0
+60,117822,8.5,555,0.171,45030,home,0,High School,Married,0
+25,30716,1.0,710,0.087,80414,home,0,College,Married,1
+45,21263,2.3,518,0.166,49160,home,0,Graduate,Single,0
+37,83443,11.6,727,0.223,56064,auto,0,College,Single,0
+61,22370,8.2,549,0.094,99540,personal,0,College,Married,0
+25,156499,21.0,574,0.252,42915,personal,1,High School,Divorced,0
+24,62463,7.0,503,0.253,63463,home,0,College,Single,0
+27,24579,2.5,599,0.107,39698,business,0,High School,Married,0
+18,203994,4.5,747,0.178,42314,auto,1,High School,Divorced,0
+28,22368,5.4,701,0.035,71085,business,0,Graduate,Married,0
+25,65754,0.4,747,0.109,94099,personal,0,Graduate,Married,0
+36,46139,3.9,702,0.155,56524,personal,1,High School,Married,0
+39,102887,6.2,539,0.14,77997,home,0,High School,Divorced,0
+57,126653,0.9,616,0.047,13474,home,0,College,Married,0
+46,37257,7.6,571,0.082,25060,home,0,College,Married,0
+28,20000,4.4,783,0.178,52702,personal,1,High School,Married,0
+24,52468,15.2,530,0.4,6901,auto,0,College,Married,0
+40,21116,0.2,739,0.321,29021,personal,3,High School,Single,0
+19,181808,1.5,739,0.217,54153,auto,1,College,Single,0
+56,40506,4.6,832,0.289,6421,personal,1,College,Married,0
+49,27112,1.8,609,0.42,30131,home,0,College,Single,0
+29,42097,6.3,721,0.075,53832,home,0,College,Married,0
+18,20000,7.1,850,0.433,59449,auto,1,Graduate,Single,0
+51,20000,0.5,588,0.301,92946,auto,1,Graduate,Married,0
+33,94876,3.6,496,0.366,66307,auto,0,High School,Single,0
+49,21471,3.6,461,0.081,44399,personal,0,High School,Married,0
+18,20000,2.3,721,0.159,93383,home,0,College,Married,0
+27,55788,13.5,461,0.353,79563,auto,0,High School,Single,0
+35,93766,8.8,612,0.204,24000,personal,0,College,Married,0
+35,64547,6.0,693,0.185,17430,home,0,College,Single,0
+29,80566,6.3,668,0.421,69202,business,0,College,Single,0
+42,20000,3.1,692,0.187,58188,business,0,College,Single,0
+22,20000,12.7,672,0.249,80018,home,0,College,Single,1
+33,120700,5.9,777,0.42,75186,home,1,Graduate,Divorced,0
+36,28053,6.5,554,0.448,64395,auto,0,High School,Single,0
+41,29712,9.9,582,0.104,98706,personal,0,College,Married,0
+43,105088,1.6,572,0.181,55691,personal,0,High School,Single,0
+21,56669,8.2,733,0.315,15745,personal,0,High School,Married,0
+18,52297,1.1,740,0.477,83685,personal,0,College,Single,0
+50,205253,2.1,695,0.106,28926,home,2,High School,Married,0
+38,21702,2.0,768,0.322,78843,personal,0,High School,Married,0
+26,76288,19.2,532,0.191,95925,personal,0,High School,Married,0
+53,38010,9.7,816,0.417,71195,personal,0,College,Single,0
+36,45020,6.0,802,0.116,61622,business,0,College,Married,1
+49,123349,6.5,723,0.424,48736,personal,1,High School,Single,0
+35,54517,4.1,828,0.313,39618,home,0,College,Single,0
+59,55861,14.7,484,0.17,38535,auto,0,High School,Married,1
+56,85648,3.4,597,0.055,65455,auto,1,College,Married,0
+32,27120,2.4,576,0.28,76370,home,0,College,Married,0
+46,20000,0.9,722,0.203,69459,business,1,College,Married,0
+42,20000,7.7,544,0.04,23848,home,3,Graduate,Single,0
+51,20000,6.6,725,0.431,51928,personal,0,Graduate,Single,0
+23,188144,2.4,787,0.174,80205,auto,0,High School,Single,0
+43,20000,0.1,719,0.409,50191,home,0,Graduate,Married,0
+47,30424,9.1,678,0.291,55979,business,1,High School,Married,0
+18,29101,0.1,551,0.436,78257,business,0,Graduate,Single,0
+20,46440,6.1,565,0.017,67820,auto,1,High School,Married,0
+18,69744,17.6,774,0.243,43887,home,0,College,Married,0
+31,72285,2.9,727,0.522,90064,home,0,High School,Married,0
+43,22777,1.3,646,0.113,20443,auto,0,High School,Married,0
+53,31770,6.1,608,0.239,99574,home,0,College,Married,1
+35,45527,8.5,447,0.076,16290,auto,1,Graduate,Married,0
+54,29763,4.0,542,0.509,6420,business,1,College,Single,0
+18,131383,17.1,841,0.175,89551,personal,0,College,Single,1
+18,53786,0.3,521,0.252,28270,business,0,College,Single,0
+34,65375,3.5,668,0.209,74321,personal,0,High School,Married,0
+39,61716,6.3,750,0.338,82046,auto,0,High School,Married,0
+34,92853,9.9,524,0.137,86603,business,0,High School,Married,1
+18,41974,1.0,668,0.205,99201,auto,0,College,Single,0
+33,20000,8.0,743,0.212,32933,business,0,High School,Married,0
+19,49998,4.0,651,0.049,72473,home,0,High School,Married,0
+43,21566,2.5,850,0.032,15962,home,0,High School,Married,0
+39,23792,0.7,483,0.268,43646,business,1,High School,Married,0
+23,58051,10.0,755,0.037,85557,personal,0,Graduate,Married,0
+28,97794,0.9,632,0.183,39927,business,0,High School,Single,0
+22,36938,1.9,727,0.102,61154,business,1,College,Single,0
+34,46493,1.7,694,0.23,52858,home,1,College,Single,0
+46,141743,10.3,576,0.332,66365,auto,1,College,Married,0
+23,44028,5.6,672,0.33,97424,auto,1,High School,Single,0
+41,291077,8.0,464,0.259,10294,personal,0,College,Married,0
+28,57091,1.4,710,0.251,59526,personal,0,High School,Married,0
+25,20000,4.9,679,0.352,86987,home,0,College,Single,0
+33,66348,4.2,713,0.257,50731,personal,1,High School,Married,0
+22,49262,8.9,755,0.145,12460,personal,1,College,Single,0
+28,101905,11.8,686,0.037,58251,home,1,College,Single,0
+20,62227,0.1,664,0.389,36547,personal,2,College,Married,0
+58,32507,5.6,561,0.521,19719,personal,2,College,Single,0
+35,20000,0.3,578,0.155,85658,business,0,College,Married,0
+26,30723,4.0,768,0.165,54551,auto,0,Graduate,Married,0
+37,20000,1.7,793,0.033,93661,home,1,High School,Divorced,0
+33,22824,1.8,626,0.165,81571,auto,0,College,Married,0
+32,58154,2.2,654,0.201,70832,home,0,College,Single,0
+42,138126,4.9,559,0.11,5477,business,0,College,Married,0
+44,49798,2.0,767,0.104,45643,home,2,High School,Single,0
+28,20000,6.6,716,0.218,23761,personal,0,College,Single,0
+28,51827,2.6,844,0.197,91525,auto,1,High School,Single,0
+31,94589,0.4,562,0.113,21585,auto,0,High School,Single,0
+18,22296,7.7,612,0.389,32175,home,0,High School,Married,0
+18,32623,1.7,673,0.012,54099,personal,0,High School,Single,0
+51,36744,2.8,714,0.363,30019,personal,0,College,Married,0
+54,20000,5.8,628,0.114,24937,home,1,Graduate,Married,0
+32,60999,2.0,562,0.193,61914,business,1,High School,Married,0
+41,32966,0.3,738,0.267,13448,auto,0,Graduate,Divorced,0
+38,50798,2.3,722,0.225,10525,auto,1,Graduate,Single,0
+70,20000,14.5,558,0.165,40363,auto,0,Graduate,Married,0
+48,25591,5.1,785,0.148,73463,home,0,Graduate,Married,1
+33,64725,5.6,767,0.197,57706,business,0,College,Single,0
+23,26949,5.0,663,0.351,45173,auto,1,High School,Married,0
+18,144577,1.1,657,0.279,58746,home,0,College,Married,0
+37,26378,2.7,705,0.094,39717,auto,0,College,Single,0
+25,43466,7.0,563,0.444,93933,personal,0,Graduate,Single,0
+18,76578,0.5,653,0.061,10215,auto,2,Graduate,Single,0
+27,20000,1.6,434,0.387,68972,personal,0,College,Married,1
+22,20000,1.6,737,0.294,89671,home,0,College,Married,0
+55,20000,2.8,493,0.065,81369,home,0,High School,Married,0
+45,99714,19.7,800,0.364,22483,personal,1,High School,Married,0
+34,23353,0.3,616,0.299,33113,home,0,College,Married,0
+52,281126,3.7,628,0.272,73119,business,1,College,Married,0
+35,23123,1.0,587,0.117,13005,home,0,Graduate,Married,0
+24,42093,17.6,621,0.214,82126,personal,0,College,Married,0
+53,124702,0.6,791,0.128,73296,auto,2,Graduate,Married,0
+41,180750,2.6,401,0.244,74312,personal,0,College,Married,1
+22,188943,6.7,777,0.083,14522,home,1,Graduate,Married,0
+32,95481,6.1,683,0.468,73187,home,0,High School,Divorced,0
+24,82392,2.7,529,0.226,69582,home,2,Graduate,Single,0
+18,58338,2.1,542,0.171,83937,home,0,College,Single,1
+46,67689,2.5,817,0.285,8951,auto,0,High School,Divorced,0
+57,23366,1.5,555,0.459,7195,auto,0,High School,Single,0
+18,20000,1.1,534,0.131,40435,personal,1,Graduate,Married,0
+41,36217,3.3,763,0.331,19134,personal,1,High School,Single,0
+27,31693,1.6,683,0.235,58046,personal,0,College,Single,0
+29,25271,1.7,556,0.194,92148,personal,0,College,Single,1
+27,63393,5.3,671,0.022,42190,auto,1,College,Single,0
+24,77982,17.3,547,0.265,85270,auto,0,Graduate,Single,0
+35,38976,4.6,760,0.322,5022,auto,0,College,Married,0
+25,118423,0.4,756,0.392,21008,personal,0,College,Married,0
+38,20000,0.4,703,0.328,7890,home,0,Graduate,Divorced,1
+34,31103,15.1,686,0.185,36173,home,0,College,Married,1
+32,20466,1.8,826,0.111,91278,personal,0,Graduate,Married,1
+24,20000,0.5,649,0.025,14210,home,0,College,Married,0
+28,33991,4.6,531,0.337,62608,business,0,High School,Married,0
+44,32945,4.9,694,0.266,47892,business,0,College,Married,0
+41,121876,5.2,850,0.209,94154,home,0,College,Single,0
+23,60153,1.6,548,0.109,16639,home,0,High School,Single,0
+36,20000,0.1,613,0.047,25142,auto,0,High School,Single,1
+44,160055,16.8,691,0.481,7806,personal,1,High School,Single,0
+18,96454,1.4,644,0.434,46223,home,0,College,Married,0
+41,57854,5.6,551,0.504,31394,personal,0,Graduate,Single,1
+27,30297,6.1,762,0.468,87641,personal,1,High School,Married,0
+41,20000,4.7,850,0.21,62469,auto,0,College,Divorced,0
+25,26963,1.9,669,0.11,63338,home,0,Graduate,Divorced,0
+18,86768,1.6,559,0.17,55531,personal,0,High School,Divorced,0
+18,164007,4.6,495,0.115,13725,home,2,College,Single,0
+35,124815,10.1,675,0.132,47276,personal,1,Graduate,Married,0
+38,24561,14.7,760,0.281,99952,auto,0,Graduate,Single,0
+24,20000,0.6,697,0.099,84346,personal,0,High School,Married,1
+42,40648,0.8,649,0.24,89878,business,0,High School,Married,0
+18,20000,14.5,591,0.071,83206,business,0,High School,Married,0
+34,47029,6.7,540,0.225,14788,auto,0,College,Married,1
+20,32270,10.7,733,0.21,26607,home,0,College,Married,0
+27,25013,1.1,741,0.457,5296,personal,2,College,Single,0
+35,20000,4.4,495,0.078,33833,auto,0,College,Single,0
+24,54769,6.0,808,0.145,15317,home,1,High School,Married,0
+30,23714,5.7,707,0.154,49915,business,1,College,Married,0
+47,20000,2.6,789,0.35,69327,home,0,College,Divorced,0
+28,20000,0.1,515,0.221,88078,home,0,College,Single,0
+45,35524,4.4,513,0.288,76175,home,1,College,Married,0
+21,149911,1.5,635,0.239,94165,personal,1,College,Married,0
+41,137174,3.0,700,0.088,10120,personal,1,High School,Married,0
+52,25193,15.8,829,0.122,6157,auto,0,High School,Married,0
+18,22431,2.5,720,0.312,67827,auto,0,High School,Divorced,0
+25,52839,9.2,625,0.265,32488,auto,0,High School,Single,0
+41,20000,1.0,547,0.161,29082,personal,0,College,Divorced,0
+32,46232,5.6,773,0.039,36434,home,0,High School,Single,0
+39,67027,18.9,553,0.099,30630,business,0,High School,Single,0
+27,96910,0.5,812,0.268,53586,home,0,College,Married,0
+36,33519,0.0,621,0.112,46814,business,1,College,Married,0
+33,30855,2.8,809,0.463,53680,home,0,College,Married,0
+49,20000,0.5,717,0.594,68907,personal,1,College,Married,0
+38,20000,6.9,636,0.184,41777,home,1,College,Married,0
+39,30297,12.3,598,0.332,28874,home,0,Graduate,Single,0
+30,48722,2.8,615,0.266,20789,business,0,High School,Divorced,0
+29,75423,1.5,692,0.341,38200,business,0,College,Single,0
+29,20000,2.8,657,0.529,75471,auto,0,Graduate,Married,0
+39,119868,6.4,590,0.234,76886,personal,0,Graduate,Single,0
+29,29234,0.0,633,0.011,68356,personal,0,High School,Married,0
+38,35700,4.5,657,0.27,27232,business,0,College,Married,0
+59,20000,4.8,437,0.414,60868,auto,0,High School,Single,0
+45,20000,5.1,695,0.046,59215,auto,0,College,Single,0
+31,73661,1.4,552,0.486,51005,auto,0,College,Single,0
+49,65478,6.3,534,0.515,57248,auto,0,College,Single,0
+30,28996,0.5,481,0.352,51720,business,0,College,Single,0
+18,38314,1.1,470,0.063,58718,home,0,College,Married,0
+22,54871,10.5,514,0.211,72973,home,0,College,Married,0
+18,20000,6.7,579,0.116,15414,personal,0,Graduate,Married,1
+30,23783,0.1,845,0.276,76214,personal,0,College,Married,1
+35,68556,1.4,597,0.096,17909,home,0,High School,Married,1
+55,20000,1.2,667,0.414,11329,auto,0,College,Married,1
+38,45928,1.6,690,0.183,97727,business,0,High School,Married,0
+32,20000,1.4,663,0.169,95914,home,0,College,Married,0
+44,52740,0.3,642,0.157,10741,personal,0,Graduate,Married,0
+18,35294,3.1,530,0.146,47109,personal,0,Graduate,Single,0
+37,20000,6.6,795,0.202,22693,auto,0,College,Married,1
+44,92207,4.7,830,0.033,51107,business,1,High School,Married,0
+18,20177,5.6,481,0.286,83866,personal,0,High School,Single,1
+48,20000,0.4,547,0.124,95308,auto,0,College,Married,0
+39,42636,15.1,622,0.339,65254,personal,0,High School,Single,0
+30,91026,9.1,553,0.357,38621,personal,1,College,Single,0
+42,20000,8.2,700,0.356,62315,personal,1,High School,Single,0
+62,38152,8.7,577,0.28,34640,business,0,College,Married,0
+37,51177,13.5,850,0.253,91433,auto,0,High School,Married,1
+37,63226,3.9,769,0.398,87688,home,0,Graduate,Married,1
+29,41820,1.1,671,0.282,58032,home,0,College,Single,0
+24,27075,4.8,752,0.279,35855,home,0,College,Married,0
+44,20000,6.8,760,0.319,32872,home,0,High School,Married,0
+24,38906,6.7,593,0.474,8174,business,1,College,Single,0
+35,20000,3.7,568,0.523,82502,personal,0,High School,Married,0
+29,20000,0.4,657,0.054,47786,personal,0,College,Single,0
+40,51495,2.3,736,0.358,35887,personal,0,Graduate,Single,0
+39,74843,12.7,663,0.093,49755,personal,0,College,Married,0
+47,20000,4.4,492,0.225,82780,auto,0,College,Married,0
+28,20000,3.9,569,0.096,16838,business,0,College,Single,0
+31,59594,1.6,642,0.159,86477,auto,0,Graduate,Single,1
+23,188338,2.3,642,0.056,90263,business,0,Graduate,Single,1
+29,36924,11.3,847,0.364,94937,personal,0,College,Single,0
+39,20284,5.5,511,0.304,42761,home,1,College,Single,0
+44,31372,7.7,700,0.529,25628,personal,0,College,Single,0
+23,109087,3.0,798,0.353,40495,auto,0,High School,Married,0
+45,21660,5.0,850,0.056,36626,home,1,College,Married,0
+51,20000,1.4,609,0.408,21734,personal,0,College,Married,0
+39,24681,6.1,699,0.119,62690,auto,0,High School,Married,1
+57,20000,2.8,706,0.252,50279,home,0,High School,Single,0
+25,40060,2.9,669,0.083,87241,business,1,College,Single,0
+20,133218,5.2,640,0.474,8050,personal,1,Graduate,Married,0
+18,47026,13.8,693,0.119,66167,business,0,College,Single,0
+52,29676,0.3,396,0.138,77480,personal,1,College,Single,0
+42,28754,8.7,718,0.432,77151,auto,0,College,Single,0
+34,20000,1.7,662,0.165,89177,auto,0,College,Married,0
+38,73606,2.9,627,0.444,74258,personal,0,College,Married,1
+21,34123,0.1,850,0.212,93141,business,0,College,Divorced,0
+64,31433,1.8,582,0.166,36602,home,2,High School,Married,0
+36,300000,3.5,609,0.043,52804,business,0,College,Married,0
+36,46120,0.3,849,0.356,6337,business,0,High School,Single,0
+43,20000,3.4,566,0.495,5660,personal,0,College,Single,1
+40,25820,13.1,594,0.246,27812,business,0,Graduate,Single,0
+37,91012,0.6,635,0.496,14576,auto,0,High School,Single,0
+25,39759,7.2,734,0.127,29720,business,0,College,Single,1
+40,20000,2.6,670,0.292,21819,personal,0,College,Single,0
+57,75764,5.3,520,0.158,7709,home,0,Graduate,Single,0
+51,21279,1.5,596,0.453,91383,business,0,College,Single,0
+54,162533,0.9,589,0.17,5781,auto,1,College,Divorced,0
+28,86166,0.9,642,0.254,74927,auto,0,Graduate,Married,0
+23,25390,0.4,692,0.363,19454,personal,0,College,Divorced,0
+33,101195,1.0,691,0.436,91661,home,0,College,Single,0
+35,38341,5.5,472,0.488,89815,auto,0,College,Married,0
+48,71841,10.7,756,0.043,67120,personal,0,Graduate,Single,0
+18,53518,8.4,675,0.367,68862,home,1,High School,Single,0
+53,20000,5.8,788,0.224,5507,home,0,College,Single,0
+33,21702,0.6,694,0.246,98562,home,0,College,Divorced,0
+29,82782,1.7,760,0.261,88394,auto,2,College,Divorced,0
+22,27783,1.9,696,0.086,90035,personal,0,College,Single,0
+18,26293,1.4,784,0.302,67628,personal,1,College,Single,0
+44,20000,3.6,702,0.131,37754,business,0,High School,Married,0
+35,50964,3.8,640,0.075,89896,personal,2,College,Single,0
+19,189097,2.2,850,0.343,32694,home,0,College,Single,0
+19,20000,2.2,738,0.351,58457,business,0,Graduate,Single,0
+30,37025,8.8,707,0.393,14474,personal,0,High School,Married,0
+55,112395,7.8,522,0.187,92585,personal,0,Graduate,Single,0
+31,34073,1.8,521,0.47,18373,personal,1,College,Single,0
+18,52150,12.3,679,0.219,26365,business,1,High School,Single,0
+32,20000,15.3,664,0.427,58022,personal,0,College,Married,0
+31,51156,2.0,588,0.398,77588,auto,1,High School,Divorced,0
+18,31265,2.2,664,0.157,63838,personal,0,Graduate,Single,1
+34,79904,3.5,808,0.166,27052,home,0,Graduate,Married,0
+32,93892,14.2,719,0.247,5089,auto,0,High School,Married,0
+43,288269,10.5,535,0.517,76929,auto,2,High School,Divorced,0
+57,57740,0.5,638,0.176,98594,home,1,College,Married,0
+48,47128,2.5,569,0.263,81941,home,1,College,Married,0
+31,42425,4.0,611,0.266,48719,home,0,College,Married,0
+21,27377,3.5,608,0.171,90857,personal,0,College,Single,1
+65,47609,1.1,602,0.458,43935,personal,0,College,Married,0
+35,28672,9.8,524,0.164,54868,business,0,High School,Divorced,1
+35,41554,5.6,637,0.273,50327,auto,1,Graduate,Married,0
+34,104201,9.1,593,0.296,47524,personal,1,Graduate,Divorced,0
+37,20000,9.8,357,0.357,78643,business,0,College,Married,0
+33,90391,6.9,850,0.264,55043,home,0,Graduate,Married,0
+28,104160,2.9,758,0.136,35088,personal,0,High School,Married,0
+28,33042,4.7,612,0.451,29525,personal,0,High School,Married,0
+34,20000,0.9,651,0.008,8585,home,0,College,Married,0
+28,22331,5.6,532,0.2,60403,business,0,College,Divorced,0
+26,102497,1.0,819,0.226,26846,personal,0,College,Married,0
+36,35657,5.9,839,0.322,19072,home,1,Graduate,Married,0
+31,20000,1.3,665,0.156,67113,home,0,Graduate,Married,0
+53,24250,0.6,752,0.319,69714,home,0,College,Single,0
+18,71146,0.9,667,0.257,76454,auto,1,College,Single,0
+48,56240,0.0,516,0.32,52839,auto,0,High School,Divorced,0
+49,29997,6.3,608,0.359,89935,auto,0,High School,Married,0
+18,27079,6.6,663,0.303,93952,home,0,College,Single,0
+30,26544,3.6,604,0.372,81700,business,0,College,Single,0
+30,20000,0.9,628,0.276,65381,auto,0,College,Married,1
+18,132230,0.4,640,0.132,33853,home,1,College,Married,0
+25,28061,0.1,641,0.109,98379,auto,0,College,Married,0
+21,96155,0.9,655,0.294,31042,auto,1,High School,Married,0
+56,122645,11.1,543,0.117,24252,auto,0,College,Single,0
+46,80712,1.4,578,0.032,47004,home,0,High School,Single,1
+50,25711,2.2,521,0.477,10399,home,0,High School,Single,0
+43,50160,0.6,747,0.514,97956,personal,1,College,Married,0
+21,35619,1.3,439,0.116,60901,business,0,High School,Single,0
+28,20000,3.7,765,0.172,57910,auto,0,Graduate,Married,1
+40,47074,4.7,788,0.135,67300,auto,1,High School,Married,0
+20,20000,1.4,619,0.287,52217,personal,0,High School,Married,0
+43,93914,0.3,389,0.129,8046,personal,1,College,Divorced,0
+32,25041,2.5,613,0.158,63169,auto,0,College,Single,0
+30,42656,1.3,643,0.338,73036,business,0,High School,Married,0
+43,45552,1.2,548,0.081,44591,personal,0,High School,Single,0
+40,29521,16.1,598,0.243,76943,auto,0,Graduate,Single,0
+30,58067,4.8,803,0.075,26565,personal,0,College,Married,0
+48,24836,4.1,716,0.11,26021,business,0,College,Single,1
+22,72914,2.7,557,0.065,20334,personal,0,College,Married,0
+42,20000,2.8,490,0.211,40339,home,0,High School,Married,1
+42,40179,3.9,617,0.24,85466,auto,0,College,Single,0
+31,171295,6.0,628,0.022,83651,auto,0,College,Single,0
+38,20000,6.1,699,0.2,41368,auto,1,Graduate,Married,0
+19,21116,0.9,596,0.063,60966,personal,1,High School,Married,0
+46,54782,3.5,701,0.523,73477,personal,0,Graduate,Married,0
+32,41926,2.7,843,0.361,27914,personal,0,High School,Married,0
+28,48074,10.2,731,0.266,20973,business,1,High School,Married,0
+47,53709,5.0,645,0.368,97349,home,0,High School,Married,0
+26,60341,3.8,631,0.177,63667,business,1,High School,Single,0
+18,88235,0.6,614,0.336,98234,personal,0,Graduate,Married,0
+18,50405,4.7,768,0.114,37086,auto,3,College,Married,0
+42,29941,0.6,587,0.205,71788,personal,0,High School,Married,0
+19,62196,2.1,654,0.102,26147,home,0,Graduate,Married,0
+56,166026,0.8,655,0.603,29814,personal,0,Graduate,Divorced,0
+18,32659,5.9,599,0.031,53630,auto,1,College,Single,0
+55,20000,1.2,512,0.067,35363,home,0,Graduate,Divorced,0
+37,88050,2.5,682,0.118,20924,personal,0,High School,Married,0
+33,32981,11.3,643,0.418,29973,personal,0,Graduate,Married,0
+28,20000,1.1,700,0.193,8396,home,0,College,Single,0
+39,71534,3.5,596,0.13,71920,home,0,Graduate,Single,1
+34,23664,2.7,772,0.315,51751,auto,1,College,Married,0
+48,33778,0.1,562,0.585,13953,personal,1,College,Married,0
+36,47362,7.9,821,0.158,21310,business,0,College,Single,0
+36,42293,0.4,475,0.339,14740,business,0,High School,Married,0
+30,64059,3.2,693,0.363,63196,auto,1,College,Single,0
+34,25632,4.1,697,0.129,13949,personal,0,High School,Divorced,0
+38,54747,5.0,570,0.067,76656,auto,0,Graduate,Married,1
+18,29506,5.8,692,0.139,6948,personal,0,High School,Single,0
+18,65581,1.5,777,0.279,28690,home,1,College,Married,0
+43,59414,0.1,428,0.215,89613,auto,0,College,Divorced,0
+37,20000,6.4,700,0.175,73260,personal,0,Graduate,Single,0
+32,86576,3.8,400,0.111,11931,home,1,College,Married,0
+35,23652,9.0,553,0.117,83006,personal,0,College,Married,0
+39,69317,8.6,812,0.273,51838,personal,0,Graduate,Married,0
+28,48719,9.3,591,0.181,85444,auto,0,College,Single,0
+25,158031,3.3,532,0.199,62070,auto,0,College,Single,1
+37,30370,2.0,630,0.009,69774,business,1,College,Married,0
+23,27461,7.8,850,0.144,99382,personal,0,Graduate,Single,0
+39,35755,3.0,466,0.415,27071,home,1,College,Married,0
+18,28494,1.0,544,0.395,64274,auto,0,High School,Single,0
+47,68868,9.7,799,0.374,48730,personal,0,Graduate,Married,0
+40,20000,10.7,835,0.356,8747,personal,0,College,Married,0
+38,20000,3.1,639,0.223,6374,home,1,College,Married,0
+46,20000,0.4,526,0.368,16326,auto,0,Graduate,Married,0
+54,77671,2.5,850,0.134,66663,business,0,High School,Divorced,0
+47,142698,8.1,809,0.392,58880,personal,0,College,Married,0
+18,33404,11.6,717,0.152,57575,business,1,College,Single,0
+19,31727,1.1,568,0.343,8026,personal,0,Graduate,Married,1
+27,38408,0.3,645,0.307,49583,business,0,High School,Divorced,0
+35,91996,10.5,633,0.198,92839,home,0,College,Single,0
+41,20000,2.5,683,0.022,42771,personal,0,Graduate,Single,0
+26,43945,3.9,795,0.456,64367,home,0,High School,Single,0
+37,79233,17.2,737,0.29,79082,personal,1,High School,Single,0
+25,54223,0.3,542,0.218,79472,auto,1,Graduate,Married,0
+27,42262,5.2,787,0.256,54331,auto,0,High School,Married,0
+18,80889,0.4,681,0.055,86505,business,1,Graduate,Divorced,0
+23,20000,2.4,718,0.116,42180,business,1,High School,Married,0
+18,62461,8.1,796,0.391,89425,home,0,College,Single,0
+23,21520,2.8,538,0.457,27821,personal,0,College,Single,0
+47,20000,29.4,646,0.098,31620,auto,0,College,Divorced,0
+23,54664,4.1,596,0.256,10046,auto,0,College,Single,0
+66,108980,1.9,493,0.229,80580,personal,0,College,Single,1
+40,32534,1.2,684,0.34,44620,auto,1,Graduate,Divorced,0
+37,77831,2.2,850,0.169,26766,business,0,High School,Married,0
+24,131903,2.3,465,0.329,27020,home,0,College,Single,0
+43,103977,0.4,646,0.359,90632,personal,1,High School,Married,0
+28,134857,2.3,714,0.214,84222,personal,0,College,Divorced,0
+36,65755,3.1,662,0.334,57585,home,0,High School,Single,0
+65,38574,6.4,638,0.12,63530,auto,2,College,Married,0
+33,20000,5.3,520,0.377,50060,personal,1,College,Single,0
+48,29826,6.2,673,0.071,42208,personal,1,High School,Married,0
+26,20000,0.0,574,0.374,91970,auto,0,High School,Divorced,0
+34,206231,1.2,431,0.375,16933,auto,0,College,Divorced,0
+56,31548,5.4,769,0.279,44752,home,0,College,Single,1
+27,40077,3.3,745,0.211,37733,home,1,Graduate,Single,0
+56,56454,0.0,655,0.147,52324,auto,1,College,Single,0
+43,37604,8.2,672,0.329,48475,home,0,High School,Married,0
+28,140933,7.4,757,0.048,54294,personal,0,College,Single,0
+42,22067,4.0,672,0.145,18292,personal,0,High School,Married,0
+46,42433,0.3,740,0.3,53748,business,1,College,Single,0
+42,20050,7.3,620,0.153,28029,personal,0,Graduate,Married,1
+18,20000,4.4,781,0.17,22511,business,0,College,Single,1
+26,22260,7.6,682,0.235,11159,personal,0,College,Married,0
+32,35255,7.0,669,0.222,77451,personal,1,High School,Single,0
+34,25759,8.1,522,0.069,45606,business,1,College,Single,0
+42,20869,3.6,678,0.187,64531,personal,0,Graduate,Married,0
+37,20000,0.8,566,0.266,74121,home,1,High School,Married,0
+18,33979,5.6,586,0.345,69535,personal,0,High School,Single,0
+39,20000,4.8,568,0.432,49697,business,0,College,Single,0
+42,66705,6.8,543,0.29,41850,personal,0,College,Married,0
+41,38791,0.9,850,0.024,40716,personal,1,College,Single,0
+47,20000,1.1,783,0.545,65804,personal,1,Graduate,Married,0
+45,28357,11.1,842,0.301,52005,business,0,High School,Married,0
+40,20000,6.9,527,0.17,85667,home,0,College,Single,0
+34,46879,11.9,657,0.191,88096,personal,0,College,Married,1
+18,106123,7.1,520,0.277,21203,home,1,High School,Married,0
+40,20000,4.5,580,0.109,17942,personal,0,College,Divorced,0
+37,39815,5.3,558,0.097,64888,personal,1,High School,Single,0
+38,31948,11.0,773,0.208,33616,home,0,High School,Married,1
+19,62135,4.3,610,0.548,6764,home,1,High School,Single,0
+22,43068,5.0,756,0.323,89421,personal,0,Graduate,Married,1
+47,20000,0.9,710,0.101,26555,home,0,College,Married,0
+34,28134,3.2,850,0.011,93281,home,0,College,Single,0
+43,20000,6.3,502,0.094,73156,personal,0,College,Divorced,0
+35,85888,1.6,775,0.266,77452,auto,0,College,Married,0
+35,36939,1.1,764,0.166,24138,auto,0,College,Divorced,0
+46,166200,1.9,552,0.368,27248,business,2,Graduate,Married,0
+28,34595,1.4,750,0.113,54520,home,0,College,Single,1
+36,20604,1.2,683,0.203,21349,auto,0,College,Single,0
+29,20000,2.8,627,0.405,34016,personal,0,High School,Single,0
+29,20000,11.9,567,0.11,35538,personal,0,College,Single,0
+31,20000,3.5,578,0.144,20164,business,0,College,Married,0
+37,44967,1.0,850,0.197,24492,business,0,Graduate,Married,0
+29,54555,0.4,650,0.253,79912,personal,0,High School,Divorced,0
+50,20000,6.0,728,0.211,20883,home,0,High School,Married,0
+24,74312,2.4,570,0.05,7703,home,0,College,Married,0
+32,24675,8.6,572,0.107,64788,auto,0,High School,Divorced,1
+29,40840,5.4,758,0.176,97718,home,0,High School,Married,0
+52,131896,8.0,515,0.165,36465,personal,0,Graduate,Single,1
+37,74419,1.6,608,0.391,16272,personal,0,College,Married,0
+47,29295,5.9,653,0.461,59186,home,0,Graduate,Single,0
+18,20000,1.5,661,0.408,91103,personal,0,Graduate,Single,0
+38,20000,14.0,632,0.098,79485,home,0,High School,Single,0
+45,20428,5.1,689,0.427,64139,auto,1,College,Married,0
+35,30671,2.0,719,0.24,34930,personal,0,High School,Married,0
+47,20000,1.6,723,0.162,56478,auto,0,Graduate,Married,0
+28,32695,1.1,551,0.209,13668,auto,0,College,Divorced,0
+51,38618,5.9,621,0.279,69499,home,0,College,Single,1
+62,30336,1.2,769,0.436,73884,auto,0,College,Married,0
+30,21590,4.5,739,0.328,96678,personal,0,College,Married,0
+29,41561,1.5,512,0.021,29737,business,0,High School,Single,1
+52,51717,5.4,685,0.468,6753,auto,1,College,Married,0
+53,20000,8.4,452,0.039,56832,auto,0,College,Single,0
+28,112279,7.5,654,0.29,72145,personal,0,Graduate,Married,0
+29,33561,7.2,839,0.356,80088,business,0,College,Single,0
+31,36867,1.0,555,0.333,23405,home,0,College,Single,0
+18,63995,0.5,566,0.071,29866,auto,1,Graduate,Married,0
+23,43764,6.0,726,0.377,53696,personal,0,High School,Single,0
+22,77847,2.3,495,0.269,36407,personal,1,Graduate,Single,0
+25,45692,2.8,586,0.156,86748,home,1,High School,Married,0
+34,22248,0.2,709,0.121,50007,personal,0,College,Single,0
+37,48494,1.5,586,0.272,80959,home,0,College,Married,0
+53,20000,0.2,626,0.287,60158,auto,0,College,Married,0
+23,39610,10.6,724,0.068,78443,auto,1,Graduate,Married,0
+46,35362,1.4,692,0.296,36603,business,1,High School,Married,0
+32,30745,4.1,676,0.358,83984,auto,1,College,Single,0
+34,32766,0.2,616,0.061,31084,home,1,College,Single,0
+43,20000,5.5,687,0.333,56879,home,0,Graduate,Married,0
+21,23412,2.0,637,0.371,25330,business,1,High School,Married,0
+39,39115,11.4,695,0.159,50175,home,0,Graduate,Single,0
+36,41269,11.0,600,0.512,35226,auto,1,College,Married,0
+40,20000,2.0,631,0.124,30336,home,0,High School,Married,1
+38,99964,11.6,551,0.165,96863,personal,0,College,Married,1
+64,20000,27.8,646,0.125,20207,auto,1,High School,Married,0
+27,78870,8.7,568,0.471,79795,auto,0,College,Single,0
+28,51111,9.3,538,0.187,98495,auto,0,High School,Married,0
+27,21655,1.4,675,0.171,6890,business,0,College,Single,0
+28,150278,4.3,671,0.103,71407,personal,0,College,Married,1
+27,20000,0.3,728,0.429,29026,personal,0,College,Married,0
+49,75759,0.5,606,0.126,8846,business,0,College,Married,0
+52,80859,34.0,690,0.138,43274,business,0,College,Single,0
+28,21237,2.0,705,0.031,93845,auto,0,High School,Divorced,0
+25,110632,6.9,694,0.13,6117,business,0,College,Married,0
+40,29731,8.2,567,0.067,60849,home,0,Graduate,Married,0
+28,45750,9.8,664,0.204,52632,auto,0,Graduate,Married,0
+42,44723,30.2,686,0.321,87971,business,0,High School,Single,0
+37,32615,1.4,650,0.151,12980,home,0,High School,Divorced,0
+18,69469,0.2,441,0.166,69744,home,0,Graduate,Married,1
+53,68513,2.6,666,0.086,69610,auto,0,College,Married,0
+56,20000,0.7,850,0.472,68562,personal,0,College,Single,0
+27,103101,0.1,613,0.421,94521,auto,0,College,Single,0
+30,20000,2.2,577,0.329,83193,personal,0,College,Divorced,0
+38,82953,7.7,687,0.314,8987,business,0,College,Married,0
+39,89443,4.2,681,0.089,49752,personal,1,Graduate,Single,0
+42,20000,1.9,769,0.278,42805,home,0,College,Single,0
+59,26143,5.3,524,0.264,34463,business,0,High School,Married,1
+32,20000,1.3,723,0.288,47876,home,0,High School,Single,0
+25,30578,0.1,709,0.027,41498,home,0,High School,Married,0
+18,28383,7.2,635,0.13,46071,home,0,College,Married,0
+26,67760,4.9,683,0.085,98029,personal,1,High School,Married,0
+34,103595,7.2,752,0.124,13420,home,0,High School,Single,0
+56,110918,0.2,737,0.154,92611,home,0,Graduate,Divorced,0
+28,23161,9.1,535,0.224,50622,auto,0,High School,Single,0
+37,30718,4.8,732,0.281,64255,home,0,High School,Married,0
+34,20000,4.1,643,0.418,83867,personal,0,High School,Single,0
+49,20000,4.9,657,0.109,39243,personal,0,High School,Married,0
+65,78580,10.0,657,0.324,45890,personal,0,College,Divorced,0
+28,132252,4.4,634,0.217,43904,home,1,Graduate,Married,0
+29,20000,4.3,769,0.038,40599,home,1,Graduate,Married,0
+47,22607,23.4,641,0.236,92925,business,0,College,Married,0
+43,35556,7.1,538,0.401,83748,home,1,College,Married,0
+57,45439,2.9,610,0.389,15354,business,1,College,Divorced,0
+42,20000,6.1,667,0.176,15271,home,0,High School,Divorced,1
+30,50983,2.5,772,0.203,45647,business,0,High School,Single,0
+42,24857,1.3,710,0.319,14372,auto,0,Graduate,Divorced,0
+48,35898,4.5,564,0.291,63813,auto,2,High School,Single,0
+44,56219,13.2,850,0.243,18650,personal,0,High School,Single,1
+41,36502,13.2,676,0.151,54625,personal,0,College,Single,0
+47,25613,2.1,777,0.362,5685,auto,0,College,Single,0
+49,33266,3.8,634,0.145,35076,personal,0,High School,Married,0
+51,33836,1.2,703,0.355,69333,personal,0,High School,Married,0
+42,27010,27.2,733,0.089,50983,home,0,College,Married,0
+32,29524,19.8,771,0.3,97935,home,0,College,Married,0
+36,130472,5.2,755,0.085,88039,auto,1,High School,Married,0
+49,56882,8.2,737,0.342,39111,home,1,College,Married,0
+25,28670,6.3,618,0.422,9321,personal,0,College,Single,0
+39,63421,4.5,592,0.219,85334,home,0,Graduate,Married,1
+30,27804,0.3,683,0.295,91567,auto,0,College,Married,0
+35,92827,3.0,743,0.402,82959,home,1,High School,Married,0
+50,48811,5.6,627,0.379,17155,auto,0,College,Married,0
+37,33328,5.7,756,0.124,99801,home,1,College,Married,0
+35,51957,2.3,795,0.179,29565,home,0,High School,Single,0
+18,20000,14.2,558,0.45,73799,home,0,College,Single,0
+43,20000,0.9,566,0.209,91263,business,0,High School,Married,1
+42,20000,3.5,635,0.292,27390,home,0,High School,Married,0
+60,40715,5.9,680,0.16,91284,personal,0,College,Married,0
+31,145221,6.0,597,0.223,34400,home,0,High School,Single,1
+37,216433,5.2,785,0.468,97759,home,0,Graduate,Single,0
+37,60502,1.6,692,0.175,31719,auto,0,College,Married,0
+53,54212,0.8,653,0.219,95576,auto,0,College,Married,0
+33,20000,5.1,506,0.188,10086,business,0,College,Married,0
+38,23525,4.6,518,0.359,72380,business,0,College,Single,0
+42,20000,1.0,678,0.273,55550,personal,0,High School,Single,1
+37,22099,6.1,436,0.151,50398,personal,1,Graduate,Married,0
+29,31744,3.0,751,0.056,26231,auto,0,Graduate,Single,0
+37,24892,5.5,634,0.23,72031,auto,2,High School,Married,0
+47,20000,9.1,850,0.339,23126,business,0,High School,Married,0
+22,66060,0.9,850,0.204,57519,personal,0,High School,Single,1
+36,20000,0.1,631,0.293,29058,personal,0,College,Married,0
+26,43975,7.6,639,0.217,95784,home,0,College,Married,0
+49,190854,4.7,749,0.321,7719,home,1,Graduate,Single,0
+18,20000,6.0,820,0.371,23974,business,0,College,Single,0
+28,20000,9.1,486,0.043,28019,auto,0,College,Married,0
+39,28888,8.1,471,0.177,44336,auto,0,College,Married,1
+53,87620,16.2,587,0.181,27109,home,0,College,Married,0
+34,173976,3.8,708,0.207,51678,personal,0,College,Married,0
+28,20000,3.4,699,0.111,87884,home,2,College,Married,0
+57,54033,2.6,756,0.264,72646,personal,0,College,Married,1
+18,25028,0.8,530,0.136,60096,home,0,College,Married,0
+18,33364,4.3,418,0.228,13455,business,0,College,Married,0
+40,300000,1.6,735,0.2,70929,personal,1,College,Single,0
+28,20000,12.7,567,0.093,20809,home,0,College,Married,1
+22,44488,4.4,448,0.166,79704,personal,0,College,Married,1
+43,52794,4.5,664,0.32,28755,auto,0,College,Married,0
+37,86563,2.2,729,0.143,44619,home,0,College,Married,0
+28,39276,0.3,637,0.274,38294,business,0,College,Single,0
+19,46464,0.2,604,0.223,86587,auto,0,High School,Married,0
+45,26547,2.8,634,0.042,17021,auto,0,High School,Single,0
+42,45039,0.4,612,0.05,58736,home,0,College,Married,0
+33,27596,4.7,515,0.091,18495,auto,1,College,Married,0
+57,59710,10.6,578,0.082,71955,business,1,Graduate,Married,0
+22,27019,10.7,702,0.588,90982,auto,0,College,Married,0
+18,49103,5.4,682,0.308,46287,business,2,College,Married,0
+26,35475,1.2,666,0.185,51368,business,0,High School,Single,0
+34,89396,9.9,550,0.19,93105,home,0,High School,Divorced,0
+37,34852,10.9,631,0.163,54494,home,0,College,Married,0
+32,20000,1.1,432,0.335,51321,business,0,High School,Married,0
+39,99661,6.7,667,0.15,59941,auto,1,College,Single,0
+19,20000,1.7,792,0.195,70476,home,0,College,Married,0
+52,21525,8.1,502,0.318,15153,home,0,College,Single,0
+34,22549,29.5,591,0.177,83005,personal,0,Graduate,Married,1
+48,109048,0.2,682,0.062,46372,personal,0,College,Single,0
+39,20000,11.4,775,0.441,11873,home,0,High School,Married,0
+40,300000,4.9,605,0.244,79687,home,0,Graduate,Married,0
+41,84528,18.1,580,0.31,40810,business,0,Graduate,Single,0
+40,43416,3.1,453,0.306,14534,personal,0,High School,Married,0
+42,34755,9.4,660,0.342,65209,personal,1,High School,Married,0
+50,45635,0.3,850,0.099,88612,personal,0,High School,Single,0
+37,55099,2.0,677,0.075,89336,auto,0,High School,Married,1
+43,60850,0.3,647,0.444,95978,personal,0,Graduate,Single,1
+33,56640,18.5,682,0.258,87432,auto,0,College,Single,0
+52,39013,8.5,648,0.005,5203,home,0,College,Single,0
+26,31011,9.6,568,0.259,41122,personal,1,Graduate,Married,0
+56,32176,13.9,732,0.086,82761,auto,0,College,Married,1
+34,31072,0.4,672,0.139,39794,business,0,College,Married,0
+18,89950,2.4,651,0.227,62147,auto,0,Graduate,Married,1
+36,58386,0.4,552,0.147,62600,business,0,Graduate,Single,0
+26,20000,1.2,780,0.442,39677,business,0,Graduate,Married,0
+45,61372,1.3,716,0.068,90925,home,0,College,Single,0
+27,42437,3.2,594,0.298,52806,personal,0,College,Married,0
+29,35776,1.6,750,0.216,49154,auto,1,High School,Single,0
+18,26613,0.5,600,0.086,99763,business,1,College,Single,0
+29,89258,0.9,571,0.357,51882,auto,0,Graduate,Married,0
+18,77499,0.8,574,0.25,21947,personal,0,High School,Divorced,0
+18,20000,18.1,472,0.059,53741,auto,1,College,Single,0
+44,50294,7.1,697,0.3,82331,home,0,College,Married,0
+44,20000,17.2,466,0.146,78801,home,0,High School,Single,0
+40,20000,2.9,527,0.43,79915,auto,1,College,Married,0
+23,21996,1.6,442,0.327,72262,personal,0,High School,Married,0
+34,72396,8.0,641,0.241,29150,personal,0,College,Single,0
+34,77846,2.0,634,0.215,86897,personal,0,High School,Single,0
+21,54746,1.8,617,0.435,89877,home,0,Graduate,Single,0
+53,64865,1.3,545,0.177,23444,auto,0,High School,Single,0
+45,54882,0.7,532,0.029,17393,home,0,High School,Single,0
+32,21737,1.5,696,0.24,97682,personal,1,High School,Married,0
+35,51304,2.2,594,0.286,87490,business,0,Graduate,Divorced,0
+37,68894,5.6,681,0.138,89857,auto,0,College,Single,0
+18,66398,0.3,561,0.166,89205,home,2,College,Married,0
+32,94007,1.2,668,0.217,56460,home,0,College,Married,0
+26,64000,8.3,780,0.034,66408,personal,0,College,Divorced,0
+22,48105,0.8,708,0.386,56809,personal,1,High School,Married,0
+31,85487,2.1,608,0.216,9864,personal,0,College,Married,0
+56,35553,10.0,675,0.497,75822,home,1,High School,Married,0
+42,20000,0.8,625,0.375,53006,personal,1,Graduate,Single,0
+28,31874,0.4,650,0.203,66532,personal,0,College,Single,0
+41,20011,3.3,617,0.111,52750,auto,0,College,Married,0

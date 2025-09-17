@@ -1,0 +1,801 @@
+age,tenure,salary,hours_per_week,commute_time,team_size,flexible_hours,remote_work,health_benefits,retirement_plan,department,education,management_level,satisfaction
+39,1.2,52129,38.2,40,9,1,1,1,1,Engineering,Bachelor,Manager,8.5
+33,5.3,83556,44.1,9,12,1,1,1,0,HR,High School,Individual,8.0
+41,0.1,66140,38.5,5,8,1,0,1,0,HR,PhD,Individual,7.4
+50,2.7,70371,41.5,5,11,0,1,0,0,Engineering,High School,Team Lead,6.3
+32,0.8,95569,58.8,15,10,1,1,0,1,Sales,Master,Individual,6.7
+32,0.4,75156,40.0,16,9,1,1,1,1,Finance,Bachelor,Team Lead,9.6
+50,0.2,75765,39.1,45,5,1,1,1,1,Sales,Bachelor,Manager,5.8
+42,3.6,86450,36.8,6,8,1,0,1,1,Finance,Bachelor,Individual,7.9
+30,1.2,57700,48.0,11,10,1,0,1,1,Sales,Bachelor,Manager,7.7
+40,3.9,48215,40.6,41,9,1,0,1,1,Finance,Bachelor,Individual,8.0
+30,0.2,44103,36.8,43,2,1,1,0,1,Finance,Bachelor,Individual,8.4
+30,1.1,30000,52.6,12,8,1,1,1,0,HR,Bachelor,Individual,6.6
+37,2.3,106124,53.4,15,7,1,1,0,1,Finance,PhD,Individual,8.5
+22,4.7,42935,37.2,9,4,1,1,0,1,Finance,Master,Individual,6.2
+22,1.2,60574,30.0,67,8,0,1,1,0,Marketing,Bachelor,Manager,5.7
+29,2.9,59463,50.1,5,13,1,1,1,1,Engineering,Bachelor,Team Lead,9.6
+24,6.5,71148,36.5,67,5,0,1,1,1,Sales,Master,Individual,7.3
+38,2.9,81314,48.3,28,4,1,0,0,0,Finance,Bachelor,Team Lead,7.1
+25,0.8,82209,30.0,18,9,1,0,0,0,HR,Bachelor,Individual,5.8
+22,0.1,53338,49.1,5,4,0,1,1,0,Engineering,Bachelor,Individual,6.9
+49,6.1,61657,32.3,16,6,1,1,1,1,Engineering,Master,Team Lead,9.4
+32,0.1,70651,47.8,13,8,0,1,0,1,HR,High School,Team Lead,8.2
+35,6.2,60026,42.1,5,11,0,1,0,1,Engineering,High School,Team Lead,5.5
+22,2.3,97146,34.4,26,8,0,0,1,1,Sales,Bachelor,Individual,8.1
+29,8.4,74819,38.7,88,4,0,1,1,1,HR,Bachelor,Team Lead,6.1
+36,4.8,79697,47.5,20,6,0,1,1,1,Marketing,Bachelor,Team Lead,7.7
+23,18.5,78257,42.8,31,9,1,1,1,1,Engineering,Bachelor,Director,7.0
+38,1.3,88469,46.7,5,9,1,1,1,1,Engineering,Bachelor,Individual,8.4
+28,4.4,68620,57.8,13,6,0,1,1,1,Engineering,High School,Individual,5.3
+32,1.5,39063,30.0,5,10,1,1,1,1,Engineering,High School,Team Lead,7.8
+28,2.0,72993,54.9,23,6,0,1,1,1,Marketing,Master,Director,7.8
+53,3.0,51972,42.8,69,4,0,1,0,1,Marketing,Master,Individual,6.6
+34,6.2,54427,34.8,27,4,0,1,1,0,Engineering,Bachelor,Individual,7.5
+24,12.4,76727,31.4,5,8,1,0,0,0,Engineering,High School,Individual,4.7
+43,4.4,89765,40.5,10,9,1,0,1,1,Engineering,High School,Individual,8.9
+22,1.6,65425,49.4,19,10,0,0,0,0,Finance,Bachelor,Individual,5.1
+37,1.6,71176,41.0,12,13,0,0,0,1,Sales,Master,Individual,6.0
+22,4.0,99044,54.1,44,11,0,1,1,1,Finance,Bachelor,Individual,5.9
+22,0.8,69815,30.4,42,8,1,1,1,0,Finance,Master,Individual,7.0
+36,0.4,117033,41.9,23,11,1,0,0,0,Marketing,Master,Individual,7.2
+42,1.3,76310,32.0,11,2,0,0,1,0,HR,Master,Individual,7.4
+36,1.0,30000,44.9,7,14,1,0,1,0,Engineering,High School,Individual,6.4
+33,1.1,80066,49.1,5,10,0,1,1,1,HR,Bachelor,Director,4.8
+31,0.8,72623,38.6,10,9,1,1,1,1,Engineering,High School,Individual,8.1
+22,0.1,90795,30.0,13,10,1,1,1,1,Finance,Master,Manager,7.7
+27,0.1,78463,43.6,28,6,1,1,1,1,Engineering,Master,Individual,10.0
+30,13.2,62230,45.5,26,12,1,0,1,1,Finance,Bachelor,Manager,7.1
+45,1.7,40514,45.2,5,6,1,1,1,1,Engineering,High School,Individual,8.5
+38,1.5,60819,51.9,12,11,0,0,1,1,Finance,Bachelor,Individual,6.5
+22,3.4,47989,33.4,5,7,0,1,1,1,Sales,Bachelor,Individual,7.2
+38,0.7,53389,47.4,5,7,1,1,1,0,HR,Bachelor,Team Lead,6.8
+31,9.0,76771,51.5,43,7,0,1,1,0,Sales,Bachelor,Individual,6.1
+28,4.6,98398,30.0,5,3,0,1,1,0,Sales,High School,Individual,5.0
+41,0.3,72893,44.6,13,5,1,1,0,0,Marketing,Master,Individual,7.7
+45,1.6,41082,38.0,5,7,1,0,1,1,Finance,Bachelor,Team Lead,7.7
+44,6.3,73892,41.3,52,14,1,0,1,0,Engineering,Bachelor,Individual,7.3
+26,8.7,88932,44.8,20,9,1,1,1,1,Finance,High School,Individual,8.5
+31,1.9,52804,38.1,6,4,1,1,1,1,Marketing,Master,Individual,6.2
+38,2.9,62319,36.6,17,12,0,0,1,1,Finance,Bachelor,Individual,5.6
+44,0.5,65293,42.3,32,9,1,1,1,1,Sales,Master,Manager,6.9
+30,14.2,49302,33.3,79,5,1,1,1,0,Sales,Bachelor,Individual,7.3
+33,0.8,77965,33.3,6,5,0,1,1,1,Finance,Master,Individual,8.0
+23,8.6,62581,47.4,54,7,0,1,1,0,Sales,Master,Manager,5.5
+23,3.1,73390,32.8,68,13,0,1,1,1,Marketing,Bachelor,Team Lead,7.4
+43,2.8,47250,47.3,62,10,1,1,1,1,Engineering,Master,Individual,6.0
+48,2.2,56250,45.7,25,10,1,1,1,1,Engineering,Bachelor,Manager,7.4
+34,0.8,79447,30.0,24,5,1,1,1,1,Marketing,Bachelor,Individual,9.2
+45,0.6,57543,36.6,12,7,1,1,1,1,HR,High School,Individual,5.8
+38,0.7,99539,51.6,34,5,0,1,1,0,Marketing,Bachelor,Director,7.0
+28,0.6,57007,34.2,18,11,1,0,1,0,Engineering,Master,Manager,6.4
+38,4.5,69493,38.3,28,7,1,0,1,1,Sales,Master,Individual,5.3
+50,1.3,83651,45.7,13,9,0,1,1,1,Sales,High School,Individual,9.7
+34,0.2,36632,48.3,32,7,1,1,0,1,Sales,Bachelor,Individual,8.0
+50,10.4,30000,40.0,43,8,0,1,1,0,Finance,Bachelor,Individual,5.2
+22,6.5,34486,37.2,5,6,1,0,1,1,Finance,Master,Individual,6.9
+43,7.9,90251,53.4,44,2,1,0,1,1,Engineering,Bachelor,Individual,5.2
+35,15.8,53962,55.9,19,6,1,1,0,1,Finance,Master,Manager,5.3
+32,0.6,116163,49.8,46,6,1,0,1,1,Sales,Bachelor,Manager,6.3
+35,1.5,53715,42.7,14,12,0,0,1,1,HR,Bachelor,Individual,5.9
+22,4.3,68691,35.5,11,5,1,1,0,0,Engineering,Master,Individual,6.9
+32,3.6,95842,35.4,61,5,0,0,0,1,HR,Bachelor,Individual,6.5
+38,0.5,105121,46.2,7,6,1,1,1,0,Engineering,High School,Individual,9.0
+49,5.1,106230,45.3,46,6,1,1,1,0,Sales,Bachelor,Individual,8.0
+29,0.8,89167,53.2,16,9,1,0,1,1,Engineering,High School,Team Lead,6.9
+26,0.8,85481,47.2,18,12,0,1,0,1,Engineering,PhD,Individual,7.6
+29,2.3,76850,30.0,9,10,1,1,1,1,Engineering,Bachelor,Manager,10.0
+44,2.7,80567,50.4,21,5,1,1,1,1,Engineering,Bachelor,Team Lead,8.3
+38,2.6,53976,34.0,9,10,1,1,1,1,Engineering,Bachelor,Individual,5.6
+29,0.3,48636,38.9,5,12,0,1,1,0,HR,High School,Individual,7.7
+40,6.3,64932,44.0,7,4,0,1,1,1,Engineering,Master,Team Lead,7.6
+35,0.9,61596,58.0,5,8,0,1,1,0,Marketing,Master,Manager,3.2
+44,0.4,55935,66.9,95,8,1,1,1,1,Engineering,Master,Team Lead,9.4
+27,6.6,78927,46.9,84,7,1,0,1,1,Finance,Bachelor,Individual,6.4
+31,9.3,84106,40.5,12,6,1,0,0,1,Finance,Bachelor,Individual,10.0
+31,5.9,66768,46.3,32,6,0,0,1,1,Engineering,High School,Individual,6.5
+22,5.0,94550,49.1,10,8,0,1,1,0,Marketing,Master,Director,7.4
+37,3.2,42166,39.4,27,9,1,0,1,1,Engineering,Bachelor,Team Lead,7.6
+37,2.4,61126,56.4,40,11,1,1,1,0,Finance,Bachelor,Team Lead,5.9
+35,0.3,50663,43.8,73,11,1,1,0,0,Marketing,Master,Individual,6.1
+32,1.6,30000,46.0,12,6,1,0,0,0,Engineering,Bachelor,Team Lead,8.9
+22,1.4,63346,47.3,38,8,1,1,1,1,Sales,High School,Individual,5.9
+30,0.9,62565,45.4,7,10,1,1,1,1,Engineering,High School,Individual,8.3
+31,3.9,95268,48.7,115,6,1,0,1,1,Sales,Bachelor,Individual,5.7
+26,2.1,77616,37.1,5,7,1,1,1,1,HR,High School,Manager,8.7
+33,0.3,44516,37.5,23,6,0,1,0,1,Sales,Bachelor,Team Lead,8.8
+39,0.7,102081,33.2,26,8,0,1,1,1,Sales,Bachelor,Individual,8.2
+53,3.4,89420,45.5,29,8,0,0,0,1,Engineering,Bachelor,Manager,7.8
+36,0.2,76641,48.2,5,13,1,1,1,1,Engineering,Master,Individual,8.9
+37,5.7,60470,45.7,69,5,0,1,1,1,Engineering,Bachelor,Individual,9.5
+34,2.1,45811,55.4,5,9,0,1,1,0,Finance,Master,Individual,5.0
+22,2.0,57555,42.0,24,8,0,0,1,1,Engineering,Bachelor,Individual,4.2
+34,2.7,86774,47.3,6,11,1,1,1,1,Marketing,Bachelor,Individual,10.0
+35,5.2,102691,33.3,9,7,0,1,1,0,Sales,Master,Individual,7.2
+59,1.3,95864,38.9,19,8,1,1,1,1,Engineering,High School,Team Lead,9.5
+33,3.4,55223,47.6,13,4,0,1,0,0,Marketing,Bachelor,Individual,7.6
+38,2.5,42607,48.8,5,7,0,1,1,0,Sales,Master,Team Lead,7.2
+34,0.9,67817,39.6,5,8,1,1,1,0,Sales,Bachelor,Individual,9.7
+23,6.3,30000,41.4,13,12,0,1,1,1,Marketing,Bachelor,Team Lead,7.2
+46,4.8,71463,30.0,35,8,0,1,1,1,Sales,Bachelor,Team Lead,7.1
+42,3.2,62047,39.1,57,7,0,0,1,1,Sales,Master,Team Lead,3.3
+42,5.7,55679,49.1,5,9,1,1,0,0,Marketing,Master,Individual,7.0
+25,6.1,33105,46.6,12,9,1,1,1,1,HR,High School,Team Lead,5.1
+49,3.7,75272,46.0,5,10,0,0,1,1,Engineering,High School,Individual,7.6
+22,5.4,54345,42.4,5,4,0,1,1,0,Sales,Bachelor,Manager,8.5
+40,3.6,41601,42.1,27,5,1,0,1,1,Engineering,Bachelor,Individual,6.9
+56,3.4,30000,36.7,23,10,1,1,0,0,Engineering,Bachelor,Individual,7.0
+25,2.9,64449,47.6,5,13,1,1,0,0,Marketing,Bachelor,Individual,7.5
+29,4.2,100445,45.4,6,13,1,0,0,1,Finance,Bachelor,Team Lead,8.4
+35,0.5,98225,45.9,5,7,1,1,1,1,Finance,High School,Individual,9.7
+29,6.4,55858,37.8,45,8,1,0,1,0,Engineering,Master,Manager,7.1
+22,6.2,52955,30.0,91,6,1,1,1,0,Sales,High School,Director,4.2
+35,0.1,74375,50.8,5,10,1,1,1,0,Marketing,Bachelor,Team Lead,9.6
+24,5.2,45032,38.2,6,8,0,1,1,0,Engineering,Bachelor,Individual,6.4
+39,0.4,71035,35.1,50,5,1,0,1,0,Finance,Master,Team Lead,6.6
+25,1.2,80321,47.5,65,10,1,0,1,1,HR,Master,Individual,7.7
+50,4.1,89538,38.9,13,13,0,1,1,1,Finance,Master,Individual,8.0
+27,0.5,62996,50.5,5,3,1,1,1,1,Engineering,High School,Manager,7.0
+31,5.1,60926,46.9,5,10,1,0,0,1,Engineering,Master,Director,5.7
+43,5.4,47440,47.5,21,2,1,0,1,1,Finance,Bachelor,Manager,7.6
+22,2.1,48462,31.1,12,5,1,0,1,0,HR,Bachelor,Individual,5.5
+37,0.1,60470,51.7,5,10,1,1,1,0,Finance,Bachelor,Individual,7.0
+48,1.0,72347,44.1,21,13,0,1,1,1,Engineering,Master,Individual,8.3
+22,2.9,83271,39.0,5,11,1,0,1,0,Marketing,Master,Individual,8.8
+36,11.9,48936,43.1,38,6,1,1,1,0,Marketing,Master,Individual,9.5
+37,3.0,94853,30.0,9,9,0,0,1,0,Engineering,Master,Individual,7.6
+42,0.9,59577,45.3,5,11,0,1,0,1,Marketing,Bachelor,Team Lead,5.9
+22,3.0,64572,33.8,22,8,1,1,1,1,Marketing,Bachelor,Team Lead,9.8
+22,2.3,50055,31.2,12,6,0,1,1,1,Engineering,High School,Team Lead,8.7
+40,4.5,30000,30.0,91,4,1,1,1,1,Engineering,Master,Manager,7.9
+37,0.3,82680,50.9,19,10,0,1,1,1,Marketing,Bachelor,Individual,7.6
+37,4.3,79736,37.0,8,13,0,1,1,1,Sales,Master,Individual,7.9
+38,2.3,59373,54.3,30,6,1,1,1,0,Finance,Bachelor,Team Lead,7.1
+28,9.9,66339,37.7,7,6,0,1,0,0,Sales,Bachelor,Individual,5.7
+37,1.3,75318,30.0,58,8,1,0,1,0,Engineering,High School,Individual,6.2
+37,3.0,33749,33.1,11,8,1,1,1,0,Finance,Bachelor,Individual,7.1
+27,8.1,54418,51.9,19,10,0,1,1,0,Finance,Master,Individual,8.3
+53,0.3,80885,40.8,5,7,0,0,1,0,Engineering,High School,Team Lead,6.4
+39,8.3,39914,37.6,13,8,0,0,1,1,Finance,Bachelor,Manager,6.2
+23,3.5,70871,43.3,44,8,0,1,1,1,Engineering,High School,Manager,6.8
+41,0.2,37868,46.0,40,13,1,0,1,1,Engineering,Bachelor,Individual,8.1
+25,1.1,74328,50.9,6,8,1,1,1,1,Engineering,Bachelor,Individual,9.5
+42,3.7,64287,53.6,6,6,0,1,1,1,Engineering,Bachelor,Manager,5.5
+46,0.2,32697,39.1,42,9,1,1,1,1,Finance,Master,Individual,4.9
+26,2.6,88294,31.4,66,6,0,1,1,1,HR,Bachelor,Individual,8.2
+44,1.3,50308,38.7,5,7,0,1,1,0,Finance,Bachelor,Manager,5.1
+39,2.9,48794,44.1,14,6,0,1,0,0,HR,Bachelor,Team Lead,7.0
+43,0.1,69011,34.3,10,12,1,0,1,1,Sales,High School,Manager,6.5
+53,6.2,87972,34.3,51,4,1,1,1,1,HR,Bachelor,Individual,9.0
+32,10.9,44683,44.8,5,7,1,0,1,0,Finance,Bachelor,Individual,7.0
+27,10.4,66233,41.6,5,6,0,0,1,0,HR,Bachelor,Manager,5.5
+26,4.2,73576,42.3,34,10,0,1,1,1,Finance,Master,Individual,6.5
+26,0.4,78862,35.9,5,3,1,0,1,0,Finance,Bachelor,Team Lead,8.6
+34,4.3,68528,40.2,16,7,1,1,0,1,Engineering,Master,Individual,6.5
+38,0.1,57659,34.6,14,6,1,0,1,0,HR,Master,Manager,8.4
+37,0.1,48448,49.1,10,7,0,0,1,1,Finance,High School,Team Lead,5.2
+43,1.2,66722,50.3,12,5,0,0,1,0,Finance,Bachelor,Individual,5.8
+35,2.0,43557,30.0,18,10,1,0,1,1,Engineering,Bachelor,Individual,6.7
+49,4.4,30000,34.6,5,8,1,1,1,0,Marketing,Bachelor,Team Lead,7.6
+32,3.4,73731,30.0,21,6,1,1,1,1,HR,Master,Team Lead,8.2
+62,1.8,83078,36.8,40,7,1,1,0,1,Engineering,Master,Individual,7.9
+41,1.0,30000,41.3,35,6,1,1,1,1,Marketing,Bachelor,Manager,4.4
+26,17.6,44805,30.4,5,14,1,0,0,1,Engineering,Bachelor,Individual,6.0
+24,1.7,77383,34.6,5,9,1,1,1,1,Sales,High School,Individual,7.9
+39,1.8,106149,34.0,7,7,1,0,0,1,Sales,Bachelor,Individual,7.4
+32,0.5,65415,43.7,11,8,1,1,1,1,Marketing,Master,Manager,9.5
+42,4.8,50439,42.6,13,8,0,1,1,1,Sales,Bachelor,Individual,5.7
+39,3.5,61342,36.2,28,12,0,1,1,1,Sales,Bachelor,Individual,8.2
+34,0.7,92497,43.4,5,10,1,1,1,0,Engineering,Master,Manager,7.8
+26,0.3,52080,37.6,5,11,1,1,1,1,Engineering,Bachelor,Individual,6.5
+22,3.4,49016,39.8,12,9,1,1,1,1,Engineering,Bachelor,Individual,5.4
+30,3.2,55345,55.4,29,5,0,1,1,1,Engineering,Bachelor,Individual,7.1
+43,1.0,45933,52.7,5,6,0,0,1,1,Marketing,Bachelor,Team Lead,6.3
+37,9.0,67453,31.6,25,8,1,1,1,1,Finance,Master,Individual,8.4
+22,0.5,97493,48.6,7,6,0,1,0,1,Engineering,Master,Manager,8.0
+36,1.7,71461,48.5,54,10,0,1,0,1,Engineering,High School,Manager,7.2
+38,8.6,59952,32.8,56,10,0,0,1,1,HR,Master,Team Lead,6.7
+26,1.6,59163,48.6,8,7,1,1,1,1,Sales,Bachelor,Team Lead,10.0
+36,3.1,33736,54.3,6,8,0,1,1,1,Finance,Master,Individual,6.0
+35,1.5,82662,33.0,13,12,1,1,1,1,HR,Master,Individual,10.0
+23,1.0,63443,34.7,6,8,1,0,1,1,Sales,Bachelor,Team Lead,8.4
+38,12.4,61390,50.1,27,8,1,1,1,1,Engineering,Master,Manager,8.5
+40,1.6,128862,44.2,43,12,1,1,1,1,Marketing,Bachelor,Individual,8.6
+45,6.7,70975,46.4,27,5,0,1,1,0,Engineering,Bachelor,Individual,3.5
+45,0.8,49964,44.7,43,6,0,1,0,1,Engineering,Master,Individual,5.9
+22,0.7,56472,45.1,12,9,0,1,0,1,Engineering,Master,Individual,5.7
+25,0.1,87968,31.4,5,8,1,0,1,0,Finance,Master,Individual,10.0
+40,3.2,67265,50.4,33,13,0,0,1,0,Marketing,Bachelor,Individual,4.7
+40,1.4,36234,51.4,11,5,0,1,1,1,Engineering,Bachelor,Individual,6.6
+40,6.0,83384,40.2,27,8,1,1,0,1,HR,Bachelor,Individual,7.8
+65,1.9,51637,41.7,7,4,0,0,1,1,Sales,PhD,Individual,4.4
+40,10.3,102465,30.0,5,3,0,1,0,1,Marketing,Bachelor,Team Lead,7.2
+46,0.6,86600,46.1,120,13,1,1,0,1,Engineering,Master,Manager,8.6
+44,6.1,56053,46.6,5,6,1,1,1,1,Marketing,Bachelor,Director,5.3
+41,4.5,90620,41.5,111,7,0,0,1,0,Finance,Bachelor,Individual,5.9
+31,4.4,66357,51.0,94,10,0,0,1,1,Engineering,Bachelor,Individual,4.2
+42,5.6,82055,39.3,39,7,1,1,1,0,Engineering,PhD,Director,10.0
+27,4.3,74694,46.5,26,8,0,1,1,1,Engineering,Bachelor,Team Lead,8.5
+32,3.0,48072,33.8,21,8,1,1,1,1,Engineering,Master,Individual,6.1
+30,0.4,52129,41.8,50,7,0,1,1,1,Sales,High School,Individual,5.7
+35,0.1,85599,40.6,8,8,1,1,1,1,Finance,Bachelor,Individual,8.9
+58,7.6,58304,43.8,15,8,0,1,1,0,Finance,Master,Individual,6.0
+22,2.9,56927,39.0,24,9,1,1,0,1,Engineering,Master,Individual,7.5
+41,4.8,45897,40.9,13,6,0,1,1,0,Marketing,Master,Manager,6.7
+22,2.0,73471,48.6,13,8,1,1,0,0,Marketing,High School,Individual,8.3
+30,0.4,106250,38.5,10,11,0,0,0,1,Marketing,High School,Team Lead,7.5
+45,0.4,43649,30.0,20,12,0,1,1,0,Sales,Bachelor,Manager,6.6
+35,3.5,65484,56.0,47,7,1,0,1,1,Engineering,High School,Team Lead,6.8
+24,1.7,93244,53.1,5,9,1,1,0,1,Sales,PhD,Manager,6.8
+27,0.7,63407,31.7,68,6,1,1,0,0,Sales,Bachelor,Director,8.2
+41,2.0,74047,47.5,29,9,1,0,1,0,Finance,Bachelor,Individual,10.0
+27,0.2,43752,38.0,43,5,1,1,1,1,Finance,High School,Director,7.1
+37,2.6,73566,44.1,20,13,1,1,1,1,Engineering,Bachelor,Team Lead,9.0
+35,0.9,61257,44.4,37,12,1,1,1,1,Engineering,Bachelor,Individual,8.6
+28,4.8,84714,40.1,5,8,1,0,1,1,Finance,High School,Team Lead,9.5
+56,1.1,88747,35.7,42,8,0,1,1,1,Marketing,Bachelor,Team Lead,8.0
+41,1.8,116791,36.5,5,5,1,0,1,1,Finance,Bachelor,Manager,7.1
+22,0.1,76592,34.7,55,9,1,0,0,0,Engineering,PhD,Individual,9.0
+36,0.2,71515,35.3,120,3,0,0,1,1,Marketing,Bachelor,Individual,6.8
+28,1.5,68887,41.5,8,8,1,0,1,1,Marketing,Bachelor,Individual,7.0
+43,2.0,57936,36.3,5,10,0,1,0,1,Finance,PhD,Individual,5.3
+27,2.7,71769,47.5,36,8,1,1,1,1,Engineering,Master,Individual,8.6
+33,1.0,59091,53.9,7,13,0,1,0,1,Engineering,PhD,Individual,4.0
+40,3.6,68369,37.4,50,3,0,1,0,0,Sales,PhD,Manager,6.6
+43,5.9,91351,43.9,5,9,1,0,1,1,Finance,Bachelor,Individual,9.1
+22,4.5,44869,46.0,5,4,1,1,1,1,Finance,Master,Individual,7.8
+31,0.1,87797,45.8,96,12,1,0,1,1,Finance,High School,Individual,5.7
+30,2.0,91342,42.6,28,8,1,1,1,0,Finance,Bachelor,Individual,8.3
+28,0.3,62638,47.9,46,6,1,1,1,1,Engineering,Master,Individual,8.3
+52,0.8,30000,45.9,9,8,0,0,1,1,Engineering,Bachelor,Individual,5.3
+39,13.0,52843,32.1,28,8,1,1,1,1,Engineering,Master,Individual,9.1
+22,0.5,90939,49.0,22,7,1,0,0,0,Sales,Master,Individual,7.4
+44,2.1,64542,49.1,23,9,1,1,1,1,Finance,Bachelor,Individual,6.8
+56,2.9,45013,35.9,28,9,0,0,1,0,Finance,Master,Individual,5.0
+45,3.6,54904,42.3,21,6,1,1,0,1,Engineering,Bachelor,Individual,6.8
+22,2.5,81812,47.5,14,5,0,0,0,1,Marketing,Bachelor,Individual,5.1
+30,0.1,75934,40.3,8,7,1,1,0,0,Finance,Master,Individual,8.0
+47,1.2,60221,50.6,36,8,1,1,1,1,Sales,Bachelor,Manager,8.0
+27,2.2,57663,60.9,6,8,1,1,1,1,Engineering,Master,Team Lead,9.3
+39,0.3,57164,35.7,29,7,1,1,1,1,Sales,Bachelor,Individual,7.6
+42,1.3,46551,31.0,6,8,0,1,1,1,Sales,Bachelor,Individual,7.3
+25,0.1,97307,44.4,24,5,1,1,1,1,Marketing,Master,Team Lead,8.4
+34,0.2,58553,47.8,34,12,1,0,1,1,Sales,Bachelor,Individual,5.4
+22,1.5,89343,40.2,6,7,0,0,1,1,Engineering,Bachelor,Manager,7.2
+24,0.4,95426,53.6,5,10,1,1,1,1,Finance,High School,Manager,10.0
+32,2.5,84966,31.3,5,5,0,1,1,1,Marketing,Master,Manager,9.2
+22,3.5,56367,47.5,23,8,1,1,1,0,Sales,High School,Manager,7.6
+51,4.8,73074,37.2,47,6,1,0,1,1,Finance,Master,Team Lead,5.9
+22,0.7,64516,55.8,5,6,1,1,1,1,Engineering,Bachelor,Team Lead,8.2
+30,0.5,46925,57.9,33,11,0,0,1,1,Engineering,Bachelor,Team Lead,4.5
+36,0.3,71487,35.9,10,10,0,1,1,1,Finance,Master,Manager,6.8
+49,3.0,41419,37.6,16,9,1,1,1,1,Engineering,Bachelor,Team Lead,6.7
+22,3.7,88753,48.9,66,9,1,0,1,1,Finance,Bachelor,Individual,6.1
+46,0.1,55707,38.9,10,9,0,1,1,1,Engineering,Master,Individual,8.1
+35,8.3,69023,41.6,15,5,0,0,1,1,Engineering,Master,Manager,7.2
+25,0.2,70665,42.2,5,11,0,1,1,0,Marketing,Bachelor,Individual,6.1
+39,2.3,59821,30.0,5,7,1,1,0,1,Engineering,Bachelor,Team Lead,7.2
+36,3.7,76733,41.9,7,6,1,1,1,1,Finance,Master,Director,9.6
+28,6.1,55501,36.5,5,5,1,1,1,1,Marketing,Master,Team Lead,9.1
+35,3.8,82425,38.1,24,10,1,0,1,1,Finance,Master,Director,8.4
+31,4.9,38080,53.5,13,8,1,1,1,0,Finance,Bachelor,Team Lead,5.7
+36,1.2,67527,31.9,19,10,1,1,1,0,Engineering,PhD,Individual,6.9
+41,5.1,103778,48.5,5,9,0,1,1,1,Finance,Bachelor,Manager,10.0
+50,0.3,44993,39.8,8,10,1,0,0,1,Marketing,High School,Individual,4.9
+22,6.8,51445,39.8,27,9,1,1,1,1,HR,Bachelor,Individual,7.8
+56,2.4,75278,48.3,84,9,1,1,1,1,Finance,High School,Individual,10.0
+22,5.1,68591,44.7,5,11,1,1,1,0,Marketing,High School,Individual,6.7
+33,1.8,72012,46.6,55,10,1,1,1,0,Sales,Bachelor,Individual,9.6
+40,3.1,74783,49.7,21,7,1,1,1,1,Marketing,High School,Individual,7.3
+37,2.2,77694,39.3,20,9,1,1,1,1,Engineering,Master,Team Lead,6.8
+28,3.9,87193,37.1,17,9,0,1,1,1,Engineering,High School,Manager,7.6
+32,0.3,73196,33.3,5,2,1,0,1,1,Marketing,Bachelor,Individual,7.1
+30,0.2,60174,35.4,5,11,1,1,1,1,Engineering,High School,Individual,5.8
+29,0.9,78451,65.6,22,9,0,1,1,0,Engineering,High School,Team Lead,6.8
+43,0.5,102997,52.0,10,5,1,1,0,1,Engineering,Bachelor,Team Lead,9.5
+38,6.2,62347,31.2,62,2,1,1,0,1,Marketing,Bachelor,Manager,6.3
+28,0.7,45509,31.4,13,6,0,1,0,0,Sales,PhD,Individual,5.4
+43,11.2,87141,45.9,5,6,1,0,1,1,Finance,Master,Manager,10.0
+38,1.2,62592,46.4,31,6,1,1,1,1,Sales,Master,Individual,6.4
+43,0.6,30000,46.4,8,8,1,1,1,1,Sales,Bachelor,Team Lead,8.4
+41,4.7,81948,40.0,18,7,0,1,1,1,Sales,Bachelor,Individual,5.5
+26,3.2,54293,41.0,29,7,1,1,1,1,HR,High School,Individual,6.0
+29,2.1,63189,44.6,57,6,0,1,1,0,Sales,Master,Individual,5.6
+42,2.4,71639,42.7,39,8,1,0,1,0,Finance,High School,Individual,8.5
+41,3.8,68809,30.0,28,9,1,1,1,0,Finance,Bachelor,Individual,5.9
+34,0.8,79189,40.2,28,8,1,1,1,1,Finance,Bachelor,Manager,7.5
+36,16.8,56290,35.2,72,7,0,1,1,0,Finance,Bachelor,Team Lead,6.5
+47,11.0,75262,43.4,8,12,0,1,1,1,Sales,PhD,Individual,8.2
+29,3.2,59809,65.9,5,8,0,0,1,0,Marketing,Master,Individual,4.1
+40,0.7,79776,44.9,7,6,0,0,0,1,HR,Master,Individual,6.0
+32,3.4,77307,39.5,6,9,1,1,1,0,HR,Bachelor,Director,9.8
+32,0.2,46291,49.4,27,7,1,1,1,1,Finance,Master,Individual,5.8
+45,0.1,86719,45.9,25,8,1,1,1,0,HR,Bachelor,Individual,8.1
+43,0.9,54280,45.4,22,9,1,1,1,1,Finance,Master,Individual,6.7
+43,1.9,81161,46.9,5,7,0,1,1,1,Sales,Bachelor,Team Lead,9.6
+48,6.1,72345,58.5,32,7,0,1,0,1,Finance,Bachelor,Individual,7.3
+35,3.9,101763,33.0,9,6,0,0,1,0,HR,Master,Individual,8.0
+41,4.1,60530,45.8,27,7,1,1,0,0,HR,Bachelor,Manager,6.0
+31,1.7,58013,34.6,20,10,1,1,1,1,Sales,Master,Team Lead,9.0
+38,1.3,64611,46.4,10,10,0,0,0,1,Finance,PhD,Team Lead,6.7
+33,1.4,58936,34.7,5,7,0,1,1,1,Finance,Bachelor,Individual,7.4
+35,13.2,80998,38.7,5,10,1,1,1,1,Engineering,Bachelor,Individual,8.5
+40,0.1,32673,39.6,44,6,1,1,1,1,Marketing,Bachelor,Manager,7.7
+26,6.1,43926,49.8,62,8,1,0,0,1,Sales,Master,Manager,4.1
+55,2.6,43643,49.3,26,7,1,1,1,1,Finance,Bachelor,Individual,9.2
+24,1.7,84006,32.0,5,7,0,0,1,1,Sales,High School,Individual,6.5
+22,3.9,99212,42.4,12,8,1,0,1,0,Engineering,Bachelor,Individual,7.2
+46,2.0,62911,36.3,32,9,1,1,1,1,Sales,High School,Individual,5.7
+42,6.2,61623,31.9,37,9,0,1,1,0,HR,Master,Team Lead,7.6
+41,6.9,66401,40.3,5,10,1,1,0,1,Engineering,Bachelor,Director,8.4
+41,1.6,88237,39.5,5,7,1,1,1,1,Marketing,Bachelor,Individual,8.1
+34,1.0,46452,61.4,31,4,0,1,1,1,Finance,Master,Individual,3.4
+26,2.7,69767,45.5,11,6,1,1,1,1,Finance,High School,Manager,6.8
+35,7.3,84503,31.0,7,7,0,1,1,1,Engineering,Bachelor,Individual,8.8
+28,0.7,75021,37.5,5,6,0,1,1,1,Finance,Bachelor,Director,8.4
+44,2.9,68791,50.2,19,10,1,1,0,1,HR,Bachelor,Team Lead,6.9
+33,3.0,85020,58.7,47,7,0,1,1,0,Engineering,Bachelor,Manager,6.6
+26,4.0,30000,30.0,79,15,1,0,0,0,Engineering,PhD,Individual,3.8
+31,0.4,78557,30.0,20,5,1,1,0,1,Engineering,Master,Individual,9.6
+39,3.8,51918,57.0,18,5,0,1,1,0,Finance,Master,Individual,4.3
+29,7.2,30000,45.1,5,6,1,1,1,1,Engineering,Master,Individual,7.7
+26,0.6,75224,35.1,19,8,1,1,1,1,Engineering,Bachelor,Individual,7.5
+37,0.8,92473,46.3,11,13,1,0,1,1,Finance,Bachelor,Director,9.2
+37,10.7,62251,30.0,23,8,1,1,0,1,Marketing,Bachelor,Manager,8.2
+29,0.6,84057,42.0,12,6,0,1,1,1,Finance,Master,Team Lead,7.7
+30,5.8,97245,44.6,6,13,1,0,1,1,HR,Master,Individual,8.9
+37,2.0,91298,49.4,5,5,1,1,1,1,Engineering,Bachelor,Team Lead,7.2
+22,0.9,97799,33.9,9,7,1,1,1,0,Finance,Bachelor,Team Lead,8.4
+22,6.1,79842,42.7,5,6,0,1,1,1,Engineering,Bachelor,Individual,6.7
+27,1.8,66508,34.6,5,6,1,1,1,1,Marketing,Bachelor,Manager,9.2
+32,2.2,32960,44.0,109,7,0,1,1,1,Marketing,Master,Individual,6.2
+38,1.3,60078,34.8,14,8,1,1,1,1,Engineering,Bachelor,Individual,8.5
+49,2.7,48135,38.7,18,6,1,1,0,1,Finance,Master,Individual,6.4
+43,0.5,108418,34.0,51,9,1,1,1,1,Sales,Bachelor,Team Lead,9.4
+33,1.5,61482,47.2,120,7,1,1,1,1,Engineering,Master,Team Lead,5.7
+34,10.5,67464,48.9,21,6,0,1,1,1,Finance,Master,Individual,5.4
+24,0.9,76029,40.1,41,6,0,1,1,0,Marketing,Master,Individual,6.9
+34,3.2,65872,42.3,9,6,0,1,1,1,HR,High School,Individual,5.4
+32,1.2,98901,30.4,9,5,0,1,1,1,Marketing,Bachelor,Individual,8.7
+38,4.5,52547,39.6,12,7,0,1,0,0,Finance,Bachelor,Individual,5.1
+26,0.4,68892,41.6,27,4,1,1,1,1,Engineering,Bachelor,Individual,6.2
+40,10.5,50150,63.0,28,12,1,0,1,0,Engineering,Bachelor,Individual,4.7
+50,1.8,38599,33.1,9,6,0,0,0,1,Sales,Master,Manager,7.1
+33,0.8,52764,53.7,5,10,1,0,1,1,Engineering,High School,Individual,3.8
+39,0.2,64259,50.0,25,4,1,0,1,1,HR,Bachelor,Team Lead,5.6
+41,0.6,56413,44.2,5,8,1,1,0,1,Sales,Bachelor,Individual,8.5
+30,2.2,51151,56.1,21,2,1,0,1,0,Engineering,Master,Individual,6.0
+37,1.2,36873,45.0,29,6,0,1,1,0,Engineering,PhD,Individual,7.1
+35,5.3,63337,45.1,30,9,1,0,0,1,HR,Bachelor,Individual,6.6
+35,1.7,34905,41.6,35,6,1,1,1,1,Finance,High School,Individual,6.9
+27,0.9,80201,51.8,51,10,0,1,1,1,Sales,Master,Manager,5.6
+35,2.9,66648,50.8,17,6,0,0,1,1,Marketing,Master,Manager,4.7
+39,3.7,35848,37.0,32,8,0,1,1,1,Engineering,Bachelor,Individual,5.1
+49,0.5,58815,31.4,24,3,0,0,1,1,Marketing,Master,Individual,6.8
+44,0.6,49956,40.4,5,5,1,1,0,1,Engineering,PhD,Director,8.4
+56,0.1,71383,35.6,5,11,1,1,1,0,Sales,Bachelor,Individual,7.1
+27,4.0,91809,41.5,8,9,0,1,1,1,Marketing,Bachelor,Team Lead,7.9
+43,3.3,30000,51.9,14,7,1,0,1,1,Finance,Bachelor,Director,6.9
+36,1.9,67300,38.3,23,8,1,1,0,0,Sales,Bachelor,Director,6.9
+56,5.6,61797,41.7,47,4,0,1,1,1,Finance,Bachelor,Individual,5.4
+26,4.9,78426,42.5,5,12,0,1,1,1,Marketing,Bachelor,Individual,9.6
+26,2.6,69263,48.8,5,11,0,1,1,1,Finance,High School,Individual,7.3
+29,6.1,49960,30.0,82,6,0,1,0,1,Sales,Bachelor,Manager,6.2
+22,0.7,58618,37.1,5,9,0,1,1,0,Sales,Bachelor,Manager,6.1
+29,0.4,49079,43.7,16,14,0,0,0,1,Finance,Bachelor,Team Lead,4.8
+27,0.9,86520,51.6,22,8,1,0,1,0,Engineering,Bachelor,Team Lead,8.2
+36,0.2,65426,38.1,19,8,1,1,0,1,Engineering,Bachelor,Team Lead,7.0
+38,2.3,103023,30.0,5,6,0,0,1,1,Engineering,Bachelor,Team Lead,8.1
+53,8.3,63786,47.0,5,8,0,0,1,1,Finance,Bachelor,Manager,4.1
+44,0.1,50831,36.9,5,6,1,0,1,0,Engineering,Master,Team Lead,6.8
+29,0.4,34725,32.5,22,11,1,1,0,1,Finance,Bachelor,Individual,6.8
+26,1.8,30000,37.0,19,5,1,1,1,1,Sales,PhD,Individual,8.5
+39,8.1,33317,40.5,6,12,1,1,1,1,Engineering,Bachelor,Team Lead,7.1
+22,1.1,70342,37.2,25,9,0,0,0,1,Sales,Bachelor,Individual,4.6
+53,2.1,75174,30.0,42,11,0,1,1,0,Engineering,High School,Individual,7.9
+46,0.1,33376,49.2,5,6,1,1,1,1,Marketing,Master,Manager,7.8
+30,0.5,82900,52.2,17,9,0,1,1,1,HR,Master,Team Lead,5.8
+22,12.9,55338,47.2,29,9,1,1,1,1,Sales,Master,Manager,5.8
+48,10.1,67935,32.9,7,9,1,1,1,1,Engineering,PhD,Individual,7.2
+33,0.1,97244,40.4,9,9,1,1,1,1,HR,Bachelor,Team Lead,8.7
+47,9.1,82936,41.9,23,7,0,0,1,1,Finance,Bachelor,Individual,8.6
+22,3.1,59629,46.8,57,5,1,0,1,1,HR,Bachelor,Manager,5.3
+29,6.1,47176,47.3,41,2,1,0,1,0,Finance,Bachelor,Individual,6.7
+35,1.8,30000,36.1,21,9,0,1,1,0,Engineering,Bachelor,Team Lead,4.5
+35,2.2,50616,42.7,32,6,0,0,1,1,Finance,Master,Team Lead,6.8
+30,2.0,60777,45.7,11,7,1,1,0,0,Sales,Master,Individual,8.4
+41,3.3,45256,53.6,25,4,1,0,1,1,Engineering,Bachelor,Director,7.2
+24,0.5,62374,47.6,15,9,1,1,1,1,Finance,Bachelor,Manager,6.8
+33,0.1,66537,48.3,5,8,0,1,1,1,Finance,High School,Individual,8.0
+36,1.1,60502,42.7,30,10,1,1,1,1,HR,Master,Individual,7.8
+40,3.7,51999,53.3,20,9,1,1,1,1,Engineering,Bachelor,Individual,7.5
+42,0.7,68373,45.3,11,9,1,0,0,0,Engineering,Master,Individual,5.1
+23,3.4,73838,35.1,60,2,1,1,1,1,Sales,Master,Manager,9.0
+22,10.5,43192,53.2,5,6,1,0,1,0,Finance,Bachelor,Director,5.9
+47,0.3,93218,47.6,9,7,1,1,1,1,Engineering,Bachelor,Individual,8.9
+38,3.3,63028,38.5,5,7,0,1,1,1,Finance,High School,Individual,6.7
+27,1.8,65376,38.2,36,9,1,0,1,1,Engineering,Master,Individual,8.4
+50,6.1,79164,44.4,30,6,1,0,1,1,Finance,Bachelor,Individual,6.9
+36,0.6,69664,45.7,10,6,0,1,1,1,Finance,PhD,Individual,6.3
+46,3.5,84062,43.6,28,10,1,1,1,1,Sales,Bachelor,Individual,9.1
+35,5.5,70742,44.5,12,10,1,1,1,1,Sales,Master,Individual,8.3
+55,8.7,52751,55.6,35,12,0,1,1,1,Finance,High School,Team Lead,6.5
+52,3.4,72230,50.6,15,8,0,1,1,1,Marketing,Bachelor,Team Lead,7.2
+32,2.1,42125,43.5,13,5,1,0,1,1,HR,Master,Individual,6.7
+44,2.9,67171,49.5,68,8,0,1,1,0,Marketing,Master,Manager,6.8
+41,6.1,64335,33.7,7,8,1,0,0,0,Engineering,Master,Team Lead,9.3
+48,2.5,60837,45.2,5,8,0,1,1,0,Finance,Bachelor,Manager,4.5
+25,0.1,62429,56.5,21,14,1,1,1,0,Engineering,PhD,Individual,5.3
+41,8.0,30000,40.3,87,2,0,0,1,1,Finance,PhD,Manager,5.6
+45,3.5,54025,35.2,11,7,0,1,0,1,Engineering,High School,Manager,6.9
+22,3.4,66856,36.8,5,7,1,1,1,1,HR,Master,Individual,7.5
+23,0.7,68197,33.3,10,5,1,1,1,1,Engineering,Bachelor,Individual,7.2
+22,3.2,44446,35.7,17,7,0,0,1,1,Sales,Master,Manager,5.1
+32,1.5,90314,39.0,5,8,0,0,0,1,Sales,Bachelor,Team Lead,6.2
+42,3.2,47676,30.8,26,8,1,1,1,1,HR,PhD,Manager,8.8
+50,0.3,84389,42.1,120,12,1,1,0,1,Marketing,High School,Team Lead,7.3
+35,3.2,73543,49.2,15,4,1,1,1,1,Finance,Bachelor,Team Lead,9.4
+51,20.0,52075,34.7,10,6,1,0,0,1,Sales,Bachelor,Individual,5.1
+22,0.1,100506,54.2,12,8,1,1,1,1,HR,Bachelor,Individual,9.8
+22,11.3,41127,46.1,5,9,1,1,1,1,Finance,Bachelor,Director,7.2
+34,1.6,83383,50.2,53,6,1,1,1,0,Engineering,High School,Individual,8.2
+38,6.1,85011,36.7,13,11,1,1,1,1,Sales,Master,Individual,8.6
+34,4.6,51587,48.8,12,6,0,1,1,1,Sales,PhD,Team Lead,6.2
+22,2.5,92849,33.3,26,9,0,1,0,1,Sales,Master,Team Lead,8.2
+34,4.0,59999,49.1,14,12,0,1,0,1,Sales,Master,Individual,6.8
+22,6.3,70773,43.4,26,7,0,1,1,1,HR,Bachelor,Individual,10.0
+41,1.6,70206,46.4,5,14,0,1,1,1,Engineering,Bachelor,Individual,8.6
+38,1.2,62313,32.6,42,6,1,1,1,1,HR,Bachelor,Individual,8.0
+25,3.3,81216,34.8,70,9,1,1,1,1,Finance,High School,Team Lead,9.7
+29,4.9,80869,46.8,26,8,1,0,1,1,Marketing,Master,Individual,8.3
+24,4.3,30029,34.4,77,10,0,0,1,1,Marketing,High School,Manager,5.8
+34,4.8,91086,45.7,5,9,0,0,0,0,Engineering,Master,Manager,7.3
+44,1.7,31750,31.1,16,5,1,0,0,1,Finance,High School,Team Lead,7.8
+25,5.1,85650,48.8,23,7,0,0,1,0,Engineering,Master,Individual,8.6
+40,0.4,87534,32.1,21,10,1,1,1,1,Marketing,Bachelor,Individual,6.6
+29,2.4,43180,46.4,12,6,1,1,0,1,Finance,High School,Individual,4.5
+27,0.1,56783,47.0,10,7,0,1,1,0,Marketing,Master,Individual,7.9
+33,1.2,42885,36.4,5,8,0,0,1,1,HR,Bachelor,Manager,5.6
+24,1.4,60701,46.7,12,6,1,0,1,1,Sales,Master,Individual,4.9
+29,1.5,58839,44.1,5,5,1,1,1,0,Engineering,Bachelor,Manager,5.6
+23,3.6,80593,37.7,33,7,1,1,1,0,Finance,High School,Individual,10.0
+54,1.5,91206,33.9,5,4,1,1,1,1,Engineering,Master,Individual,10.0
+35,1.8,92913,30.0,5,12,0,1,1,1,HR,Bachelor,Director,7.3
+28,0.8,53756,44.8,20,12,1,1,1,1,Engineering,Master,Individual,6.8
+37,1.4,60815,30.0,22,9,0,1,0,1,Finance,Bachelor,Individual,6.2
+33,0.8,31331,42.8,51,7,0,1,1,1,Engineering,Bachelor,Individual,7.5
+32,0.2,48882,39.9,21,5,1,1,1,1,Marketing,Bachelor,Individual,6.9
+41,2.8,84297,47.4,10,5,1,1,0,1,Marketing,Bachelor,Team Lead,7.2
+42,3.3,97311,39.6,40,7,0,1,1,1,Sales,Bachelor,Individual,8.7
+29,2.9,40313,39.4,19,6,0,1,0,1,Sales,Bachelor,Individual,6.0
+29,1.9,53150,47.9,5,7,0,0,1,1,Sales,Bachelor,Individual,5.7
+32,1.4,64471,44.7,20,9,0,1,1,1,Sales,Master,Manager,7.7
+22,6.0,70603,44.5,59,8,0,1,1,1,Sales,Master,Individual,4.7
+22,2.2,48807,45.8,12,6,1,1,0,1,Sales,High School,Individual,7.3
+48,2.0,73481,30.0,8,9,1,1,0,0,Marketing,Bachelor,Individual,8.2
+51,0.1,55523,48.1,5,8,1,1,1,1,Engineering,Bachelor,Individual,5.9
+32,1.3,64710,46.9,5,5,1,1,1,1,Finance,High School,Individual,5.0
+40,1.4,75925,33.9,14,9,1,1,0,1,Marketing,Bachelor,Individual,7.3
+38,1.5,65128,40.0,22,6,1,0,1,1,Engineering,High School,Individual,7.2
+65,2.6,56272,41.7,5,8,1,1,1,1,Sales,PhD,Individual,7.8
+46,2.3,62807,40.9,70,6,0,0,0,1,Finance,Master,Individual,7.1
+33,2.8,63232,44.7,35,7,1,0,1,1,Engineering,High School,Manager,7.4
+25,4.3,57599,53.5,22,8,1,1,1,0,HR,High School,Team Lead,5.3
+22,5.0,59824,50.7,44,5,1,0,1,1,Marketing,Master,Individual,6.1
+37,3.8,96972,31.5,5,8,1,1,1,1,Engineering,Bachelor,Individual,7.4
+27,9.3,76218,47.0,16,5,1,0,1,1,Finance,Master,Team Lead,8.1
+22,0.1,59090,52.6,24,9,1,0,1,1,Sales,Master,Manager,8.7
+28,0.7,78939,45.1,44,11,0,1,1,1,Engineering,Bachelor,Individual,8.0
+24,0.1,58323,50.7,38,8,1,1,1,0,Finance,Bachelor,Manager,6.0
+51,3.1,88462,58.1,8,6,0,1,1,1,Marketing,Master,Individual,8.2
+43,6.8,72392,50.2,70,11,0,1,1,0,Finance,PhD,Individual,5.6
+34,0.8,62853,44.0,5,7,0,1,1,1,Marketing,Bachelor,Director,3.7
+49,7.9,73954,50.4,52,10,1,1,1,1,HR,Master,Team Lead,7.0
+35,0.2,33582,43.2,88,8,0,1,1,1,Finance,Bachelor,Manager,6.7
+26,8.2,42464,42.2,5,9,1,1,1,1,Engineering,Bachelor,Individual,8.7
+50,1.3,41121,39.2,32,7,0,1,1,1,Finance,Master,Individual,8.7
+40,0.3,67858,54.5,5,7,1,0,1,0,Marketing,Master,Team Lead,7.2
+24,2.0,99650,35.5,12,12,1,1,1,1,Engineering,Bachelor,Individual,10.0
+33,0.9,109626,54.3,18,3,0,1,1,0,Marketing,Master,Individual,7.8
+26,1.0,77761,46.0,21,6,0,1,0,0,Engineering,Bachelor,Individual,7.9
+22,1.1,75016,30.8,68,9,1,1,1,0,HR,Bachelor,Individual,8.9
+44,4.9,30000,44.9,27,8,1,1,1,1,Marketing,Bachelor,Individual,7.7
+54,2.3,54146,30.0,16,8,1,1,1,1,Finance,Bachelor,Team Lead,9.2
+22,1.1,49244,47.0,41,7,0,1,1,1,Engineering,Bachelor,Manager,6.0
+40,2.8,52583,49.1,75,9,1,0,1,1,Marketing,Bachelor,Individual,3.1
+28,3.8,61637,37.3,5,11,1,0,1,0,Engineering,Master,Team Lead,8.2
+30,1.0,55558,43.0,101,8,0,1,1,1,Marketing,Master,Individual,6.3
+29,1.6,30000,57.6,5,7,1,1,0,0,HR,Bachelor,Manager,5.5
+26,0.4,79958,38.0,42,8,0,0,1,1,HR,Bachelor,Individual,5.2
+35,0.6,43545,33.5,8,15,1,0,1,0,Finance,Bachelor,Team Lead,7.1
+26,3.4,69784,53.9,5,14,1,1,1,1,Finance,PhD,Team Lead,8.4
+37,0.6,106481,57.7,14,10,0,1,0,1,Engineering,Bachelor,Individual,7.6
+34,2.2,46612,42.0,25,6,0,1,1,1,Sales,High School,Individual,5.2
+32,3.7,30000,50.1,11,13,0,1,1,1,HR,High School,Director,5.8
+25,0.3,59279,52.7,5,4,1,0,1,1,Sales,Bachelor,Individual,7.4
+29,2.5,87019,36.1,22,4,1,1,1,0,Engineering,Bachelor,Team Lead,8.7
+42,0.9,104166,38.1,58,7,1,0,1,1,Marketing,Master,Director,9.2
+40,9.9,40409,51.8,12,10,1,0,1,1,Sales,Master,Individual,6.5
+25,2.0,74933,55.5,6,13,0,1,1,0,Sales,Bachelor,Manager,8.2
+35,4.9,55693,46.5,14,6,1,1,1,1,Finance,Bachelor,Manager,7.6
+42,2.4,62881,35.0,5,10,1,0,1,0,Sales,Bachelor,Team Lead,6.1
+22,0.1,117886,57.9,42,5,1,0,0,1,Engineering,Master,Individual,8.2
+40,3.0,34940,37.8,43,11,0,1,1,0,Engineering,Bachelor,Individual,5.0
+28,9.1,70074,39.3,22,6,0,1,0,1,Finance,Master,Individual,7.4
+40,2.8,74353,44.7,10,8,1,0,1,1,Finance,Bachelor,Manager,8.3
+27,5.1,86715,54.4,40,4,1,1,1,0,HR,Bachelor,Manager,7.8
+22,6.5,66959,48.8,20,8,0,0,1,1,Sales,Bachelor,Team Lead,7.4
+22,0.8,71161,45.3,43,9,1,1,1,1,Finance,Bachelor,Individual,8.6
+35,0.7,57167,45.7,24,11,1,1,1,1,HR,Bachelor,Individual,7.7
+37,2.8,70382,42.3,38,8,0,1,1,1,Finance,Bachelor,Team Lead,7.8
+25,1.6,58136,46.5,22,8,1,1,1,1,Finance,Bachelor,Team Lead,9.8
+41,5.5,77431,30.0,13,9,1,1,0,1,Sales,High School,Manager,10.0
+22,6.9,57607,39.6,79,13,0,1,1,0,Sales,Bachelor,Team Lead,7.1
+34,1.3,72542,43.9,19,10,1,0,1,0,Engineering,Bachelor,Manager,8.8
+22,0.8,64414,32.8,23,9,1,0,1,1,Engineering,Bachelor,Team Lead,6.8
+28,4.5,87521,45.1,6,8,1,1,0,0,Finance,Master,Team Lead,8.0
+35,1.0,63972,40.4,24,7,0,0,1,1,Finance,High School,Individual,6.6
+26,5.2,30000,56.0,21,12,0,1,1,1,HR,Bachelor,Manager,7.9
+31,1.7,90238,54.6,5,2,1,1,1,1,Sales,Bachelor,Team Lead,9.6
+45,3.3,46885,38.3,5,6,0,1,1,0,Engineering,Bachelor,Individual,7.3
+29,0.3,51924,40.8,23,6,1,1,1,1,Engineering,Bachelor,Individual,10.0
+43,2.9,53086,41.4,36,6,0,1,1,1,Sales,Master,Individual,6.3
+23,1.8,92488,38.4,18,13,0,1,1,0,Sales,Bachelor,Individual,8.4
+40,2.7,30000,43.6,6,6,1,0,1,1,Marketing,Bachelor,Individual,7.8
+49,0.6,127754,35.9,27,6,1,1,0,1,Engineering,Master,Individual,8.8
+22,4.0,86121,33.0,5,9,1,0,0,0,Finance,Master,Individual,7.9
+27,6.0,69464,47.0,14,8,0,0,1,1,Sales,PhD,Individual,6.5
+40,0.7,63902,47.0,5,14,1,1,0,0,Finance,Master,Manager,6.2
+32,0.3,70711,35.6,5,6,0,0,1,1,Marketing,Master,Individual,7.8
+38,0.1,75422,49.2,5,4,1,0,0,1,Engineering,Bachelor,Individual,8.4
+28,3.1,77904,36.9,12,9,1,0,0,1,Finance,Bachelor,Individual,7.7
+35,2.8,76112,44.0,5,7,0,1,0,1,HR,High School,Individual,4.9
+33,2.4,66791,48.6,12,8,1,1,1,1,Marketing,Master,Individual,5.5
+46,0.8,61053,41.7,17,8,0,0,1,1,Marketing,Master,Manager,5.5
+37,1.5,61974,45.6,16,10,1,1,1,1,Engineering,Bachelor,Team Lead,7.8
+38,2.7,61101,37.9,12,6,1,0,1,0,HR,Bachelor,Individual,5.5
+30,2.1,87675,40.4,45,4,1,1,0,0,Finance,Master,Team Lead,8.5
+30,13.2,76871,40.4,5,10,1,1,1,1,Engineering,Master,Individual,10.0
+30,0.4,30000,36.0,17,10,0,1,1,1,Engineering,Bachelor,Director,8.9
+38,3.6,78118,40.6,5,5,0,1,0,0,Finance,PhD,Director,7.5
+30,1.6,68894,30.0,5,7,0,1,1,0,Engineering,Bachelor,Individual,8.1
+37,1.7,64625,38.1,21,8,1,0,1,1,HR,Bachelor,Team Lead,6.5
+55,3.8,57229,39.7,20,4,1,1,1,1,Marketing,Bachelor,Manager,7.5
+43,3.5,87482,40.0,52,7,0,0,1,1,Marketing,Bachelor,Team Lead,5.6
+31,14.2,83950,40.1,20,12,1,1,0,1,Sales,High School,Team Lead,9.7
+47,0.4,49542,41.5,80,8,0,0,1,1,Engineering,Master,Director,8.5
+30,0.3,73141,45.8,5,6,0,1,0,1,Engineering,Master,Individual,7.1
+22,3.9,45566,49.0,5,5,1,0,1,1,HR,Master,Team Lead,4.7
+24,2.6,37407,36.8,5,8,1,0,1,0,HR,Bachelor,Manager,5.8
+22,1.0,52465,32.4,5,9,1,1,1,1,HR,Bachelor,Team Lead,7.2
+31,0.2,82247,33.7,19,4,0,1,0,1,Marketing,Bachelor,Team Lead,5.9
+35,0.3,84062,38.1,25,9,1,1,1,1,Engineering,High School,Individual,7.3
+51,6.7,75261,39.2,5,6,0,1,1,0,Engineering,Bachelor,Individual,7.9
+38,0.6,79501,35.8,72,11,0,1,1,1,Finance,High School,Individual,7.8
+32,1.2,75323,31.6,46,9,1,0,1,0,Sales,High School,Individual,4.7
+43,0.8,52170,38.4,8,8,1,0,1,0,Sales,Master,Individual,6.0
+22,1.3,73638,43.5,5,8,0,0,1,1,Engineering,High School,Director,7.7
+37,0.2,81008,46.8,5,7,0,1,1,1,Engineering,PhD,Team Lead,6.9
+42,2.2,80085,37.5,5,7,1,0,1,1,Sales,Bachelor,Team Lead,8.6
+22,0.2,88778,38.7,5,7,0,0,1,1,Finance,PhD,Individual,6.9
+46,4.8,79166,34.6,18,7,1,0,0,1,Finance,High School,Manager,7.2
+38,0.8,72028,41.7,7,12,1,0,1,1,Finance,Bachelor,Team Lead,7.2
+30,2.3,86403,35.2,11,11,0,1,1,1,Finance,Bachelor,Team Lead,8.4
+41,6.4,64469,46.6,113,7,1,0,1,0,Finance,Master,Individual,4.6
+57,3.2,47362,30.0,28,4,1,1,1,1,Marketing,Bachelor,Individual,5.3
+36,2.3,61738,39.1,74,14,0,1,1,1,Engineering,Bachelor,Team Lead,6.7
+37,1.2,50101,44.4,5,10,1,1,1,0,Finance,Master,Individual,5.7
+30,1.2,51496,43.5,12,11,0,0,0,1,Engineering,Bachelor,Manager,4.1
+26,3.3,62109,63.5,20,5,1,1,1,1,Engineering,High School,Manager,7.7
+43,15.4,49151,44.8,5,13,0,0,1,1,Engineering,Bachelor,Director,6.6
+26,3.3,58840,34.0,5,8,1,1,1,1,Marketing,Master,Team Lead,7.1
+35,2.4,30000,41.2,27,5,0,0,1,1,Sales,Bachelor,Director,6.5
+30,3.9,69265,30.0,25,7,0,1,1,0,Engineering,Bachelor,Manager,7.5
+39,1.9,65024,41.4,13,8,1,1,1,0,Sales,High School,Individual,7.2
+38,0.2,48658,35.3,16,10,0,1,1,1,Finance,Bachelor,Individual,6.9
+45,2.5,78184,49.3,13,5,0,1,1,1,Marketing,Master,Individual,5.7
+29,9.5,83751,37.6,5,5,0,1,1,1,Finance,Bachelor,Individual,9.3
+32,0.6,32848,41.1,10,4,0,1,1,1,Engineering,Bachelor,Individual,7.5
+25,3.5,49745,36.9,5,5,1,0,1,1,Engineering,High School,Individual,6.1
+30,0.7,49617,55.9,5,12,1,1,0,1,Marketing,Bachelor,Team Lead,7.0
+38,2.3,46201,39.4,78,2,0,1,1,0,Sales,Bachelor,Individual,5.7
+42,0.3,81589,56.7,22,7,1,1,1,0,HR,Bachelor,Individual,7.5
+25,1.8,61123,48.5,32,9,1,0,0,1,Finance,Bachelor,Team Lead,8.5
+43,4.2,59709,45.9,9,9,1,1,1,1,Finance,Master,Manager,5.6
+48,1.3,30000,44.9,12,7,0,0,0,1,Finance,High School,Director,4.0
+39,3.3,77708,45.2,6,10,1,0,1,1,Sales,Bachelor,Team Lead,5.4
+53,4.8,40214,30.0,5,8,1,0,1,1,Engineering,Bachelor,Individual,7.4
+27,7.9,66198,39.8,5,10,1,0,1,1,Marketing,Bachelor,Individual,7.6
+22,0.8,70547,48.8,39,10,1,1,1,1,Engineering,Master,Individual,8.9
+22,1.5,92213,41.6,28,3,0,1,1,1,Engineering,Bachelor,Individual,7.3
+49,0.5,38823,30.8,19,4,1,0,0,1,Engineering,High School,Individual,7.2
+41,14.7,30000,41.6,16,7,1,1,1,1,Sales,Master,Director,7.7
+34,7.9,68676,55.6,63,7,1,1,0,0,Engineering,Bachelor,Individual,6.9
+37,2.3,101010,52.0,5,8,0,1,0,1,Engineering,High School,Individual,8.5
+23,5.5,89778,41.5,8,4,1,1,0,1,HR,Bachelor,Individual,6.9
+59,2.2,69193,49.6,10,9,1,1,1,1,Marketing,Bachelor,Team Lead,7.3
+36,2.9,55167,39.1,38,13,1,0,0,1,HR,Bachelor,Individual,5.9
+36,0.3,81142,30.0,120,8,1,1,1,1,HR,Bachelor,Individual,9.2
+42,4.2,45529,34.6,6,9,1,1,1,0,Engineering,Bachelor,Individual,6.5
+39,0.4,74527,54.5,51,10,0,1,1,1,Engineering,Bachelor,Individual,8.5
+37,5.2,75109,39.8,44,5,1,1,1,0,Engineering,Bachelor,Individual,6.3
+27,4.6,86204,40.1,6,6,0,1,1,0,Finance,PhD,Individual,8.7
+39,3.7,120193,39.6,12,5,1,1,1,1,HR,High School,Individual,9.4
+53,0.1,72848,57.2,13,10,0,0,1,1,Engineering,PhD,Team Lead,7.1
+48,1.1,54820,55.0,95,7,1,0,0,1,Sales,Bachelor,Individual,6.2
+50,0.9,64488,59.8,5,9,1,1,0,1,Finance,Master,Team Lead,6.6
+29,1.3,30000,40.7,40,11,1,1,1,1,Marketing,Bachelor,Individual,6.0
+25,0.3,51105,44.4,10,7,0,1,1,0,Finance,Bachelor,Individual,8.2
+33,8.3,56814,30.0,32,8,1,1,1,0,Engineering,Master,Individual,6.9
+35,2.4,54518,53.8,13,9,0,1,1,1,Engineering,Master,Individual,7.6
+45,1.1,68047,32.7,21,9,0,1,1,0,Finance,Bachelor,Individual,7.6
+22,1.5,48551,43.7,44,5,0,1,1,1,HR,Bachelor,Individual,7.1
+50,1.8,87420,33.2,40,10,1,0,1,1,HR,Bachelor,Team Lead,8.7
+33,2.8,65004,37.3,50,8,1,1,1,1,Marketing,Master,Manager,8.5
+30,2.2,64813,35.3,5,11,1,1,1,0,Marketing,Bachelor,Team Lead,8.8
+24,7.6,58442,37.1,29,8,1,0,1,1,HR,Master,Individual,7.3
+22,2.1,68103,37.7,5,5,0,0,1,1,Engineering,Master,Team Lead,6.9
+43,14.5,81501,37.6,13,9,1,1,1,0,Sales,Master,Individual,6.7
+35,5.7,47657,48.7,19,9,0,0,1,1,Finance,Bachelor,Team Lead,6.6
+22,0.7,51837,33.2,12,9,0,1,1,1,Sales,Bachelor,Individual,7.9
+22,8.0,58925,43.8,18,5,0,1,1,1,Marketing,PhD,Individual,5.2
+31,0.4,38082,51.7,120,10,1,1,0,1,HR,Bachelor,Manager,5.7
+51,5.1,48614,37.9,5,10,1,1,1,0,Finance,Master,Team Lead,8.3
+32,1.4,55475,36.3,28,9,0,1,0,1,Sales,Bachelor,Individual,7.8
+22,6.3,82487,40.2,12,8,1,1,1,1,Sales,Master,Individual,7.3
+32,6.1,70251,51.4,5,8,1,1,1,0,Finance,Bachelor,Individual,8.9
+32,4.9,68871,43.6,5,10,0,1,1,1,Finance,Bachelor,Manager,6.5
+22,4.7,82017,37.8,74,10,1,1,1,0,HR,Master,Individual,6.8
+34,1.1,62252,45.9,52,3,1,1,1,1,Sales,Bachelor,Director,6.2
+32,0.3,72809,33.2,59,14,1,0,1,0,Sales,Master,Individual,6.5
+41,1.5,62935,47.5,119,11,1,1,1,1,Marketing,Bachelor,Individual,6.8
+53,0.6,70307,45.3,5,8,1,1,0,1,Finance,Bachelor,Team Lead,8.0
+46,3.6,53344,39.5,10,8,0,0,0,1,Finance,Bachelor,Individual,6.4
+32,1.3,30000,35.3,27,8,1,0,0,1,Engineering,Bachelor,Individual,5.2
+23,11.1,62314,34.9,16,9,1,0,1,1,Sales,Bachelor,Individual,7.8
+60,3.1,93454,46.3,13,12,0,1,1,1,Sales,Master,Team Lead,8.6
+35,5.2,83524,51.8,11,13,1,1,1,1,Finance,Master,Team Lead,7.0
+35,0.4,84307,36.9,22,11,1,0,1,1,HR,Bachelor,Team Lead,9.9
+34,5.9,89722,45.7,21,7,0,1,1,1,Sales,Bachelor,Team Lead,8.3
+36,7.7,66773,30.0,5,7,1,1,1,1,Engineering,Master,Team Lead,9.6
+33,2.0,68946,37.3,15,5,1,0,1,1,Marketing,Master,Individual,8.4
+29,2.8,52646,41.8,20,6,0,1,1,1,Engineering,Master,Individual,8.1
+29,4.3,58678,34.7,21,3,0,1,1,0,Finance,Master,Team Lead,6.6
+34,0.6,77315,34.5,5,9,0,1,0,1,Finance,Bachelor,Director,8.5
+29,2.1,89077,36.7,33,13,1,0,0,0,Sales,Bachelor,Individual,4.6
+27,1.5,62211,44.3,5,7,1,0,0,1,Sales,Bachelor,Individual,6.7
+36,0.5,55996,40.5,10,7,1,0,1,0,Finance,Bachelor,Individual,8.5
+32,1.4,65010,30.0,37,11,0,1,0,1,Engineering,Master,Individual,5.7
+50,0.2,77024,30.0,20,6,0,1,0,1,Engineering,High School,Individual,8.6
+22,0.1,36122,37.1,7,9,0,1,1,1,Finance,Master,Team Lead,9.4
+45,0.4,30000,45.7,29,13,1,1,0,1,Finance,Master,Individual,7.6
+47,9.9,53989,30.0,20,11,1,0,0,1,Finance,Master,Team Lead,8.3
+22,2.4,40585,38.0,39,11,1,1,1,1,Engineering,Master,Manager,6.2
+31,10.1,54837,37.8,33,8,0,1,0,1,Engineering,Bachelor,Director,5.6
+31,1.7,62044,53.1,23,12,1,1,1,1,Engineering,Master,Individual,9.2
+22,1.1,55935,38.9,16,12,1,1,1,1,Engineering,Bachelor,Individual,8.8
+27,2.1,94049,45.1,5,15,0,1,1,1,Finance,High School,Individual,8.1
+23,1.7,71534,43.1,7,4,1,0,1,0,Engineering,Master,Individual,7.5
+52,0.3,71009,30.0,13,6,0,0,1,1,HR,High School,Individual,7.5
+44,3.1,77444,48.1,22,5,0,0,1,1,Engineering,PhD,Team Lead,9.5
+47,0.7,42223,43.7,18,8,0,0,1,1,Sales,Master,Individual,5.9
+42,2.9,85782,46.1,8,10,1,1,1,1,Finance,Master,Director,9.7
+23,3.2,63484,70.0,5,7,1,0,1,1,Engineering,Bachelor,Manager,7.8
+29,0.5,78409,30.0,17,7,0,0,1,1,Sales,Master,Team Lead,6.9
+39,0.2,43562,55.8,8,3,0,1,1,0,Sales,High School,Team Lead,5.6
+22,4.6,33924,39.7,33,10,1,1,1,1,Engineering,Master,Individual,9.5
+42,1.8,81357,44.3,5,9,1,1,1,0,Sales,Bachelor,Team Lead,9.0
+32,0.2,72528,41.6,21,8,1,1,1,1,Sales,Master,Individual,7.6
+31,15.8,46958,38.6,70,9,0,1,1,1,HR,Bachelor,Manager,6.1
+42,0.2,47606,37.4,5,7,0,1,1,0,Finance,High School,Individual,5.1
+39,3.6,87508,44.6,15,7,0,0,1,1,Marketing,Bachelor,Individual,8.1
+31,12.3,41211,30.0,5,10,0,1,1,1,Engineering,Bachelor,Individual,6.9
+46,0.8,97853,48.0,24,6,1,1,1,0,Marketing,Master,Individual,7.6
+24,0.5,46987,38.7,19,6,1,1,1,1,Engineering,Bachelor,Individual,8.6
+41,0.4,77767,33.0,13,8,1,0,1,0,Marketing,Bachelor,Individual,5.5
+40,1.1,58427,38.4,18,11,1,1,0,1,HR,Bachelor,Manager,7.2
+31,0.3,77063,52.1,56,8,0,0,1,1,Engineering,Bachelor,Individual,6.6
+38,3.5,54117,37.7,5,11,0,1,1,1,Finance,Bachelor,Individual,6.3
+22,0.2,61744,44.9,5,8,1,1,0,1,Finance,Master,Individual,6.4
+44,2.1,65818,36.2,49,10,0,1,1,1,Finance,Bachelor,Individual,5.4
+33,17.1,44956,48.1,21,6,0,1,1,0,Sales,High School,Individual,6.4
+29,5.0,79816,47.5,55,8,0,1,0,1,Marketing,Bachelor,Team Lead,5.7
+45,2.9,54735,56.8,22,7,0,1,1,1,Finance,Bachelor,Individual,6.3
+27,1.1,60428,40.6,41,7,0,1,1,0,Sales,Bachelor,Individual,5.2
+22,2.9,45113,47.3,14,3,1,1,0,1,Finance,Bachelor,Individual,6.1
+22,2.2,30000,42.8,34,11,1,0,1,0,Engineering,Master,Individual,6.8
+41,1.7,61179,52.4,61,7,0,1,1,1,Engineering,High School,Individual,5.5
+22,0.4,113252,36.2,21,6,0,0,1,1,Finance,Bachelor,Team Lead,8.9
+52,6.5,80692,48.0,5,11,1,1,0,1,Finance,Bachelor,Individual,7.7
+22,1.8,64614,40.4,7,2,0,1,1,1,Finance,Bachelor,Individual,7.9
+51,0.6,59742,41.5,5,7,0,1,1,1,Finance,PhD,Team Lead,6.1
+37,1.4,65449,42.7,7,9,0,1,1,0,Engineering,Bachelor,Individual,5.5
+34,1.6,75942,44.0,9,8,0,0,0,1,Engineering,PhD,Team Lead,5.1
+29,5.3,41383,41.1,20,12,1,0,1,1,Finance,Bachelor,Individual,6.2
+38,4.0,87286,43.7,22,6,1,1,1,1,Engineering,High School,Individual,8.2
+34,4.4,79307,54.6,13,13,0,0,1,1,HR,Bachelor,Manager,7.2
+46,0.1,79363,49.9,23,11,0,1,1,0,Marketing,Bachelor,Individual,7.7
+36,1.6,73769,49.0,5,12,0,0,1,1,Engineering,Bachelor,Manager,8.3
+36,2.0,65392,38.4,5,4,0,1,1,0,Engineering,High School,Individual,7.9
+31,0.1,78457,34.9,5,14,1,0,1,0,Marketing,Bachelor,Team Lead,6.9
+34,0.9,76836,49.6,18,4,1,1,1,1,Finance,Bachelor,Manager,8.6
+38,4.3,57919,49.0,6,12,1,1,1,0,HR,High School,Manager,6.1
+22,0.4,53527,53.8,8,5,1,1,1,0,Marketing,Bachelor,Team Lead,7.6
+22,2.3,67037,37.2,12,6,1,0,1,1,Sales,Master,Team Lead,9.6
+42,0.7,95980,40.2,41,12,1,1,1,0,Engineering,Bachelor,Individual,6.5
+36,0.1,40217,30.0,5,9,0,0,1,0,Engineering,Master,Individual,7.2
+33,0.8,35649,38.9,26,10,0,1,1,0,Sales,Bachelor,Individual,7.3
+35,11.2,68295,50.0,27,9,1,1,1,0,Engineering,Bachelor,Individual,6.0
+38,4.9,66017,38.3,40,8,0,1,1,1,Engineering,Bachelor,Manager,7.6
+29,9.6,68466,47.1,67,11,1,1,1,1,Sales,Bachelor,Individual,6.4
+27,2.0,69879,40.5,5,7,1,1,1,1,Sales,Bachelor,Individual,7.3
+36,0.3,60535,44.6,5,10,1,1,1,1,Engineering,Bachelor,Team Lead,7.6
+25,2.4,94797,32.8,54,7,0,1,1,0,Marketing,Bachelor,Individual,6.6
+39,1.8,32981,42.7,15,16,1,1,0,0,Marketing,High School,Individual,7.8
+22,5.6,48430,30.0,20,7,0,1,1,0,Engineering,Master,Individual,6.8
+45,0.3,62934,40.5,27,12,1,1,1,1,Finance,Bachelor,Individual,6.5
+39,2.0,32136,30.0,28,5,0,0,0,1,Engineering,Bachelor,Team Lead,6.3
+37,0.5,61482,51.6,67,7,1,1,1,1,Finance,Bachelor,Individual,4.0
+44,1.2,98229,48.2,120,11,1,1,1,1,Engineering,Master,Individual,6.7
+51,4.0,65417,45.7,31,8,1,0,1,0,Finance,Bachelor,Team Lead,8.0
+45,1.9,69614,54.2,8,11,1,0,1,1,Engineering,Bachelor,Individual,6.7
+22,1.4,39796,34.4,52,6,1,1,0,1,Finance,Master,Team Lead,6.6
+22,1.5,52672,56.0,5,9,1,1,1,1,Sales,Master,Manager,7.9
+28,1.8,57496,49.5,6,7,1,1,0,1,HR,High School,Individual,7.6
+35,4.6,58645,40.1,56,5,0,1,1,1,Sales,Bachelor,Individual,7.7
+40,6.7,90632,51.1,7,8,1,1,1,1,Engineering,Master,Individual,8.3
+27,9.3,76153,33.1,6,4,1,1,1,1,Finance,Master,Team Lead,8.8
+36,4.6,42770,35.4,5,4,1,1,1,1,Engineering,Bachelor,Individual,7.6
+27,1.1,69930,37.1,48,4,0,1,1,1,Finance,Bachelor,Individual,7.5
+28,3.5,74964,37.8,17,12,1,0,1,0,Engineering,Bachelor,Manager,8.1
+22,1.7,87802,33.5,28,6,0,1,1,1,Sales,Bachelor,Individual,10.0
+25,0.9,96610,51.8,6,9,0,0,0,1,HR,Master,Individual,6.3
+22,5.5,44698,39.9,35,8,1,1,1,0,Sales,High School,Team Lead,9.4
+25,0.1,48782,44.8,35,4,0,1,1,1,Engineering,PhD,Individual,5.5
+45,7.0,39848,37.4,9,10,0,0,0,0,Finance,Master,Team Lead,4.2
+25,1.9,60319,30.0,13,13,1,1,1,1,Finance,Bachelor,Team Lead,7.8
+61,3.0,74327,44.2,5,7,0,1,1,1,Finance,Bachelor,Individual,8.9
+39,3.2,84746,30.0,93,6,0,1,1,1,Sales,Bachelor,Manager,6.8
+36,6.8,63480,41.5,25,11,0,1,1,0,Marketing,Bachelor,Individual,5.4
+26,3.0,58603,31.1,68,6,1,1,1,1,Sales,Master,Director,8.8
+42,2.9,68035,57.9,9,8,1,1,1,1,Engineering,Bachelor,Individual,8.2
+29,0.2,48297,49.3,38,6,1,1,0,1,Finance,Bachelor,Individual,5.5
+36,2.2,106790,42.8,36,13,0,1,1,1,Sales,Bachelor,Individual,6.3
+60,0.5,32846,52.1,29,7,0,1,1,1,Sales,Master,Individual,7.4
+34,4.0,68694,35.2,84,5,0,1,1,1,Sales,High School,Team Lead,4.4
+46,2.2,105472,46.3,12,8,1,0,1,0,HR,Bachelor,Team Lead,8.9
+27,3.4,65135,43.6,5,5,1,1,1,0,Finance,Master,Team Lead,8.4
+34,0.1,61199,44.1,27,12,0,1,1,1,HR,Bachelor,Individual,3.6
+52,0.3,57851,52.2,32,11,0,1,1,0,Sales,Master,Individual,5.9
+28,3.8,61392,47.9,21,11,0,1,1,1,Finance,Bachelor,Team Lead,4.4
+53,0.2,92456,44.3,5,8,1,1,1,0,Marketing,PhD,Individual,6.5
+42,0.2,30000,30.0,17,5,1,0,1,1,Engineering,High School,Team Lead,7.0
+29,0.1,95668,34.3,9,9,1,1,0,1,Engineering,Bachelor,Team Lead,7.2
+41,9.4,36520,41.0,13,12,1,1,0,1,Engineering,High School,Individual,9.9
+44,4.0,59666,42.7,25,14,1,1,1,1,Sales,Bachelor,Team Lead,8.6
+41,1.3,56415,33.0,34,4,0,0,1,0,Finance,Bachelor,Team Lead,7.5
+22,1.1,76771,61.3,6,6,0,1,1,1,Sales,Bachelor,Team Lead,7.4
+27,1.3,33037,54.1,12,11,1,1,0,1,Sales,PhD,Individual,6.6
+32,4.5,74243,46.8,7,9,1,0,1,1,Finance,Master,Individual,9.8
+34,3.2,105486,42.6,5,10,1,1,1,1,Finance,Bachelor,Individual,8.9
+41,0.6,37736,40.3,38,5,1,0,1,1,HR,Bachelor,Individual,7.2
+36,0.6,68794,34.4,59,4,1,1,1,1,Engineering,Bachelor,Individual,6.2
+22,0.3,51760,42.6,11,5,1,1,1,1,Engineering,Master,Manager,7.1
+38,3.2,73517,44.1,34,8,1,0,0,1,Engineering,Bachelor,Team Lead,8.0
+41,4.3,65382,32.1,56,12,1,0,0,1,Engineering,High School,Individual,6.7
+40,0.9,52170,44.7,46,6,0,1,0,1,Engineering,Master,Individual,4.9
+45,0.1,74757,40.8,5,16,1,1,1,1,Marketing,Master,Manager,9.5
+43,0.3,101086,30.0,78,5,1,1,0,0,Engineering,Bachelor,Individual,5.9
+39,10.3,61181,35.1,11,7,0,1,1,1,Engineering,Master,Team Lead,7.7
+34,1.1,79395,38.7,10,10,1,1,1,1,Engineering,Master,Director,7.6
+22,4.4,39134,57.1,5,7,1,0,1,1,Marketing,Bachelor,Team Lead,8.5
+39,2.9,45871,46.5,16,10,0,1,1,1,Marketing,Bachelor,Director,6.4
+37,1.4,74448,31.3,5,6,1,1,0,1,Marketing,PhD,Team Lead,7.7
+37,0.7,94682,45.9,7,8,0,1,1,1,Engineering,Bachelor,Individual,6.4
+22,0.4,72112,30.0,9,10,1,1,1,1,Sales,Bachelor,Individual,7.1
+24,2.9,58738,50.7,41,5,1,0,0,1,Engineering,Bachelor,Individual,6.6
+45,4.5,64985,38.2,52,6,0,0,1,0,Engineering,Master,Individual,6.9
+34,3.1,39991,41.3,9,10,0,1,1,0,Finance,Master,Team Lead,7.9
+41,2.3,77090,52.6,48,3,1,1,1,0,Finance,High School,Individual,9.0
+35,0.1,82646,31.7,48,2,0,1,1,1,Marketing,PhD,Manager,9.9
+35,10.4,55958,30.8,36,5,0,1,1,1,Finance,Master,Individual,8.0
