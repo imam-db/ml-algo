@@ -2,13 +2,18 @@ name: Tests
 
 on:
   push:
+<<<<<<< HEAD
     branches: [ main ]
+=======
+    branches: [ main, cursor/** ]
+>>>>>>> d18948c (Add GitHub Actions CI workflow for automated testing)
   pull_request:
     branches: [ main ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+<<<<<<< HEAD
     
     steps:
     - uses: actions/checkout@v4
@@ -26,3 +31,38 @@ jobs:
     
     - name: Run tests
       run: uv run pytest tests/ -v
+=======
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install uv
+      run: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+    
+    - name: Install dependencies
+      run: |
+        uv sync
+        uv pip install pytest scikit-learn
+    
+    - name: Run tests
+      run: |
+        uv run pytest tests/ -v --tb=short
+    
+    - name: Test K-Means implementation
+      run: |
+        uv run python 02_unsupervised_learning/01_kmeans/implementation.py
+    
+    - name: Test PCA implementation
+      run: |
+        uv run python 02_unsupervised_learning/04_pca/implementation.py
+>>>>>>> d18948c (Add GitHub Actions CI workflow for automated testing)
