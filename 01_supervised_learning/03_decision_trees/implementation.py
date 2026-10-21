@@ -13,8 +13,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from collections import Counter
 from typing import List, Tuple, Optional, Union
-import warnings
-warnings.filterwarnings('ignore')
 
 
 class Node:
@@ -60,7 +58,11 @@ class DecisionTreeScratch:
                  max_depth=10, min_samples_split=2, min_samples_leaf=1,
                  min_impurity_decrease=0.0, random_state=None):
         self.task_type = task_type
-        self.criterion = criterion
+        # Set sensible default criterion for regression
+        if criterion == 'gini' and task_type == 'regression':
+            self.criterion = 'mse'
+        else:
+            self.criterion = criterion
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
@@ -72,9 +74,13 @@ class DecisionTreeScratch:
         self.feature_importances_ = None
         self.n_features_ = None
         self.tree_depth_ = 0
+        self.label_encoder_ = None  # For handling string labels
         
+        # Use is not None to avoid treating random_state=0 as unset
         if random_state is not None:
-            np.random.seed(random_state)
+            self.rng = np.random.default_rng(random_state)
+        else:
+            self.rng = np.random.default_rng()
     
     def _calculate_impurity(self, y: np.ndarray) -> float:
         """Calculate impurity measure based on criterion"""
@@ -93,13 +99,17 @@ class DecisionTreeScratch:
         raise ValueError(f"Unknown criterion: {self.criterion}")
     
     def _gini_impurity(self, y: np.ndarray) -> float:
-        """Calculate Gini impurity"""
-        proportions = np.bincount(y) / len(y)
+        """Calculate Gini impurity - handles string labels"""
+        # Encode labels to integers if they're strings
+        _, counts = np.unique(y, return_counts=True)
+        proportions = counts / len(y)
         return 1 - np.sum(proportions ** 2)
     
     def _entropy(self, y: np.ndarray) -> float:
-        """Calculate entropy"""
-        proportions = np.bincount(y) / len(y)
+        """Calculate entropy - handles string labels"""
+        # Encode labels to integers if they're strings
+        _, counts = np.unique(y, return_counts=True)
+        proportions = counts / len(y)
         proportions = proportions[proportions > 0]  # Remove zero proportions
         return -np.sum(proportions * np.log2(proportions))
     
@@ -128,7 +138,7 @@ class DecisionTreeScratch:
         return impurity_parent - weighted_impurity
     
     def _best_split(self, X: np.ndarray, y: np.ndarray) -> Tuple[int, float, float]:
-        """Find the best split for the given data"""
+        """Find the best split for the given data using midpoint thresholds"""
         m, n = X.shape
         
         # If all samples have the same target value, no split needed
@@ -142,10 +152,12 @@ class DecisionTreeScratch:
         # Try each feature
         for feature in range(n):
             feature_values = X[:, feature]
-            thresholds = np.unique(feature_values)
+            unique_values = np.unique(feature_values)
             
-            # Try each unique value as threshold
-            for threshold in thresholds:
+            # Use midpoint thresholds between consecutive unique values
+            for i in range(len(unique_values) - 1):
+                threshold = (unique_values[i] + unique_values[i + 1]) / 2
+                
                 # Split data based on threshold
                 left_mask = feature_values <= threshold
                 right_mask = ~left_mask
@@ -220,6 +232,20 @@ class DecisionTreeScratch:
         X = np.array(X)
         y = np.array(y)
         
+        # Reset tree state
+        self.tree_depth_ = 0
+        self.feature_importances_ = None
+        self.root = None
+        self.label_encoder_ = None
+        
+        # Handle string labels by encoding them
+        if self.task_type == 'classification' and y.dtype.kind in ['U', 'S', 'O']:
+            self.label_encoder_ = {}
+            unique_labels, y_encoded = np.unique(y, return_inverse=True)
+            self.label_encoder_['classes_'] = unique_labels
+            self.label_encoder_['inverse_map'] = {i: label for i, label in enumerate(unique_labels)}
+            y = y_encoded
+        
         self.n_features_ = X.shape[1]
         
         # Build the tree
@@ -285,7 +311,13 @@ class DecisionTreeScratch:
     def predict(self, X: np.ndarray) -> np.ndarray:
         """Make predictions for given samples"""
         X = np.array(X)
-        return np.array([self._predict_sample(x) for x in X])
+        predictions = np.array([self._predict_sample(x) for x in X])
+        
+        # Decode string labels if they were encoded
+        if self.label_encoder_ is not None:
+            predictions = np.array([self.label_encoder_['inverse_map'][int(p)] for p in predictions])
+        
+        return predictions
     
     def score(self, X: np.ndarray, y: np.ndarray) -> float:
         """Calculate accuracy (classification) or R² score (regression)"""
@@ -294,9 +326,10 @@ class DecisionTreeScratch:
         if self.task_type == 'classification':
             return np.mean(predictions == y)
         else:  # regression
+            # Guard against constant y (division by zero)
             ss_res = np.sum((y - predictions) ** 2)
             ss_tot = np.sum((y - np.mean(y)) ** 2)
-            return 1 - (ss_res / ss_tot) if ss_tot != 0 else 0
+            return 1 - (ss_res / ss_tot) if ss_tot > 0 else 0.0
     
     def print_tree(self, node: Optional[Node] = None, depth: int = 0):
         """Print the tree structure"""

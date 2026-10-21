@@ -48,18 +48,16 @@ class LinearRegressionFromScratch:
     def fit_normal_equation(self, X: np.ndarray, y: np.ndarray) -> None:
         """
         Training using Normal Equation (Closed-form solution)
-        θ = (X^T * X)^(-1) * X^T * y
+        Uses np.linalg.lstsq for numerical stability instead of computing (X^T X)^-1
         """
         # Add bias term
         X_with_bias = self._add_bias_term(X)
         
-        # Normal Equation formula
-        # θ = (X^T * X)^(-1) * X^T * y
-        try:
-            theta = np.linalg.inv(X_with_bias.T @ X_with_bias) @ X_with_bias.T @ y
-        except np.linalg.LinAlgError:
-            # If matrix is singular, use pseudo-inverse
-            theta = np.linalg.pinv(X_with_bias.T @ X_with_bias) @ X_with_bias.T @ y
+        # Flatten y to 1D to avoid shape issues
+        y = y.ravel()
+        
+        # Use lstsq instead of inv(X^T X) for better numerical stability
+        theta, _, _, _ = np.linalg.lstsq(X_with_bias, y, rcond=None)
         
         # Separate bias and weights
         self.bias = theta[0]
@@ -68,8 +66,15 @@ class LinearRegressionFromScratch:
     def fit_gradient_descent(self, X: np.ndarray, y: np.ndarray) -> None:
         """
         Training using Gradient Descent
+        
+        Note: For best convergence, scale features to similar ranges (e.g., using
+        StandardScaler) before training, as gradient descent is sensitive to feature
+        scales.
         """
         n_samples, n_features = X.shape
+        
+        # Flatten y to 1D to avoid shape issues
+        y = y.ravel()
         
         # Initialize parameters
         self.weights = np.zeros(n_features)
@@ -148,11 +153,15 @@ class LinearRegressionFromScratch:
         Compute R² score (coefficient of determination)
 
         R² = 1 - (SS_res / SS_tot)
+        
+        Guard against constant y to avoid division by zero.
         """
+        y = np.asarray(y).ravel()
         y_pred = self.predict(X)
         ss_res = np.sum((y - y_pred) ** 2)
         ss_tot = np.sum((y - np.mean(y)) ** 2)
-        return 1 - (ss_res / ss_tot)
+        # Guard against constant y (ss_tot = 0)
+        return 1 - (ss_res / ss_tot) if ss_tot > 0 else 0.0
     
     def plot_cost_history(self) -> None:
         """Plot cost function history for gradient descent"""

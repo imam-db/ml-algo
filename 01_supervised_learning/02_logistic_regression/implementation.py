@@ -12,8 +12,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from typing import Tuple, Optional
-import warnings
-warnings.filterwarnings('ignore')
 
 
 class LogisticRegressionScratch:
@@ -153,12 +151,13 @@ class LogisticRegressionScratch:
             X = self._add_intercept(X)
             n += 1
         
-        # Initialize weights randomly
-        np.random.seed(42)
-        self.weights = np.random.normal(0, 0.01, size=n)
+        # Initialize weights randomly using modern RNG
+        rng = np.random.default_rng(42)
+        self.weights = rng.normal(0, 0.01, size=n)
         
-        # Clear cost history
+        # Reset state for new fit
         self.cost_history = []
+        self.converged = False
         previous_cost = float('inf')
         
         # Gradient descent
@@ -276,12 +275,16 @@ class LogisticRegressionScratch:
     
     def get_feature_importance(self) -> np.ndarray:
         """
-        Get feature importance based on absolute weights
+        Get feature importance based on absolute weights.
+        
+        Note: For meaningful comparison, features should be scaled to similar ranges
+        (e.g., using StandardScaler) before training, since weight magnitudes depend
+        on feature scales.
         
         Returns:
         --------
         np.ndarray
-            Feature importance scores
+            Feature importance scores (absolute weights)
         """
         if self.weights is None:
             raise ValueError("Model must be trained first")
