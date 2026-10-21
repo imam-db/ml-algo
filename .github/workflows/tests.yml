@@ -2,13 +2,16 @@ name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, cursor/** ]
   pull_request:
     branches: [ main ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
     
     steps:
     - uses: actions/checkout@v4
@@ -18,11 +21,18 @@ jobs:
       with:
         version: "latest"
     
-    - name: Set up Python
-      run: uv python install
+    - name: Set up Python ${{ matrix.python-version }}
+      run: uv python install ${{ matrix.python-version }}
     
     - name: Install dependencies
       run: uv sync --all-extras
     
     - name: Run tests
-      run: uv run pytest tests/ -v
+      run: uv run pytest tests/ -v --tb=short
+    
+    - name: Test K-Means implementation
+      run: uv run python 02_unsupervised_learning/01_kmeans/implementation.py
+    
+    - name: Test PCA implementation
+      run: uv run python 02_unsupervised_learning/04_pca/implementation.py
+# CI test
