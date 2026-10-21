@@ -37,10 +37,10 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **🚧 08_neural_networks** - Neural Networks (planned)
 
 ### 2. **Unsupervised Learning** ([`02_unsupervised_learning/`](./02_unsupervised_learning/))
-- **🚧 01_kmeans** - K-Means Clustering (planned)
+- **[01_kmeans](./02_unsupervised_learning/01_kmeans/)** - K-Means Clustering ✅
 - **🚧 02_hierarchical_clustering** - Hierarchical Clustering (planned)
 - **🚧 03_dbscan** - DBSCAN (planned)
-- **🚧 04_pca** - Principal Component Analysis (planned)
+- **[04_pca](./02_unsupervised_learning/04_pca/)** - Principal Component Analysis ✅
 - **🚧 05_tsne** - t-SNE (planned)
 - **🚧 06_association_rules** - Association Rules (planned)
 
