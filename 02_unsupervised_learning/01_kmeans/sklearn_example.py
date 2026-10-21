@@ -204,6 +204,86 @@ def example_cluster_interpretation():
         print()
 
 
+def example_why_scaling_matters():
+    """Example 5: Demonstrate why scaling is critical for K-Means (Kenapa harus scaling?)."""
+    print("\n" + "=" * 60)
+    print("Example 5: Kenapa Harus Scaling? (Why Scaling Matters)")
+    print("=" * 60)
+    
+    X, _, _ = load_spg_outlets_data()
+    
+    print("\nOriginal feature ranges (before scaling):")
+    feature_names = ['Monthly Sales (IDR)', 'SKU Count', 'Visit Freq', 'OOS Rate', 'Avg Basket (IDR)']
+    for i, name in enumerate(feature_names):
+        print(f"  {name:25s}: {X[:, i].min():12,.0f} to {X[:, i].max():12,.0f} (range: {X[:, i].max()-X[:, i].min():12,.0f})")
+    
+    # K-Means WITHOUT scaling
+    print("\n" + "-" * 60)
+    print("WITHOUT Scaling (BAD!):")
+    print("-" * 60)
+    kmeans_no_scale = KMeans(n_clusters=4, random_state=42, n_init=10)
+    labels_no_scale = kmeans_no_scale.fit_predict(X)
+    
+    sil_no_scale = silhouette_score(X, labels_no_scale)
+    
+    print(f"  Inertia: {kmeans_no_scale.inertia_:,.2f}")
+    print(f"  Silhouette score: {sil_no_scale:.3f}")
+    
+    # Check cluster centers
+    print(f"\n  Cluster 0 center (original scale):")
+    for i, name in enumerate(feature_names):
+        print(f"    {name:25s}: {kmeans_no_scale.cluster_centers_[0, i]:,.2f}")
+    
+    print(f"\n  ⚠️  Distance calculation is dominated by IDR columns")
+    print(f"  ⚠️  Features with small values (OOS rate, visit freq) barely affect clustering")
+    
+    # K-Means WITH scaling
+    print("\n" + "-" * 60)
+    print("WITH Scaling (GOOD!):")
+    print("-" * 60)
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    kmeans_scaled = KMeans(n_clusters=4, random_state=42, n_init=10)
+    labels_scaled = kmeans_scaled.fit_predict(X_scaled)
+    
+    sil_scaled = silhouette_score(X_scaled, labels_scaled)
+    
+    print(f"  Inertia: {kmeans_scaled.inertia_:,.2f}")
+    print(f"  Silhouette score: {sil_scaled:.3f}")
+    
+    # Transform cluster center back to original scale
+    center_original = scaler.inverse_transform(kmeans_scaled.cluster_centers_[0:1])[0]
+    print(f"\n  Cluster 0 center (original scale):")
+    for i, name in enumerate(feature_names):
+        print(f"    {name:25s}: {center_original[i]:,.2f}")
+    
+    print(f"\n  ✓ All features contribute equally to distance calculation")
+    print(f"  ✓ Clusters reflect patterns across ALL features")
+    print(f"  ✓ Better silhouette score: {sil_scaled:.3f} vs {sil_no_scale:.3f}")
+    
+    # Key insights
+    print("\n" + "=" * 60)
+    print("Key Insights:")
+    print("=" * 60)
+    print("1. WITHOUT scaling: Distance dominated by large-range features")
+    print("   - K-Means uses Euclidean distance")
+    print("   - Difference of 1M IDR >> difference of 0.1 in OOS rate")
+    print("   - Small-range features have almost no effect on clusters")
+    print("")
+    print("2. WITH scaling: All features contribute equally")
+    print("   - Each feature has mean=0, std=1")
+    print("   - 1 unit difference means the same for all features")
+    print("   - Clusters capture patterns across ALL dimensions")
+    print("")
+    print("3. Rule: ALWAYS scale before K-Means unless features are already")
+    print("   on the same scale (e.g., all percentages, all normalized)")
+    print("")
+    print(f"4. Result: Silhouette score improves from {sil_no_scale:.3f} to {sil_scaled:.3f}")
+    
+    return X, X_scaled, labels_no_scale, labels_scaled
+
+
 def visualize_results():
     """Create visualizations if matplotlib is available."""
     try:
@@ -258,6 +338,7 @@ if __name__ == "__main__":
     example_basic_clustering()
     example_elbow_method()
     example_silhouette_analysis()
+    example_why_scaling_matters()
     example_cluster_interpretation()
     
     # Visualizations

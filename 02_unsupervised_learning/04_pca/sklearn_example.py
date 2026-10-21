@@ -192,6 +192,80 @@ def example_reconstruction():
     print("\nNote: With all 5 components, reconstruction is perfect (MSE ≈ 0)")
 
 
+def example_why_scaling_matters():
+    """Example 6: Demonstrate why scaling is critical for PCA (Kenapa harus scaling?)."""
+    print("\n" + "=" * 60)
+    print("Example 6: Kenapa Harus Scaling? (Why Scaling Matters)")
+    print("=" * 60)
+    
+    X, _, _ = load_spg_outlets_data()
+    
+    print("\nOriginal feature ranges (before scaling):")
+    feature_names = ['Monthly Sales (IDR)', 'SKU Count', 'Visit Freq', 'OOS Rate', 'Avg Basket (IDR)']
+    for i, name in enumerate(feature_names):
+        print(f"  {name:25s}: {X[:, i].min():12,.0f} to {X[:, i].max():12,.0f} (range: {X[:, i].max()-X[:, i].min():12,.0f})")
+    
+    # PCA WITHOUT scaling
+    print("\n" + "-" * 60)
+    print("WITHOUT Scaling (BAD!):")
+    print("-" * 60)
+    pca_no_scale = PCA(n_components=2)
+    pca_no_scale.fit(X)
+    
+    print(f"  PC1 explains: {pca_no_scale.explained_variance_ratio_[0]*100:.1f}%")
+    print(f"  PC2 explains: {pca_no_scale.explained_variance_ratio_[1]*100:.1f}%")
+    print(f"  Total (2 PCs): {pca_no_scale.explained_variance_ratio_[:2].sum()*100:.1f}%")
+    
+    print(f"\n  Feature contributions to PC1:")
+    loadings = pca_no_scale.components_[0]
+    for i, name in enumerate(feature_names):
+        print(f"    {name:25s}: {loadings[i]:+.6f}")
+    
+    print(f"\n  ⚠️  PC1 is dominated by features with large ranges (IDR columns)")
+    print(f"  ⚠️  Features with small ranges (OOS rate) are ignored")
+    
+    # PCA WITH scaling
+    print("\n" + "-" * 60)
+    print("WITH Scaling (GOOD!):")
+    print("-" * 60)
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    pca_scaled = PCA(n_components=2)
+    pca_scaled.fit(X_scaled)
+    
+    print(f"  PC1 explains: {pca_scaled.explained_variance_ratio_[0]*100:.1f}%")
+    print(f"  PC2 explains: {pca_scaled.explained_variance_ratio_[1]*100:.1f}%")
+    print(f"  Total (2 PCs): {pca_scaled.explained_variance_ratio_[:2].sum()*100:.1f}%")
+    
+    print(f"\n  Feature contributions to PC1:")
+    loadings = pca_scaled.components_[0]
+    for i, name in enumerate(feature_names):
+        print(f"    {name:25s}: {loadings[i]:+.6f}")
+    
+    print(f"\n  ✓ All features contribute meaningfully to PC1")
+    print(f"  ✓ PC1 captures overall outlet 'size/performance'")
+    
+    # Key insights
+    print("\n" + "=" * 60)
+    print("Key Insights:")
+    print("=" * 60)
+    print("1. WITHOUT scaling: Large-range features dominate")
+    print("   - Monthly Sales (IDR) and Avg Basket (IDR) have huge ranges")
+    print("   - PCA finds variance only in those features")
+    print("   - Small-range features (OOS rate, visit freq) are ignored")
+    print("")
+    print("2. WITH scaling: All features contribute equally")
+    print("   - Each feature has mean=0, std=1")
+    print("   - PCA finds meaningful patterns across ALL features")
+    print("   - Better representation of outlet characteristics")
+    print("")
+    print("3. Rule: ALWAYS scale before PCA unless features are already")
+    print("   on the same scale (e.g., all percentages, all counts)")
+    
+    return X, X_scaled, pca_no_scale, pca_scaled
+
+
 def visualize_results():
     """Create visualizations if matplotlib is available."""
     try:
@@ -283,6 +357,7 @@ if __name__ == "__main__":
     # Run examples
     example_basic_pca()
     example_variance_analysis()
+    example_why_scaling_matters()
     example_visualization_with_clusters()
     example_feature_importance()
     example_reconstruction()
