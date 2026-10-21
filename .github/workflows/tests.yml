@@ -35,3 +35,4 @@ jobs:
     
     - name: Test PCA implementation
       run: uv run python 02_unsupervised_learning/04_pca/implementation.py
+# CI test
