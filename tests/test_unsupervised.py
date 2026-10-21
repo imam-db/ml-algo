@@ -22,14 +22,25 @@ except ImportError:
 # Import our implementations
 import sys
 from pathlib import Path
+import importlib.util
 
 # Add module directories to path
 workspace = Path(__file__).parent.parent
-sys.path.insert(0, str(workspace / "02_unsupervised_learning" / "01_kmeans"))
-sys.path.insert(0, str(workspace / "02_unsupervised_learning" / "04_pca"))
 
-from implementation import KMeansFromScratch, silhouette_score as our_silhouette_score
-from implementation import PCAFromScratch
+# Import K-Means implementation
+kmeans_path = workspace / "02_unsupervised_learning" / "01_kmeans" / "implementation.py"
+spec_kmeans = importlib.util.spec_from_file_location("kmeans_impl", kmeans_path)
+kmeans_module = importlib.util.module_from_spec(spec_kmeans)
+spec_kmeans.loader.exec_module(kmeans_module)
+KMeansFromScratch = kmeans_module.KMeansFromScratch
+our_silhouette_score = kmeans_module.silhouette_score
+
+# Import PCA implementation
+pca_path = workspace / "02_unsupervised_learning" / "04_pca" / "implementation.py"
+spec_pca = importlib.util.spec_from_file_location("pca_impl", pca_path)
+pca_module = importlib.util.module_from_spec(spec_pca)
+spec_pca.loader.exec_module(pca_module)
+PCAFromScratch = pca_module.PCAFromScratch
 
 
 # ============================================================================
