@@ -31,27 +31,27 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **[02_logistic_regression](./01_supervised_learning/02_logistic_regression/)** - Logistic Regression  
 - **[03_decision_trees](./01_supervised_learning/03_decision_trees/)** - Decision Trees
 - **[04_random_forest](./01_supervised_learning/04_random_forest/)** - Random Forest
-- **[05_svm](./01_supervised_learning/05_svm/)** - Support Vector Machine
-- **[06_naive_bayes](./01_supervised_learning/06_naive_bayes/)** - Naive Bayes
-- **[07_knn](./01_supervised_learning/07_knn/)** - K-Nearest Neighbors
-- **[08_neural_networks](./01_supervised_learning/08_neural_networks/)** - Neural Networks
+- **🚧 05_svm** - Support Vector Machine (planned)
+- **🚧 06_naive_bayes** - Naive Bayes (planned)
+- **🚧 07_knn** - K-Nearest Neighbors (planned)
+- **🚧 08_neural_networks** - Neural Networks (planned)
 
 ### 2. **Unsupervised Learning** ([`02_unsupervised_learning/`](./02_unsupervised_learning/))
-- **[01_kmeans](./02_unsupervised_learning/01_kmeans/)** - K-Means Clustering
-- **[02_hierarchical_clustering](./02_unsupervised_learning/02_hierarchical_clustering/)** - Hierarchical Clustering
-- **[03_dbscan](./02_unsupervised_learning/03_dbscan/)** - DBSCAN
-- **[04_pca](./02_unsupervised_learning/04_pca/)** - Principal Component Analysis
-- **[05_tsne](./02_unsupervised_learning/05_tsne/)** - t-SNE
-- **[06_association_rules](./02_unsupervised_learning/06_association_rules/)** - Association Rules
+- **🚧 01_kmeans** - K-Means Clustering (planned)
+- **🚧 02_hierarchical_clustering** - Hierarchical Clustering (planned)
+- **🚧 03_dbscan** - DBSCAN (planned)
+- **🚧 04_pca** - Principal Component Analysis (planned)
+- **🚧 05_tsne** - t-SNE (planned)
+- **🚧 06_association_rules** - Association Rules (planned)
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))
-- **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning
-- **[02_deep_q_networks](./03_reinforcement_learning/02_deep_q_networks/)** - Deep Q-Networks
+- **🚧 01_q_learning** - Q-Learning (planned)
+- **🚧 02_deep_q_networks** - Deep Q-Networks (planned)
 
 ### 4. **Advanced Topics** ([`04_advanced_topics/`](./04_advanced_topics/))
-- **[01_ensemble_methods](./04_advanced_topics/01_ensemble_methods/)** - Ensemble Methods
-- **[02_deep_learning](./04_advanced_topics/02_deep_learning/)** - Deep Learning
-- **[03_model_evaluation](./04_advanced_topics/03_model_evaluation/)** - Model Evaluation
+- **🚧 01_ensemble_methods** - Ensemble Methods (planned)
+- **🚧 02_deep_learning** - Deep Learning (planned)
+- **🚧 03_model_evaluation** - Model Evaluation (planned)
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting)
 
 ### 5. **Datasets** ([`05_datasets/`](./05_datasets/))
@@ -78,10 +78,7 @@ Quick references to accelerate learning and implementation:
 - 🤖 [Algorithms Quick Reference](./08_cheat_sheets/01_algorithms/algorithms_quick_reference.md)
 - 📊 [Classification Metrics](./08_cheat_sheets/04_model_evaluation/classification_metrics.md)
 - 🧮 [Essential Math & Statistics](./08_cheat_sheets/03_math_statistics/essential_formulas.md)
-- 📈 [Matplotlib Visualization](./cheat_sheets/visualization/matplotlib_quick_reference.md)
-- 📊 [Seaborn Visualization](./cheat_sheets/visualization/seaborn_quick_reference.md)
-- 📉 [Plotly Interactive Visualization](./cheat_sheets/visualization/plotly_quick_reference.md)
-- 🛠️ [Interactive Generator Tool](./cheat_sheets/interactive_generator.py)
+- **🚧 Visualization cheat sheets** (planned)
 
 ## 🚀 Quick Start
 

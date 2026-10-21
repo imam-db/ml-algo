@@ -20,8 +20,6 @@ from math import sqrt, log2
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import List, Tuple, Optional, Union
-import warnings
-warnings.filterwarnings('ignore')
 
 class DecisionTreeNode:
     """Node class for decision tree used in Random Forest"""
@@ -56,8 +54,11 @@ class DecisionTreeRF:
         self.feature_importances_ = None
         self.n_features_ = None
         
-        if random_state:
-            np.random.seed(random_state)
+        # Use is not None to avoid treating random_state=0 as unset
+        if random_state is not None:
+            self.rng = np.random.default_rng(random_state)
+        else:
+            self.rng = np.random.default_rng()
     
     def _calculate_impurity(self, y: np.ndarray) -> float:
         """Calculate impurity using specified criterion"""
@@ -107,8 +108,8 @@ class DecisionTreeRF:
         # Ensure at least one feature
         max_features = max(1, max_features)
         
-        # Return random subset of feature indices
-        return np.random.choice(n_features, size=max_features, replace=False)
+        # Return random subset of feature indices using instance RNG
+        return self.rng.choice(n_features, size=max_features, replace=False)
     
     def _find_best_split(self, X: np.ndarray, y: np.ndarray, feature_indices: np.ndarray) -> Tuple[int, float, float]:
         """Find the best split among random features"""
@@ -199,12 +200,55 @@ class DecisionTreeRF:
         y = np.array(y)
         
         self.n_features_ = X.shape[1]
+        self.feature_importances_ = np.zeros(self.n_features_)
         self.root = self._build_tree(X, y)
         
-        # Calculate feature importances (simplified)
-        self.feature_importances_ = np.zeros(self.n_features_)
+        # Calculate feature importances based on weighted impurity decrease
+        self._calculate_feature_importances(X, y)
         
         return self
+    
+    def _calculate_feature_importances(self, X: np.ndarray, y: np.ndarray):
+        """Calculate feature importances based on impurity decrease"""
+        importances = np.zeros(self.n_features_)
+        
+        def _traverse_and_accumulate(node, X_subset, y_subset):
+            if node.value is not None:  # Leaf node
+                return
+            
+            # Calculate weighted impurity decrease for this split
+            feature = node.feature_index
+            threshold = node.threshold
+            
+            left_mask = X_subset[:, feature] <= threshold
+            right_mask = ~left_mask
+            
+            n_samples = len(y_subset)
+            n_left = np.sum(left_mask)
+            n_right = np.sum(right_mask)
+            
+            if n_left > 0 and n_right > 0:
+                # Weighted impurity decrease
+                impurity_parent = self._calculate_impurity(y_subset)
+                impurity_left = self._calculate_impurity(y_subset[left_mask])
+                impurity_right = self._calculate_impurity(y_subset[right_mask])
+                
+                weighted_impurity = (n_left / n_samples) * impurity_left + (n_right / n_samples) * impurity_right
+                importance = n_samples * (impurity_parent - weighted_impurity)
+                
+                importances[feature] += importance
+                
+                # Recurse on children
+                _traverse_and_accumulate(node.left, X_subset[left_mask], y_subset[left_mask])
+                _traverse_and_accumulate(node.right, X_subset[right_mask], y_subset[right_mask])
+        
+        _traverse_and_accumulate(self.root, X, y)
+        
+        # Normalize importances
+        if importances.sum() > 0:
+            importances = importances / importances.sum()
+        
+        self.feature_importances_ = importances
     
     def _predict_sample(self, x: np.ndarray, node: DecisionTreeNode):
         """Predict single sample by traversing tree"""
@@ -226,6 +270,223 @@ class DecisionTreeRF:
             predictions.append(prediction)
         
         return np.array(predictions)
+
+
+class DecisionTreeRegRF:
+    """Decision Tree Regressor implementation optimized for Random Forest"""
+    
+    def __init__(self, 
+                 max_depth: Optional[int] = None,
+                 min_samples_split: int = 2,
+                 min_samples_leaf: int = 1,
+                 max_features: Optional[Union[int, str, float]] = None,
+                 criterion: str = 'mse',
+                 random_state: Optional[int] = None):
+        
+        self.max_depth = max_depth
+        self.min_samples_split = min_samples_split
+        self.min_samples_leaf = min_samples_leaf
+        self.max_features = max_features
+        self.criterion = criterion
+        self.random_state = random_state
+        self.root = None
+        self.feature_importances_ = None
+        self.n_features_ = None
+        self.is_classifier = False  # For regression trees
+        
+        # Use is not None to avoid treating random_state=0 as unset
+        if random_state is not None:
+            self.rng = np.random.default_rng(random_state)
+        else:
+            self.rng = np.random.default_rng()
+    
+    def _calculate_mse(self, y: np.ndarray) -> float:
+        """Calculate mean squared error (variance)"""
+        if len(y) == 0:
+            return 0
+        mean_y = np.mean(y)
+        return np.mean((y - mean_y) ** 2)
+    
+    def _get_random_features(self, n_features: int) -> np.ndarray:
+        """Get random subset of features for splitting"""
+        if self.max_features is None or self.max_features == 1.0:
+            max_features = n_features
+        elif self.max_features == 'sqrt':
+            max_features = int(sqrt(n_features))
+        elif self.max_features == 'log2':
+            max_features = int(log2(n_features))
+        elif isinstance(self.max_features, float):
+            max_features = max(1, int(self.max_features * n_features))
+        elif isinstance(self.max_features, int):
+            max_features = min(self.max_features, n_features)
+        else:
+            max_features = n_features
+        
+        # Ensure at least one feature
+        max_features = max(1, max_features)
+        
+        # Return random subset of feature indices using instance RNG
+        return self.rng.choice(n_features, size=max_features, replace=False)
+    
+    def _find_best_split(self, X: np.ndarray, y: np.ndarray, feature_indices: np.ndarray) -> Tuple[int, float, float]:
+        """Find the best split among random features for regression"""
+        best_feature = None
+        best_threshold = None
+        best_gain = -1
+        
+        current_mse = self._calculate_mse(y)
+        
+        for feature_idx in feature_indices:
+            feature_values = X[:, feature_idx]
+            unique_values = np.unique(feature_values)
+            
+            # Try midpoint thresholds
+            for i in range(len(unique_values) - 1):
+                threshold = (unique_values[i] + unique_values[i + 1]) / 2
+                
+                # Split data
+                left_mask = feature_values <= threshold
+                right_mask = ~left_mask
+                
+                left_y = y[left_mask]
+                right_y = y[right_mask]
+                
+                # Skip if split doesn't meet minimum samples requirement
+                if len(left_y) < self.min_samples_leaf or len(right_y) < self.min_samples_leaf:
+                    continue
+                
+                # Calculate weighted MSE after split
+                left_mse = self._calculate_mse(left_y)
+                right_mse = self._calculate_mse(right_y)
+                
+                weighted_mse = (len(left_y) * left_mse + len(right_y) * right_mse) / len(y)
+                
+                # Calculate MSE reduction
+                gain = current_mse - weighted_mse
+                
+                if gain > best_gain:
+                    best_gain = gain
+                    best_feature = feature_idx
+                    best_threshold = threshold
+        
+        return best_feature, best_threshold, best_gain
+    
+    def _build_tree(self, X: np.ndarray, y: np.ndarray, depth: int = 0) -> DecisionTreeNode:
+        """Recursively build regression tree"""
+        node = DecisionTreeNode()
+        node.samples = len(y)
+        node.impurity = self._calculate_mse(y)
+        
+        # Check stopping criteria
+        if (self.max_depth is not None and depth >= self.max_depth) or \
+           (len(y) < self.min_samples_split) or \
+           (node.impurity == 0):  # All values are the same
+            # Create leaf node with mean value
+            node.value = np.mean(y)
+            return node
+        
+        # Get random features for this split
+        feature_indices = self._get_random_features(X.shape[1])
+        
+        # Find best split
+        best_feature, best_threshold, best_gain = self._find_best_split(X, y, feature_indices)
+        
+        # If no good split found, create leaf node
+        if best_feature is None or best_gain <= 0:
+            node.value = np.mean(y)
+            return node
+        
+        # Store split information
+        node.feature_index = best_feature
+        node.threshold = best_threshold
+        
+        # Split data
+        left_mask = X[:, best_feature] <= best_threshold
+        right_mask = ~left_mask
+        
+        # Recursively build child nodes
+        node.left = self._build_tree(X[left_mask], y[left_mask], depth + 1)
+        node.right = self._build_tree(X[right_mask], y[right_mask], depth + 1)
+        
+        return node
+    
+    def fit(self, X: np.ndarray, y: np.ndarray):
+        """Train the regression tree"""
+        X = np.array(X)
+        y = np.array(y)
+        
+        self.n_features_ = X.shape[1]
+        self.feature_importances_ = np.zeros(self.n_features_)
+        self.root = self._build_tree(X, y)
+        
+        # Calculate feature importances based on weighted MSE decrease
+        self._calculate_feature_importances(X, y)
+        
+        return self
+    
+    def _calculate_feature_importances(self, X: np.ndarray, y: np.ndarray):
+        """Calculate feature importances based on MSE decrease"""
+        importances = np.zeros(self.n_features_)
+        
+        def _traverse_and_accumulate(node, X_subset, y_subset):
+            if node.value is not None:  # Leaf node
+                return
+            
+            # Calculate weighted MSE decrease for this split
+            feature = node.feature_index
+            threshold = node.threshold
+            
+            left_mask = X_subset[:, feature] <= threshold
+            right_mask = ~left_mask
+            
+            n_samples = len(y_subset)
+            n_left = np.sum(left_mask)
+            n_right = np.sum(right_mask)
+            
+            if n_left > 0 and n_right > 0:
+                # Weighted MSE decrease
+                mse_parent = self._calculate_mse(y_subset)
+                mse_left = self._calculate_mse(y_subset[left_mask])
+                mse_right = self._calculate_mse(y_subset[right_mask])
+                
+                weighted_mse = (n_left / n_samples) * mse_left + (n_right / n_samples) * mse_right
+                importance = n_samples * (mse_parent - weighted_mse)
+                
+                importances[feature] += importance
+                
+                # Recurse on children
+                _traverse_and_accumulate(node.left, X_subset[left_mask], y_subset[left_mask])
+                _traverse_and_accumulate(node.right, X_subset[right_mask], y_subset[right_mask])
+        
+        _traverse_and_accumulate(self.root, X, y)
+        
+        # Normalize importances
+        if importances.sum() > 0:
+            importances = importances / importances.sum()
+        
+        self.feature_importances_ = importances
+    
+    def _predict_sample(self, x: np.ndarray, node: DecisionTreeNode):
+        """Predict single sample by traversing tree"""
+        if node.value is not None:  # Leaf node
+            return node.value
+        
+        if x[node.feature_index] <= node.threshold:
+            return self._predict_sample(x, node.left)
+        else:
+            return self._predict_sample(x, node.right)
+    
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        """Make predictions for multiple samples"""
+        X = np.array(X)
+        predictions = []
+        
+        for x in X:
+            prediction = self._predict_sample(x, self.root)
+            predictions.append(prediction)
+        
+        return np.array(predictions)
+
 
 class RandomForestClassifier:
     """Random Forest Classifier implementation from scratch"""
@@ -265,9 +526,11 @@ class RandomForestClassifier:
         self.n_features_ = None
         self.n_outputs_ = 1
         
-        # Set random seed
-        if random_state:
-            np.random.seed(random_state)
+        # Set random seed using is not None to avoid treating random_state=0 as unset
+        if random_state is not None:
+            self.rng = np.random.default_rng(random_state)
+        else:
+            self.rng = np.random.default_rng()
         
         # Store bootstrap indices for OOB calculation
         self.bootstrap_indices = []
@@ -278,11 +541,13 @@ class RandomForestClassifier:
         n_samples = X.shape[0]
         
         if self.bootstrap:
-            # Sample with replacement
-            if self.random_state:
-                np.random.seed(self.random_state + sample_idx)  # Different seed for each tree
+            # Sample with replacement using per-tree RNG for reproducibility
+            if self.random_state is not None:
+                tree_rng = np.random.default_rng(self.random_state + sample_idx)
+            else:
+                tree_rng = self.rng
             
-            bootstrap_idx = np.random.choice(n_samples, size=n_samples, replace=True)
+            bootstrap_idx = tree_rng.choice(n_samples, size=n_samples, replace=True)
             oob_idx = np.setdiff1d(np.arange(n_samples), bootstrap_idx)
         else:
             # Use entire dataset
@@ -295,12 +560,13 @@ class RandomForestClassifier:
         return X_bootstrap, y_bootstrap, bootstrap_idx, oob_idx
     
     def _calculate_oob_score(self, X: np.ndarray, y: np.ndarray):
-        """Calculate Out-of-Bag score"""
+        """Calculate Out-of-Bag score using zero-initialized vote counts"""
         if not self.bootstrap or not self.oob_score:
             return
         
         n_samples = X.shape[0]
-        oob_predictions = np.full((n_samples, self.n_classes_), np.nan)
+        # Use zero-initialized vote counts instead of NaN to fix argmax issue
+        oob_vote_counts = np.zeros((n_samples, self.n_classes_))
         oob_counts = np.zeros(n_samples)
         
         # Collect OOB predictions from all trees
@@ -309,44 +575,44 @@ class RandomForestClassifier:
                 # Get predictions for OOB samples
                 oob_pred = tree.predict(X[oob_idx])
                 
-                # Convert predictions to probabilities (simplified)
+                # Accumulate votes per class
                 for i, sample_idx in enumerate(oob_idx):
                     class_idx = np.where(self.classes_ == oob_pred[i])[0][0]
-                    if np.isnan(oob_predictions[sample_idx, class_idx]):
-                        oob_predictions[sample_idx, class_idx] = 0
-                    oob_predictions[sample_idx, class_idx] += 1
+                    oob_vote_counts[sample_idx, class_idx] += 1
                     oob_counts[sample_idx] += 1
         
-        # Calculate OOB score
+        # Calculate OOB score only for samples with at least one OOB vote
         valid_samples = oob_counts > 0
         if np.sum(valid_samples) > 0:
-            # Normalize predictions
-            oob_predictions[valid_samples] /= oob_counts[valid_samples].reshape(-1, 1)
-            
-            # Get final predictions
-            final_predictions = np.argmax(oob_predictions[valid_samples], axis=1)
+            # Get final predictions by majority vote
+            final_predictions = np.argmax(oob_vote_counts[valid_samples], axis=1)
             final_predictions = self.classes_[final_predictions]
             
             # Calculate accuracy
             self.oob_score_ = np.mean(final_predictions == y[valid_samples])
-            self.oob_decision_function_ = oob_predictions
+            
+            # Store normalized decision function
+            self.oob_decision_function_ = oob_vote_counts.copy()
+            self.oob_decision_function_[valid_samples] /= oob_counts[valid_samples].reshape(-1, 1)
         else:
             self.oob_score_ = 0.0
     
     def _calculate_feature_importance(self):
-        """Calculate feature importance based on impurity decrease"""
+        """Calculate feature importance based on average impurity decrease across trees"""
         if not self.trees:
             return
         
         self.feature_importances_ = np.zeros(self.n_features_)
         
-        # Simple feature importance calculation
-        # In a full implementation, this would track impurity decrease
+        # Accumulate feature importances from all trees
         for tree in self.trees:
-            if hasattr(tree, 'feature_importances_'):
+            if hasattr(tree, 'feature_importances_') and tree.feature_importances_ is not None:
                 self.feature_importances_ += tree.feature_importances_
         
-        # Normalize
+        # Average across trees and normalize
+        if len(self.trees) > 0:
+            self.feature_importances_ /= len(self.trees)
+        
         if np.sum(self.feature_importances_) > 0:
             self.feature_importances_ /= np.sum(self.feature_importances_)
     
@@ -456,41 +722,191 @@ class RandomForestRegressor:
                  max_depth: Optional[int] = None,
                  min_samples_split: int = 2,
                  min_samples_leaf: int = 1,
-                 max_features: str = 'auto',
+                 max_features: Union[str, float] = 1.0,  # sklearn default for regression
                  bootstrap: bool = True,
                  oob_score: bool = False,
-                 random_state: Optional[int] = None):
+                 random_state: Optional[int] = None,
+                 verbose: int = 0):
         
         self.n_estimators = n_estimators
         self.criterion = criterion
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
-        self.max_features = max_features if max_features != 'auto' else 'sqrt'
+        self.max_features = max_features
         self.bootstrap = bootstrap
         self.oob_score = oob_score
         self.random_state = random_state
+        self.verbose = verbose
         
         # Initialize containers
         self.trees = []
         self.feature_importances_ = None
         self.oob_score_ = None
+        self.oob_prediction_ = None
+        self.n_features_ = None
         
-        if random_state:
-            np.random.seed(random_state)
+        # Use is not None to avoid treating random_state=0 as unset
+        if random_state is not None:
+            self.rng = np.random.default_rng(random_state)
+        else:
+            self.rng = np.random.default_rng()
+        
+        # Store bootstrap indices for OOB calculation
+        self.bootstrap_indices = []
+        self.oob_indices = []
+    
+    def _bootstrap_sample(self, X: np.ndarray, y: np.ndarray, sample_idx: int) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+        """Create bootstrap sample of the data"""
+        n_samples = X.shape[0]
+        
+        if self.bootstrap:
+            # Sample with replacement using per-tree RNG for reproducibility
+            if self.random_state is not None:
+                tree_rng = np.random.default_rng(self.random_state + sample_idx)
+            else:
+                tree_rng = self.rng
+            
+            bootstrap_idx = tree_rng.choice(n_samples, size=n_samples, replace=True)
+            oob_idx = np.setdiff1d(np.arange(n_samples), bootstrap_idx)
+        else:
+            # Use entire dataset
+            bootstrap_idx = np.arange(n_samples)
+            oob_idx = np.array([])
+        
+        X_bootstrap = X[bootstrap_idx]
+        y_bootstrap = y[bootstrap_idx]
+        
+        return X_bootstrap, y_bootstrap, bootstrap_idx, oob_idx
+    
+    def _calculate_oob_score(self, X: np.ndarray, y: np.ndarray):
+        """Calculate Out-of-Bag R² score"""
+        if not self.bootstrap or not self.oob_score:
+            return
+        
+        n_samples = X.shape[0]
+        oob_predictions_sum = np.zeros(n_samples)
+        oob_counts = np.zeros(n_samples)
+        
+        # Collect OOB predictions from all trees
+        for tree_idx, (tree, oob_idx) in enumerate(zip(self.trees, self.oob_indices)):
+            if len(oob_idx) > 0:
+                # Get predictions for OOB samples
+                oob_pred = tree.predict(X[oob_idx])
+                
+                # Accumulate predictions
+                for i, sample_idx in enumerate(oob_idx):
+                    oob_predictions_sum[sample_idx] += oob_pred[i]
+                    oob_counts[sample_idx] += 1
+        
+        # Calculate OOB score only for samples with at least one OOB prediction
+        valid_samples = oob_counts > 0
+        if np.sum(valid_samples) > 0:
+            # Average predictions
+            oob_predictions = oob_predictions_sum.copy()
+            oob_predictions[valid_samples] /= oob_counts[valid_samples]
+            
+            # Calculate R² score
+            y_valid = y[valid_samples]
+            y_pred_valid = oob_predictions[valid_samples]
+            
+            ss_res = np.sum((y_valid - y_pred_valid) ** 2)
+            ss_tot = np.sum((y_valid - np.mean(y_valid)) ** 2)
+            
+            self.oob_score_ = 1 - (ss_res / ss_tot) if ss_tot != 0 else 0.0
+            self.oob_prediction_ = oob_predictions
+        else:
+            self.oob_score_ = 0.0
+    
+    def _calculate_feature_importance(self):
+        """Calculate feature importance based on average MSE decrease across trees"""
+        if not self.trees:
+            return
+        
+        self.feature_importances_ = np.zeros(self.n_features_)
+        
+        # Accumulate feature importances from all trees
+        for tree in self.trees:
+            if hasattr(tree, 'feature_importances_') and tree.feature_importances_ is not None:
+                self.feature_importances_ += tree.feature_importances_
+        
+        # Average across trees and normalize
+        if len(self.trees) > 0:
+            self.feature_importances_ /= len(self.trees)
+        
+        if np.sum(self.feature_importances_) > 0:
+            self.feature_importances_ /= np.sum(self.feature_importances_)
     
     def fit(self, X: np.ndarray, y: np.ndarray):
-        """Train the Random Forest Regressor"""
-        # Note: This is a simplified implementation
-        # Full implementation would need regression trees
-        print("RandomForestRegressor implementation is simplified")
-        print("For complete regression functionality, use scikit-learn")
+        """Train the Random Forest Regressor with bootstrap samples and regression trees"""
+        # Convert to numpy arrays
+        X = np.array(X)
+        y = np.array(y)
+        
+        # Store basic information
+        self.n_features_ = X.shape[1]
+        
+        # Initialize containers
+        self.trees = []
+        self.bootstrap_indices = []
+        self.oob_indices = []
+        
+        # Train trees
+        for i in range(self.n_estimators):
+            if self.verbose > 0 and (i + 1) % 10 == 0:
+                print(f"Training tree {i + 1}/{self.n_estimators}")
+            
+            # Create bootstrap sample
+            X_bootstrap, y_bootstrap, bootstrap_idx, oob_idx = self._bootstrap_sample(X, y, i)
+            
+            # Store indices for OOB calculation
+            self.bootstrap_indices.append(bootstrap_idx)
+            self.oob_indices.append(oob_idx)
+            
+            # Create and train regression tree
+            tree = DecisionTreeRegRF(
+                max_depth=self.max_depth,
+                min_samples_split=self.min_samples_split,
+                min_samples_leaf=self.min_samples_leaf,
+                max_features=self.max_features,
+                criterion=self.criterion,
+                random_state=self.random_state + i if self.random_state is not None else None
+            )
+            
+            tree.fit(X_bootstrap, y_bootstrap)
+            self.trees.append(tree)
+        
+        # Calculate OOB score if requested
+        if self.oob_score:
+            self._calculate_oob_score(X, y)
+        
+        # Calculate feature importance
+        self._calculate_feature_importance()
+        
         return self
     
     def predict(self, X: np.ndarray) -> np.ndarray:
-        """Make predictions by averaging tree predictions"""
-        print("Use scikit-learn RandomForestRegressor for regression tasks")
-        return np.zeros(X.shape[0])
+        """Make predictions by averaging predictions from all trees"""
+        X = np.array(X)
+        n_samples = X.shape[0]
+        
+        # Collect predictions from all trees
+        all_predictions = np.zeros((n_samples, self.n_estimators))
+        
+        for i, tree in enumerate(self.trees):
+            all_predictions[:, i] = tree.predict(X)
+        
+        # Average predictions
+        final_predictions = np.mean(all_predictions, axis=1)
+        
+        return final_predictions
+    
+    def score(self, X: np.ndarray, y: np.ndarray) -> float:
+        """Calculate R² score"""
+        predictions = self.predict(X)
+        ss_res = np.sum((y - predictions) ** 2)
+        ss_tot = np.sum((y - np.mean(y)) ** 2)
+        return 1 - (ss_res / ss_tot) if ss_tot != 0 else 0.0
 
 def demonstrate_random_forest():
     """Demonstrate Random Forest implementation"""
