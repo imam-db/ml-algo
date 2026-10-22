@@ -6,11 +6,11 @@ labels: bug
 assignees: ''
 ---
 
-## 🐛 Deskripsi Bug
+## 🐛 Bug Description / Deskripsi Bug
 
 Penjelasan singkat dan jelas tentang bug.
 
-## 📋 Langkah untuk Mereproduksi
+## 📋 Steps to Reproduce / Langkah untuk Mereproduksi
 
 Langkah-langkah untuk mereproduksi behavior:
 
@@ -18,19 +18,19 @@ Langkah-langkah untuk mereproduksi behavior:
 2. Jalankan '...'
 3. Lihat error pada '...'
 
-## ✅ Expected Behavior
+## ✅ Expected Behavior / Perilaku yang Diharapkan
 
 Deskripsi singkat tentang apa yang seharusnya terjadi.
 
-## ❌ Actual Behavior
+## ❌ Actual Behavior / Perilaku yang Sebenarnya
 
 Deskripsi singkat tentang apa yang sebenarnya terjadi.
 
-## 🖼️ Screenshots
+## 🖼️ Screenshots / Tangkapan Layar
 
 Jika applicable, tambahkan screenshots untuk membantu menjelaskan masalah Anda.
 
-## 💻 Environment
+## 💻 Environment / Lingkungan
 
 **Desktop:**
 - OS: [e.g. Ubuntu 20.04, Windows 10, macOS 12]
@@ -40,23 +40,23 @@ Jika applicable, tambahkan screenshots untuk membantu menjelaskan masalah Anda.
   pip list | grep -E "(numpy|scikit-learn|pandas)"
   ```
 
-## 📝 Kode yang Menyebabkan Error
+## 📝 Code That Causes the Error / Kode yang Menyebabkan Error
 
 ```python
 # Paste kode Anda di sini
 ```
 
-## 📄 Error Messages
+## 📄 Error Messages / Pesan Error
 
 ```
 Paste full error message/traceback di sini
 ```
 
-## 🔍 Konteks Tambahan
+## 🔍 Additional Context / Konteks Tambahan
 
 Tambahkan konteks lain tentang masalah di sini.
 
-## ✅ Checklist
+## ✅ Checklist / Daftar Periksa
 
 - [ ] Saya sudah mencari di existing issues
 - [ ] Saya sudah mencoba dengan Python version terbaru

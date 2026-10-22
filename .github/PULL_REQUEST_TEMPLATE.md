@@ -1,115 +1,115 @@
-## 📝 Deskripsi
+## 📝 Description / Deskripsi
 
-Jelaskan perubahan Anda secara singkat dan jelas.
+Describe your changes clearly and concisely. / Jelaskan perubahan Anda secara singkat dan jelas.
 
-## 🎯 Jenis Perubahan
+## 🎯 Type of Change / Jenis Perubahan
 
-Pilih yang relevan:
+Select all that apply: / Pilih yang relevan:
 
-- [ ] 🐛 Bug fix (perubahan non-breaking yang memperbaiki issue)
-- [ ] ✨ New feature (perubahan non-breaking yang menambahkan functionality)
-- [ ] 💥 Breaking change (fix atau feature yang menyebabkan existing functionality tidak bekerja seperti sebelumnya)
-- [ ] 📝 Documentation update
-- [ ] ♻️ Code refactoring
-- [ ] ✅ Test improvements
-- [ ] 🎨 Style/UI improvements
-- [ ] ⚡️ Performance improvements
+- [ ] 🐛 Bug fix / Perbaikan bug (non-breaking change that fixes an issue / perubahan non-breaking yang memperbaiki issue)
+- [ ] ✨ New feature / Fitur baru (non-breaking change that adds functionality / perubahan non-breaking yang menambahkan functionality)
+- [ ] 💥 Breaking change / Perubahan breaking (fix or feature that causes existing functionality to not work as expected / fix atau feature yang menyebabkan existing functionality tidak bekerja seperti sebelumnya)
+- [ ] 📝 Documentation update / Pembaruan dokumentasi
+- [ ] ♻️ Code refactoring / Refactoring kode
+- [ ] ✅ Test improvements / Peningkatan test
+- [ ] 🎨 Style/UI improvements / Peningkatan style/UI
+- [ ] ⚡️ Performance improvements / Peningkatan performa
 
-## 🔗 Related Issues
+## 🔗 Related Issues / Issue Terkait
 
-Closes #(issue number)
+Closes #(issue number) / Menutup #(nomor issue)
 
-## 📸 Screenshots / Demo (jika applicable)
+## 📸 Screenshots / Demo (if applicable / jika berlaku)
 
-Tambahkan screenshots atau GIF yang menunjukkan perubahan Anda.
+Add screenshots or GIFs showing your changes. / Tambahkan screenshot atau GIF yang menunjukkan perubahan Anda.
 
-## 🧪 Testing
+## 🧪 Testing / Pengujian
 
-Jelaskan testing yang sudah Anda lakukan:
+Describe the testing you have done: / Jelaskan pengujian yang sudah Anda lakukan:
 
-- [ ] Unit tests pass locally
-- [ ] Integration tests pass locally
-- [ ] Manual testing completed
+- [ ] Unit tests pass locally / Unit test lulus secara lokal
+- [ ] Integration tests pass locally / Integration test lulus secara lokal
+- [ ] Manual testing completed / Pengujian manual selesai
 
-**Test commands:**
+**Test command / Perintah pengujian:**
 ```bash
-python -m pytest tests/ -v
+uv run pytest
 ```
 
-**Test results:**
+**Test results / Hasil pengujian:**
 ```
-# Paste test output atau summary di sini
+# Paste test output or summary here / Tempel output atau ringkasan test di sini
 ```
 
-## ✅ Checklist
+## ✅ Checklist / Daftar Periksa
 
-Sebelum submit PR, pastikan:
+Before submitting a PR, make sure: / Sebelum mengirim PR, pastikan:
 
-### Code Quality
-- [ ] Kode mengikuti style guidelines project
-- [ ] Self-review sudah dilakukan
-- [ ] Komentar ditambahkan di area yang sulit dipahami
-- [ ] Tidak ada console.log/print statements yang tertinggal (kecuali memang diperlukan)
+### Code Quality / Kualitas Kode
+- [ ] Code follows the project style guidelines / Kode mengikuti style guidelines project
+- [ ] Self-review completed / Self-review sudah dilakukan
+- [ ] Comments added in hard-to-understand areas / Komentar ditambahkan di area yang sulit dipahami
+- [ ] No leftover console.log/print statements (unless intentionally needed) / Tidak ada console.log/print statements yang tertinggal (kecuali memang diperlukan)
 
-### Documentation
-- [ ] Docstrings ditambahkan/diupdate untuk public APIs
-- [ ] README.md diupdate jika ada perubahan user-facing
-- [ ] CHANGELOG.md diupdate (jika ada)
+### Documentation / Dokumentasi
+- [ ] Docstrings added/updated for public APIs / Docstring ditambahkan/diperbarui untuk public API
+- [ ] `README.md` (English) updated if there are user-facing changes / `README.md` (English) diperbarui jika ada perubahan user-facing
+- [ ] `README.id.md` (Indonesian) updated if there are user-facing changes / `README.id.md` (Bahasa Indonesia) diperbarui jika ada perubahan user-facing
 
-### Testing
-- [ ] Tests ditambahkan untuk fitur baru / bug fix
-- [ ] Semua tests pass (local dan CI)
-- [ ] Test coverage tidak menurun
-- [ ] Edge cases sudah dipertimbangkan
+### Testing / Pengujian
+- [ ] Tests added for new features / bug fixes / Test ditambahkan untuk fitur baru / perbaikan bug
+- [ ] All tests pass (local and CI) / Semua test lulus (lokal dan CI)
+- [ ] Test coverage did not decrease / Cakupan test tidak menurun
+- [ ] Edge cases considered / Edge case sudah dipertimbangkan
 
-### Compatibility
-- [ ] Backward compatibility dijaga (atau dijelaskan breaking changes)
-- [ ] Tidak ada conflict dengan main branch
-- [ ] Dependencies baru (jika ada) sudah didokumentasikan
+### Compatibility / Kompatibilitas
+- [ ] Backward compatibility maintained (or breaking changes explained) / Backward compatibility dijaga (atau breaking changes dijelaskan)
+- [ ] No conflicts with the main branch / Tidak ada conflict dengan main branch
+- [ ] New dependencies (if any) are documented / Dependencies baru (jika ada) sudah didokumentasikan
 
-### Additional (jika applicable)
-- [ ] Algoritma baru mengikuti struktur folder standar
-- [ ] README algorithm dalam Bahasa Indonesia
-- [ ] Exercise notebook ditambahkan
-- [ ] Dataset sample disediakan (jika diperlukan)
+### Additional / Tambahan (if applicable / jika berlaku)
+- [ ] New algorithms follow the standard folder structure / Algoritma baru mengikuti struktur folder standar
+- [ ] Algorithm README provided in both English and Indonesian / README algoritma disediakan dalam Bahasa Inggris dan Bahasa Indonesia
+- [ ] Exercise notebook added / Notebook latihan ditambahkan
+- [ ] Sample dataset provided (if needed) / Dataset contoh disediakan (jika diperlukan)
 
-## 📊 Performance Impact (jika applicable)
+## 📊 Performance Impact / Dampak Performa (if applicable / jika berlaku)
 
-Jelaskan dampak perubahan terhadap performance:
+Explain the impact of your changes on performance: / Jelaskan dampak perubahan terhadap performa:
 
-- Memory usage: [increase/decrease/same]
-- Execution time: [faster/slower/same]
+- Memory usage / Penggunaan memori: [increase/decrease/same / naik/turun/sama]
+- Execution time / Waktu eksekusi: [faster/slower/same / lebih cepat/lebih lambat/sama]
 - Benchmarks:
   ```
-  # Paste benchmark results jika ada
+  # Paste benchmark results here if any / Tempel hasil benchmark di sini jika ada
   ```
 
-## 🔄 Migration Guide (jika breaking change)
+## 🔄 Migration Guide / Panduan Migrasi (if breaking change / jika breaking change)
 
-Jelaskan bagaimana users harus migrate kode mereka:
+Explain how users should migrate their code: / Jelaskan bagaimana users harus memigrasikan kode mereka:
 
 ```python
-# Before
+# Before / Sebelum
 old_way()
 
-# After
+# After / Sesudah
 new_way()
 ```
 
-## 💭 Additional Context
+## 💭 Additional Context / Konteks Tambahan
 
-Tambahkan konteks lain yang perlu diketahui reviewer:
-- Design decisions
-- Trade-offs yang dipertimbangkan
-- Future improvements yang planned
-- Known limitations
+Add any other context the reviewer should know: / Tambahkan konteks lain yang perlu diketahui reviewer:
+- Design decisions / Keputusan desain
+- Trade-offs considered / Trade-off yang dipertimbangkan
+- Planned future improvements / Future improvements yang direncanakan
+- Known limitations / Known limitations
 
-## 👀 Reviewer Notes
+## 👀 Reviewer Notes / Catatan untuk Reviewer
 
-Area yang perlu perhatian khusus dari reviewer:
-- [ ] Area 1: ...
-- [ ] Area 2: ...
+Areas that need special attention from the reviewer: / Area yang perlu perhatian khusus dari reviewer:
+- [ ] Area 1 / Area 1: ...
+- [ ] Area 2 / Area 2: ...
 
 ---
 
-**Terima kasih atas kontribusi Anda! 🙏**
+**Thank you for your contribution! / Terima kasih atas kontribusi Anda! 🙏**
