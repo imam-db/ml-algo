@@ -239,9 +239,9 @@ default.
 ### C (both linear and kernel SVMs)
 
 ```
-Too small: underfitting, almost every point violates the margin
+Too small: underfitting, many margin violations, many support vectors
 Balanced:  good validation accuracy, moderate number of support vectors
-Too large: overfitting, very few margin violations, many support vectors
+Too large: overfitting risk, few margin violations, usually fewer support vectors
 ```
 
 ### Gamma (RBF kernel)
