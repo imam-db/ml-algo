@@ -5,7 +5,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/imam-db/ml-algo/actions/workflows/tests.yml/badge.svg)](https://github.com/imam-db/ml-algo/actions/workflows/tests.yml)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.id.md)
 
 Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
@@ -235,7 +235,7 @@ Proyek ini menggunakan Lisensi MIT. Lihat [LICENSE](LICENSE) untuk detailnya.
 - **Masalah**: [GitHub Issues](https://github.com/imam-db/ml-algo/issues)
 - **Diskusi**: [GitHub Discussions](https://github.com/imam-db/ml-algo/discussions)
 - **Kontribusi**: [Panduan Kontribusi](CONTRIBUTING.id.md)
-- **Kode Etik**: [Kode Etik](CODE_OF_CONDUCT.md)
+- **Kode Etik**: [Kode Etik](CODE_OF_CONDUCT.id.md)
 
 ## 🌟 Ucapan Terima Kasih
 

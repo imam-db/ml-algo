@@ -60,11 +60,8 @@ cd ml-algo
 ### 2. Setup Development Environment
 
 ```bash
-# Install dependencies
-pip install -e ".[dev]"
-
-# Or with uv (recommended)
-uv sync
+# Install dependencies, including development tools (uv is recommended)
+uv sync --extra dev
 ```
 
 ### 3. Create New Branch
@@ -83,13 +80,13 @@ git checkout -b feature/your-feature-name
 
 ```bash
 # Run all tests
-python -m pytest tests/ -v
+uv run pytest
 
-# Run specific test file
-python -m pytest tests/test_linear_regression.py -v
+# Run a specific test file
+uv run pytest tests/test_linear_regression.py -v
 
 # Run with coverage
-python -m pytest tests/ --cov=. --cov-report=html
+uv run pytest --cov=. --cov-report=html
 ```
 
 ### 6. Commit and Push
@@ -111,17 +108,18 @@ git push origin feature/your-feature-name
 
 ### Python Style
 
-We follow [PEP 8](https://pep8.org/) with these tools:
+We follow [PEP 8](https://pep8.org/) and use [Ruff](https://github.com/astral-sh/ruff) for linting and formatting. These checks are optional/recommended for local development and are **not enforced in CI**.
 
 ```bash
-# Format code
-black .
+# Check style and lint (optional/recommended)
+uv run ruff check .
 
-# Check style
-flake8 .
+# Check formatting (optional/recommended)
+uv run ruff format --check
 
-# Type checking
-mypy .
+# Auto-fix lint issues and format code (optional)
+uv run ruff check --fix .
+uv run ruff format .
 ```
 
 ### Code Quality

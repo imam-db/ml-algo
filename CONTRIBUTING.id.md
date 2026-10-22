@@ -10,13 +10,14 @@ Terima kasih atas minat Anda untuk berkontribusi pada Machine Learning Algorithm
 - [Cara Berkontribusi](#cara-berkontribusi)
 - [Proses Development](#proses-development)
 - [Standar Kode](#standar-kode)
+- [Dokumentasi Bilingual](#dokumentasi-bilingual)
 - [Commit Messages](#commit-messages)
 - [Pull Request Process](#pull-request-process)
 - [Menambahkan Algoritma Baru](#menambahkan-algoritma-baru)
 
 ## Code of Conduct
 
-Proyek ini mengikuti [Code of Conduct](CODE_OF_CONDUCT.md). Dengan berpartisipasi, Anda diharapkan menjunjung kode etik ini.
+Proyek ini mengikuti [Code of Conduct](CODE_OF_CONDUCT.id.md). Dengan berpartisipasi, Anda diharapkan menjunjung kode etik ini.
 
 ## Cara Berkontribusi
 
@@ -52,18 +53,15 @@ Lihat bagian [Menambahkan Algoritma Baru](#menambahkan-algoritma-baru) di bawah.
 ```bash
 # Fork repository di GitHub
 # Clone fork Anda
-git clone https://github.com/YOUR_USERNAME/ml-algorithms-learning.git
-cd ml-algorithms-learning
+git clone https://github.com/YOUR_USERNAME/ml-algo.git
+cd ml-algo
 ```
 
 ### 2. Setup Development Environment
 
 ```bash
-# Install dependencies
-pip install -e ".[dev]"
-
-# Atau dengan uv (recommended)
-uv sync
+# Install dependencies, termasuk dev tools (uv direkomendasikan)
+uv sync --extra dev
 ```
 
 ### 3. Buat Branch Baru
@@ -81,14 +79,14 @@ git checkout -b feature/nama-fitur-anda
 ### 5. Run Tests
 
 ```bash
-# Run all tests
-python -m pytest tests/ -v
+# Jalankan semua tests
+uv run pytest
 
-# Run specific test file
-python -m pytest tests/test_linear_regression.py -v
+# Jalankan file test tertentu
+uv run pytest tests/test_linear_regression.py -v
 
-# Run with coverage
-python -m pytest tests/ --cov=. --cov-report=html
+# Jalankan dengan coverage
+uv run pytest --cov=. --cov-report=html
 ```
 
 ### 6. Commit dan Push
@@ -109,7 +107,21 @@ git push origin feature/nama-fitur-anda
 
 ### Python Style Guide
 
-Kami mengikuti [PEP 8](https://pep8.org/) dengan beberapa penyesuaian:
+Kami mengikuti [PEP 8](https://pep8.org/) dan menggunakan [Ruff](https://github.com/astral-sh/ruff) untuk linting dan formatting. Pemeriksaan ini bersifat opsional/direkomendasikan untuk pengembangan lokal dan **tidak dijalankan sebagai gate di CI**.
+
+```bash
+# Cek style dan lint (opsional/direkomendasikan)
+uv run ruff check .
+
+# Cek formatting (opsional/direkomendasikan)
+uv run ruff format --check
+
+# Perbaiki otomatis masalah lint dan format kode (opsional)
+uv run ruff check --fix .
+uv run ruff format .
+```
+
+### Contoh:
 
 ```python
 # Good ✅
@@ -165,6 +177,40 @@ def test_linear_regression_predictions():
 - Tests harus deterministic (gunakan `random_state` atau `seed`)
 - Tests harus cepat (<1 detik per test jika memungkinkan)
 - Gunakan fixtures untuk setup yang reusable
+
+## Dokumentasi Bilingual
+
+**🌐 Semua modul baru WAJIB menyertakan dokumentasi dalam Bahasa Inggris dan Bahasa Indonesia.**
+
+### Persyaratan:
+
+1. **README.md** (English)
+   - Teori dan penjelasan algoritma secara lengkap
+   - Contoh penggunaan dengan kode
+   - Rumus dan konsep matematika
+   - Bahasa yang mudah dipahami pembelajar
+
+2. **README.id.md** (Indonesian)
+   - Terjemahan setia dari versi bahasa Inggris
+   - Pertahankan bahasa yang sederhana dan fokus belajar
+   - Pertahankan contoh bertema SPG/retail
+   - Gunakan Bahasa Indonesia yang natural (hindari terjemahan literal)
+
+3. **Language Switcher**
+   - Tambahkan di bagian atas setiap README: `**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**`
+   - Tautkan ke versi bahasa yang sesuai
+
+4. **Internal Links**
+   - Perbarui semua tautan relatif agar bekerja di kedua bahasa
+   - Uji tautan setelah membuat versi bilingual
+
+### Tips Terjemahan:
+
+- **Bahasa Sederhana**: Kedua versi harus ramah pemula
+- **Konsistensi**: Gunakan terminologi yang konsisten antar file
+- **Contoh**: Pertahankan contoh praktis (konteks SPG/retail tidak masalah)
+- **Rumus**: Notasi matematika tetap sama
+- **Kode**: Pertahankan contoh kode identik di kedua bahasa
 
 ## Commit Messages
 
@@ -276,38 +322,43 @@ Setiap algoritma harus mengikuti struktur ini:
 ```
 01_supervised_learning/
 └── XX_nama_algoritma/
-    ├── README.md              # Teori dan penjelasan (Indonesian)
+    ├── README.md              # Teori dan penjelasan (English)
+    ├── README.id.md           # Teori dan penjelasan (Indonesian)
     ├── implementation.py      # Implementasi dari nol
     ├── sklearn_example.py     # Contoh menggunakan scikit-learn (jika applicable)
     ├── exercise.ipynb         # Latihan interaktif
     ├── datasets/              # Dataset khusus (jika ada)
-    │   └── README.md
+    │   └── README.md          # Dokumentasi dataset
     └── tests/                 # Tests (atau di tests/ root)
 ```
 
-### Template README.md
+**Catatan:** Setiap algoritma wajib memiliki `README.md` (English) dan `README.id.md` (Indonesian).
+
+### Template README.md (English)
+
+`README.id.md` adalah versi Bahasa Indonesia dan wajib disertakan.
 
 ```markdown
-# Nama Algoritma
+# Algorithm Name
 
-**🏠 [Kembali ke Menu Utama](../../README.md)** | **📁 [Kategori](../README.md)**
+**🏠 [Back to Main Menu](../../README.md)** | **📁 [Category](../README.md)**
 
-## 🗺️ Akses Cepat
+## 🗺️ Quick Access
 [Quick access table]
 
-## 📖 Teori dan Konsep
-[Penjelasan konsep dalam Bahasa Indonesia]
+## 📖 Theory and Concepts
+[Concept explanation in English]
 
-## 🎯 Kapan Menggunakan?
+## 🎯 When to Use?
 [Use cases]
 
-## 💻 Implementasi
+## 💻 Implementation
 [Code examples]
 
-## 📊 Evaluasi
+## 📊 Evaluation
 [Metrics and evaluation]
 
-## 📚 Sumber Belajar
+## 📚 Learning Resources
 [References]
 ```
 
@@ -370,19 +421,20 @@ if __name__ == "__main__":
 
 ### Checklist untuk Algoritma Baru
 
-- [ ] README.md lengkap (Indonesian)
+- [ ] README.md (English) lengkap
+- [ ] README.id.md (Indonesian) lengkap
 - [ ] implementation.py dengan docstrings
 - [ ] exercise.ipynb dengan latihan interaktif
 - [ ] Tests di `tests/test_nama_algoritma.py`
 - [ ] Contoh dataset (jika diperlukan)
-- [ ] Update main README.md
-- [ ] All tests pass
+- [ ] Update README.md (English) dan README.id.md (Indonesian) di root
+- [ ] Semua tests pass
 - [ ] Code reviewed
 
 ## Pertanyaan?
 
 Jika ada pertanyaan:
-1. Cek [Issues](https://github.com/YOUR_USERNAME/ml-algorithms-learning/issues) yang sudah ada
+1. Cek [Issues](https://github.com/YOUR_USERNAME/ml-algo/issues) yang sudah ada
 2. Buka issue baru dengan label `question`
 3. Join diskusi di GitHub Discussions (jika tersedia)
 
