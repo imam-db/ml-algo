@@ -54,7 +54,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **[02_dbscan](./02_unsupervised_learning/02_dbscan/)** - DBSCAN (Density-Based Clustering) ✅
 - **[03_hierarchical](./02_unsupervised_learning/03_hierarchical/)** - Hierarchical (Agglomerative) Clustering ✅
 - **[04_pca](./02_unsupervised_learning/04_pca/)** - Principal Component Analysis ✅
-- **🚧 05_tsne** - t-SNE (planned)
+- **[05_tsne](./02_unsupervised_learning/05_tsne/)** - t-SNE (t-Distributed Stochastic Neighbor Embedding) ✅
 - **[06_association_rules](./02_unsupervised_learning/06_association_rules/)** - Association Rules (Apriori & FP-Growth) ✅
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))

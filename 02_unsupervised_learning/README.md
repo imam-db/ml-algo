@@ -15,7 +15,7 @@ Modules (available/planned):
 - `02_hierarchical_clustering/` — Hierarchical Clustering (coming soon)
 - `03_dbscan/` — DBSCAN (coming soon)
 - **[`04_pca/`](04_pca/)** — Principal Component Analysis (available)
-- `05_tsne/` — t-SNE (coming soon)
+- **[`05_tsne/`](05_tsne/)** — t-SNE (available)
 - **[`06_association_rules/`](06_association_rules/)** — Association Rules (Apriori & FP-Growth) (available)
 
 ## Shared Dataset
