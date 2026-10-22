@@ -1,6 +1,14 @@
 # Machine Learning Algorithms Learning Repository
 
+[![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/YOUR_USERNAME/ml-algorithms-learning/actions)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+
 Welcome to the machine learning algorithms learning repository! 🤖📚
+
+**Comprehensive learning resource untuk machine learning dengan implementasi dari nol, teori lengkap dalam Bahasa Indonesia, dan latihan interaktif.**
 
 ## 🗺️ Quick Navigation
 
@@ -45,7 +53,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **🚧 06_association_rules** - Association Rules (planned)
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))
-- **🚧 01_q_learning** - Q-Learning (planned)
+- **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning ✅
 - **🚧 02_deep_q_networks** - Deep Q-Networks (planned)
 
 ### 4. **Advanced Topics** ([`04_advanced_topics/`](./04_advanced_topics/))
@@ -159,9 +167,63 @@ Each algorithm has the same folder structure:
 - [Machine Learning Course - Andrew Ng](https://www.coursera.org/learn/machine-learning)
 - [Hands-On Machine Learning](https://github.com/ageron/handson-ml2)
 
+## 📊 Status Implementasi
+
+| Category | Implemented | Planned | Progress |
+|----------|-------------|---------|----------|
+| Supervised Learning | 4 | 4 | 🟢 50% |
+| Unsupervised Learning | 2 | 4 | 🟡 33% |
+| Reinforcement Learning | 1 | 1 | 🟢 50% |
+| Advanced Topics | 1 | 3 | 🟡 25% |
+
+## 🧪 Testing
+
+Repository ini dilengkapi dengan comprehensive test suite:
+
+```bash
+# Run all tests
+python -m pytest tests/ -v
+
+# Run specific test file
+python -m pytest tests/test_reinforcement_learning.py -v
+
+# Run with coverage
+python -m pytest tests/ --cov --cov-report=html
+```
+
+**Test Coverage:** 52 tests, semua passing ✅
+
 ## 🤝 Contributing
 
-Feel free to contribute by adding new algorithms or improving existing implementations!
+Kontribusi sangat diterima! Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan lengkap.
+
+**Quick Start untuk Contributors:**
+
+1. Fork repository
+2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'feat: Add AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buka Pull Request
+
+## 📜 License
+
+Project ini dilisensikan under MIT License - lihat [LICENSE](LICENSE) untuk details.
+
+## 📧 Contact & Support
+
+- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/ml-algorithms-learning/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/ml-algorithms-learning/discussions)
+- **Contributing**: [Contributing Guidelines](CONTRIBUTING.md)
+- **Code of Conduct**: [Code of Conduct](CODE_OF_CONDUCT.md)
+
+## 🌟 Acknowledgments
+
+- Terima kasih kepada semua contributors
+- Inspired by [scikit-learn](https://scikit-learn.org/) documentation
+- Educational resources dari [Andrew Ng](https://www.coursera.org/learn/machine-learning) dan [Fast.ai](https://www.fast.ai/)
 
 ---
-Happy Learning! 🎉
+
+**Happy Learning! 🎉**
+
+*Repository ini dibuat dengan ❤️ untuk pembelajar machine learning*
