@@ -102,13 +102,20 @@ Referensi cepat untuk mempercepat belajar dan implementasi:
 
 1. **Pasang Dependensi:**
    ```bash
-   uv sync
+   # Dependensi inti + pengembangan
+   uv sync --extra dev
+   ```
+
+   Untuk dependensi opsional notebook, pasang semua extra:
+   ```bash
+   uv sync --all-extras
    ```
 
 2. **Aktifkan Lingkungan Virtual:**
    ```bash
-   uv run python
+   source .venv/bin/activate
    ```
+   Atau lewati aktivasi dan jalankan perintah dengan `uv run` (misalnya, `uv run python`).
 
 3. **Jalankan Jupyter Lab:**
    ```bash
@@ -193,13 +200,13 @@ Repositori ini dilengkapi rangkaian pengujian yang lengkap:
 
 ```bash
 # Jalankan semua pengujian
-python -m pytest tests/ -v
+uv run pytest
 
 # Jalankan satu berkas pengujian
-python -m pytest tests/test_reinforcement_learning.py -v
+uv run pytest tests/test_reinforcement_learning.py -v
 
 # Jalankan dengan laporan cakupan
-python -m pytest tests/ --cov --cov-report=html
+uv run pytest --cov
 ```
 
 **Cakupan Pengujian:** 200+ pengujian, semuanya lulus ✅

@@ -8,6 +8,8 @@ and cluster interpretation.
 """
 
 import numpy as np
+from pathlib import Path
+
 try:
     from sklearn.cluster import KMeans
     from sklearn.preprocessing import StandardScaler
@@ -19,8 +21,13 @@ except ImportError:
     print("Warning: scikit-learn not available")
 
 
-def load_spg_outlets_data(filepath='datasets/spg_outlets.csv'):
-    """Load the SPG outlets dataset."""
+def load_spg_outlets_data(filepath=None):
+    """Load the SPG outlets dataset (path is resolved relative to this script)."""
+    if filepath is None:
+        filepath = Path(__file__).resolve().parent / 'datasets' / 'spg_outlets.csv'
+    else:
+        filepath = Path(filepath)
+
     data = []
     with open(filepath, 'r') as f:
         headers = f.readline().strip().split(',')
@@ -210,7 +217,7 @@ def example_why_scaling_matters():
     print("Example 5: Kenapa Harus Scaling? (Why Scaling Matters)")
     print("=" * 60)
     
-    X, _, _ = load_spg_outlets_data()
+    X, _, _, _ = load_spg_outlets_data()
     
     print("\nOriginal feature ranges (before scaling):")
     feature_names = ['Monthly Sales (IDR)', 'SKU Count', 'Visit Freq', 'OOS Rate', 'Avg Basket (IDR)']
