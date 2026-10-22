@@ -517,7 +517,7 @@ df = optimize_dtypes(df)
 
 - **[Scikit-Learn Quick Reference](sklearn_quick_reference.md)** - ML implementation
 - **[Data Preprocessing](../05_data_preprocessing/preprocessing_pipeline.md)** - Advanced preprocessing
-- **[Data Visualization](../06_visualization/matplotlib_seaborn_essentials.md)** - Plotting and EDA
+- **Data Visualization** (`06_visualization/matplotlib_seaborn_essentials.md`, planned) - Plotting and EDA
 - **[Feature Engineering Lab](../../06_playground/feature_lab.py)** - Interactive feature engineering
 
 ---
@@ -543,4 +543,4 @@ df = optimize_dtypes(df)
 
 **📋 Print this cheat sheet** for quick offline reference! **🔍 Use Ctrl+F** to find specific operations quickly.
 
-**🏠 [Back to Cheat Sheets](../README.md)** | **🎮 [Try Interactive Tools](../../06_playground/)** | **📊 [Visualization Guide](../06_visualization/)**
+**🏠 [Back to Cheat Sheets](../README.md)** | **🎮 [Try Interactive Tools](../../06_playground/)** | **📊 Visualization Guide** (`06_visualization/`, planned)

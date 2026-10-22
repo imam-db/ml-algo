@@ -525,7 +525,7 @@ for i, score in enumerate(f1_per_class):
 - **[Algorithms Quick Reference](../01_algorithms/algorithms_quick_reference.md)** - Choose right algorithm
 - **[Scikit-Learn Quick Reference](../02_python_sklearn/sklearn_quick_reference.md)** - Implementation syntax
 - **[Data Preprocessing](../05_data_preprocessing/preprocessing_pipeline.md)** - Prepare data properly
-- **[Hyperparameter Tuning](../07_troubleshooting/hyperparameter_tuning.md)** - Optimize performance
+- **Hyperparameter Tuning** (`07_troubleshooting/hyperparameter_tuning.md`, planned) - Optimize performance
 
 ---
 

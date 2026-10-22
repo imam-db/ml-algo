@@ -21,7 +21,7 @@
 |------|-------------|----------|
 | [`implementation.py`](./implementation.py) | Basic XGBoost usage | `uv run python implementation.py` |
 | [`sklearn_example.py`](./sklearn_example.py) | Comprehensive examples | `uv run python sklearn_example.py` |
-| [`hyperparameter_tuning.py`](./hyperparameter_tuning.py) | Advanced tuning | `uv run python hyperparameter_tuning.py` |
+| `hyperparameter_tuning.py` (direncanakan) | Advanced tuning | — |
 | [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `uv run jupyter lab exercise.ipynb` |
 
 ## 📖 Theory and Concepts
@@ -260,20 +260,16 @@ cv_results = xgb.cv(
 
 ### 🔍 Hyperparameter Tuning Scenarios
 
+> 🚧 Skrip `hyperparameter_tuning.py` khusus masih direncanakan. Alur tuning di bawah belum dapat dijalankan; gunakan [`sklearn_example.py`](./sklearn_example.py) untuk contoh yang tersedia saat ini.
+
 #### Quick Tuning (5-10 minutes)
-```bash
-uv run python hyperparameter_tuning.py --method random_search --budget small
-```
+Random Search dengan budget kecil.
 
 #### Production Tuning (30-60 minutes)
-```bash
-uv run python hyperparameter_tuning.py --method optuna --budget production
-```
+Pencarian berbasis Optuna dengan budget sedang.
 
 #### Competition Tuning (2-4 hours)
-```bash
-uv run python hyperparameter_tuning.py --method bayesian --budget competition
-```
+Optimasi Bayesian dengan budget besar.
 
 ### [`implementation.py`](./implementation.py)
 - **Basic XGBoost workflows** for beginners
@@ -288,8 +284,8 @@ uv run python hyperparameter_tuning.py --method bayesian --budget competition
 - **Model evaluation** and **business metrics**
 - **SHAP interpretability** integration
 
-### [`hyperparameter_tuning.py`](./hyperparameter_tuning.py)
-- **Multiple tuning strategies**: Random Search, Bayesian, Optuna
+### `hyperparameter_tuning.py` (direncanakan)
+- **Strategi tuning yang direncanakan**: Random Search, Bayesian, Optuna
 - **Budget-aware optimization**
 - **Parallel processing** for faster tuning
 - **Competition-grade** parameter spaces
@@ -311,7 +307,7 @@ uv run python hyperparameter_tuning.py --method bayesian --budget competition
 1. **Start** with [`implementation.py`](./implementation.py) - Basic concepts
 2. **Practice** with [`exercise.ipynb`](./exercise.ipynb) - Interactive learning
 3. **Explore** [`sklearn_example.py`](./sklearn_example.py) - Real scenarios
-4. **Master** [`hyperparameter_tuning.py`](./hyperparameter_tuning.py) - Advanced techniques
+4. **Master** `hyperparameter_tuning.py` (direncanakan) - Advanced techniques
 
 ## 🏆 Competition Tips
 
@@ -326,8 +322,8 @@ uv run python hyperparameter_tuning.py --method bayesian --budget competition
 
 | Algorithm | Comparison | Use Case |
 |-----------|------------|----------|
-| [**LightGBM**](../05_lightgbm/) | Faster training | Large datasets |
-| [**CatBoost**](../06_catboost/) | Better categorical handling | Mixed data types |
+| **LightGBM** (direncanakan) | Faster training | Large datasets |
+| **CatBoost** (direncanakan) | Better categorical handling | Mixed data types |
 | [**Random Forest**](../../01_supervised_learning/04_random_forest/) | More interpretable | Feature importance |
 | [**Neural Networks**](../../01_supervised_learning/08_neural_networks/) | More flexible | Complex patterns |
 

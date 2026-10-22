@@ -502,7 +502,7 @@ balanced = ['RandomForest', 'DecisionTree']
 - **[Algorithm Selection Flowchart](algorithm_selection_flowchart.md)** - Visual guide to choose algorithms
 - **[Scikit-Learn Quick Reference](../02_python_sklearn/sklearn_quick_reference.md)** - Implementation details
 - **[Model Evaluation Metrics](../04_model_evaluation/classification_metrics.md)** - Performance measurement
-- **[Hyperparameter Tuning](../07_troubleshooting/hyperparameter_tuning.md)** - Optimize algorithm performance
+- **Hyperparameter Tuning** (`07_troubleshooting/hyperparameter_tuning.md`, planned) - Optimize algorithm performance
 
 ---
 

@@ -113,31 +113,31 @@ Choose the right machine learning algorithm for your specific problem with confi
 | **House Price Prediction** | Linear Regression | Clear feature relationships | [Scenario](./01_supervised_learning/01_linear_regression/README.md#-scenario-1-house-price-prediction) |
 | **Credit Risk Assessment** | XGBoost | Handles mixed data types, high accuracy | [Scenario](./04_advanced_topics/04_xgboost/README.md#-scenario-2-credit-risk-assessment) |
 | **Customer Churn Prediction** | Random Forest | Feature importance, robust | [Scenario](./04_advanced_topics/04_xgboost/README.md#-scenario-4-customer-churn-prediction) |
-| **Fraud Detection** | SVM | Good with imbalanced data | Coming Soon |
+| **Fraud Detection** | SVM | Good with imbalanced data | [SVM](./01_supervised_learning/10_svm/) |
 
 ### **🔬 Science & Research**
 | Use Case | Primary Algorithm | Why? | Implementation |
 |----------|-------------------|------|----------------|
 | **Medical Diagnosis** | XGBoost | High accuracy, confidence intervals | [Scenario](./04_advanced_topics/04_xgboost/README.md#-scenario-5-medical-diagnosis-support) |
-| **Drug Discovery** | Neural Networks | Complex molecular patterns | Coming Soon |
+| **Drug Discovery** | Neural Networks | Complex molecular patterns | [Neural Networks](./01_supervised_learning/08_neural_networks/) |
 | **Weather Prediction** | Linear Regression | Time series relationships | [Scenario](./01_supervised_learning/01_linear_regression/README.md#️-scenario-2-temperature-prediction) |
-| **Gene Expression Analysis** | PCA + Clustering | Dimension reduction + grouping | Coming Soon |
+| **Gene Expression Analysis** | PCA + Clustering | Dimension reduction + grouping | [PCA](./02_unsupervised_learning/04_pca/) + [K-Means](./02_unsupervised_learning/01_kmeans/) |
 
 ### **🛒 E-commerce & Marketing**
 | Use Case | Primary Algorithm | Why? | Implementation |
 |----------|-------------------|------|----------------|
 | **Sales Forecasting** | XGBoost | Seasonal patterns, feature engineering | [Scenario](./04_advanced_topics/04_xgboost/README.md#-scenario-3-e-commerce-sales-forecasting) |
-| **Recommendation System** | K-NN + Association Rules | Similar users/items | Coming Soon |
-| **Market Basket Analysis** | Association Rules | Find product relationships | Coming Soon |
-| **Customer Segmentation** | K-Means | Group similar customers | Coming Soon |
+| **Recommendation System** | K-NN + Association Rules | Similar users/items | [K-NN](./01_supervised_learning/07_knn/) + [Association Rules](./02_unsupervised_learning/06_association_rules/) |
+| **Market Basket Analysis** | Association Rules | Find product relationships | [Association Rules](./02_unsupervised_learning/06_association_rules/) |
+| **Customer Segmentation** | K-Means | Group similar customers | [K-Means](./02_unsupervised_learning/01_kmeans/) |
 
 ### **📱 Technology**
 | Use Case | Primary Algorithm | Why? | Implementation |
 |----------|-------------------|------|----------------|
-| **Image Classification** | Neural Networks | Best for visual patterns | Coming Soon |
-| **Text Classification** | Naive Bayes | Works well with text features | Coming Soon |
-| **Anomaly Detection** | SVM | One-class classification | Coming Soon |
-| **Time Series Forecasting** | Linear Regression + XGBoost | Trend + complex patterns | Multiple Scenarios |
+| **Image Classification** | Neural Networks | Best for visual patterns | [CNN & Computer Vision](./04_advanced_topics/05_cnn_computer_vision/) |
+| **Text Classification** | Naive Bayes | Works well with text features | [Naive Bayes](./01_supervised_learning/06_naive_bayes/) |
+| **Anomaly Detection** | SVM | One-class classification | [SVM](./01_supervised_learning/10_svm/) |
+| **Time Series Forecasting** | Linear Regression + XGBoost | Trend + complex patterns | [Time Series Forecasting](./04_advanced_topics/06_time_series_forecasting/) |
 
 ---
 
@@ -218,13 +218,13 @@ Choose the right machine learning algorithm for your specific problem with confi
 
 #### **For Intermediate + Medium Data + Moderate Interpretability:**
 1. **[Random Forest](./01_supervised_learning/04_random_forest/)** (Both)
-2. **[SVM](./01_supervised_learning/05_svm/)** (Both)
+2. **[SVM](./01_supervised_learning/10_svm/)** (Both)
 3. **[K-Means](./02_unsupervised_learning/01_kmeans/)** (Clustering)
 
 #### **For Advanced + Large Data + Any Interpretability:**
 1. **[XGBoost](./04_advanced_topics/04_xgboost/)** (Both)
 2. **[Neural Networks](./01_supervised_learning/08_neural_networks/)** (Both)
-3. **[Ensemble Methods](./04_advanced_topics/01_ensemble_methods/)** (Both)
+3. **Ensemble Methods** (`04_advanced_topics/01_ensemble_methods/`, planned) (Both)
 
 ---
 
@@ -274,9 +274,9 @@ Choose the right machine learning algorithm for your specific problem with confi
 - Document your findings
 
 ### **4. 🏆 Master Advanced Techniques**
-- Explore [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/)
+- Explore **Ensemble Methods** (`04_advanced_topics/01_ensemble_methods/`, planned)
 - Learn [Hyperparameter Tuning](./04_advanced_topics/04_xgboost/README.md#-hyperparameter-tuning-scenarios)
-- Practice with [Real Datasets](./05_datasets/)
+- Practice with **Real Datasets** (`05_datasets/`, planned)
 
 ---
 

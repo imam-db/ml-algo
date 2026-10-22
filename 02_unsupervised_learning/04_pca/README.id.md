@@ -275,9 +275,9 @@ With all components: MSE ≈ 0 (perfect reconstruction)
 ### After PCA, explore:
 
 1. **[t-SNE](../05_tsne/)** - Non-linear dimensionality reduction for visualization
-2. **[Autoencoders](../../04_advanced_topics/02_deep_learning/)** - Non-linear PCA with neural networks
-3. **[LDA](../07_lda/)** - Linear Discriminant Analysis (supervised version)
-4. **[Factor Analysis](../08_factor_analysis/)** - Similar to PCA but models noise
+2. **Autoencoders** (`../../04_advanced_topics/02_deep_learning/`, direncanakan) - Non-linear PCA with neural networks
+3. **LDA** (`../07_lda/`, direncanakan) - Linear Discriminant Analysis (supervised version)
+4. **Factor Analysis** (`../08_factor_analysis/`, direncanakan) - Similar to PCA but models noise
 
 ### Combining with other algorithms
 

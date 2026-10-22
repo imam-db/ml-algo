@@ -93,7 +93,7 @@ Master machine learning step by step with personalized progress tracking and gam
    - Bias-variance tradeoff
 
 #### **Phase 3: Advanced Algorithms (3-4 weeks)**
-6. **[SVM](./01_supervised_learning/05_svm/)** ⭐⭐⭐
+6. **[SVM](./01_supervised_learning/10_svm/)** ⭐⭐⭐
    - Kernel methods and mathematical rigor
 7. **[XGBoost](./04_advanced_topics/04_xgboost/)** ⭐⭐⭐⭐
    - State-of-the-art ensemble methods
@@ -152,7 +152,7 @@ Master machine learning step by step with personalized progress tracking and gam
 - [ ] Create your own regression project
 
 #### **🏆 Mastery Badge Requirements**
-- [ ] Score 80%+ on algorithm quiz (coming soon)
+- [ ] Score 80%+ on algorithm quiz (planned)
 - [ ] Complete all 4 scenarios successfully
 - [ ] Explain algorithm to a friend/colleague
 - [ ] Implement algorithm without looking at code
@@ -190,17 +190,17 @@ Master machine learning step by step with personalized progress tracking and gam
 
 | Algorithm | Theory | Implementation | Scenarios | Projects | Badge |
 |-----------|--------|----------------|-----------|----------|-------|
-| **Linear Regression** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Logistic Regression** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Decision Trees** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Random Forest** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **SVM** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Naive Bayes** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **K-NN** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Neural Networks** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **K-Means** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **PCA** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **XGBoost** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[Linear Regression](./01_supervised_learning/01_linear_regression/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[Logistic Regression](./01_supervised_learning/02_logistic_regression/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[Decision Trees](./01_supervised_learning/03_decision_trees/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[Random Forest](./01_supervised_learning/04_random_forest/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[SVM](./01_supervised_learning/10_svm/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[Naive Bayes](./01_supervised_learning/06_naive_bayes/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[K-NN](./01_supervised_learning/07_knn/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[Neural Networks](./01_supervised_learning/08_neural_networks/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[K-Means](./02_unsupervised_learning/01_kmeans/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[PCA](./02_unsupervised_learning/04_pca/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **[XGBoost](./04_advanced_topics/04_xgboost/)** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 ---
 
@@ -448,7 +448,7 @@ uv run python 01_supervised_learning/01_linear_regression/sklearn_example.py --s
 
 - **[Algorithm Comparison](./ALGORITHM_COMPARISON.md)** - Choose your next algorithm
 - **[Glossary](./GLOSSARY.md)** - Understand terminology
-- **[WARP.md](./WARP.md)** - Development setup and workflow
+- **WARP.md** (`WARP.md`, planned) - Development setup and workflow
 
 ### **🤝 Community & Support**
 
