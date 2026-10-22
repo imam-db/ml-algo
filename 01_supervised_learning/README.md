@@ -1,5 +1,7 @@
 # Supervised Learning
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 🏠 Back to Main: `../README.md`
 
 This section groups supervised learning algorithms under a consistent folder pattern:

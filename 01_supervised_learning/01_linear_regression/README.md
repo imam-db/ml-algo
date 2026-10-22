@@ -1,5 +1,7 @@
 # Linear Regression
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)** | **➡️ [Next: Logistic Regression](../02_logistic_regression/README.md)**
 
 ## 🔑 Key Terms
@@ -46,7 +48,7 @@ Where:
 - `ε` = error/noise
 
 ### Cost Function
-Linear regression menggunakan **Mean Squared Error (MSE)** sebagai cost function:
+Linear regression uses **Mean Squared Error (MSE)** as the cost function:
 ```
 MSE = (1/n) * Σ(yi - ŷi)²
 ```

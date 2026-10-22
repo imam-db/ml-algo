@@ -1,40 +1,42 @@
 # K-Nearest Neighbors (KNN)
 
-**🏠 [Kembali ke Menu Utama](../../README.md)** | **📁 [Supervised Learning](../README.md)**
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
 
-## 🗺️ Akses Cepat
+**🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)**
 
-| File | Deskripsi | Jalankan |
-|------|-----------|----------|
-| [`implementation.py`](./implementation.py) | Implementasi dari nol | `python3 implementation.py` |
-| [`sklearn_example.py`](./sklearn_example.py) | Contoh scikit-learn | `python3 sklearn_example.py` |
-| [`exercise.ipynb`](./exercise.ipynb) | Latihan interaktif | `jupyter lab exercise.ipynb` |
+## 🗺️ Quick Access
 
-## 📖 Teori dan Konsep
+| File | Description | Run |
+|------|-------------|-----|
+| [`implementation.py`](./implementation.py) | Implementation from scratch | `python3 implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `python3 sklearn_example.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
 
-### Apa itu K-Nearest Neighbors?
+## 📖 Theory and Concepts
 
-**K-Nearest Neighbors (KNN)** adalah algoritma supervised learning yang sederhana namun powerful. KNN melakukan prediksi berdasarkan K sampel terdekat dalam training data. Algoritma ini bersifat **instance-based** atau **lazy learning** karena tidak membangun model eksplisit saat training.
+### What is K-Nearest Neighbors?
 
-**Analogi SPG (Sales Promoter Girl):**
-Bayangkan seorang SPG baru yang ingin tahu produk mana yang cocok untuk customer. Dia akan melihat K customer terdekat (yang paling mirip) dan melihat produk apa yang mereka beli, kemudian merekomendasikan berdasarkan mayoritas.
+**K-Nearest Neighbors (KNN)** is a simple yet powerful supervised learning algorithm. KNN makes predictions based on K nearest samples in the training data. This algorithm is **instance-based** or **lazy learning** because it doesn't build an explicit model during training.
 
-### Cara Kerja KNN
+**SPG (Sales Promoter Girl) Analogy:**
+Imagine a new SPG who wants to know which product is suitable for a customer. She will look at the K nearest customers (most similar) and see what products they bought, then recommend based on the majority.
+
+### How KNN Works
 
 **Classification:**
 ```
-1. Hitung jarak dari sampel test ke semua training samples
-2. Pilih K sampel terdekat
-3. Voting: pilih class yang paling sering muncul di K neighbors
-4. Return class tersebut
+1. Calculate distance from test sample to all training samples
+2. Select K nearest samples
+3. Voting: choose the class that appears most often in K neighbors
+4. Return that class
 ```
 
 **Regression:**
 ```
-1. Hitung jarak dari sampel test ke semua training samples
-2. Pilih K sampel terdekat
-3. Rata-rata: hitung mean dari nilai K neighbors
-4. Return nilai rata-rata tersebut
+1. Calculate distance from test sample to all training samples
+2. Select K nearest samples
+3. Average: calculate mean of K neighbors' values
+4. Return the average value
 ```
 
 ### Distance Metrics
@@ -43,19 +45,19 @@ Bayangkan seorang SPG baru yang ingin tahu produk mana yang cocok untuk customer
 ```
 d(x, y) = √(Σ(xi - yi)²)
 ```
-- Paling umum digunakan
-- Sensitif terhadap outliers
-- Baik untuk data continuous
+- Most commonly used
+- Sensitive to outliers
+- Good for continuous data
 
 #### 2. Manhattan Distance (L1)
 ```
 d(x, y) = Σ|xi - yi|
 ```
-- Lebih robust terhadap outliers
-- Cocok untuk data grid-like
-- Lebih cepat dihitung
+- More robust to outliers
+- Suitable for grid-like data
+- Faster to compute
 
-#### 3. Minkowski Distance (generalisasi)
+#### 3. Minkowski Distance (generalization)
 ```
 d(x, y) = (Σ|xi - yi|^p)^(1/p)
 ```
@@ -66,64 +68,64 @@ d(x, y) = (Σ|xi - yi|^p)^(1/p)
 ### Weighting Schemes
 
 **Uniform Weights:**
-- Semua neighbors punya bobot sama
+- All neighbors have equal weight
 - Simple majority vote / average
-- Cocok jika neighbors relatif merata
+- Suitable if neighbors are relatively uniform
 
 **Distance Weights:**
-- Neighbors lebih dekat punya bobot lebih besar
+- Closer neighbors have greater weight
 - Weight = 1 / distance
-- Lebih akurat jika ada variasi jarak
-- Mencegah tie votes
+- More accurate if distance varies
+- Prevents tie votes
 
 ### Choosing K
 
-**K Kecil (k=1, 3, 5):**
-- ✅ Sensitif terhadap pola lokal
-- ✅ Dapat menangkap decision boundaries kompleks
-- ❌ Sensitif terhadap noise
-- ❌ Overfitting risk tinggi
+**Small K (k=1, 3, 5):**
+- ✅ Sensitive to local patterns
+- ✅ Can capture complex decision boundaries
+- ❌ Sensitive to noise
+- ❌ High overfitting risk
 
-**K Besar (k=20, 50, 100):**
-- ✅ Lebih stabil, less sensitive to noise
+**Large K (k=20, 50, 100):**
+- ✅ More stable, less sensitive to noise
 - ✅ Smoother decision boundaries
-- ❌ Bisa terlalu smooth (underfitting)
-- ❌ Komputasi lebih lambat
+- ❌ Can be too smooth (underfitting)
+- ❌ Slower computation
 
-**K Optimal:**
-- Gunakan cross-validation
+**Optimal K:**
+- Use cross-validation
 - Plot accuracy vs k (elbow method)
-- Biasanya k = √n (rule of thumb)
-- K ganjil untuk classification (avoid ties)
+- Usually k = √n (rule of thumb)
+- Odd K for classification (avoid ties)
 
-## 🎯 Kapan Menggunakan KNN?
+## 🎯 When to Use KNN?
 
-### ✅ Cocok untuk:
-- **Dataset kecil hingga menengah**
+### ✅ Good for:
+- **Small to medium datasets**
   - Training O(1), prediction O(n)
-- **Decision boundaries non-linear**
-  - Tidak ada asumsi tentang data distribution
+- **Non-linear decision boundaries**
+  - No assumptions about data distribution
 - **Multi-class classification**
-  - Natural extension, tidak perlu one-vs-rest
-- **Prototype untuk baseline**
-  - Mudah diimplementasikan
+  - Natural extension, no need for one-vs-rest
+- **Prototype for baseline**
+  - Easy to implement
 - **Anomaly detection**
-  - K-distance untuk detect outliers
+  - K-distance to detect outliers
 
-### ❌ Kurang cocok untuk:
-- **Dataset sangat besar**
-  - Prediction lambat (harus scan semua data)
+### ❌ Less suitable for:
+- **Very large datasets**
+  - Slow prediction (must scan all data)
 - **High-dimensional data (curse of dimensionality)**
-  - Distance menjadi meaningless
-  - Perlu dimensionality reduction
+  - Distance becomes meaningless
+  - Needs dimensionality reduction
 - **Imbalanced classes**
-  - Majority class akan dominate
-- **Features dengan skala berbeda**
-  - Feature scaling WAJIB
+  - Majority class will dominate
+- **Features with different scales**
+  - Feature scaling MANDATORY
 - **Real-time prediction**
-  - Terlalu lambat untuk production
+  - Too slow for production
 
-## 💡 Implementasi
+## 💡 Implementation
 
 ### KNN Classifier
 
@@ -182,7 +184,7 @@ plt.show()
 
 ### 1. Feature Scaling (CRITICAL!)
 
-KNN bergantung pada distance, sehingga feature scaling sangat penting:
+KNN depends on distance, so feature scaling is essential:
 
 ```python
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -196,21 +198,21 @@ scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X_train)
 ```
 
-**Tanpa scaling:**
-- Feature dengan range besar akan dominate
-- Contoh: salary (0-100000) vs age (0-100)
-- Distance akan dikuasai oleh salary
+**Without scaling:**
+- Features with large ranges will dominate
+- Example: salary (0-100000) vs age (0-100)
+- Distance will be dominated by salary
 
 ### 2. Handling High Dimensions
 
 **Curse of Dimensionality:**
-- Semakin banyak dimensions, semakin sparse data
-- Distance menjadi kurang meaningful
-- Semua points terlihat "jauh"
+- More dimensions = sparser data
+- Distance becomes less meaningful
+- All points appear "far"
 
 **Solutions:**
 ```python
-# PCA untuk dimensionality reduction
+# PCA for dimensionality reduction
 from sklearn.decomposition import PCA
 pca = PCA(n_components=10)
 X_reduced = pca.fit_transform(X)
@@ -227,7 +229,7 @@ X_selected = selector.fit_transform(X, y)
 # Option 1: Distance weighting
 knn = KNNClassifier(n_neighbors=5, weights='distance')
 
-# Option 2: SMOTE untuk resampling
+# Option 2: SMOTE for resampling
 from imblearn.over_sampling import SMOTE
 smote = SMOTE()
 X_resampled, y_resampled = smote.fit_resample(X, y)
@@ -239,7 +241,7 @@ knn = KNNClassifier(n_neighbors=15)  # Reduces majority bias
 ### 4. Efficient Implementation
 
 ```python
-# Use KD-Tree or Ball-Tree untuk large datasets
+# Use KD-Tree or Ball-Tree for large datasets
 from sklearn.neighbors import KNeighborsClassifier
 
 knn = KNeighborsClassifier(
@@ -278,9 +280,9 @@ for k in range(1, 31):
 best_k = np.argmax(scores) + 1
 ```
 
-## 🔍 Interpretasi dan Debugging
+## 🔍 Interpretation and Debugging
 
-### Visualisasi Decision Boundaries
+### Visualizing Decision Boundaries
 
 ```python
 import matplotlib.pyplot as plt
@@ -316,10 +318,10 @@ def analyze_prediction(model, x_sample):
         print(f"  Neighbor {i+1}: distance={dist:.3f}, label={label}")
 ```
 
-## 📚 Perbandingan dengan Algoritma Lain
+## 📚 Comparison with Other Algorithms
 
-| Aspek | KNN | Decision Tree | SVM | Neural Network |
-|-------|-----|---------------|-----|----------------|
+| Aspect | KNN | Decision Tree | SVM | Neural Network |
+|--------|-----|---------------|-----|----------------|
 | Training | Instant (lazy) | Fast | Moderate | Slow |
 | Prediction | Slow | Fast | Fast | Fast |
 | Interpretability | High | High | Low | Very Low |
@@ -327,10 +329,10 @@ def analyze_prediction(model, x_sample):
 | Memory Usage | High | Low | Moderate | Moderate |
 | Feature Scaling | Required | Not needed | Required | Required |
 
-## 💻 Contoh Use Case: Customer Segmentation
+## 💻 Example Use Case: Customer Segmentation
 
 ```python
-# SPG ingin classify customer baru berdasarkan purchase history
+# SPG wants to classify new customer based on purchase history
 # Features: age, income, frequency, recency
 # Target: segment (low, medium, high value)
 
@@ -359,16 +361,16 @@ print(f"Predicted segment: {segment[0]}")
 print(f"Confidence: {proba[0]}")
 ```
 
-## 📚 Sumber Belajar
+## 📚 Learning Resources
 
 - [Scikit-learn KNN Documentation](https://scikit-learn.org/stable/modules/neighbors.html)
 - [StatQuest: K-Nearest Neighbors](https://www.youtube.com/watch?v=HVXime0nQeI)
 - [KNN Visualization](https://www.youtube.com/watch?v=UqYde-LULfs)
 
-## 🎓 Latihan
+## 🎓 Exercises
 
-Lihat [`exercise.ipynb`](./exercise.ipynb) untuk latihan hands-on:
-1. KNN Classification dengan real data
+See [`exercise.ipynb`](./exercise.ipynb) for hands-on practice:
+1. KNN Classification with real data
 2. KNN Regression
 3. Choosing optimal K
 4. Comparing distance metrics
@@ -377,4 +379,4 @@ Lihat [`exercise.ipynb`](./exercise.ipynb) untuk latihan hands-on:
 
 ---
 
-**Selamat Belajar K-Nearest Neighbors! 🎯**
+**Happy Learning K-Nearest Neighbors! 🎯**

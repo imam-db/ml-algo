@@ -1,33 +1,35 @@
 # Naive Bayes
 
-**🏠 [Kembali ke Menu Utama](../../README.md)** | **📁 [Supervised Learning](../README.md)**
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
 
-## 🗺️ Akses Cepat
+**🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)**
 
-| File | Deskripsi | Jalankan |
-|------|-----------|----------|
-| [`implementation.py`](./implementation.py) | Implementasi dari nol | `python3 implementation.py` |
-| [`sklearn_example.py`](./sklearn_example.py) | Contoh scikit-learn | `python3 sklearn_example.py` |
-| [`exercise.ipynb`](./exercise.ipynb) | Latihan interaktif | `jupyter lab exercise.ipynb` |
+## 🗺️ Quick Access
 
-## 📖 Teori dan Konsep
+| File | Description | Run |
+|------|-------------|-----|
+| [`implementation.py`](./implementation.py) | Implementation from scratch | `python3 implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `python3 sklearn_example.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
 
-### Apa itu Naive Bayes?
+## 📖 Theory and Concepts
 
-**Naive Bayes** adalah algoritma klasifikasi yang berdasarkan pada **Bayes' Theorem** dengan asumsi "naive" (naif) bahwa semua features adalah independent satu sama lain. Meskipun asumsi ini sering tidak realistis, Naive Bayes tetap sangat efektif untuk banyak aplikasi real-world.
+### What is Naive Bayes?
 
-**Analogi SPG (Sales Promoter Girl):**
-Seorang SPG ingin memprediksi apakah customer akan membeli produk berdasarkan karakteristik customer (usia, gender, waktu kunjungan, dll). Naive Bayes melihat seberapa sering kombinasi karakteristik tersebut muncul pada customer yang membeli vs tidak membeli, kemudian membuat prediksi berdasarkan probabilitas.
+**Naive Bayes** is a classification algorithm based on **Bayes' Theorem** with a "naive" assumption that all features are independent of each other. Although this assumption is often unrealistic, Naive Bayes remains highly effective for many real-world applications.
+
+**SPG (Sales Promoter Girl) Analogy:**
+An SPG wants to predict whether a customer will buy a product based on customer characteristics (age, gender, visit time, etc.). Naive Bayes looks at how often these characteristic combinations appear in customers who buy vs don't buy, then makes predictions based on probabilities.
 
 ### Bayes' Theorem
 
-Formula dasar:
+Basic formula:
 
 ```
 P(Class|Features) = P(Features|Class) × P(Class) / P(Features)
 ```
 
-Dalam praktik:
+In practice:
 
 ```
 P(y|x₁, x₂, ..., xₙ) = P(x₁, x₂, ..., xₙ|y) × P(y) / P(x₁, x₂, ..., xₙ)
@@ -35,45 +37,45 @@ P(y|x₁, x₂, ..., xₙ) = P(x₁, x₂, ..., xₙ|y) × P(y) / P(x₁, x₂, 
 
 ### Naive Assumption
 
-Asumsi naive (independent features):
+Naive assumption (independent features):
 
 ```
 P(x₁, x₂, ..., xₙ|y) = P(x₁|y) × P(x₂|y) × ... × P(xₙ|y)
 ```
 
-Sehingga Bayes' Theorem menjadi:
+So Bayes' Theorem becomes:
 
 ```
 P(y|x₁, ..., xₙ) ∝ P(y) × P(x₁|y) × P(x₂|y) × ... × P(xₙ|y)
 ```
 
-## 🔢 Jenis-jenis Naive Bayes
+## 🔢 Types of Naive Bayes
 
 ### 1. Gaussian Naive Bayes
 
-**Untuk:** Continuous features (data kontinu)
+**For:** Continuous features
 
-**Asumsi:** Features mengikuti distribusi Gaussian (normal)
+**Assumption:** Features follow a Gaussian (normal) distribution
 
-**Formula Likelihood:**
+**Likelihood Formula:**
 ```
 P(xᵢ|y) = (1/√(2πσᵧ²)) × exp(-(xᵢ-μᵧ)²/(2σᵧ²))
 ```
 
-Di mana:
-- `μᵧ` = mean feature untuk class y
-- `σᵧ²` = variance feature untuk class y
+Where:
+- `μᵧ` = mean of feature for class y
+- `σᵧ²` = variance of feature for class y
 
-**Kapan digunakan:**
-- Features berupa angka continuous (tinggi, berat, harga, dll)
+**When to use:**
+- Features are continuous numbers (height, weight, price, etc.)
 - Iris classification, medical diagnosis
 - Sensor data analysis
 
-**Contoh Use Case SPG:**
+**SPG Use Case Example:**
 ```python
-# Prediksi customer segment berdasarkan:
-# - Usia (continuous)
-# - Penghasilan (continuous)
+# Predict customer segment based on:
+# - Age (continuous)
+# - Income (continuous)
 # - Spending score (continuous)
 X = [[25, 50000, 65], [45, 80000, 80], ...]
 y = ['budget', 'premium', ...]
@@ -81,108 +83,108 @@ y = ['budget', 'premium', ...]
 
 ### 2. Multinomial Naive Bayes
 
-**Untuk:** Discrete count data (data count/frekuensi)
+**For:** Discrete count data (frequency data)
 
-**Asumsi:** Features adalah count atau frequency
+**Assumption:** Features are counts or frequencies
 
-**Formula Likelihood:**
+**Likelihood Formula:**
 ```
 P(xᵢ|y) = (countᵢᵧ + α) / (total_countᵧ + α × n_features)
 ```
 
-Di mana:
+Where:
 - `α` = smoothing parameter (Laplace/Lidstone)
-- `countᵢᵧ` = count feature i untuk class y
+- `countᵢᵧ` = count of feature i for class y
 
-**Kapan digunakan:**
+**When to use:**
 - Text classification (word counts, TF-IDF)
 - Document categorization
 - Spam filtering
 
-**Contoh Use Case SPG:**
+**SPG Use Case Example:**
 ```python
-# Prediksi kategori customer berdasarkan:
-# - Jumlah kunjungan per minggu
-# - Jumlah produk dibeli per kategori
-# - Frekuensi pembelian
+# Predict customer category based on:
+# - Number of visits per week
+# - Number of products purchased per category
+# - Purchase frequency
 X = [[5, 2, 1, 3], [1, 0, 5, 2], ...]  # counts
 y = ['frequent', 'occasional', ...]
 ```
 
-### 3. Bernoulli Naive Bayes (tidak diimplementasikan)
+### 3. Bernoulli Naive Bayes (not implemented)
 
-**Untuk:** Binary features (0/1, True/False)
+**For:** Binary features (0/1, True/False)
 
-**Contoh:** Email spam (word present or not)
+**Example:** Email spam (word present or not)
 
-## 💡 Kelebihan dan Kekurangan
+## 💡 Advantages and Disadvantages
 
-### ✅ Kelebihan
+### ✅ Advantages
 
-1. **Fast Training dan Prediction**
-   - Training: O(n × d) - sangat cepat
+1. **Fast Training and Prediction**
+   - Training: O(n × d) - very fast
    - Prediction: O(c × d) - real-time capable
 
-2. **Works Well dengan Small Data**
-   - Tidak perlu banyak training data
-   - Good dengan imbalanced classes
+2. **Works Well with Small Data**
+   - Doesn't need much training data
+   - Good with imbalanced classes
 
-3. **Simple dan Interpretable**
+3. **Simple and Interpretable**
    - Easy to understand
-   - Probabilitas output dapat diinterpretasi
+   - Probability outputs can be interpreted
 
 4. **Handles High Dimensions**
-   - Works dengan banyak features
-   - Common untuk text classification
+   - Works with many features
+   - Common for text classification
 
-5. **Tidak Sensitive ke Irrelevant Features**
-   - Independent assumption helps
+5. **Not Sensitive to Irrelevant Features**
+   - Independence assumption helps
 
-### ❌ Kekurangan
+### ❌ Disadvantages
 
 1. **Independence Assumption**
-   - Features jarang truly independent
-   - Dapat menghasilkan overconfident predictions
+   - Features are rarely truly independent
+   - Can produce overconfident predictions
 
 2. **Zero Frequency Problem**
-   - Jika feature tidak muncul di training data
-   - Solved dengan smoothing (Laplace)
+   - If feature doesn't appear in training data
+   - Solved with smoothing (Laplace)
 
 3. **Bad Estimator**
-   - Probabilitas output sering terlalu ekstrim
+   - Probability outputs are often too extreme
    - Don't rely on exact probability values
 
 4. **Can't Learn Feature Interactions**
-   - Tidak bisa capture correlations antar features
+   - Cannot capture correlations between features
 
-## 🎯 Kapan Menggunakan Naive Bayes?
+## 🎯 When to Use Naive Bayes?
 
-### ✅ Cocok untuk:
+### ✅ Good for:
 - **Text classification**
   - Spam detection, sentiment analysis
   - Document categorization
 - **Real-time prediction**
-  - Sangat cepat, suitable untuk production
+  - Very fast, suitable for production
 - **Multi-class problems**
   - Natural extension
 - **Baseline model**
   - Quick benchmark
 - **High-dimensional data**
-  - Banyak features
+  - Many features
 - **Small training data**
-  - Works dengan data terbatas
+  - Works with limited data
 
-### ❌ Kurang cocok untuk:
-- **Features yang highly correlated**
-  - Melanggar independence assumption
+### ❌ Less suitable for:
+- **Highly correlated features**
+  - Violates independence assumption
 - **Regression problems**
-  - Naive Bayes untuk classification only
-- **Feature interactions penting**
-  - Tidak bisa capture complex relationships
+  - Naive Bayes is for classification only
+- **Feature interactions are important**
+  - Cannot capture complex relationships
 - **Need precise probability estimates**
-  - Probabilities sering overconfident
+  - Probabilities are often overconfident
 
-## 🔧 Implementasi
+## 🔧 Implementation
 
 ### Gaussian Naive Bayes
 
@@ -207,7 +209,7 @@ accuracy = gnb.score(X_test, y_test)
 ```python
 from implementation import MultinomialNaiveBayes
 
-# Create and train (dengan Laplace smoothing)
+# Create and train (with Laplace smoothing)
 mnb = MultinomialNaiveBayes(alpha=1.0)
 mnb.fit(X_train_counts, y_train)
 
@@ -221,7 +223,7 @@ accuracy = mnb.score(X_test_counts, y_test)
 
 ## 📊 Laplace Smoothing
 
-**Problem:** Zero frequency untuk unseen features
+**Problem:** Zero frequency for unseen features
 
 **Example:**
 ```
@@ -240,13 +242,13 @@ P(word|class) = (count(word, class) + α) / (total_count(class) + α × vocab_si
 **Parameter α:**
 - α = 0: No smoothing (risky!)
 - α = 1: Laplace smoothing (standard)
-- α > 1: More smoothing (untuk very sparse data)
+- α > 1: More smoothing (for very sparse data)
 - α < 1: Less smoothing
 
 **Tips:**
-- Start dengan α = 1.0
-- Tune dengan cross-validation
-- Larger α untuk smaller datasets
+- Start with α = 1.0
+- Tune with cross-validation
+- Larger α for smaller datasets
 
 ## 🔍 Hyperparameter Tuning
 
@@ -276,7 +278,7 @@ for alpha in [0.01, 0.1, 1.0, 5.0, 10.0]:
     print(f"alpha={alpha}: {score:.4f}")
 ```
 
-## 💻 Contoh Use Case: Customer Purchase Prediction
+## 💻 Example Use Case: Customer Purchase Prediction
 
 ### Gaussian NB: Continuous Features
 
@@ -287,7 +289,7 @@ for alpha in [0.01, 0.1, 1.0, 5.0, 10.0]:
 from implementation import GaussianNaiveBayes
 import numpy as np
 
-# Data customer SPG
+# SPG customer data
 X = np.array([
     [25, 45000, 60],  # young, low income, medium spending
     [45, 95000, 85],  # older, high income, high spending
@@ -318,10 +320,10 @@ print(f"Probability: {probability[0]}")
 
 from implementation import MultinomialNaiveBayes
 
-# Data kunjungan customer
+# Customer visit data
 X_counts = np.array([
-    [10, 2, 1, 0],   # banyak lihat electronics, jarang beli
-    [2, 5, 8, 3],    # balance, regular buyer
+    [10, 2, 1, 0],   # lots of electronics browsing, rarely buy
+    [2, 5, 8, 3],    # balanced, regular buyer
     [15, 20, 10, 8], # frequent visitor, VIP
     # ... more data
 ])
@@ -341,10 +343,10 @@ print(f"Customer Type: {prediction[0]}")
 print(f"Probabilities: {probability[0]}")
 ```
 
-## 📚 Perbandingan dengan Algoritma Lain
+## 📚 Comparison with Other Algorithms
 
-| Aspek | Naive Bayes | Logistic Regression | Decision Tree | KNN |
-|-------|-------------|-------------------|---------------|-----|
+| Aspect | Naive Bayes | Logistic Regression | Decision Tree | KNN |
+|--------|-------------|-------------------|---------------|-----|
 | Speed | Very Fast | Fast | Fast | Slow |
 | Interpretability | High | High | Very High | Medium |
 | Probabilistic | Yes | Yes | No (standard) | Yes |
@@ -353,14 +355,14 @@ print(f"Probabilities: {probability[0]}")
 | High Dimensions | Excellent | Good | Poor | Poor |
 | Text Classification | Excellent | Good | Poor | Poor |
 
-## 🎓 Tips dan Best Practices
+## 🎓 Tips and Best Practices
 
 ### 1. Feature Preprocessing
 
 **Gaussian NB:**
 ```python
-# Tidak perlu scaling (uses mean/variance per class)
-# Tapi ensure no missing values
+# No scaling needed (uses mean/variance per class)
+# But ensure no missing values
 X = X.fillna(X.mean())
 ```
 
@@ -410,21 +412,21 @@ calibrated_nb = CalibratedClassifierCV(gnb, cv=5)
 calibrated_nb.fit(X_train, y_train)
 ```
 
-## 📚 Sumber Belajar
+## 📚 Learning Resources
 
 - [Naive Bayes - Scikit-learn](https://scikit-learn.org/stable/modules/naive_bayes.html)
 - [StatQuest: Naive Bayes](https://www.youtube.com/watch?v=O2L2Uv9pdDA)
 - [Andrew Ng ML Course - Naive Bayes](https://www.coursera.org/learn/machine-learning)
 
-## 🎓 Latihan
+## 🎓 Exercises
 
-Lihat [`exercise.ipynb`](./exercise.ipynb) untuk latihan hands-on:
-1. Gaussian NB untuk customer segmentation
-2. Multinomial NB untuk text classification
+See [`exercise.ipynb`](./exercise.ipynb) for hands-on practice:
+1. Gaussian NB for customer segmentation
+2. Multinomial NB for text classification
 3. Comparing smoothing parameters
 4. Feature importance analysis
 5. Probability calibration
 
 ---
 
-**Selamat Belajar Naive Bayes! 🎯**
+**Happy Learning Naive Bayes! 🎯**

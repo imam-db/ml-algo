@@ -1,5 +1,7 @@
 # XGBoost (eXtreme Gradient Boosting)
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../../README.md)** | **📁 [Advanced Topics](../README.md)** | **⬅️ [Previous: Model Evaluation](../03_model_evaluation/README.md)**
 
 ## 🔑 Key Terms
@@ -49,52 +51,52 @@ Where:
 - **Regularization** terms in objective
 - **Optimized tree construction** algorithm
 
-## 🎯 Kapan Menggunakan XGBoost?
+## 🎯 When to Use XGBoost?
 
-### ✅ Sangat Cocok untuk:
-- **Data tabular/structured data** 
-- **Kompetisi machine learning** (Kaggle, etc.)
-- **Data dengan missing values**
+### ✅ Excellent for:
+- **Tabular/structured data** 
+- **Machine learning competitions** (Kaggle, etc.)
+- **Data with missing values**
 - **Mixed data types** (numerical + categorical)
-- **Classification dan Regression tasks**
+- **Classification and Regression tasks**
 - **Feature importance** analysis
-- **Dataset berukuran menengah-besar**
+- **Medium to large datasets**
 
-### ❌ Tidak ideal untuk:
-- **Computer vision** (CNN lebih baik)
-- **Natural Language Processing** (Transformer lebih baik)  
-- **Dataset yang sangat kecil** (< 1000 samples)
-- **Real-time prediction** (latency tinggi)
-- **Data dengan struktur temporal kompleks**
+### ❌ Not ideal for:
+- **Computer vision** (CNN is better)
+- **Natural Language Processing** (Transformers are better)  
+- **Very small datasets** (< 1000 samples)
+- **Real-time prediction** (high latency)
+- **Data with complex temporal structure**
 
-## 🔍 Kelebihan dan Kekurangan
+## 🔍 Advantages and Disadvantages
 
-### Kelebihan:
-- ✅ **Performa excellent** pada data tabular
-- ✅ **Handle missing values** secara native
+### Advantages:
+- ✅ **Excellent performance** on tabular data
+- ✅ **Handles missing values** natively
 - ✅ **Built-in regularization** (L1, L2)
-- ✅ **Feature importance** yang akurat
-- ✅ **Parallel processing** dan GPU support
-- ✅ **Cross-validation** built-in
-- ✅ **Early stopping** untuk mencegah overfitting
-- ✅ **Robust terhadap outliers**
+- ✅ **Accurate feature importance**
+- ✅ **Parallel processing** and GPU support
+- ✅ **Built-in cross-validation**
+- ✅ **Early stopping** to prevent overfitting
+- ✅ **Robust to outliers**
 
-### Kekurangan:
-- ❌ **Hyperparameter tuning** yang kompleks
-- ❌ **Memory intensive** untuk dataset besar
-- ❌ **Prone to overfitting** jika tidak di-tune dengan baik
-- ❌ **Black box model** (sulit interpretasi)
-- ❌ **Training time** relatif lama
+### Disadvantages:
+- ❌ **Complex hyperparameter tuning**
+- ❌ **Memory intensive** for large datasets
+- ❌ **Prone to overfitting** if not tuned well
+- ❌ **Black box model** (difficult to interpret)
+- ❌ **Relatively slow training time**
 - ❌ **Sensitive to noisy data**
 
-## ⚙️ Hyperparameters Utama
+## ⚙️ Key Hyperparameters
 
 ### Tree-specific Parameters:
-- **n_estimators**: Jumlah trees (default: 100)
-- **max_depth**: Kedalaman maksimum tree (default: 6)
-- **min_child_weight**: Minimum sum of weights di leaf (default: 1)
-- **subsample**: Fraction of samples untuk setiap tree (default: 1)
-- **colsample_bytree**: Fraction of features untuk setiap tree (default: 1)
+- **n_estimators**: Number of trees (default: 100)
+- **max_depth**: Maximum tree depth (default: 6)
+- **min_child_weight**: Minimum sum of weights in leaf (default: 1)
+- **subsample**: Fraction of samples per tree (default: 1)
+- **colsample_bytree**: Fraction of features per tree (default: 1)
 
 ### Learning Parameters:
 - **learning_rate/eta**: Step size shrinkage (default: 0.3)
@@ -104,21 +106,21 @@ Where:
 ### Regularization Parameters:
 - **reg_alpha**: L1 regularization (default: 0)
 - **reg_lambda**: L2 regularization (default: 1)
-- **gamma**: Minimum loss reduction untuk split (default: 0)
+- **gamma**: Minimum loss reduction for split (default: 0)
 
 ## 📊 XGBoost vs Other Algorithms
 
-| Aspek | XGBoost | Random Forest | Gradient Boosting | Linear Models |
-|-------|---------|---------------|-------------------|---------------|
+| Aspect | XGBoost | Random Forest | Gradient Boosting | Linear Models |
+|--------|---------|---------------|-------------------|---------------|
 | **Accuracy** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
 | **Speed** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
 | **Interpretability** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
 | **Overfitting Risk** | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
 | **Hyperparameter Tuning** | ⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
 
-## 🛠️ Instalasi dan Setup
+## 🛠️ Installation and Setup
 
-### Instalasi XGBoost:
+### Installing XGBoost:
 ```bash
 # Via pip
 pip install xgboost
@@ -126,7 +128,7 @@ pip install xgboost
 # Via conda
 conda install -c conda-forge xgboost
 
-# Via UV (recommended untuk project ini)
+# Via UV (recommended for this project)
 uv add xgboost
 ```
 
@@ -136,7 +138,7 @@ uv add xgboost
 pip install xgboost[gpu]
 ```
 
-## 📈 Evaluation dan Model Selection
+## 📈 Evaluation and Model Selection
 
 ### Classification Metrics:
 - **Accuracy**: Overall correct predictions
@@ -152,7 +154,7 @@ pip install xgboost[gpu]
 - **MAPE**: Mean Absolute Percentage Error
 
 ### Cross-Validation:
-XGBoost memiliki built-in CV:
+XGBoost has built-in CV:
 ```python
 cv_results = xgb.cv(
     params, dtrain, num_boost_round=100,
@@ -164,32 +166,32 @@ cv_results = xgb.cv(
 
 ### 1. **Data Preparation**:
 - Handle missing values (XGBoost can handle, but preprocessing might help)
-- Encode categorical variables (LabelEncoder atau One-hot)
-- Feature scaling tidak wajib, tapi bisa membantu
+- Encode categorical variables (LabelEncoder or One-hot)
+- Feature scaling not mandatory, but can help
 
 ### 2. **Hyperparameter Tuning**:
-- Start dengan default parameters
-- Tune **n_estimators** dengan early stopping
-- Adjust **learning_rate** dan **max_depth**
-- Use **RandomizedSearchCV** atau **Optuna**
+- Start with default parameters
+- Tune **n_estimators** with early stopping
+- Adjust **learning_rate** and **max_depth**
+- Use **RandomizedSearchCV** or **Optuna**
 
 ### 3. **Overfitting Prevention**:
 - Use **early_stopping_rounds**
 - Apply **regularization** (reg_alpha, reg_lambda)
-- Reduce **learning_rate** dan increase **n_estimators**
-- Use **cross-validation** untuk monitoring
+- Reduce **learning_rate** and increase **n_estimators**
+- Use **cross-validation** for monitoring
 
 ### 4. **Feature Engineering**:
 - Create interaction features
-- Polynomial features untuk non-linear relationships
+- Polynomial features for non-linear relationships
 - Domain-specific feature engineering
 
 ### 5. **Model Interpretation**:
 - Plot **feature importance**
-- Use **SHAP** values untuk detailed interpretation
+- Use **SHAP** values for detailed interpretation
 - Analyze **learning curves**
 
-## 📊 Workflow Tipikal
+## 📊 Typical Workflow
 
 1. **Data Preparation** → Clean, encode, split
 2. **Baseline Model** → Default parameters

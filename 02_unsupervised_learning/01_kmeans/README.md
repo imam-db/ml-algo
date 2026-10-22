@@ -1,5 +1,7 @@
 # K-Means Clustering
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../../README.md)** | **📁 [Unsupervised Learning](../README.md)** | **➡️ [Next: PCA](../04_pca/README.md)**
 
 ## 🗺️ Quick Access
@@ -225,24 +227,24 @@ self.rng_ = np.random.default_rng(random_state)
 
 ## Ringkasan (ID)
 
-**K-Means Clustering** adalah algoritma unsupervised learning yang membagi data menjadi K kelompok (cluster) yang tidak tumpang tindih. Setiap titik data ditempatkan ke cluster dengan centroid (rata-rata) terdekat.
+**K-Means Clustering** is algoritma unsupervised learning that divides data menjadi K groups (cluster) that not overlapping. Each data point is placed in cluster with centroid (average) terdekat.
 
-**Cara Kerja:**
-1. Pilih K centroid awal (random atau k-means++)
-2. Assign setiap titik ke centroid terdekat
-3. Update centroid sebagai rata-rata dari titik yang di-assign
-4. Ulangi sampai konvergen
+**How it Works:**
+1. Pilih K centroid awal (random or k-means++)
+2. Assign each points to centroid terdekat
+3. Update centroid as average from points that assigned
+4. Repeat until konvergen
 
 **Metrik Evaluasi:**
-- **Inertia:** Jumlah jarak kuadrat dari setiap titik ke centroid cluster-nya (semakin kecil semakin baik)
+- **Inertia:** Jumlah jarak kuadrat from each points to centroid cluster-nya (semakin kecil semakin good)
 - **Elbow Method:** Plot inertia vs K, cari "siku" di mana penurunan melambat
-- **Silhouette Score:** Ukur seberapa baik titik cocok dengan cluster-nya (-1 sampai 1, semakin tinggi semakin baik)
+- **Silhouette Score:** Ukur seberapa good points cocok with cluster-nya (-1 until 1, semakin tinggi semakin good)
 
-**Penting:** Selalu lakukan feature scaling sebelum K-Means karena algoritma ini menggunakan jarak Euclidean!
+**Penting:** Always do feature scaling before K-Means because this algorithm uses jarak Euclidean!
 
-**Studi Kasus:** Dataset berisi 500 outlet retail (warung, minimarket, grosir) di Denpasar/Bali yang dikunjungi SPG. Supervisor ingin mengelompokkan outlet untuk mengoptimalkan jadwal kunjungan berdasarkan sales, jumlah SKU, frekuensi kunjungan, OOS rate, dan rata-rata transaksi.
+**Studi Kasus:** Dataset berisi 500 outlet retail (warung, minimarket, grosir) di Denpasar/Bali that dikunjungi SPG. Supervisor ingin mengelompokkan outlet for mengoptimalkan jadwal kunjungan based on sales, jumlah SKU, frekuensi kunjungan, OOS rate, and average transaksi.
 
-**Latihan:** Gunakan elbow method dan silhouette score untuk memilih K optimal, lalu interpretasikan cluster menjadi strategi kunjungan (prioritas tinggi/sedang/rendah).
+**Exercises:** Gunakan elbow method and silhouette score for memilih K optimal, lalu interpretasikan cluster menjadi strategi kunjungan (prioritas tinggi/sedang/rendah).
 
 ---
 

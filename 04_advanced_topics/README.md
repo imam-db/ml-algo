@@ -1,5 +1,7 @@
 # Advanced Topics
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 🏠 Back to Main: `../README.md`
 
 Advanced topics to improve model performance and understanding.
