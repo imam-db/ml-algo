@@ -11,7 +11,7 @@
 | [`implementation.py`](./implementation.py) | From-scratch implementation | `python3 implementation.py` |
 | [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `python3 sklearn_example.py` |
 | [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
-| [`datasets/`](./datasets/) | SPG retail outlets dataset | - |
+| [`../01_kmeans/datasets/`](../01_kmeans/datasets/) | SPG retail outlets dataset (shared with K-Means) | - |
 
 ## 📖 Theory and Concepts
 
