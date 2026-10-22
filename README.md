@@ -17,8 +17,10 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 | Category | Beginner Friendly | Intermediate | Advanced |
 |----------|------------------|--------------|----------|
 | **Supervised** | [Linear Regression](./01_supervised_learning/01_linear_regression/) | [Random Forest](./01_supervised_learning/04_random_forest/) | [Neural Networks](./01_supervised_learning/08_neural_networks/) |
-| **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [t-SNE](./02_unsupervised_learning/05_tsne/) |
-| **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Ensemble Methods](./04_advanced_topics/01_ensemble_methods/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+| **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [Hierarchical Clustering](./02_unsupervised_learning/03_hierarchical/) |
+| **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Gradient Boosting](./01_supervised_learning/09_gradient_boosting/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+| **🧠 More Models** | [Q-Learning](./03_reinforcement_learning/01_q_learning/) | [SVM](./01_supervised_learning/10_svm/) | [CNN & Computer Vision](./04_advanced_topics/05_cnn_computer_vision/) |
+| **📈 Time Series** | [Forecasting](./04_advanced_topics/06_time_series_forecasting/) | [Gradient Boosting](./01_supervised_learning/09_gradient_boosting/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
 | **🎮 Interactive** | [Algorithm Racing](./06_playground/) | [Parameter Playground](./06_playground/) | [Feature Engineering](./06_playground/) |
 
 **🤔 Not sure which algorithm to choose?** ➡️ [**Algorithm Selection Guide**](./ALGORITHM_COMPARISON.md)
@@ -40,10 +42,10 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **[02_logistic_regression](./01_supervised_learning/02_logistic_regression/)** - Logistic Regression ✅
 - **[03_decision_trees](./01_supervised_learning/03_decision_trees/)** - Decision Trees ✅
 - **[04_random_forest](./01_supervised_learning/04_random_forest/)** - Random Forest ✅
-- **🚧 05_svm** - Support Vector Machine (planned)
+- *05_svm — moved to [10_svm](./01_supervised_learning/10_svm/)*
 - **[06_naive_bayes](./01_supervised_learning/06_naive_bayes/)** - Naive Bayes (Gaussian & Multinomial) ✅
 - **[07_knn](./01_supervised_learning/07_knn/)** - K-Nearest Neighbors (Classifier & Regressor) ✅
-- **🚧 08_neural_networks** - Neural Networks (planned)
+- **[08_neural_networks](./01_supervised_learning/08_neural_networks/)** - Neural Networks (Feedforward) ✅
 - **[09_gradient_boosting](./01_supervised_learning/09_gradient_boosting/)** - Gradient Boosting (Regression & Classification) ✅
 - **[10_svm](./01_supervised_learning/10_svm/)** - Support Vector Machine (Linear Pegasos & Kernel SMO) ✅
 
@@ -65,10 +67,11 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **🚧 02_deep_learning** - Deep Learning (planned)
 - **[03_model_evaluation](./04_advanced_topics/03_model_evaluation/)** - Model Evaluation (Metrics & Cross-Validation) ✅
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
+- **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (Conv2D, Pooling & Backprop) ✅
 - **[06_time_series_forecasting](./04_advanced_topics/06_time_series_forecasting/)** - Time Series Forecasting (Classical Models, Lag Features & Backtesting) ✅
 
-### 5. **Datasets** ([`05_datasets/`](./05_datasets/))
-Datasets used for learning
+### 5. **🚧 Datasets** (`05_datasets/`, planned)
+Shared datasets for learning (each module currently generates its own synthetic data)
 
 ### 6. **🎮 Algorithm Playground** ([`06_playground/`](./06_playground/))
 Interactive tools for experimenting with ML algorithms:
@@ -80,8 +83,8 @@ Interactive tools for experimenting with ML algorithms:
 - **🎬 Algorithm Animator** - Step-by-step visual animations
 - **🎲 Data Generator** - Create synthetic datasets for testing
 
-### 7. **Utils** ([`06_utils/`](./06_utils/))
-Utility functions and helper code
+### 7. **🚧 Utils** (`06_utils/`, planned)
+Shared utility functions and helper code
 
 ### 8. **Cheat Sheets** ([`08_cheat_sheets/`](./08_cheat_sheets/))
 Quick references to accelerate learning and implementation:
@@ -91,6 +94,8 @@ Quick references to accelerate learning and implementation:
 - 🤖 [Algorithms Quick Reference](./08_cheat_sheets/01_algorithms/algorithms_quick_reference.md)
 - 📊 [Classification Metrics](./08_cheat_sheets/04_model_evaluation/classification_metrics.md)
 - 🧮 [Essential Math & Statistics](./08_cheat_sheets/03_math_statistics/essential_formulas.md)
+- 🧹 [Data Preprocessing Pipeline](./08_cheat_sheets/05_data_preprocessing/preprocessing_pipeline.md)
+- 🛠️ [Common Errors & Solutions](./08_cheat_sheets/07_troubleshooting/common_errors_solutions.md)
 - **🚧 Visualization cheat sheets** (planned)
 
 ## 🚀 Quick Start
@@ -161,10 +166,11 @@ Each algorithm has the same folder structure:
 
 ### Advanced
 1. Neural Networks
-2. Ensemble Methods
-3. XGBoost (Gradient Boosting)
-4. Deep Learning
-5. Reinforcement Learning
+2. Gradient Boosting
+3. XGBoost
+4. CNN & Computer Vision
+5. Time Series Forecasting
+6. Reinforcement Learning (Q-Learning, SARSA)
 
 ## 📖 Resources
 
@@ -176,10 +182,10 @@ Each algorithm has the same folder structure:
 
 | Category | Implemented | Planned | Progress |
 |----------|-------------|---------|----------|
-| Supervised Learning | 6 | 2 | 🟢 75% |
+| Supervised Learning | 9 | 0 | 🟢 100% |
 | Unsupervised Learning | 4 | 2 | 🟢 67% |
 | Reinforcement Learning | 2 | 1 | 🟢 67% |
-| Advanced Topics | 2 | 2 | 🟢 50% |
+| Advanced Topics | 4 | 2 | 🟢 67% |
 
 ## 🧪 Testing
 
@@ -196,7 +202,7 @@ python -m pytest tests/test_reinforcement_learning.py -v
 python -m pytest tests/ --cov --cov-report=html
 ```
 
-**Test Coverage:** 160+ tests, all passing ✅
+**Test Coverage:** 200+ tests, all passing ✅
 
 ## 🤝 Contributing
 
