@@ -7,12 +7,16 @@ import numpy as np
 import sys
 import os
 
-# Add parent directory to path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '03_reinforcement_learning', '01_q_learning')))
+# Import RL implementation directly
+import importlib.util
+rl_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '03_reinforcement_learning', '01_q_learning', 'implementation.py'))
+spec = importlib.util.spec_from_file_location("rl_implementation", rl_path)
+rl_impl = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rl_impl)
 
-from implementation import (
-    GridWorldSPG, QLearningAgent, RandomAgent
-)
+GridWorldSPG = rl_impl.GridWorldSPG
+QLearningAgent = rl_impl.QLearningAgent
+RandomAgent = rl_impl.RandomAgent
 
 
 @pytest.fixture
