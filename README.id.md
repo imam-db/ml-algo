@@ -67,7 +67,7 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - **🚧 02_deep_learning** - Deep Learning (direncanakan)
 - **[03_model_evaluation](./04_advanced_topics/03_model_evaluation/)** - Evaluasi Model (Metrik & Validasi Silang) ✅
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
-- **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (Konvolusi 2D, Pooling & Backprop) ✅
+- **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (Conv2D im2col, MaxPool, CNN produk rak yang bisa dilatih, jembatan ke YOLO) ✅
 - **[06_time_series_forecasting](./04_advanced_topics/06_time_series_forecasting/)** - Peramalan Deret Waktu (Model Klasik, Fitur Lag & Backtesting) ✅
 
 ### 5. **🚧 Dataset** (`05_datasets/`, direncanakan)

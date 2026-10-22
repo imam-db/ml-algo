@@ -67,7 +67,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **🚧 02_deep_learning** - Deep Learning (planned)
 - **[03_model_evaluation](./04_advanced_topics/03_model_evaluation/)** - Model Evaluation (Metrics & Cross-Validation) ✅
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
-- **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (Conv2D, Pooling & Backprop) ✅
+- **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (im2col Conv2D, MaxPool, trainable shelf-product CNN, YOLO bridge) ✅
 - **[06_time_series_forecasting](./04_advanced_topics/06_time_series_forecasting/)** - Time Series Forecasting (Classical Models, Lag Features & Backtesting) ✅
 
 ### 5. **🚧 Datasets** (`05_datasets/`, planned)
