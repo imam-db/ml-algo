@@ -2,289 +2,289 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-🏠 Back to Supervised Index: `../README.md`
+🏠 Kembali ke Indeks Supervised: `../README.md`
 
-Random Forest is a powerful ensemble learning method that combines multiple decision trees to create a more robust and accurate model. It's one of the most popular and effective machine learning algorithms.
+Random Forest adalah metode ensemble learning yang kuat yang menggabungkan beberapa decision tree untuk membentuk model yang lebih kokoh dan akurat. Random Forest merupakan salah satu algoritma machine learning paling populer dan efektif.
 
-## 📚 Table of Contents
-- [Theory & Concepts](#-theory--concepts)
-- [Mathematical Foundation](#-mathematical-foundation)
-- [Ensemble Methods](#-ensemble-methods)
+## 📚 Daftar Isi
+- [Teori & Konsep](#-teori--konsep)
+- [Dasar Matematika](#-dasar-matematika)
+- [Metode Ensemble](#-metode-ensemble)
 - [Bootstrap Aggregating (Bagging)](#-bootstrap-aggregating-bagging)
-- [Advantages & Disadvantages](#-advantages--disadvantages)
-- [When to Use](#-when-to-use)
-- [Files in This Directory](#-files-in-this-directory)
+- [Kelebihan & Kekurangan](#-kelebihan--kekurangan)
+- [Kapan Digunakan](#-kapan-digunakan)
+- [File di Direktori Ini](#-file-di-direktori-ini)
 
-## 🧠 Theory & Concepts
+## 🧠 Teori & Konsep
 
-### What is Random Forest?
-Random Forest is an ensemble method that constructs multiple decision trees during training and outputs the average prediction (regression) or majority vote (classification) of the individual trees. It combines the concepts of **bagging** and **random feature selection**.
+### Apa itu Random Forest?
+Random Forest adalah metode ensemble yang membangun beberapa decision tree selama training dan mengeluarkan rata-rata prediksi (regresi) atau suara mayoritas (klasifikasi) dari masing-masing tree. Metode ini menggabungkan konsep **bagging** dan **pemilihan fitur secara acak**.
 
-### Key Concepts:
-1. **Ensemble Learning**: Combining multiple weak learners to create a strong learner
-2. **Bootstrap Sampling**: Creating different datasets by sampling with replacement
-3. **Random Feature Selection**: Each tree uses a random subset of features
-4. **Voting/Averaging**: Combining predictions from all trees
-5. **Out-of-Bag (OOB) Error**: Error estimation using samples not used in training each tree
-6. **Feature Importance**: Measuring importance based on impurity decrease across all trees
+### Konsep Kunci:
+1. **Ensemble Learning**: Menggabungkan beberapa weak learner untuk membentuk strong learner
+2. **Bootstrap Sampling**: Membuat dataset berbeda dengan sampling dengan pengembalian
+3. **Seleksi Fitur Acak**: Setiap tree menggunakan subset fitur secara acak
+4. **Voting/Averaging**: Menggabungkan prediksi dari semua tree
+5. **Out-of-Bag (OOB) Error**: Estimasi error menggunakan sampel yang tidak dipakai saat training setiap tree
+6. **Feature Importance**: Mengukur kepentingan berdasarkan penurunan impurity di semua tree
 
-### How Random Forest Works:
+### Cara Kerja Random Forest:
 ```
-1. Create B bootstrap samples from training data
-2. For each bootstrap sample:
-   - Train a decision tree
-   - At each split, consider only m random features (m < total features)
-   - Grow tree without pruning
-3. For prediction:
-   - Classification: Majority vote from all trees
-   - Regression: Average prediction from all trees
+1. Buat B bootstrap sample dari data training
+2. Untuk setiap bootstrap sample:
+   - Latih sebuah decision tree
+   - Pada setiap split, pertimbangkan hanya m fitur acak (m < total fitur)
+   - Tumbuhkan tree tanpa pruning
+3. Untuk prediksi:
+   - Klasifikasi: Suara mayoritas dari semua tree
+   - Regresi: Rata-rata prediksi dari semua tree
 ```
 
-## 📐 Mathematical Foundation
+## 📐 Dasar Matematika
 
 ### Bootstrap Sampling
 ```
-Given dataset D with n samples:
-- Create bootstrap sample D_i by sampling n samples WITH replacement
-- Each D_i contains ~63.2% unique samples from D
-- Remaining ~36.8% are "out-of-bag" (OOB) samples
+Diberikan dataset D dengan n sampel:
+- Buat bootstrap sample D_i dengan mengambil n sampel DENGAN pengembalian
+- Setiap D_i berisi ~63,2% sampel unik dari D
+- Sisanya ~36,8% adalah sampel "out-of-bag" (OOB)
 ```
 
 ### Random Feature Selection
 ```
-At each node split:
-- Total features: p
-- Random features considered: m = √p (classification) or m = p/3 (regression)
-- Best split chosen from these m features only
+Pada setiap split node:
+- Total fitur: p
+- Fitur acak yang dipertimbangkan: m = √p (klasifikasi) atau m = p/3 (regresi)
+- Split terbaik dipilih hanya dari m fitur tersebut
 ```
 
-### Ensemble Prediction
+### Prediksi Ensemble
 
-#### For Classification:
+#### Untuk Klasifikasi:
 ```
 Final_Prediction = mode(Tree_1, Tree_2, ..., Tree_B)
 
-Or with probabilities:
+Atau dengan probabilitas:
 P(class_k) = (1/B) * Σ P_i(class_k)
-where P_i(class_k) is probability from tree i
+dengan P_i(class_k) adalah probabilitas dari tree i
 ```
 
-#### For Regression:
+#### Untuk Regresi:
 ```
 Final_Prediction = (1/B) * Σ Tree_i_Prediction
 ```
 
 ### Out-of-Bag (OOB) Error
 ```
-For each sample x_i:
-- Find all trees where x_i was NOT in training set
-- Make prediction using only those trees
-- Compare with true label to compute OOB error
+Untuk setiap sampel x_i:
+- Temukan semua tree yang tidak memasukkan x_i dalam training set
+- Lakukan prediksi hanya menggunakan tree tersebut
+- Bandingkan dengan label sebenarnya untuk menghitung OOB error
 
 OOB_Error = (1/n) * Σ L(y_i, ŷ_i^OOB)
-where L is loss function and ŷ_i^OOB is OOB prediction
+dengan L adalah loss function dan ŷ_i^OOB adalah prediksi OOB
 ```
 
 ### Feature Importance
 ```
-For each feature j:
-1. Calculate impurity decrease when feature j is used for splitting
-2. Average across all trees and all nodes where feature j is used
-3. Normalize by total impurity decrease
+Untuk setiap fitur j:
+1. Hitung penurunan impurity ketika fitur j digunakan untuk splitting
+2. Rata-ratakan di semua tree dan semua node yang menggunakan fitur j
+3. Normalisasi dengan total penurunan impurity
 
 Importance_j = Σ(trees) Σ(nodes using feature j) Impurity_Decrease / Total_Impurity_Decrease
 ```
 
-## 🌳 Ensemble Methods
+## 🌳 Metode Ensemble
 
-### Types of Ensemble Methods:
+### Jenis-jenis Metode Ensemble:
 
 1. **Bagging (Bootstrap Aggregating)**
-   - Train models on different subsets of data
-   - Combine predictions by voting/averaging
-   - Reduces variance (overfitting)
-   - Random Forest uses this
+   - Melatih model pada subset data yang berbeda
+   - Menggabungkan prediksi dengan voting/averaging
+   - Mengurangi varians (overfitting)
+   - Random Forest menggunakan metode ini
 
 2. **Boosting**
-   - Train models sequentially
-   - Each model learns from previous model's errors
-   - Reduces bias (underfitting)
-   - Examples: AdaBoost, Gradient Boosting
+   - Melatih model secara sekuensial
+   - Setiap model belajar dari error model sebelumnya
+   - Mengurangi bias (underfitting)
+   - Contoh: AdaBoost, Gradient Boosting
 
 3. **Stacking**
-   - Train multiple different algorithms
-   - Use meta-learner to combine predictions
-   - Can reduce both bias and variance
+   - Melatih beberapa algoritma yang berbeda
+   - Menggunakan meta-learner untuk menggabungkan prediksi
+   - Dapat mengurangi bias maupun varians
 
-### Why Ensemble Works:
+### Mengapa Ensemble Bekerja:
 
 #### Bias-Variance Decomposition:
 ```
 Total Error = Bias² + Variance + Irreducible Error
 
 Random Forest:
-- Individual trees: High variance, low bias
-- Ensemble: Reduces variance while maintaining low bias
+- Tree individual: Varians tinggi, bias rendah
+- Ensemble: Mengurangi varians sambil mempertahankan bias rendah
 ```
 
 #### Wisdom of Crowds:
-- Individual trees make different errors
-- Averaging reduces overall error
-- Works best when trees are diverse and uncorrelated
+- Tree individual membuat error yang berbeda-beda
+- Averaging mengurangi error keseluruhan
+- Bekerja paling baik ketika tree beragam dan tidak berkorelasi
 
 ## 🎒 Bootstrap Aggregating (Bagging)
 
-### Bootstrap Process:
-1. **Original Dataset**: D = {(x₁,y₁), (x₂,y₂), ..., (xₙ,yₙ)}
-2. **Bootstrap Sample**: Sample n instances WITH replacement
-3. **Multiple Samples**: Create B bootstrap samples
-4. **Train Models**: One model per bootstrap sample
-5. **Aggregate**: Combine predictions
+### Proses Bootstrap:
+1. **Dataset Asli**: D = {(x₁,y₁), (x₂,y₂), ..., (xₙ,yₙ)}
+2. **Bootstrap Sample**: Ambil n instance DENGAN pengembalian
+3. **Beberapa Sampel**: Buat B bootstrap sample
+4. **Latih Model**: Satu model per bootstrap sample
+5. **Agregasi**: Gabungkan prediksi
 
-### Benefits of Bagging:
-- **Variance Reduction**: Averaging reduces prediction variance
-- **Stability**: Less sensitive to small data changes  
-- **Parallel Training**: Each model can be trained independently
-- **OOB Evaluation**: Built-in validation without separate test set
+### Manfaat Bagging:
+- **Variance Reduction**: Averaging mengurangi varians prediksi
+- **Stability**: Kurang sensitif terhadap perubahan kecil pada data  
+- **Parallel Training**: Setiap model dapat dilatih secara independen
+- **OOB Evaluation**: Validasi bawaan tanpa test set terpisah
 
-### Mathematical Intuition:
+### Intuisi Matematis:
 ```
-If each tree has error variance σ²:
-- Single tree variance: σ²
-- Average of B independent trees: σ²/B
-- With correlation ρ between trees: ρσ² + (1-ρ)σ²/B
+Jika setiap tree memiliki varians error σ²:
+- Varians satu tree: σ²
+- Rata-rata B tree independen: σ²/B
+- Dengan korelasi ρ antar tree: ρσ² + (1-ρ)σ²/B
 
-Random feature selection reduces correlation ρ
+Random feature selection mengurangi korelasi ρ
 ```
 
-## ✅ Advantages & Disadvantages
+## ✅ Kelebihan & Kekurangan
 
-### ✅ Advantages:
-- **High Accuracy**: Often provides excellent performance
-- **Robust to Overfitting**: Averaging reduces overfitting risk
-- **Handles Missing Values**: Can maintain accuracy with missing data
-- **Feature Importance**: Built-in feature importance ranking
-- **No Scaling Required**: Works with features on different scales
-- **Parallel Training**: Trees can be trained simultaneously
-- **OOB Validation**: Built-in model validation
-- **Versatile**: Works for both classification and regression
-- **Handles Large Datasets**: Scales well with data size
-- **Robust to Outliers**: Individual trees may be affected, but ensemble is robust
+### ✅ Kelebihan:
+- **Akurasi Tinggi**: Sering memberikan performa yang sangat baik
+- **Tahan terhadap Overfitting**: Averaging mengurangi risiko overfitting
+- **Menangani Nilai yang Hilang**: Dapat mempertahankan akurasi dengan data yang hilang
+- **Feature Importance**: Peringkat feature importance bawaan
+- **Tidak Perlu Scaling**: Bekerja dengan fitur pada skala berbeda
+- **Parallel Training**: Tree dapat dilatih secara bersamaan
+- **Validasi OOB**: Validasi model bawaan
+- **Versatile**: Bekerja untuk klasifikasi maupun regresi
+- **Menangani Dataset Besar**: Skalanya baik terhadap ukuran data
+- **Tahan terhadap Outlier**: Tree individual mungkin terpengaruh, tetapi ensemble tetap kokoh
 
-### ❌ Disadvantages:
-- **Less Interpretable**: Harder to understand than single decision tree
-- **Memory Intensive**: Stores multiple trees
-- **Slower Prediction**: Must query all trees for prediction
-- **Can Overfit**: With very noisy data or too many trees
-- **Biased Toward Categorical Features**: With many categories
-- **Not Great for Linear Relationships**: Like individual trees
-- **Hyperparameter Tuning**: More parameters to optimize
+### ❌ Kekurangan:
+- **Kurang Mudah Diinterpretasikan**: Lebih sulit dipahami daripada satu decision tree
+- **Intensif Memori**: Menyimpan banyak tree
+- **Prediksi Lebih Lambat**: Harus menanyakan semua tree untuk prediksi
+- **Dapat Mengalami Overfitting**: Pada data yang sangat bising atau tree yang terlalu banyak
+- **Bias terhadap Fitur Kategorikal**: Dengan banyak kategori
+- **Kurang Cocok untuk Hubungan Linear**: Seperti tree individual
+- **Tuning Hyperparameter**: Lebih banyak parameter untuk dioptimalkan
 
-## 🎯 When to Use
+## 🎯 Kapan Digunakan
 
-### ✅ Use Random Forest When:
-- You need high accuracy without much tuning
-- Dataset has mixed feature types (numerical + categorical)
-- You want feature importance rankings
-- Interpretability is less important than performance
-- You have sufficient training data
-- You want a robust, general-purpose algorithm
-- You need to handle missing values gracefully
-- You want built-in validation (OOB error)
+### ✅ Gunakan Random Forest Ketika:
+- Anda membutuhkan akurasi tinggi tanpa banyak tuning
+- Dataset memiliki tipe fitur campuran (numerik + kategorikal)
+- Anda menginginkan peringkat feature importance
+- Interpretabilitas tidak sepenting performa
+- Anda memiliki data training yang memadai
+- Anda menginginkan algoritma yang kokoh dan serba guna
+- Anda perlu menangani nilai yang hilang dengan baik
+- Anda menginginkan validasi bawaan (OOB error)
 
-### ❌ Don't Use When:
-- You need highly interpretable models
-- You have very limited memory/computational resources
-- Dataset is very small (< 1000 samples)
-- Prediction speed is critical
-- Relationships are primarily linear
-- You need probability calibration (though this can be fixed)
+### ❌ Jangan Gunakan Ketika:
+- Anda membutuhkan model yang sangat mudah diinterpretasikan
+- Anda memiliki memori/sumber daya komputasi yang sangat terbatas
+- Dataset sangat kecil (< 1000 sampel)
+- Kecepatan prediksi sangat kritis
+- Hubungannya terutama linear
+- Anda membutuhkan kalibrasi probabilitas (meskipun ini dapat diperbaiki)
 
-### Real-World Applications:
-- **Finance**: Credit scoring, algorithmic trading, risk assessment
-- **Healthcare**: Disease prediction, drug discovery, medical imaging
-- **Technology**: Recommendation systems, image classification, NLP
-- **Marketing**: Customer segmentation, churn prediction, A/B testing
-- **Manufacturing**: Quality control, predictive maintenance
-- **Bioinformatics**: Gene expression analysis, protein structure prediction
+### Aplikasi di Dunia Nyata:
+- **Finance**: Credit scoring, algorithmic trading, penilaian risiko
+- **Healthcare**: Prediksi penyakit, drug discovery, medical imaging
+- **Technology**: Sistem rekomendasi, klasifikasi gambar, NLP
+- **Marketing**: Segmentasi pelanggan, prediksi churn, A/B testing
+- **Manufacturing**: Kontrol kualitas, predictive maintenance
+- **Bioinformatics**: Analisis ekspresi gen, prediksi struktur protein
 
-## 🔧 Random Forest Variants
+## 🔧 Varian Random Forest
 
-### 1. **Standard Random Forest**
+### 1. **Random Forest Standar**
 - Random bootstrap sampling
-- Random feature selection at each split
-- No pruning of individual trees
+- Random feature selection pada setiap split
+- Tanpa pruning pada tree individual
 
 ### 2. **Extremely Randomized Trees (Extra Trees)**
 - Random feature selection
-- Random thresholds (not optimal splits)
-- Uses entire dataset (no bootstrap)
-- Faster training, potentially better generalization
+- Threshold acak (bukan split optimal)
+- Menggunakan seluruh dataset (tanpa bootstrap)
+- Training lebih cepat, generalisasi berpotensi lebih baik
 
 ### 3. **Balanced Random Forest**
-- Handles imbalanced datasets
-- Balances bootstrap samples
-- Good for skewed class distributions
+- Menangani dataset yang tidak seimbang
+- Menyeimbangkan bootstrap sample
+- Baik untuk distribusi kelas yang miring
 
 ### 4. **Rotation Forest**
-- Applies PCA to feature subsets
-- Rotates feature space for each tree
-- Can improve performance on some datasets
+- Menerapkan PCA pada subset fitur
+- Merotasi ruang fitur untuk setiap tree
+- Dapat meningkatkan performa pada beberapa dataset
 
-## 📁 Files in This Directory
+## 📁 File di Direktori Ini
 
-- **`README.md`** (this file) - Theory and concepts
+- **`README.md`** (file ini) - Teori dan konsep
 - **`implementation.py`** - Random Forest from scratch
-- **`sklearn_example.py`** - Practical examples using scikit-learn
-- **`exercise.ipynb`** - Hands-on exercises and experiments
-- **`datasets/`** - Sample datasets for practice
+- **`sklearn_example.py`** - Contoh praktis menggunakan scikit-learn
+- **`exercise.ipynb`** - Latihan dan eksperimen langsung
+- **`datasets/`** - Dataset contoh untuk latihan
 
-## 🚀 Quick Start
+## 🚀 Mulai Cepat
 
-1. **Understand the Theory**: Read this README
-2. **See Implementation**: Check `implementation.py`
-3. **Try Examples**: Run `sklearn_example.py`
-4. **Practice**: Complete `exercise.ipynb`
-5. **Experiment**: Use your own datasets
+1. **Pahami Teori**: Baca README ini
+2. **Lihat Implementasi**: Periksa `implementation.py`
+3. **Coba Contoh**: Jalankan `sklearn_example.py`
+4. **Latihan**: Selesaikan `exercise.ipynb`
+5. **Eksperimen**: Gunakan dataset Anda sendiri
 
-## 🎛️ Important Hyperparameters
+## 🎛️ Hyperparameter Penting
 
-### Scikit-learn Parameters:
+### Parameter Scikit-learn:
 ```python
 RandomForestClassifier(
-    n_estimators=100,          # Number of trees
-    criterion='gini',          # Split criterion
-    max_depth=None,           # Maximum depth per tree
-    min_samples_split=2,      # Min samples to split node
-    min_samples_leaf=1,       # Min samples in leaf
-    max_features='sqrt',      # Features per split
-    bootstrap=True,           # Use bootstrap sampling
-    oob_score=False,          # Calculate OOB score
-    n_jobs=None,              # Parallel jobs (-1 for all cores)
+    n_estimators=100,          # Jumlah tree
+    criterion='gini',          # Kriteria split
+    max_depth=None,           # Kedalaman maksimum per tree
+    min_samples_split=2,      # Sampel minimum untuk split node
+    min_samples_leaf=1,       # Sampel minimum di leaf
+    max_features='sqrt',      # Fitur per split
+    bootstrap=True,           # Gunakan bootstrap sampling
+    oob_score=False,          # Hitung OOB score
+    n_jobs=None,              # Pekerjaan paralel (-1 untuk semua core)
     random_state=None,        # Random seed
-    warm_start=False,         # Add trees incrementally
-    class_weight=None,        # Handle class imbalance
+    warm_start=False,         # Tambahkan tree secara bertahap
+    class_weight=None,        # Tangani ketidakseimbangan kelas
 )
 ```
 
-### Key Parameters Explained:
-- **n_estimators**: More trees = better performance, diminishing returns after ~100-500
-- **max_features**: Controls randomness and overfitting (sqrt for classification, 1/3 for regression)
-- **max_depth**: Controls individual tree complexity
-- **min_samples_split/leaf**: Prevents overfitting by requiring minimum samples
-- **bootstrap**: Whether to use bootstrap sampling (True for RF, False for Extra Trees)
-- **oob_score**: Whether to calculate out-of-bag validation score
+### Penjelasan Parameter Kunci:
+- **n_estimators**: Semakin banyak tree = performa lebih baik, dengan diminishing returns setelah ~100-500
+- **max_features**: Mengontrol keacakan dan overfitting (sqrt untuk klasifikasi, 1/3 untuk regresi)
+- **max_depth**: Mengontrol kompleksitas tree individual
+- **min_samples_split/leaf**: Mencegah overfitting dengan mensyaratkan sampel minimum
+- **bootstrap**: Apakah menggunakan bootstrap sampling (True untuk RF, False untuk Extra Trees)
+- **oob_score**: Apakah menghitung skor validasi out-of-bag
 
-## 📊 Performance Tuning
+## 📊 Tuning Performa
 
-### Hyperparameter Tuning Strategy:
-1. **Start with defaults**: Often work well
-2. **Tune n_estimators**: Find point where performance plateaus
-3. **Tune max_features**: Try sqrt(p), log2(p), p/3
-4. **Tune tree depth**: max_depth, min_samples_split, min_samples_leaf
-5. **Handle class imbalance**: class_weight, balanced sampling
+### Strategi Hyperparameter Tuning:
+1. **Mulai dengan nilai default**: Sering kali sudah bekerja baik
+2. **Tuning n_estimators**: Temukan titik ketika performa mendatar
+3. **Tuning max_features**: Coba sqrt(p), log2(p), p/3
+4. **Tuning kedalaman tree**: max_depth, min_samples_split, min_samples_leaf
+5. **Tangani ketidakseimbangan kelas**: class_weight, balanced sampling
 
-### Cross-Validation Grid:
+### Grid Cross-Validation:
 ```python
 param_grid = {
     'n_estimators': [100, 200, 500],
@@ -295,18 +295,17 @@ param_grid = {
 }
 ```
 
-## 🔗 Related Algorithms
+## 🔗 Algoritma Terkait
 
-- **Decision Trees**: Building blocks of Random Forest
-- **Extra Trees**: Extremely randomized trees variant
-- **Gradient Boosting**: Sequential ensemble method
-- **XGBoost/LightGBM**: Optimized gradient boosting
-- **Bagging**: General bootstrap aggregating method
+- **Decision Trees**: Blok penyusun Random Forest
+- **Extra Trees**: Varian extremely randomized trees
+- **Gradient Boosting**: Metode ensemble sekuensial
+- **XGBoost/LightGBM**: Gradient boosting yang dioptimalkan
+- **Bagging**: Metode bootstrap aggregating umum
 
 ---
 
-**Next Steps**: 
-- Try the implementation in `sklearn_example.py`
-- Complete exercises in `exercise.ipynb`
-- Compare with other ensemble methods
-- Explore feature importance analysis
+**Langkah Berikutnya**: 
+- Coba implementasinya di `sklearn_example.py`
+- Selesaikan latihan di `exercise.ipynb`
+- Bandingkan dengan metode ensemble lainnya

@@ -1,369 +1,367 @@
-# 🎮 Algorithm Playground
+# 🎮 Playground Algoritma
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-**🏠 [Back to Main](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🔬 [Algorithm Comparison](../ALGORITHM_COMPARISON.md)**
+**🏠 [Kembali ke Utama](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🔬 [Perbandingan Algoritma](../ALGORITHM_COMPARISON.md)**
 
-Interactive tools for experimenting with machine learning algorithms, visualizing their behavior, and understanding how they work under the hood.
+Alat interaktif untuk bereksperimen dengan algoritma machine learning, memvisualisasikan perilakunya, dan memahami cara kerjanya di balik layar.
 
 ---
 
-## 🎨 Interactive Tools
+## 🎨 Alat Interaktif
 
-### **🎛️ Parameter Playground**
+### **🎛️ Playground Parameter**
 **[`parameter_playground.py`](./parameter_playground.py)**
 
-Visualize how hyperparameters affect algorithm behavior in real-time.
+Visualisasikan bagaimana hyperparameter memengaruhi perilaku algoritma secara real-time.
 
 ```bash
-# Interactive parameter tuning with live visualization
+# Tuning parameter interaktif dengan visualisasi langsung
 uv run python parameter_playground.py
 
-# Try different algorithms
+# Coba berbagai algoritma
 uv run python parameter_playground.py --algorithm linear_regression
 uv run python parameter_playground.py --algorithm xgboost
 ```
 
-**Features:**
-- Real-time parameter adjustment with sliders
-- Live visualization of model changes
-- Performance metrics updates
-- Side-by-side comparison mode
+**Fitur:**
+- Penyesuaian parameter real-time dengan slider
+- Visualisasi langsung dari perubahan model
+- Pembaruan metrik performa
+- Mode perbandingan berdampingan
 
 ---
 
-### **🎲 Data Generator Lab**
+### **🎲 Lab Generator Data**
 **[`data_generator.py`](./data_generator.py)**
 
-Create synthetic datasets for algorithm testing and experimentation.
+Buat dataset sintetis untuk pengujian dan eksperimen algoritma.
 
 ```bash
-# Generate different dataset types
+# Hasilkan berbagai tipe dataset
 uv run python data_generator.py --type linear
 uv run python data_generator.py --type clusters --n_clusters 4
 uv run python data_generator.py --type moons --noise 0.2
 ```
 
-**Dataset Types:**
-- **Linear**: Simple linear relationships
-- **Polynomial**: Non-linear polynomial curves
-- **Clusters**: Gaussian clusters for classification
-- **Moons**: Half-moon shaped data
-- **Circles**: Concentric circles
-- **Blobs**: Random blob clusters
-- **Spiral**: Spiral patterns
-- **Custom**: Define your own patterns
+**Tipe Dataset:**
+- **Linear**: Hubungan linear sederhana
+- **Polynomial**: Kurva polinomial non-linear
+- **Clusters**: Cluster Gaussian untuk klasifikasi
+- **Moons**: Data berbentuk bulan sabit
+- **Circles**: Lingkaran konsentris
+- **Blobs**: Cluster blob acak
+- **Spiral**: Pola spiral
+- **Custom**: Tentukan pola Anda sendiri
 
 ---
 
-### **🎯 Model Visualizer**
+### **🎯 Visualizer Model**
 **[`model_visualizer.py`](./model_visualizer.py)**
 
-See decision boundaries and classification regions for different algorithms.
+Lihat decision boundary dan wilayah klasifikasi untuk berbagai algoritma.
 
 ```bash
-# Visualize decision boundaries
+# Visualisasikan decision boundary
 uv run python model_visualizer.py --algorithm svm
 uv run python model_visualizer.py --algorithm random_forest --data_type moons
 ```
 
-**Visualizations:**
-- Decision boundaries for classification
-- Regression lines and confidence intervals
-- Feature importance plots
-- Confusion matrices
-- ROC curves and precision-recall curves
+**Visualisasi:**
+- Decision boundary untuk klasifikasi
+- Garis regresi dan confidence interval
+- Plot feature importance
+- Confusion matrix
+- Kurva ROC dan kurva precision-recall
 
 ---
 
-### **🏁 Algorithm Racing**
+### **🏁 Balapan Algoritma**
 **[`algorithm_race.py`](./algorithm_race.py)**
 
-Compare multiple algorithms side-by-side on the same dataset with comprehensive performance analysis.
+Bandingkan beberapa algoritma secara berdampingan pada dataset yang sama dengan analisis performa yang komprehensif.
 
 ```bash
-# Quick test with generated data
+# Uji cepat dengan data yang dihasilkan
 uv run python algorithm_race.py --quick_test
 
-# Race with your own dataset
+# Balapan dengan dataset Anda sendiri
 uv run python algorithm_race.py --data_path your_dataset.csv
 
-# Race specific algorithms
+# Balapan algoritma tertentu
 uv run python algorithm_race.py --data_path data.csv --algorithms "random_forest,svm,logistic_regression"
 
-# Include statistical significance testing
+# Sertakan pengujian signifikansi statistik
 uv run python algorithm_race.py --data_path data.csv --stats_test
 ```
 
-**Features:**
-- **Automatic Problem Detection**: Classification vs regression
-- **Comprehensive Metrics**: Accuracy, precision, recall, F1, R², RMSE, etc.
-- **Performance Visualizations**: 4-panel comparison charts
-- **Statistical Testing**: Pairwise t-tests between algorithms
-- **Speed Analysis**: Training and prediction time benchmarks
-- **Cross-validation**: Robust performance evaluation
-- **Winner Declaration**: Best algorithm with detailed analysis
+**Fitur:**
+- **Deteksi Masalah Otomatis**: Klasifikasi vs regresi
+- **Metrik Komprehensif**: Accuracy, precision, recall, F1, R², RMSE, dan sebagainya
+- **Visualisasi Performa**: Grafik perbandingan 4 panel
+- **Pengujian Statistik**: Pairwise t-test antar algoritma
+- **Analisis Kecepatan**: Benchmark waktu training dan prediksi
+- **Cross-validation**: Evaluasi performa yang kokoh
+- **Penentuan Pemenang**: Algoritma terbaik dengan analisis detail
 
-**Supported Algorithms:**
-- Classification: Logistic Regression, Random Forest, SVM, Naive Bayes, KNN, Decision Tree, XGBoost
-- Regression: Linear Regression, Random Forest, SVM, KNN, Decision Tree, XGBoost
+**Algoritma yang Didukung:**
+- Klasifikasi: Logistic Regression, Random Forest, SVM, Naive Bayes, KNN, Decision Tree, XGBoost
+- Regresi: Linear Regression, Random Forest, SVM, KNN, Decision Tree, XGBoost
 
 ---
 
-### **📈 Learning Curve Explorer**
+### **📈 Penjelajah Learning Curve**
 **[`learning_curves.py`](./learning_curves.py)**
 
-Watch how algorithms learn over time and iterations.
+Amati bagaimana algoritma belajar seiring waktu dan iterasi.
 
 ```bash
-# Visualize learning process
+# Visualisasikan proses pembelajaran
 uv run python learning_curves.py --algorithm gradient_descent
 uv run python learning_curves.py --algorithm xgboost --show_validation
 ```
 
-**Visualizations:**
-- Training vs validation curves
-- Cost function optimization paths
-- Convergence analysis
-- Overfitting detection
-- Early stopping visualization
+**Visualisasi:**
+- Kurva training vs validation
+- Jalur optimasi cost function
+- Analisis konvergensi
+- Deteksi overfitting
+- Visualisasi early stopping
 
 ---
 
-### **⚗️ Feature Engineering Lab**
+### **⚗️ Lab Feature Engineering**
 **[`feature_lab.py`](./feature_lab.py)**
 
-Experiment with different feature transformations and see their effects.
+Eksperimen dengan berbagai transformasi fitur dan lihat efeknya.
 
 ```bash
-# Interactive feature engineering
+# Feature engineering interaktif
 uv run python feature_lab.py
 uv run python feature_lab.py --transformations polynomial,scaling,selection
 ```
 
-**Transformations:**
+**Transformasi:**
 - Polynomial features
 - Feature scaling (StandardScaler, MinMaxScaler)
 - Feature selection (SelectKBest, RFE)
-- PCA dimensionality reduction
-- Custom transformations
+- Reduksi dimensi PCA
+- Transformasi kustom
 - Interaction features
 
 ---
 
-### **🎬 Algorithm Animations**
+### **🎬 Animasi Algoritma**
 **[`algorithm_animator.py`](./algorithm_animator.py)**
 
-Step-by-step visual animations of how algorithms work internally.
+Animasi visual langkah demi langkah tentang cara kerja internal algoritma.
 
 ```bash
-# Animate algorithm steps
+# Animasi langkah-langkah algoritma
 uv run python algorithm_animator.py --algorithm kmeans
 uv run python algorithm_animator.py --algorithm gradient_descent --steps 50
 ```
 
-**Available Animations:**
-- K-Means clustering iterations
-- Gradient descent optimization
-- Decision tree splitting
-- Linear regression fitting
-- Neural network training
+**Animasi yang Tersedia:**
+- Iterasi clustering K-Means
+- Optimasi gradient descent
+- Pemisahan decision tree
+- Pencocokan linear regression
+- Training neural network
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Panduan Mulai Cepat
 
-### **1. 🎯 First-Time Setup**
+### **1. 🎯 Persiapan Pertama**
 ```bash
-# Install additional visualization dependencies
+# Instal dependensi visualisasi tambahan
 uv add matplotlib seaborn plotly ipywidgets
 
-# Test the playground
+# Uji playground
 uv run python parameter_playground.py --test
 ```
 
-### **2. 🎮 Interactive Mode**
+### **2. 🎮 Mode Interaktif**
 ```bash
-# Launch interactive playground
+# Jalankan playground interaktif
 uv run python 06_playground/playground_launcher.py
 ```
 
-### **3. 🔬 Experiment with Algorithms**
+### **3. 🔬 Eksperimen dengan Algoritma**
 ```bash
-# Quick algorithm comparison
+# Perbandingan algoritma cepat
 uv run python algorithm_race.py --quick_test
 
-# Generate test data
+# Hasilkan data uji
 uv run python data_generator.py --interactive
 
-# Visualize any algorithm
+# Visualisasikan algoritma apa pun
 uv run python model_visualizer.py --interactive
 ```
 
 ---
 
-## 🎓 Educational Use Cases
+## 🎓 Kasus Penggunaan Edukatif
 
-### **👶 For Beginners**
-- **Understanding Basics**: Use `parameter_playground.py` to see how changing learning rate affects linear regression
-- **Data Exploration**: Generate different datasets with `data_generator.py` to understand data patterns
-- **Visual Learning**: Watch algorithms work with `algorithm_animator.py`
+### **👶 Untuk Pemula**
+- **Memahami Dasar**: Gunakan `parameter_playground.py` untuk melihat bagaimana perubahan learning rate memengaruhi linear regression
+- **Eksplorasi Data**: Hasilkan berbagai dataset dengan `data_generator.py` untuk memahami pola data
+- **Belajar Visual**: Amati cara kerja algoritma dengan `algorithm_animator.py`
 
-### **📚 For Intermediate Learners**
-- **Parameter Tuning**: Master hyperparameter effects with interactive sliders
-- **Algorithm Comparison**: Race algorithms to understand trade-offs
-- **Feature Engineering**: Experiment with transformations in `feature_lab.py`
+### **📚 Untuk Pelajar Tingkat Menengah**
+- **Parameter Tuning**: Kuasai efek hyperparameter dengan slider interaktif
+- **Perbandingan Algoritma**: Balapan algoritma untuk memahami trade-off
+- **Feature Engineering**: Eksperimen dengan transformasi di `feature_lab.py`
 
-### **🚀 For Advanced Users**
-- **Algorithm Analysis**: Deep dive into learning curves and convergence
-- **Custom Experiments**: Modify playground tools for specific research
-- **Teaching Tools**: Use visualizations for presentations and tutorials
+### **🚀 Untuk Pengguna Lanjutan**
+- **Analisis Algoritma**: Selami learning curve dan konvergensi
+- **Eksperimen Kustom**: Modifikasi alat playground untuk penelitian tertentu
+- **Alat Pengajaran**: Gunakan visualisasi untuk presentasi dan tutorial
 
 ---
 
-## 🛠️ Playground Architecture
+## 🛠️ Arsitektur Playground
 
-### **Core Components**
+### **Komponen Inti**
 ```
 06_playground/
-├── README.md                    # This file
-├── playground_launcher.py       # Main interactive launcher
-├── parameter_playground.py      # Parameter visualization tool
-├── data_generator.py           # Synthetic data creation
-├── model_visualizer.py         # Decision boundary plots  
-├── algorithm_race.py           # Multi-algorithm comparison
-├── learning_curves.py          # Learning curve analysis
-├── feature_lab.py              # Feature engineering experiments
-├── algorithm_animator.py       # Step-by-step animations
-├── utils/                      # Shared utilities
+├── README.md                    # File ini
+├── playground_launcher.py       # Launcher interaktif utama
+├── parameter_playground.py      # Alat visualisasi parameter
+├── data_generator.py           # Pembuatan data sintetis
+├── model_visualizer.py         # Plot decision boundary  
+├── algorithm_race.py           # Perbandingan multi-algoritma
+├── learning_curves.py          # Analisis learning curve
+├── feature_lab.py              # Eksperimen feature engineering
+├── algorithm_animator.py       # Animasi langkah demi langkah
+├── utils/                      # Utilitas bersama
 │   ├── __init__.py
-│   ├── visualization.py       # Common plotting functions
-│   ├── data_utils.py          # Data generation utilities
-│   └── algorithm_utils.py     # Algorithm wrapper utilities
-└── examples/                   # Example notebooks
-    ├── playground_tour.ipynb   # Interactive tour
-    ├── parameter_tuning.ipynb  # Parameter exploration
-    └── visual_learning.ipynb   # Visual algorithm guide
+│   ├── visualization.py       # Fungsi plotting umum
+│   ├── data_utils.py          # Utilitas pembuatan data
+│   └── algorithm_utils.py     # Utilitas wrapper algoritma
+└── examples/                   # Notebook contoh
+    ├── playground_tour.ipynb   # Tur interaktif
+    ├── parameter_tuning.ipynb  # Eksplorasi parameter
+    └── visual_learning.ipynb   # Panduan algoritma visual
 ```
 
-### **Integration Points**
-- **Algorithm Implementations**: Uses algorithms from `01_supervised_learning/`, `02_unsupervised_learning/`
-- **Datasets**: Can load CSV data; the shared `05_datasets/` folder is planned (direncanakan)
-- **Progress Tracking**: Integration with `progress_tracker.py`
-- **Terminology**: Links to `GLOSSARY.md` for explanations
+### **Titik Integrasi**
+- **Implementasi Algoritma**: Menggunakan algoritma dari `01_supervised_learning/`, `02_unsupervised_learning/`
+- **Dataset**: Dapat memuat data CSV; folder bersama `05_datasets/` direncanakan
+- **Pelacakan Progres**: Integrasi dengan `progress_tracker.py`
+- **Terminologi**: Tautan ke `GLOSSARY.md` untuk penjelasan
 
 ---
 
-## 🎯 Learning Objectives
+## 🎯 Tujuan Pembelajaran
 
-After using the Algorithm Playground, you will:
+Setelah menggunakan Playground Algoritma, Anda akan:
 
-### **🎓 Conceptual Understanding**
-- [ ] **Visualize** how different algorithms create decision boundaries
-- [ ] **Understand** the effect of hyperparameters on model behavior
-- [ ] **Compare** algorithm performance across different data types
-- [ ] **Recognize** overfitting and underfitting patterns
+### **🎓 Pemahaman Konseptual**
+- [ ] **Memvisualisasikan** bagaimana berbagai algoritma membuat decision boundary
+- [ ] **Memahami** efek hyperparameter terhadap perilaku model
+- [ ] **Membandingkan** performa algoritma pada berbagai tipe data
+- [ ] **Mengenali** pola overfitting dan underfitting
 
-### **🔬 Practical Skills**  
-- [ ] **Generate** synthetic datasets for algorithm testing
-- [ ] **Experiment** with feature engineering transformations
-- [ ] **Analyze** learning curves and convergence patterns
-- [ ] **Optimize** hyperparameters through visual feedback
+### **🔬 Keterampilan Praktis**  
+- [ ] **Menghasilkan** dataset sintetis untuk pengujian algoritma
+- [ ] **Bereksperimen** dengan transformasi feature engineering
+- [ ] **Menganalisis** learning curve dan pola konvergensi
+- [ ] **Mengoptimalkan** hyperparameter melalui umpan balik visual
 
-### **🧠 Analytical Thinking**
-- [ ] **Predict** which algorithms work best for specific data patterns
-- [ ] **Diagnose** model problems through visualization
-- [ ] **Design** experiments to test algorithmic hypotheses
-- [ ] **Communicate** algorithm behavior through visual evidence
+### **🧠 Berpikir Analitis**
+- [ ] **Memprediksi** algoritma mana yang paling cocok untuk pola data tertentu
+- [ ] **Mendiagnosis** masalah model melalui visualisasi
+- [ ] **Merancang** eksperimen untuk menguji hipotesis algoritma
+- [ ] **Mengomunikasikan** perilaku algoritma melalui bukti visual
 
 ---
 
-## 🎮 Interactive Examples
+## 🎮 Contoh Interaktif
 
-### **Example 1: Understanding Overfitting**
+### **Contoh 1: Memahami Overfitting**
 ```bash
-# Generate polynomial data
+# Hasilkan data polinomial
 uv run python data_generator.py --type polynomial --noise 0.1 --save overfitting_data.csv
 
-# Compare different model complexities
+# Bandingkan berbagai kompleksitas model
 uv run python parameter_playground.py --data overfitting_data.csv --algorithm polynomial_regression
 
-# Adjust polynomial degree and watch validation performance
-# Degree 1: Underfitting (high bias)
-# Degree 3: Good fit  
-# Degree 15: Overfitting (high variance)
+# Sesuaikan derajat polinomial dan amati performa validasi
+# Derajat 1: Underfitting (bias tinggi)
+# Derajat 3: Fit yang baik  
+# Derajat 15: Overfitting (variance tinggi)
 ```
 
-### **Example 2: Algorithm Selection**
+### **Contoh 2: Pemilihan Algoritma**
 ```bash
-# Create classification dataset  
+# Buat dataset klasifikasi  
 uv run python data_generator.py --type moons --noise 0.3 --save moons_data.csv
 
-# Race different classifiers
+# Balapan berbagai classifier
 uv run python algorithm_race.py --data moons_data.csv --algorithms logistic_regression,svm,random_forest
 
-# Visualize decision boundaries
+# Visualisasikan decision boundary
 uv run python model_visualizer.py --data moons_data.csv --algorithm svm --kernel rbf
 ```
 
-### **Example 3: Feature Engineering Impact**
+### **Contoh 3: Dampak Feature Engineering**
 ```bash
-# Generate non-linear data
+# Hasilkan data non-linear
 uv run python data_generator.py --type circles --save circles_data.csv
 
-# Test linear model (will fail)
+# Uji model linear (akan gagal)
 uv run python model_visualizer.py --data circles_data.csv --algorithm logistic_regression
 
-# Apply polynomial features and see improvement  
+# Terapkan polynomial features dan lihat peningkatannya  
 uv run python feature_lab.py --data circles_data.csv --transform polynomial --degree 2
 ```
 
 ---
 
-## 💡 Pro Tips
+## 💡 Tips Pro
 
-### **🎯 Effective Experimentation**
-1. **Start Simple**: Begin with linear data and simple algorithms
-2. **One Variable**: Change one parameter at a time to understand effects
-3. **Visual First**: Always visualize before diving into metrics
-4. **Compare**: Use racing tool to understand trade-offs
+### **🎯 Eksperimen yang Efektif**
+1. **Mulai Sederhana**: Awali dengan data linear dan algoritma sederhana
+2. **Satu Variabel**: Ubah satu parameter pada satu waktu untuk memahami efeknya
+3. **Visualisasi Dulu**: Selalu visualisasikan sebelum menyelami metrik
+4. **Bandingkan**: Gunakan alat balapan untuk memahami trade-off
 
-### **🔬 Scientific Approach**
-1. **Hypothesis**: Form predictions before running experiments
-2. **Control**: Keep other variables constant when testing
-3. **Repeat**: Run experiments multiple times with different random seeds
-4. **Document**: Save interesting findings and parameter combinations
+### **🔬 Pendekatan Ilmiah**
+1. **Hipotesis**: Buat prediksi sebelum menjalankan eksperimen
+2. **Kontrol**: Jaga variabel lain tetap konstan saat menguji
+3. **Ulangi**: Jalankan eksperimen beberapa kali dengan random seed berbeda
+4. **Dokumentasikan**: Simpan temuan menarik dan kombinasi parameter
 
-### **🎨 Visualization Best Practices**
-1. **Appropriate Scale**: Use log scale for wide-ranging metrics
-2. **Color Coding**: Consistent colors for algorithms across plots
-3. **Clear Labels**: Always label axes and include legends
-4. **Interactive**: Use sliders and widgets for real-time exploration
-
----
-
-## 🔗 Related Resources
-
-### **Learning Materials**
-- **[Algorithm Comparison](../ALGORITHM_COMPARISON.md)** - Choose the right algorithm
-- **[Glossary](../GLOSSARY.md)** - Understand terminology
-- **[Progress Tracker](../PROGRESS_TRACKER.md)** - Track your learning
-
-### **Implementation References**
-- **[Linear Regression](../01_supervised_learning/01_linear_regression/)** - Theory and implementation
-- **[XGBoost](../04_advanced_topics/04_xgboost/)** - Advanced ensemble methods
-- **[Model Evaluation](../04_advanced_topics/03_model_evaluation/)** - Performance metrics
-
-### **Development Tools**
-- **Development workflow** (`WARP.md`, direncanakan)
-- **Jupyter Notebooks** - Interactive development environment
+### **🎨 Praktik Terbaik Visualisasi**
+1. **Skala yang Tepat**: Gunakan skala log untuk metrik dengan rentang lebar
+2. **Kode Warna**: Warna yang konsisten untuk algoritma di semua plot
+3. **Label Jelas**: Selalu beri label sumbu dan sertakan legenda
+4. **Interaktif**: Gunakan slider dan widget untuk eksplorasi real-time
 
 ---
 
-**🎮 Ready to Play?** Start with the playground launcher and explore the interactive world of machine learning!
+## 🔗 Sumber Daya Terkait
+
+### **Materi Pembelajaran**
+- **[Perbandingan Algoritma](../ALGORITHM_COMPARISON.md)** - Pilih algoritma yang tepat
+- **[Glosarium](../GLOSSARY.md)** - Pahami terminologi
+- **[Progress Tracker](../PROGRESS_TRACKER.md)** - Lacak pembelajaran Anda
+
+### **Referensi Implementasi**
+- **[Linear Regression](../01_supervised_learning/01_linear_regression/)** - Teori dan implementasi
+- **[XGBoost](../04_advanced_topics/04_xgboost/)** - Metode ensemble lanjutan
+- **[Model Evaluation](../04_advanced_topics/03_model_evaluation/)** - Metrik performa
+
+### **Alat Pengembangan**
+- **Alur kerja pengembangan** (`WARP.md`, direncanakan)
+- **Jupyter Notebooks** - Lingkungan pengembangan interaktif
+
+---
+
+**🎮 Siap Bermain?** Mulai dengan playground launcher dan jelajahi dunia machine learning yang interaktif!
 
 ```bash
 uv run python 06_playground/playground_launcher.py
 ```
-
-**🏠 [Back to Main README](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🚀 [Start Learning](../README.md#-quick-navigation)**

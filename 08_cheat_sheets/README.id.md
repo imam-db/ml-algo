@@ -1,201 +1,201 @@
-# 📋 Machine Learning Cheat Sheets Collection
+# 📋 Koleksi Cheat Sheet Machine Learning
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-**🏠 [Back to Main](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🎮 [Algorithm Playground](../06_playground/)**
+**🏠 [Kembali ke Utama](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🎮 [Playground Algoritma](../06_playground/)**
 
-Quick reference guides and cheat sheets for machine learning algorithms, Python libraries, and essential concepts.
+Panduan referensi cepat dan cheat sheet untuk algoritma machine learning, library Python, dan konsep-konsep penting.
 
 ---
 
-## 🗂️ Collection Overview
+## 🗂️ Ringkasan Koleksi
 
-| Category | Description | Quick Access |
+| Kategori | Deskripsi | Akses Cepat |
 |----------|-------------|--------------|
-| **🤖 [Algorithms](./01_algorithms/)** | Algorithms overview and selection | [Algorithm Selection Flowchart](./01_algorithms/algorithm_selection_flowchart.md) • [Algorithms Quick Reference](./01_algorithms/algorithms_quick_reference.md) |
-| **🐍 [Python/Sklearn](./02_python_sklearn/)** | Python, pandas, NumPy, scikit-learn | [Sklearn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md) • [Pandas & NumPy Essentials](./02_python_sklearn/pandas_numpy_essentials.md) |
-| **📊 [Math & Stats](./03_math_statistics/)** | Essential formulas | [Essential Formulas](./03_math_statistics/essential_formulas.md) |
-| **📈 [Model Evaluation](./04_model_evaluation/)** | Metrics & validation | [Classification Metrics](./04_model_evaluation/classification_metrics.md) |
-| **🔧 [Data Preprocessing](./05_data_preprocessing/)** | Cleaning & features | [Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md) |
-| **📊 Visualization** | Plotting references | Visualization cheat sheet (direncanakan) |
-| **🐛 [Troubleshooting](./07_troubleshooting/)** | Common errors & fixes | [Common Errors & Solutions](./07_troubleshooting/common_errors_solutions.md) |
-| **📝 Templates** | Reusable templates | Templates (direncanakan) |
-| **⚡ Interactive Generator** | Generate sheets | Generator scripts (direncanakan) |
+| **🤖 [Algoritma](./01_algorithms/)** | Ringkasan dan pemilihan algoritma | [Flowchart Pemilihan Algoritma](./01_algorithms/algorithm_selection_flowchart.md) • [Referensi Cepat Algoritma](./01_algorithms/algorithms_quick_reference.md) |
+| **🐍 [Python/Sklearn](./02_python_sklearn/)** | Python, pandas, NumPy, scikit-learn | [Referensi Cepat Sklearn](./02_python_sklearn/sklearn_quick_reference.md) • [Dasar Pandas & NumPy](./02_python_sklearn/pandas_numpy_essentials.md) |
+| **📊 [Matematika & Statistik](./03_math_statistics/)** | Rumus-rumus penting | [Rumus Penting](./03_math_statistics/essential_formulas.md) |
+| **📈 [Evaluasi Model](./04_model_evaluation/)** | Metrik & validasi | [Metrik Klasifikasi](./04_model_evaluation/classification_metrics.md) |
+| **🔧 [Data Preprocessing](./05_data_preprocessing/)** | Pembersihan & fitur | [Pipeline Preprocessing](./05_data_preprocessing/preprocessing_pipeline.md) |
+| **📊 Visualisasi** | Referensi plotting | Cheat sheet visualisasi (direncanakan) |
+| **🐛 [Troubleshooting](./07_troubleshooting/)** | Error umum & solusinya | [Error Umum & Solusi](./07_troubleshooting/common_errors_solutions.md) |
+| **📝 Template** | Template yang dapat digunakan ulang | Template (direncanakan) |
+| **⚡ Generator Interaktif** | Hasilkan sheet | Skrip generator (direncanakan) |
 
 ---
 
-## 🚀 Quick Navigation
+## 🚀 Navigasi Cepat
 
-### **🔥 Most Popular Cheat Sheets**
-1. **[Scikit-learn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md)**
-2. **[Classification Metrics](./04_model_evaluation/classification_metrics.md)**
-3. **[Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md)**
-4. **[Algorithm Selection Flowchart](./01_algorithms/algorithm_selection_flowchart.md)**
+### **🔥 Cheat Sheet Paling Populer**
+1. **[Referensi Cepat Scikit-learn](./02_python_sklearn/sklearn_quick_reference.md)**
+2. **[Metrik Klasifikasi](./04_model_evaluation/classification_metrics.md)**
+3. **[Pipeline Preprocessing](./05_data_preprocessing/preprocessing_pipeline.md)**
+4. **[Flowchart Pemilihan Algoritma](./01_algorithms/algorithm_selection_flowchart.md)**
 
-### **📚 By Learning Level**
+### **📚 Berdasarkan Tingkat Pembelajaran**
 
-Each level lists available sheets first, followed by planned topics.
+Setiap tingkat mencantumkan sheet yang tersedia terlebih dahulu, diikuti topik yang direncanakan.
 
-#### **🟢 Beginner**
-- [Scikit-Learn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md)
-- [Pandas & NumPy Essentials](./02_python_sklearn/pandas_numpy_essentials.md)
-- [Algorithm Selection Flowchart](./01_algorithms/algorithm_selection_flowchart.md)
-- [Algorithms Quick Reference](./01_algorithms/algorithms_quick_reference.md)
-- Python basics for ML (direncanakan)
+#### **🟢 Pemula**
+- [Referensi Cepat Scikit-Learn](./02_python_sklearn/sklearn_quick_reference.md)
+- [Dasar Pandas & NumPy](./02_python_sklearn/pandas_numpy_essentials.md)
+- [Flowchart Pemilihan Algoritma](./01_algorithms/algorithm_selection_flowchart.md)
+- [Referensi Cepat Algoritma](./01_algorithms/algorithms_quick_reference.md)
+- Dasar Python untuk ML (direncanakan)
 
-#### **🟡 Intermediate**
-- [Classification Metrics](./04_model_evaluation/classification_metrics.md)
-- [Data Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md)
-- [Common Errors & Solutions](./07_troubleshooting/common_errors_solutions.md)
-- Feature engineering techniques (direncanakan)
-- Cross-validation methods (direncanakan)
-- Advanced scikit-learn usage (direncanakan)
+#### **🟡 Menengah**
+- [Metrik Klasifikasi](./04_model_evaluation/classification_metrics.md)
+- [Pipeline Data Preprocessing](./05_data_preprocessing/preprocessing_pipeline.md)
+- [Error Umum & Solusi](./07_troubleshooting/common_errors_solutions.md)
+- Teknik feature engineering (direncanakan)
+- Metode cross-validation (direncanakan)
+- Penggunaan scikit-learn lanjutan (direncanakan)
 
-#### **🔴 Advanced**
-- [Essential Math & Statistics](./03_math_statistics/essential_formulas.md)
-- Hyperparameter tuning guide (direncanakan)
-- Ensemble methods guide (direncanakan)
-- Custom transformer templates (direncanakan)
-- Model optimization strategies (direncanakan)
+#### **🔴 Lanjutan**
+- [Matematika & Statistik Penting](./03_math_statistics/essential_formulas.md)
+- Panduan hyperparameter tuning (direncanakan)
+- Panduan metode ensemble (direncanakan)
+- Template custom transformer (direncanakan)
+- Strategi optimasi model (direncanakan)
 
 ---
 
-## 🎯 Usage Guide
+## 🎯 Panduan Penggunaan
 
-### **🔍 Find What You Need**
+### **🔍 Temukan yang Anda Butuhkan**
 ```bash
-# Search for specific topics
+# Cari topik tertentu
 grep -r "random forest" 08_cheat_sheets/
 grep -r "cross validation" 08_cheat_sheets/
 
-# Browse by category
+# Jelajahi berdasarkan kategori
 ls 08_cheat_sheets/01_algorithms/
 ls 08_cheat_sheets/02_python_sklearn/
 ```
 
-### **📱 Interactive Generation**
+### **📱 Pembuatan Interaktif**
 Direncanakan (skrip generator sedang dikembangkan).
 
-### **📖 Print-Friendly Versions**
-All cheat sheets are designed to be:
-- **Printable** on standard A4/Letter paper
-- **Mobile-friendly** for quick reference
-- **Copy-paste ready** with working code examples
+### **📖 Versi Ramah Cetak**
+Semua cheat sheet dirancang untuk:
+- **Dapat dicetak** pada kertas A4/Letter standar
+- **Ramah mobile** untuk referensi cepat
+- **Siap copy-paste** dengan contoh kode yang berfungsi
 
 ---
 
-## 🛠️ How to Use
+## 🛠️ Cara Menggunakan
 
-### **1. 🔎 Quick Reference**
-- **Browse by category** using the table above
-- **Search by keyword** using your favorite text search
-- **Bookmark frequently used sheets** for quick access
+### **1. 🔎 Referensi Cepat**
+- **Jelajahi berdasarkan kategori** menggunakan tabel di atas
+- **Cari berdasarkan kata kunci** menggunakan pencarian teks favorit Anda
+- **Tandai sheet yang sering digunakan** untuk akses cepat
 
-### **2. 📝 Code Examples**
-All cheat sheets include:
-- ✅ **Working code snippets**
-- ✅ **Import statements**
-- ✅ **Parameter explanations**
-- ✅ **Common use cases**
+### **2. 📝 Contoh Kode**
+Semua cheat sheet mencakup:
+- ✅ **Potongan kode yang berfungsi**
+- ✅ **Pernyataan import**
+- ✅ **Penjelasan parameter**
+- ✅ **Kasus penggunaan umum**
 
-### **3. 🎓 Learning Integration**
-- **Link to full tutorials** in main algorithm folders
-- **Cross-references** to related concepts
-- **Difficulty indicators** for each topic
+### **3. 🎓 Integrasi Pembelajaran**
+- **Tautan ke tutorial lengkap** di folder algoritma utama
+- **Referensi silang** ke konsep terkait
+- **Indikator tingkat kesulitan** untuk setiap topik
 
 ---
 
-## 📋 Cheat Sheet Format
+## 📋 Format Cheat Sheet
 
-Each cheat sheet follows a consistent format:
+Setiap cheat sheet mengikuti format yang konsisten:
 
 ```markdown
-# [Topic] Cheat Sheet
+# Cheat Sheet [Topik]
 
-## 🎯 Quick Summary
-[One-line description of what this covers]
+## 🎯 Ringkasan Singkat
+[Deskripsi satu baris tentang apa yang dibahas]
 
-## ⚡ Essential Code
-[Most common code patterns]
+## ⚡ Kode Penting
+[Pola kode yang paling umum]
 
-## 📊 Key Concepts
-[Important formulas/concepts]
+## 📊 Konsep Kunci
+[Formula/konsep penting]
 
-## 🔧 Parameters Guide
-[Parameter explanations with examples]
+## 🔧 Panduan Parameter
+[Penjelasan parameter dengan contoh]
 
-## ❗ Common Pitfalls
-[Things to watch out for]
+## ❗ Jebakan Umum
+[Hal-hal yang perlu diwaspadai]
 
-## 🔗 Related Topics
-[Links to related cheat sheets]
+## 🔗 Topik Terkait
+[Tautan ke cheat sheet terkait]
 ```
 
 ---
 
-## 🆕 Latest Updates
+## 🆕 Pembaruan Terbaru
 
-- **📅 [Date]**: Added XGBoost parameter tuning guide
-- **📅 [Date]**: Updated sklearn syntax for v1.3+
-- **📅 [Date]**: New data visualization patterns
-- **📅 [Date]**: Enhanced troubleshooting section
-
----
-
-## 🤝 Contributing
-
-### **Adding New Cheat Sheets**
-1. Choose appropriate category folder
-2. Follow the standard format template
-3. Include working code examples
-4. Add cross-references to related sheets
-
-### **Updating Existing Sheets**
-- Keep examples current with latest library versions
-- Add new common use cases
-- Improve clarity and conciseness
+- **📅 [Tanggal]**: Menambahkan panduan tuning parameter XGBoost
+- **📅 [Tanggal]**: Memperbarui sintaks sklearn untuk v1.3+
+- **📅 [Tanggal]**: Pola visualisasi data baru
+- **📅 [Tanggal]**: Meningkatkan bagian troubleshooting
 
 ---
 
-## 📱 Mobile Access
+## 🤝 Kontribusi
 
-All cheat sheets are optimized for mobile viewing:
-- **Responsive design** for all screen sizes
-- **Concise formatting** for quick scanning
-- **Essential information first** approach
+### **Menambahkan Cheat Sheet Baru**
+1. Pilih folder kategori yang sesuai
+2. Ikuti template format standar
+3. Sertakan contoh kode yang berfungsi
+4. Tambahkan referensi silang ke sheet terkait
 
----
-
-## 💡 Pro Tips
-
-### **🔥 Efficiency Hacks**
-- **Bookmark this page** for quick access
-- **Print frequently used sheets** for offline reference
-- **Use browser search** (Ctrl+F) to find specific functions
-- **Combine sheets** for complex workflows
-
-### **🎯 Best Practices**
-- **Start with templates** for new projects
-- **Check troubleshooting** before debugging
-- **Cross-reference** multiple related sheets
-- **Keep sheets updated** with your personal notes
+### **Memperbarui Sheet yang Ada**
+- Jaga contoh tetap mutakhir dengan versi library terbaru
+- Tambahkan kasus penggunaan umum yang baru
+- Tingkatkan kejelasan dan keringkasan
 
 ---
 
-## 🔗 Related Resources
+## 📱 Akses Mobile
 
-### **Internal Links**
-- **[Algorithm Implementations](../01_supervised_learning/)** - Full tutorials and theory
-- **[Interactive Playground](../06_playground/)** - Hands-on experimentation
-- **[Progress Tracker](../PROGRESS_TRACKER.md)** - Track your learning journey
-
-### **External References**
-- **[Scikit-learn Documentation](https://scikit-learn.org/stable/user_guide.html)**
-- **[Pandas Documentation](https://pandas.pydata.org/docs/)**
-- **[NumPy Documentation](https://numpy.org/doc/stable/)**
+Semua cheat sheet dioptimalkan untuk tampilan mobile:
+- **Desain responsif** untuk semua ukuran layar
+- **Format ringkas** untuk pemindaian cepat
+- **Pendekatan informasi penting lebih dulu**
 
 ---
 
-**📋 Ready to find what you need?** Start with the [Quick Navigation](#-quick-navigation) above or browse by category!
+## 💡 Tips Pro
 
-**🏠 [Back to Main Repository](../README.md)** | **🎮 [Try Algorithm Playground](../06_playground/)** | **🚀 [Start Learning](../README.md#-learning-path)**
+### **🔥 Trik Efisiensi**
+- **Tandai halaman ini** untuk akses cepat
+- **Cetak sheet yang sering digunakan** untuk referensi offline
+- **Gunakan pencarian browser** (Ctrl+F) untuk menemukan fungsi tertentu
+- **Gabungkan sheet** untuk alur kerja yang kompleks
+
+### **🎯 Praktik Terbaik**
+- **Mulai dengan template** untuk proyek baru
+- **Periksa troubleshooting** sebelum melakukan debugging
+- **Referensi silang** beberapa sheet terkait
+- **Jaga sheet tetap diperbarui** dengan catatan pribadi Anda
+
+---
+
+## 🔗 Sumber Daya Terkait
+
+### **Tautan Internal**
+- **[Implementasi Algoritma](../01_supervised_learning/)** - Tutorial dan teori lengkap
+- **[Playground Interaktif](../06_playground/)** - Eksperimen langsung
+- **[Progress Tracker](../PROGRESS_TRACKER.md)** - Lacak perjalanan pembelajaran Anda
+
+### **Referensi Eksternal**
+- **[Dokumentasi Scikit-learn](https://scikit-learn.org/stable/user_guide.html)**
+- **[Dokumentasi Pandas](https://pandas.pydata.org/docs/)**
+- **[Dokumentasi NumPy](https://numpy.org/doc/stable/)**
+
+---
+
+**📋 Siap menemukan yang Anda butuhkan?** Mulai dengan [Navigasi Cepat](#-navigasi-cepat) di atas atau jelajahi berdasarkan kategori!
+
+**🏠 [Kembali ke Repositori Utama](../README.md)** | **🎮 [Coba Playground Algoritma](../06_playground/)** | **🚀 [Mulai Belajar](../README.md#-learning-path)**

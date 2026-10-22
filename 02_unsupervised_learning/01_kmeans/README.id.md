@@ -2,230 +2,230 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-**🏠 [Back to Main](../../README.md)** | **📁 [Unsupervised Learning](../README.md)** | **➡️ [Next: PCA](../04_pca/README.md)**
+**🏠 [Kembali ke Utama](../../README.md)** | **📁 [Unsupervised Learning](../README.md)** | **➡️ [Berikutnya: PCA](../04_pca/README.md)**
 
-## 🗺️ Quick Access
+## 🗺️ Akses Cepat
 
-| File | Description | Quick Run |
+| File | Deskripsi | Cara Menjalankan |
 |------|-------------|----------|
-| [`implementation.py`](./implementation.py) | From-scratch implementation | `python3 implementation.py` |
-| [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `python3 sklearn_example.py` |
-| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
-| [`datasets/`](./datasets/) | SPG retail outlets dataset | - |
+| [`implementation.py`](./implementation.py) | Implementasi from-scratch | `python3 implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Contoh scikit-learn | `python3 sklearn_example.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Latihan interaktif | `jupyter lab exercise.ipynb` |
+| [`datasets/`](./datasets/) | Dataset outlet retail SPG | - |
 
-## 📖 Theory and Concepts
+## 📖 Teori dan Konsep
 
-### What is K-Means Clustering?
+### Apa itu K-Means Clustering?
 
-**K-Means** is an unsupervised learning algorithm that partitions data into K distinct, non-overlapping clusters. Each data point belongs to the cluster with the nearest mean (centroid). It's one of the simplest and most widely used clustering algorithms.
+**K-Means** adalah algoritma unsupervised learning yang mempartisi data menjadi K cluster yang berbeda dan tidak saling tumpang tindih. Setiap titik data termasuk dalam cluster dengan mean (centroid) terdekat. Algoritma ini merupakan salah satu algoritma clustering yang paling sederhana dan paling banyak digunakan.
 
-### Mathematical Formulation
+### Formulasi Matematika
 
-**Objective:** Minimize the within-cluster sum of squared distances (inertia):
+**Tujuan:** Meminimalkan jumlah kuadrat jarak di dalam cluster (inertia):
 
 ```
 J = Σ(i=1 to K) Σ(x ∈ Ci) ||x - μi||²
 ```
 
-Where:
-- `K` = number of clusters
-- `Ci` = set of points in cluster i
-- `μi` = centroid (mean) of cluster i
-- `||x - μi||²` = squared Euclidean distance
+Keterangan:
+- `K` = jumlah cluster
+- `Ci` = himpunan titik di cluster i
+- `μi` = centroid (mean) dari cluster i
+- `||x - μi||²` = kuadrat jarak Euclidean
 
-### Algorithm Steps
+### Langkah-langkah Algoritma
 
-1. **Initialize** K centroids (randomly or using k-means++)
-2. **Assignment step:** Assign each point to nearest centroid
+1. **Inisialisasi** K centroid (secara acak atau menggunakan k-means++)
+2. **Langkah assignment:** Tetapkan setiap titik ke centroid terdekat
    ```
    ci = argmin(k) ||xi - μk||²
    ```
-3. **Update step:** Recompute centroids as mean of assigned points
+3. **Langkah update:** Hitung ulang centroid sebagai mean dari titik-titik yang ditetapkan
    ```
    μk = (1/|Ck|) Σ(x ∈ Ck) x
    ```
-4. **Repeat** steps 2-3 until convergence (centroids don't change or change is below tolerance)
+4. **Ulangi** langkah 2-3 hingga konvergen (centroid tidak berubah atau perubahannya di bawah toleransi)
 
-### K-Means++ Initialization
+### Inisialisasi K-Means++
 
-K-means++ improves initial centroid selection:
+K-means++ memperbaiki pemilihan centroid awal:
 
-1. Choose first centroid uniformly at random from data points
-2. For each subsequent centroid:
-   - Compute distance D(x) from each point x to nearest existing centroid
-   - Choose next centroid with probability proportional to D(x)²
-3. Proceed with standard k-means algorithm
+1. Pilih centroid pertama secara acak seragam dari titik-titik data
+2. Untuk setiap centroid berikutnya:
+   - Hitung jarak D(x) dari setiap titik x ke centroid terdekat yang sudah ada
+   - Pilih centroid berikutnya dengan probabilitas yang proporsional terhadap D(x)²
+3. Lanjutkan dengan algoritma k-means standar
 
-This initialization makes convergence faster and often produces better results.
+Inisialisasi ini membuat konvergensi lebih cepat dan sering menghasilkan hasil yang lebih baik.
 
-### Convergence
+### Konvergensi
 
-K-Means is guaranteed to converge, but:
-- May converge to local optimum (not global)
-- Solution depends on initial centroids
-- **Solution:** Run multiple times with different initializations (`n_init`)
+K-Means dijamin akan konvergen, tetapi:
+- Dapat konvergen ke optimum lokal (bukan global)
+- Solusinya bergantung pada centroid awal
+- **Solusi:** Jalankan beberapa kali dengan inisialisasi berbeda (`n_init`)
 
-## 🎯 When to Use K-Means?
+## 🎯 Kapan Menggunakan K-Means?
 
-### ✅ Suitable for:
-- Customer segmentation
-- Image compression
-- Document clustering
-- Anomaly detection (outliers far from centroids)
-- Pre-processing for other algorithms
-- When number of clusters is known or can be estimated
+### ✅ Cocok untuk:
+- Segmentasi pelanggan
+- Kompresi gambar
+- Clustering dokumen
+- Deteksi anomali (outlier yang jauh dari centroid)
+- Pre-processing untuk algoritma lain
+- Ketika jumlah cluster diketahui atau dapat diperkirakan
 
-### ❌ Not suitable for:
-- Non-spherical cluster shapes
-- Clusters with very different sizes or densities
-- Many outliers (sensitive to outliers)
-- Unknown or variable number of clusters
-- Overlapping clusters
+### ❌ Tidak cocok untuk:
+- Bentuk cluster yang tidak bulat (non-spherical)
+- Cluster dengan ukuran atau kepadatan yang sangat berbeda
+- Banyak outlier (sensitif terhadap outlier)
+- Jumlah cluster yang tidak diketahui atau bervariasi
+- Cluster yang saling tumpang tindih
 
-## 📊 Model Evaluation
+## 📊 Evaluasi Model
 
 ### Elbow Method
-Plot inertia vs. number of clusters K. Look for the "elbow" where inertia decrease slows down.
+Plot inertia terhadap jumlah cluster K. Cari "siku" tempat penurunan inertia mulai melambat.
 
 ```
 Inertia(K) = Σ(i=1 to K) Σ(x ∈ Ci) ||x - μi||²
 ```
 
 ### Silhouette Score
-Measures how similar a point is to its own cluster compared to other clusters:
+Mengukur seberapa mirip suatu titik dengan cluster-nya sendiri dibandingkan dengan cluster lain:
 
 ```
 s(i) = (b(i) - a(i)) / max{a(i), b(i)}
 ```
 
-Where:
-- `a(i)` = mean distance from point i to other points in same cluster
-- `b(i)` = mean distance from point i to nearest other cluster
+Keterangan:
+- `a(i)` = jarak rata-rata dari titik i ke titik lain di cluster yang sama
+- `b(i)` = jarak rata-rata dari titik i ke cluster lain terdekat
 
-**Score range:** -1 to 1 (higher is better)
-- `1.0`: Well-matched to own cluster, far from neighbors
-- `0.0`: On or very close to decision boundary
-- `-1.0`: Assigned to wrong cluster
+**Rentang skor:** -1 sampai 1 (semakin tinggi semakin baik)
+- `1.0`: Cocok dengan cluster sendiri, jauh dari tetangga
+- `0.0`: Berada di atau sangat dekat dengan decision boundary
+- `-1.0`: Ditetapkan ke cluster yang salah
 
-## 🔍 Advantages and Disadvantages
+## 🔍 Kelebihan dan Kekurangan
 
-### Advantages:
-- ✅ Simple and easy to understand
-- ✅ Fast and scalable (O(n·K·i·d) where n=samples, i=iterations, d=dimensions)
-- ✅ Works well when clusters are spherical and similar sized
-- ✅ Guaranteed to converge
+### Kelebihan:
+- ✅ Sederhana dan mudah dipahami
+- ✅ Cepat dan skalabel (O(n·K·i·d) dengan n=sampel, i=iterasi, d=dimensi)
+- ✅ Bekerja baik ketika cluster berbentuk bulat dan berukuran serupa
+- ✅ Dijamin konvergen
 
-### Disadvantages:
-- ❌ Must specify K in advance
-- ❌ Sensitive to initial centroids
-- ❌ Sensitive to outliers
-- ❌ Assumes spherical clusters of similar size
-- ❌ May converge to local optimum
+### Kekurangan:
+- ❌ Harus menentukan K terlebih dahulu
+- ❌ Sensitif terhadap centroid awal
+- ❌ Sensitif terhadap outlier
+- ❌ Mengasumsikan cluster berbentuk bulat dengan ukuran serupa
+- ❌ Dapat konvergen ke optimum lokal
 
-## 🎯 Practical Scenario: SPG Visit Planning
+## 🎯 Skenario Praktis: Perencanaan Kunjungan SPG
 
-### 🏪 Indonesian FMCG Retail Outlet Segmentation
+### 🏪 Segmentasi Outlet Retail FMCG Indonesia
 
-**Dataset**: 500 retail outlets in Denpasar/Bali visited by SPG (Sales Promotion Girls/Guys)
+**Dataset**: 500 outlet retail di Denpasar/Bali yang dikunjungi SPG (Sales Promotion Girls/Guys)
 
-**Features:**
-- `monthly_sales_idr` - Monthly sales in Indonesian Rupiah
-- `sku_count` - Number of SKUs (Stock Keeping Units) carried
-- `visit_freq_per_month` - How often outlet needs visits
-- `oos_rate` - Out-of-stock rate (0-1)
-- `avg_basket_idr` - Average basket size in IDR
+**Fitur:**
+- `monthly_sales_idr` - Penjualan bulanan dalam Rupiah
+- `sku_count` - Jumlah SKU (Stock Keeping Unit) yang dijual
+- `visit_freq_per_month` - Seberapa sering outlet perlu dikunjungi
+- `oos_rate` - Tingkat out-of-stock (0-1)
+- `avg_basket_idr` - Rata-rata ukuran basket dalam IDR
 
-**Business Goal:** A supervisor wants to group outlets into segments to optimize SPG visit routes and prioritization.
+**Tujuan Bisnis:** Seorang supervisor ingin mengelompokkan outlet ke dalam segmen untuk mengoptimalkan rute dan prioritas kunjungan SPG.
 
-**Outlet types:**
-- **Warung** - Traditional small shops
-- **Minimarket** - Small self-service stores
-- **Grosir** - Wholesalers
+**Tipe outlet:**
+- **Warung** - Toko kecil tradisional
+- **Minimarket** - Toko swalayan kecil
+- **Grosir** - Pedagang grosir
 
-**Run the example:**
+**Jalankan contohnya:**
 ```bash
 python3 sklearn_example.py
 ```
 
-**What you'll learn:**
-- Why feature scaling is critical for K-Means
-- How to choose K using elbow method and silhouette score
-- How to interpret clusters for business decisions
-- Converting clustering results into actionable visit plans
+**Yang akan Anda pelajari:**
+- Mengapa feature scaling sangat penting untuk K-Means
+- Cara memilih K menggunakan elbow method dan silhouette score
+- Cara menginterpretasikan cluster untuk keputusan bisnis
+- Mengubah hasil clustering menjadi rencana kunjungan yang dapat ditindaklanjuti
 
-### Expected Segments
+### Segmen yang Diharapkan
 
-The dataset contains 4 hidden segments:
-1. **Small warungs** - Low sales, few SKUs, high OOS rate
-2. **Active minimarkets** - Medium-high sales, good variety
-3. **High-volume grosir** - Very high sales and SKU count
-4. **Struggling outlets** - Low sales, medium SKUs, high OOS
+Dataset berisi 4 segmen tersembunyi:
+1. **Warung kecil** - Penjualan rendah, sedikit SKU, OOS rate tinggi
+2. **Minimarket aktif** - Penjualan sedang-tinggi, variasi bagus
+3. **Grosir bervolume tinggi** - Penjualan dan jumlah SKU sangat tinggi
+4. **Outlet yang kesulitan** - Penjualan rendah, SKU sedang, OOS tinggi
 
-Your task: Use K-Means to discover these segments and recommend visit strategies!
+Tugas Anda: Gunakan K-Means untuk menemukan segmen-segmen ini dan merekomendasikan strategi kunjungan!
 
-## 💡 Key Implementation Details
+## 💡 Detail Implementasi Penting
 
-### Important Parameters
+### Parameter Penting
 
 ```python
 KMeans(
-    n_clusters=8,        # Number of clusters
-    init='k-means++',    # Initialization: 'k-means++' or 'random'
-    n_init=10,          # Number of different initializations
-    max_iter=300,       # Maximum iterations
-    tol=1e-4,           # Tolerance for convergence
-    random_state=42     # For reproducibility
+    n_clusters=8,        # Jumlah cluster
+    init='k-means++',    # Inisialisasi: 'k-means++' atau 'random'
+    n_init=10,          # Jumlah inisialisasi berbeda
+    max_iter=300,       # Jumlah iterasi maksimum
+    tol=1e-4,           # Toleransi untuk konvergensi
+    random_state=42     # Untuk reproduksibilitas
 )
 ```
 
-### Feature Scaling is CRITICAL
+### Feature Scaling SANGAT PENTING
 
-K-Means uses Euclidean distance, so features with larger ranges dominate:
+K-Means menggunakan jarak Euclidean, sehingga fitur dengan rentang lebih besar akan mendominasi:
 
 ```python
 from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)  # Zero mean, unit variance
+X_scaled = scaler.fit_transform(X)  # Mean nol, varians satu
 ```
 
-**Example:** Without scaling, `monthly_sales_idr` (millions) would dominate over `oos_rate` (0-1).
+**Contoh:** Tanpa scaling, `monthly_sales_idr` (dalam jutaan) akan mendominasi `oos_rate` (0-1).
 
-### Random State and Determinism
+### Random State dan Determinisme
 
-For reproducibility:
+Untuk reproduksibilitas:
 ```python
 kmeans = KMeans(n_clusters=3, random_state=42)
 ```
 
-In our implementation:
+Dalam implementasi kami:
 ```python
 self.rng_ = np.random.default_rng(random_state)
 ```
 
-## 📚 References
+## 📚 Referensi
 
 - [Scikit-learn K-Means](https://scikit-learn.org/stable/modules/clustering.html#k-means)
 - [k-means++: The Advantages of Careful Seeding](http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf)
 - [Silhouette Coefficient](https://en.wikipedia.org/wiki/Silhouette_(clustering))
 
-## 🎓 Learning Progression
+## 🎓 Progres Pembelajaran
 
-### Prerequisites
-- Basic NumPy knowledge
-- Understanding of Euclidean distance
-- Basic statistics (mean, variance)
+### Prasyarat
+- Pengetahuan dasar NumPy
+- Pemahaman tentang jarak Euclidean
+- Statistik dasar (mean, variance)
 
-### After K-Means, explore:
+### Setelah K-Means, jelajahi:
 
-1. **[Hierarchical Clustering](../03_hierarchical/)** - No need to specify K
-2. **[DBSCAN](../02_dbscan/)** - Finds arbitrarily-shaped clusters
-3. **[PCA](../04_pca/)** - Visualize high-dimensional clusters in 2D
+1. **[Hierarchical Clustering](../03_hierarchical/)** - Tidak perlu menentukan K
+2. **[DBSCAN](../02_dbscan/)** - Menemukan cluster dengan bentuk arbitrer
+3. **[PCA](../04_pca/)** - Visualisasikan cluster berdimensi tinggi dalam 2D
 4. **[Gaussian Mixture Models](../../04_advanced_topics/)** - Soft clustering
 
 ---
 
-## Ringkasan (ID)
+## Ringkasan
 
 **K-Means Clustering** adalah algoritma unsupervised learning yang membagi data menjadi K kelompok (cluster) yang tidak tumpang tindih. Setiap titik data ditempatkan ke cluster dengan centroid (rata-rata) terdekat.
 
@@ -248,4 +248,4 @@ self.rng_ = np.random.default_rng(random_state)
 
 ---
 
-**➡️ Next Step**: Continue to **[PCA](../04_pca/)** to visualize clusters in 2D!
+**➡️ Langkah Berikutnya**: Lanjutkan ke **[PCA](../04_pca/)** untuk memvisualisasikan cluster dalam 2D!

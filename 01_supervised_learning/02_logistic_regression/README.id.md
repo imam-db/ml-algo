@@ -2,46 +2,46 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-🏠 Back to Supervised Index: `../README.md`
+🏠 Kembali ke Indeks Supervised: `../README.md`
 
-Logistic Regression is a fundamental classification algorithm that uses the logistic function to model the probability of class membership. Despite its name, it's used for classification, not regression.
+Logistic Regression adalah algoritma klasifikasi fundamental yang menggunakan fungsi logistik untuk memodelkan probabilitas keanggotaan suatu kelas. Meskipun namanya mengandung "regression", algoritma ini digunakan untuk klasifikasi, bukan regresi.
 
-## 📚 Table of Contents
-- [Theory & Concepts](#-theory--concepts)
-- [Mathematical Foundation](#-mathematical-foundation)
-- [Assumptions](#-assumptions)
-- [Implementation](#-implementation)
-- [Advantages & Disadvantages](#-advantages--disadvantages)
-- [When to Use](#-when-to-use)
-- [Files in This Directory](#-files-in-this-directory)
+## 📚 Daftar Isi
+- [Teori & Konsep](#-teori--konsep)
+- [Dasar Matematika](#-dasar-matematika)
+- [Asumsi](#-asumsi)
+- [Implementasi](#-implementasi)
+- [Kelebihan & Kekurangan](#-kelebihan--kekurangan)
+- [Kapan Digunakan](#-kapan-digunakan)
+- [File di Direktori Ini](#-file-di-direktori-ini)
 
-## 🧠 Theory & Concepts
+## 🧠 Teori & Konsep
 
-### What is Logistic Regression?
-Logistic Regression predicts the probability that an instance belongs to a particular category. It uses the **sigmoid (logistic) function** to map any real number to a value between 0 and 1, making it perfect for binary classification.
+### Apa itu Logistic Regression?
+Logistic Regression memprediksi probabilitas bahwa suatu instance termasuk dalam kategori tertentu. Algoritma ini menggunakan **fungsi sigmoid (logistik)** untuk memetakan bilangan real apa pun ke nilai antara 0 dan 1, sehingga sangat cocok untuk klasifikasi biner.
 
-### Key Concepts:
-1. **Sigmoid Function**: Maps input to probability (0-1)
-2. **Decision Boundary**: Linear boundary that separates classes
-3. **Maximum Likelihood Estimation**: Method to find optimal parameters
-4. **Log-Odds**: Natural logarithm of odds ratio
+### Konsep Kunci:
+1. **Fungsi Sigmoid**: Memetakan input menjadi probabilitas (0-1)
+2. **Batas Keputusan (Decision Boundary)**: Batas linear yang memisahkan kelas
+3. **Maximum Likelihood Estimation**: Metode untuk menemukan parameter optimal
+4. **Log-Odds**: Logaritma natural dari rasio odds
 
-### Types of Logistic Regression:
-- **Binary**: Two classes (yes/no, spam/not spam)
-- **Multinomial**: Multiple classes (cat/dog/bird)
-- **Ordinal**: Ordered classes (low/medium/high)
+### Jenis Logistic Regression:
+- **Binary**: Dua kelas (ya/tidak, spam/bukan spam)
+- **Multinomial**: Banyak kelas (kucing/anjing/burung)
+- **Ordinal**: Kelas berurutan (rendah/sedang/tinggi)
 
-## 📐 Mathematical Foundation
+## 📐 Dasar Matematika
 
-### The Sigmoid Function
+### Fungsi Sigmoid
 ```
 σ(z) = 1 / (1 + e^(-z))
-where z = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ
+dengan z = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ
 ```
 
-### Probability and Odds
+### Probabilitas dan Odds
 ```
-# Probability
+# Probabilitas
 P(y=1|x) = σ(β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ)
 
 # Odds
@@ -54,114 +54,114 @@ logit(p) = ln(odds) = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ
 ### Cost Function (Log-Likelihood)
 ```
 J(θ) = -(1/m) * Σ[y*log(h(x)) + (1-y)*log(1-h(x))]
-where h(x) = sigmoid function
+dengan h(x) = fungsi sigmoid
 ```
 
-### Gradient Descent Update
+### Update Gradient Descent
 ```
 θⱼ := θⱼ - α * (1/m) * Σ[(h(x⁽ⁱ⁾) - y⁽ⁱ⁾) * xⱼ⁽ⁱ⁾]
 ```
 
-## ⚖️ Assumptions
+## ⚖️ Asumsi
 
-1. **Linear Relationship**: Between logit of outcome and features
-2. **Independence**: Observations are independent
-3. **No Perfect Multicollinearity**: Features aren't perfectly correlated
-4. **Large Sample Size**: More data improves accuracy
-5. **No Extreme Outliers**: Can affect the model significantly
+1. **Hubungan Linear**: Antara logit outcome dan fitur
+2. **Independence**: Observasi bersifat independen
+3. **Tanpa Multikolinearitas Sempurna**: Fitur tidak berkorelasi sempurna
+4. **Ukuran Sampel Besar**: Semakin banyak data, semakin baik akurasinya
+5. **Tanpa Outlier Ekstrem**: Outlier ekstrem dapat memengaruhi model secara signifikan
 
-## 🔧 Implementation
+## 🔧 Implementasi
 
-### From Scratch Implementation
-See `implementation.py` for step-by-step implementation including:
-- Sigmoid function
-- Cost function calculation
-- Gradient descent optimization
-- Prediction method
+### Implementasi From Scratch
+Lihat `implementation.py` untuk implementasi langkah demi langkah yang mencakup:
+- Fungsi sigmoid
+- Perhitungan cost function
+- Optimasi gradient descent
+- Metode prediksi
 
-### Using scikit-learn
-See `sklearn_example.py` for practical examples:
-- Data preparation
-- Model training
-- Evaluation metrics
+### Menggunakan scikit-learn
+Lihat `sklearn_example.py` untuk contoh praktis:
+- Persiapan data
+- Training model
+- Metrik evaluasi
 - Feature importance
 
-## ✅ Advantages & Disadvantages
+## ✅ Kelebihan & Kekurangan
 
-### ✅ Advantages:
-- **Probabilistic Output**: Provides probability estimates
-- **No Tuning**: Fewer hyperparameters to tune
-- **Less Overfitting**: With low-dimensional data
-- **Interpretable**: Coefficients show feature importance
-- **Fast**: Quick training and prediction
-- **No Scaling Required**: Robust to feature scales
+### ✅ Kelebihan:
+- **Output Probabilistik**: Memberikan estimasi probabilitas
+- **Minim Tuning**: Hyperparameter yang perlu di-tuning lebih sedikit
+- **Overfitting Lebih Rendah**: Pada data berdimensi rendah
+- **Interpretable**: Koefisien menunjukkan feature importance
+- **Fast**: Training dan prediksi yang cepat
+- **Tidak Perlu Scaling**: Tahan terhadap skala fitur
 
-### ❌ Disadvantages:
-- **Linear Decision Boundary**: Can't capture complex relationships
-- **Sensitive to Outliers**: Extreme values can skew results
-- **Large Sample Size**: Needs substantial data for stable results
-- **Perfect Separation**: Problems when classes are perfectly separable
-- **Multicollinearity**: Struggles with correlated features
+### ❌ Kekurangan:
+- **Decision Boundary Linear**: Tidak dapat menangkap hubungan yang kompleks
+- **Sensitif terhadap Outlier**: Nilai ekstrem dapat menggeser hasil
+- **Ukuran Sampel Besar**: Membutuhkan data yang cukup besar untuk hasil stabil
+- **Separasi Sempurna**: Bermasalah ketika kelas dapat dipisahkan sempurna
+- **Multicollinearity**: Kesulitan dengan fitur yang saling berkorelasi
 
-## 🎯 When to Use
+## 🎯 Kapan Digunakan
 
-### ✅ Use Logistic Regression When:
-- Binary or multi-class classification needed
-- You need probability estimates, not just predictions
-- Dataset is linearly separable or nearly so
-- Interpretability is important
-- You have limited training time
-- Features have linear relationship with log-odds
+### ✅ Gunakan Logistic Regression Ketika:
+- Dibutuhkan klasifikasi biner atau multi-kelas
+- Anda membutuhkan estimasi probabilitas, bukan sekadar prediksi
+- Dataset dapat dipisahkan secara linear atau hampir demikian
+- Interpretabilitas penting
+- Waktu training Anda terbatas
+- Fitur memiliki hubungan linear dengan log-odds
 
-### ❌ Don't Use When:
-- You need to capture complex non-linear patterns
-- Dataset has perfect multicollinearity
-- Classes are perfectly separable (causes numerical issues)
-- You have very small datasets
+### ❌ Jangan Gunakan Ketika:
+- Anda perlu menangkap pola non-linear yang kompleks
+- Dataset memiliki multikolinearitas sempurna
+- Kelas dapat dipisahkan sempurna (menyebabkan masalah numerik)
+- Anda memiliki dataset yang sangat kecil
 
-### Real-World Applications:
-- **Medical Diagnosis**: Disease prediction based on symptoms
-- **Marketing**: Customer conversion prediction
-- **Finance**: Credit approval, fraud detection
-- **Email**: Spam classification
-- **Social Media**: Sentiment analysis
+### Aplikasi di Dunia Nyata:
+- **Diagnosis Medis**: Prediksi penyakit berdasarkan gejala
+- **Marketing**: Prediksi konversi pelanggan
+- **Finance**: Persetujuan kredit, deteksi fraud
+- **Email**: Klasifikasi spam
+- **Media Sosial**: Analisis sentimen
 
-## 📁 Files in This Directory
+## 📁 File di Direktori Ini
 
-- **`README.md`** (this file) - Theory and concepts
+- **`README.md`** (file ini) - Teori dan konsep
 - **`implementation.py`** - Logistic regression from scratch
-- **`sklearn_example.py`** - Practical examples using scikit-learn
-- **`exercise.ipynb`** - Hands-on exercises and experiments
-- **`datasets/`** - Sample datasets for practice
+- **`sklearn_example.py`** - Contoh praktis menggunakan scikit-learn
+- **`exercise.ipynb`** - Latihan dan eksperimen langsung
+- **`datasets/`** - Dataset contoh untuk latihan
 
-## 🚀 Quick Start
+## 🚀 Mulai Cepat
 
-1. **Understand the Theory**: Read this README
-2. **See Implementation**: Check `implementation.py`
-3. **Try Examples**: Run `sklearn_example.py`
-4. **Practice**: Complete `exercise.ipynb`
-5. **Experiment**: Use your own datasets
+1. **Pahami Teori**: Baca README ini
+2. **Lihat Implementasi**: Periksa `implementation.py`
+3. **Coba Contoh**: Jalankan `sklearn_example.py`
+4. **Latihan**: Selesaikan `exercise.ipynb`
+5. **Eksperimen**: Gunakan dataset Anda sendiri
 
-## 📊 Performance Metrics
+## 📊 Metrik Performa
 
-For classification problems, evaluate using:
-- **Accuracy**: Overall correctness
+Untuk masalah klasifikasi, evaluasi menggunakan:
+- **Accuracy**: Tingkat kebenaran keseluruhan
 - **Precision**: True positives / (True positives + False positives)
 - **Recall**: True positives / (True positives + False negatives)
-- **F1-Score**: Harmonic mean of precision and recall
-- **ROC-AUC**: Area under ROC curve
-- **Confusion Matrix**: Detailed breakdown of predictions
+- **F1-Score**: Rata-rata harmonik dari precision dan recall
+- **ROC-AUC**: Area di bawah kurva ROC
+- **Confusion Matrix**: Rincian prediksi secara detail
 
-## 🔗 Related Algorithms
+## 🔗 Algoritma Terkait
 
-- **Linear Regression**: The linear version for continuous outputs
-- **Decision Trees**: Non-linear alternative for classification
-- **SVM**: Another linear classifier with different approach
-- **Naive Bayes**: Probabilistic classifier based on Bayes' theorem
+- **Linear Regression**: Versi linear untuk output kontinu
+- **Decision Trees**: Alternatif non-linear untuk klasifikasi
+- **SVM**: Classifier linear lain dengan pendekatan berbeda
+- **Naive Bayes**: Classifier probabilistik berdasarkan teorema Bayes
 
 ---
 
-**Next Steps**: 
-- Try the implementation in `sklearn_example.py`
-- Complete exercises in `exercise.ipynb`
-- Compare with other algorithms in `../`
+**Langkah Berikutnya**: 
+- Coba implementasinya di `sklearn_example.py`
+- Selesaikan latihan di `exercise.ipynb`
+- Bandingkan dengan algoritma lain di `../`
