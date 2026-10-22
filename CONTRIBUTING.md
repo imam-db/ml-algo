@@ -1,57 +1,60 @@
-# Panduan Kontribusi
+# Contributing Guidelines
 
-Terima kasih atas minat Anda untuk berkontribusi pada Machine Learning Algorithms Learning Repository! 🎉
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](CONTRIBUTING.id.md)**
 
-## 📋 Daftar Isi
+Thank you for your interest in contributing to the Machine Learning Algorithms Learning Repository! 🎉
+
+## 📋 Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
-- [Cara Berkontribusi](#cara-berkontribusi)
-- [Proses Development](#proses-development)
-- [Standar Kode](#standar-kode)
+- [How to Contribute](#how-to-contribute)
+- [Development Process](#development-process)
+- [Code Standards](#code-standards)
+- [Bilingual Documentation](#bilingual-documentation)
 - [Commit Messages](#commit-messages)
 - [Pull Request Process](#pull-request-process)
-- [Menambahkan Algoritma Baru](#menambahkan-algoritma-baru)
+- [Adding New Algorithms](#adding-new-algorithms)
 
 ## Code of Conduct
 
-Proyek ini mengikuti [Code of Conduct](CODE_OF_CONDUCT.md). Dengan berpartisipasi, Anda diharapkan menjunjung kode etik ini.
+This project follows the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-## Cara Berkontribusi
+## How to Contribute
 
-Ada banyak cara untuk berkontribusi:
+There are many ways to contribute:
 
-### 🐛 Melaporkan Bug
+### 🐛 Reporting Bugs
 
-- Gunakan GitHub Issues untuk melaporkan bug
-- Jelaskan langkah-langkah untuk mereproduksi bug
-- Sertakan environment details (Python version, OS, dll)
-- Lampirkan screenshot jika relevan
+- Use GitHub Issues to report bugs
+- Describe the steps to reproduce the bug
+- Include environment details (Python version, OS, etc.)
+- Attach screenshots if relevant
 
-### 💡 Mengusulkan Fitur Baru
+### 💡 Proposing New Features
 
-- Buka issue dengan label `enhancement`
-- Jelaskan use case dan manfaat fitur
-- Diskusikan dengan maintainer sebelum implementasi besar
+- Open an issue with the `enhancement` label
+- Explain the use case and benefits
+- Discuss with maintainers before major implementations
 
-### 📝 Memperbaiki Dokumentasi
+### 📝 Improving Documentation
 
-- Typo, kesalahan, atau penjelasan yang kurang jelas
-- Menambahkan contoh atau tutorial
-- Menerjemahkan dokumentasi
+- Fix typos, errors, or unclear explanations
+- Add examples or tutorials
+- Translate documentation (both English and Indonesian required)
 
-### 🎨 Menambahkan Algoritma
+### 🎨 Adding Algorithms
 
-Lihat bagian [Menambahkan Algoritma Baru](#menambahkan-algoritma-baru) di bawah.
+See the [Adding New Algorithms](#adding-new-algorithms) section below.
 
-## Proses Development
+## Development Process
 
-### 1. Fork dan Clone Repository
+### 1. Fork and Clone Repository
 
 ```bash
-# Fork repository di GitHub
-# Clone fork Anda
-git clone https://github.com/YOUR_USERNAME/ml-algorithms-learning.git
-cd ml-algorithms-learning
+# Fork repository on GitHub
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/ml-algo.git
+cd ml-algo
 ```
 
 ### 2. Setup Development Environment
@@ -60,21 +63,21 @@ cd ml-algorithms-learning
 # Install dependencies
 pip install -e ".[dev]"
 
-# Atau dengan uv (recommended)
+# Or with uv (recommended)
 uv sync
 ```
 
-### 3. Buat Branch Baru
+### 3. Create New Branch
 
 ```bash
-git checkout -b feature/nama-fitur-anda
+git checkout -b feature/your-feature-name
 ```
 
-### 4. Buat Perubahan
+### 4. Make Changes
 
-- Tulis kode yang jelas dan documented
-- Tambahkan tests untuk fitur baru
-- Pastikan semua tests pass
+- Write clear and documented code
+- Add tests for new features
+- Ensure all tests pass
 
 ### 5. Run Tests
 
@@ -89,84 +92,116 @@ python -m pytest tests/test_linear_regression.py -v
 python -m pytest tests/ --cov=. --cov-report=html
 ```
 
-### 6. Commit dan Push
+### 6. Commit and Push
 
 ```bash
 git add .
-git commit -m "feat: deskripsi singkat perubahan"
-git push origin feature/nama-fitur-anda
+git commit -m "feat: brief description of changes"
+git push origin feature/your-feature-name
 ```
 
-### 7. Buat Pull Request
+### 7. Create Pull Request
 
-- Buka Pull Request di GitHub
-- Isi template PR dengan lengkap
-- Link ke issue terkait jika ada
+- Go to GitHub and create a Pull Request
+- Fill out the PR template completely
+- Link related issues
+- Wait for review
 
-## Standar Kode
+## Code Standards
 
-### Python Style Guide
+### Python Style
 
-Kami mengikuti [PEP 8](https://pep8.org/) dengan beberapa penyesuaian:
+We follow [PEP 8](https://pep8.org/) with these tools:
+
+```bash
+# Format code
+black .
+
+# Check style
+flake8 .
+
+# Type checking
+mypy .
+```
+
+### Code Quality
+
+- **Clear variable names**: Use descriptive names
+- **Comments**: Explain non-obvious logic
+- **Docstrings**: Document all functions and classes
+- **Type hints**: Use type annotations where possible
+
+### Example:
 
 ```python
-# Good ✅
-def train_model(X: np.ndarray, y: np.ndarray, learning_rate: float = 0.01) -> Model:
+def train_test_split(X: np.ndarray, y: np.ndarray, 
+                    test_size: float = 0.2,
+                    random_state: Optional[int] = None) -> Tuple[np.ndarray, ...]:
     """
-    Train a machine learning model.
+    Split data into training and testing sets.
     
     Args:
-        X: Training features, shape (n_samples, n_features)
-        y: Training labels, shape (n_samples,)
-        learning_rate: Learning rate for gradient descent
-        
+        X: Feature matrix
+        y: Target vector
+        test_size: Proportion of test set (0.0-1.0)
+        random_state: Random seed for reproducibility
+    
     Returns:
-        Trained model instance
+        X_train, X_test, y_train, y_test
     """
-    model = Model(learning_rate=learning_rate)
-    model.fit(X, y)
-    return model
-
-# Bad ❌
-def trainModel(x,y,lr=0.01):
-    m=Model(lr=lr)
-    m.fit(x,y)
-    return m
+    # Implementation
+    pass
 ```
 
-### Dokumentasi
+## Bilingual Documentation
 
-- **Docstrings**: Gunakan Google style docstrings
-- **Type hints**: Tambahkan type hints untuk fungsi publik
-- **Comments**: Jelaskan "why", bukan "what"
+**🌐 All new modules MUST include both English and Indonesian documentation.**
 
-### Testing
+### Requirements:
 
-```python
-# Good test ✅
-def test_linear_regression_predictions():
-    """Test that linear regression produces reasonable predictions."""
-    X = np.array([[1], [2], [3], [4]])
-    y = np.array([2, 4, 6, 8])
-    
-    model = LinearRegression()
-    model.fit(X, y)
-    
-    predictions = model.predict(np.array([[5], [6]]))
-    expected = np.array([10, 12])
-    
-    np.testing.assert_allclose(predictions, expected, rtol=0.01)
+1. **README.md** (English)
+   - Complete algorithm theory and explanations
+   - Usage examples with code
+   - Mathematical formulas and concepts
+   - Plain language suitable for learners
+
+2. **README.id.md** (Indonesian)  
+   - Faithful translation of English version
+   - Maintain plain language and learning focus
+   - Keep SPG/retail themed examples
+   - Use natural Indonesian (avoid literal translations)
+
+3. **Language Switcher**
+   - Add at the top of each README: `**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**`
+   - Link to the corresponding language version
+
+4. **Internal Links**
+   - Update all relative links to work in both languages
+   - Test links after creating bilingual versions
+
+### Translation Tips:
+
+- **Plain Language**: Both versions should be beginner-friendly
+- **Consistency**: Use consistent terminology across files
+- **Examples**: Keep practical examples (SPG/retail context is fine)
+- **Formulas**: Mathematical notation stays the same
+- **Code**: Keep code examples identical in both languages
+
+### Example Structure:
+
 ```
-
-**Test Requirements:**
-- Setiap algoritma harus memiliki tests
-- Tests harus deterministic (gunakan `random_state` atau `seed`)
-- Tests harus cepat (<1 detik per test jika memungkinkan)
-- Gunakan fixtures untuk setup yang reusable
+01_supervised_learning/
+├── 07_knn/
+│   ├── README.md          # English version
+│   ├── README.id.md       # Indonesian version
+│   ├── implementation.py
+│   ├── sklearn_example.py
+│   └── exercise.ipynb
+```
 
 ## Commit Messages
 
-Kami menggunakan [Conventional Commits](https://www.conventionalcommits.org/):
+We use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
 <type>(<scope>): <subject>
@@ -177,15 +212,15 @@ Kami menggunakan [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 **Types:**
-- `feat`: Fitur baru
+- `feat`: New feature
 - `fix`: Bug fix
-- `docs`: Perubahan dokumentasi
+- `docs`: Documentation changes
 - `style`: Formatting, missing semicolons, etc
-- `refactor`: Refactoring kode
-- `test`: Menambah atau memperbaiki tests
+- `refactor`: Code refactoring
+- `test`: Adding or fixing tests
 - `chore`: Maintenance tasks
 
-**Contoh:**
+**Examples:**
 
 ```bash
 feat(kmeans): implement K-Means++ initialization
@@ -204,22 +239,22 @@ divergence with high learning rates.
 ```
 
 ```bash
-docs(readme): add badges and quick start guide
+docs(sarsa): add bilingual README
 
-- Add CI/CD status badge
-- Add test coverage badge
-- Improve quick start instructions
+- Created README.md (English)
+- Created README.id.md (Indonesian)
+- Added language switcher links
 ```
 
 ## Pull Request Process
 
 ### PR Template
 
-Saat membuka PR, isi template berikut:
+When opening a PR, fill out this template:
 
 ```markdown
 ## Description
-[Jelaskan perubahan Anda]
+[Describe your changes]
 
 ## Type of Change
 - [ ] Bug fix
@@ -228,10 +263,16 @@ Saat membuka PR, isi template berikut:
 - [ ] Refactoring
 - [ ] Other (explain)
 
+## Bilingual Documentation (if applicable)
+- [ ] Created/updated README.md (English)
+- [ ] Created/updated README.id.md (Indonesian)
+- [ ] Added language switcher links
+- [ ] Tested all internal links
+
 ## Checklist
 - [ ] Tests pass locally
 - [ ] Added/updated tests for changes
-- [ ] Updated documentation
+- [ ] Updated documentation (both languages if applicable)
 - [ ] Code follows style guidelines
 - [ ] Self-reviewed code
 - [ ] Commented hard-to-understand areas
@@ -245,145 +286,99 @@ Closes #[issue number]
 
 ### Review Process
 
-1. **Automated Checks**: CI/CD akan run tests otomatis
-2. **Code Review**: Maintainer akan review kode Anda
-3. **Discussion**: Diskusi dan iterasi jika diperlukan
-4. **Merge**: PR akan di-merge setelah approved
+1. **Automated Checks**: CI/CD will run tests automatically
+2. **Code Review**: Maintainers will review your code
+3. **Discussion**: Be open to feedback and questions
+4. **Updates**: Make requested changes
+5. **Approval**: After approval, your PR will be merged
 
-### Tips untuk PR yang Baik
+## Adding New Algorithms
 
-✅ **Do:**
-- Keep PR focused dan atomic
-- Write clear description
-- Include tests
-- Update documentation
-- Respond to feedback
+### Required Structure
 
-❌ **Don't:**
-- Mix unrelated changes
-- Submit PR tanpa testing
-- Ignore feedback
-- Force push setelah review started
-
-## Menambahkan Algoritma Baru
-
-### Struktur Folder
-
-Setiap algoritma harus mengikuti struktur ini:
+Each algorithm must include:
 
 ```
-01_supervised_learning/
-└── XX_nama_algoritma/
-    ├── README.md              # Teori dan penjelasan (Indonesian)
-    ├── implementation.py      # Implementasi dari nol
-    ├── sklearn_example.py     # Contoh menggunakan scikit-learn (jika applicable)
-    ├── exercise.ipynb         # Latihan interaktif
-    ├── datasets/              # Dataset khusus (jika ada)
-    │   └── README.md
-    └── tests/                 # Tests (atau di tests/ root)
+algorithm_name/
+├── README.md              # English documentation
+├── README.id.md           # Indonesian documentation  
+├── implementation.py      # From-scratch implementation
+├── sklearn_example.py     # Comparison with sklearn
+├── exercise.ipynb         # Interactive exercises
+└── datasets/              # (Optional) specific datasets
 ```
 
-### Template README.md
+### Documentation Requirements
 
-```markdown
-# Nama Algoritma
+Both **README.md** and **README.id.md** must include:
 
-**🏠 [Kembali ke Menu Utama](../../README.md)** | **📁 [Kategori](../README.md)**
+1. **Introduction**
+   - What is the algorithm?
+   - Plain language explanation
+   - SPG/retail analogy (if applicable)
 
-## 🗺️ Akses Cepat
-[Quick access table]
+2. **Key Concepts**
+   - Core concepts explained simply
+   - Diagrams or visualizations (if helpful)
+   - When to use this algorithm
 
-## 📖 Teori dan Konsep
-[Penjelasan konsep dalam Bahasa Indonesia]
+3. **Mathematical Foundation**
+   - Formulas with explanations
+   - Step-by-step algorithm
+   - Complexity analysis
 
-## 🎯 Kapan Menggunakan?
-[Use cases]
+4. **Implementation Details**
+   - Code examples
+   - Parameter tuning guide
+   - Common pitfalls
 
-## 💻 Implementasi
-[Code examples]
+5. **Comparison**
+   - vs similar algorithms
+   - Pros and cons
+   - Use cases
 
-## 📊 Evaluasi
-[Metrics and evaluation]
+6. **References**
+   - Papers, books, or tutorials
+   - Sklearn documentation links
 
-## 📚 Sumber Belajar
-[References]
-```
+### Testing Requirements
 
-### Template implementation.py
+- Each algorithm must have comprehensive tests
+- Tests must be deterministic (use `random_state` or `seed`)
+- Tests should be fast (<1 second per test if possible)
+- Use fixtures for reusable setup
+
+### Example Test Structure:
 
 ```python
-"""
-Nama Algoritma - Implementation from Scratch
-
-Brief description in English.
-"""
-
+import pytest
 import numpy as np
-from typing import Optional
+from implementation import YourAlgorithm
 
-class NamaAlgoritma:
-    """
-    Brief description.
+class TestYourAlgorithm:
+    def test_initialization(self):
+        algo = YourAlgorithm()
+        assert algo is not None
     
-    Parameters:
-        param1: Description
-        param2: Description
-    """
-    
-    def __init__(self, param1: float = 0.01, param2: int = 100):
-        self.param1 = param1
-        self.param2 = param2
+    def test_fit_predict(self):
+        X = np.array([[1, 2], [3, 4], [5, 6]])
+        y = np.array([0, 1, 0])
         
-    def fit(self, X: np.ndarray, y: np.ndarray) -> 'NamaAlgoritma':
-        """
-        Train the model.
+        algo = YourAlgorithm()
+        algo.fit(X, y)
+        predictions = algo.predict(X)
         
-        Args:
-            X: Training features, shape (n_samples, n_features)
-            y: Training labels, shape (n_samples,)
-            
-        Returns:
-            self: Trained model instance
-        """
-        # Implementation
-        return self
-    
-    def predict(self, X: np.ndarray) -> np.ndarray:
-        """
-        Make predictions.
-        
-        Args:
-            X: Features, shape (n_samples, n_features)
-            
-        Returns:
-            Predictions, shape (n_samples,)
-        """
-        # Implementation
-        pass
-
-if __name__ == "__main__":
-    # Demo
-    pass
+        assert predictions.shape == y.shape
 ```
 
-### Checklist untuk Algoritma Baru
+## Questions?
 
-- [ ] README.md lengkap (Indonesian)
-- [ ] implementation.py dengan docstrings
-- [ ] exercise.ipynb dengan latihan interaktif
-- [ ] Tests di `tests/test_nama_algoritma.py`
-- [ ] Contoh dataset (jika diperlukan)
-- [ ] Update main README.md
-- [ ] All tests pass
-- [ ] Code reviewed
-
-## Pertanyaan?
-
-Jika ada pertanyaan:
-1. Cek [Issues](https://github.com/YOUR_USERNAME/ml-algorithms-learning/issues) yang sudah ada
-2. Buka issue baru dengan label `question`
-3. Join diskusi di GitHub Discussions (jika tersedia)
+- 💬 Open a [Discussion](https://github.com/imam-db/ml-algo/discussions)
+- 🐛 Report an [Issue](https://github.com/imam-db/ml-algo/issues)
+- 📧 Contact maintainers
 
 ---
 
-**Terima kasih atas kontribusi Anda! 🙏**
+**Thank you for contributing! 🙏**
+
+*Together we make learning machine learning accessible to everyone.*

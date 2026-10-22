@@ -1,5 +1,7 @@
 # Machine Learning Algorithms Learning Repository
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 [![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/imam-db/ml-algo/actions/workflows/tests.yml/badge.svg)](https://github.com/imam-db/ml-algo/actions/workflows/tests.yml)
@@ -8,7 +10,7 @@
 
 Welcome to the machine learning algorithms learning repository! 🤖📚
 
-**Comprehensive learning resource untuk machine learning dengan implementasi dari nol, teori lengkap dalam Bahasa Indonesia, dan latihan interaktif.**
+**A comprehensive learning resource for machine learning with from-scratch implementations, complete theory, and interactive exercises.**
 
 ## 🗺️ Quick Navigation
 
@@ -45,15 +47,16 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 
 ### 2. **Unsupervised Learning** ([`02_unsupervised_learning/`](./02_unsupervised_learning/))
 - **[01_kmeans](./02_unsupervised_learning/01_kmeans/)** - K-Means Clustering ✅
-- **🚧 02_hierarchical_clustering** - Hierarchical Clustering (planned)
-- **🚧 03_dbscan** - DBSCAN (planned)
+- **[02_dbscan](./02_unsupervised_learning/02_dbscan/)** - DBSCAN (Density-Based Clustering) ✅
+- **[03_hierarchical](./02_unsupervised_learning/03_hierarchical/)** - Hierarchical (Agglomerative) Clustering ✅
 - **[04_pca](./02_unsupervised_learning/04_pca/)** - Principal Component Analysis ✅
 - **🚧 05_tsne** - t-SNE (planned)
 - **🚧 06_association_rules** - Association Rules (planned)
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))
-- **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning ✅
-- **🚧 02_deep_q_networks** - Deep Q-Networks (planned)
+- **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning (Off-Policy TD) ✅
+- **[02_sarsa](./03_reinforcement_learning/02_sarsa/)** - SARSA (On-Policy TD) ✅
+- **🚧 03_deep_q_networks** - Deep Q-Networks (planned)
 
 ### 4. **Advanced Topics** ([`04_advanced_topics/`](./04_advanced_topics/))
 - **🚧 01_ensemble_methods** - Ensemble Methods (planned)
@@ -133,7 +136,7 @@ Use these flags in environments without a display or when running in CI:
 ## 📚 How to Learn
 
 Each algorithm has the same folder structure:
-- `README.md` - Theory and concept explanations
+- `README.md` / `README.id.md` - Theory and concept explanations (English/Indonesian)
 - `implementation.py` - Implementation from scratch
 - `sklearn_example.py` - Examples using scikit-learn
 - `exercise.ipynb` - Practical exercises
@@ -166,18 +169,18 @@ Each algorithm has the same folder structure:
 - [Machine Learning Course - Andrew Ng](https://www.coursera.org/learn/machine-learning)
 - [Hands-On Machine Learning](https://github.com/ageron/handson-ml2)
 
-## 📊 Status Implementasi
+## 📊 Implementation Status
 
 | Category | Implemented | Planned | Progress |
 |----------|-------------|---------|----------|
 | Supervised Learning | 6 | 2 | 🟢 75% |
-| Unsupervised Learning | 2 | 4 | 🟡 33% |
-| Reinforcement Learning | 1 | 1 | 🟢 50% |
+| Unsupervised Learning | 4 | 2 | 🟢 67% |
+| Reinforcement Learning | 2 | 1 | 🟢 67% |
 | Advanced Topics | 2 | 2 | 🟢 50% |
 
 ## 🧪 Testing
 
-Repository ini dilengkapi dengan comprehensive test suite:
+This repository includes a comprehensive test suite:
 
 ```bash
 # Run all tests
@@ -190,39 +193,41 @@ python -m pytest tests/test_reinforcement_learning.py -v
 python -m pytest tests/ --cov --cov-report=html
 ```
 
-**Test Coverage:** 107 tests, semua passing ✅
+**Test Coverage:** 160+ tests, all passing ✅
 
 ## 🤝 Contributing
 
-Kontribusi sangat diterima! Lihat [CONTRIBUTING.md](CONTRIBUTING.md) untuk panduan lengkap.
+Contributions are very welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for complete guidelines.
 
-**Quick Start untuk Contributors:**
+**Quick Start for Contributors:**
 
-1. Fork repository
-2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'feat: Add AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buka Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+**Note:** All new modules must include both English (README.md) and Indonesian (README.id.md) documentation.
 
 ## 📜 License
 
-Project ini dilisensikan under MIT License - lihat [LICENSE](LICENSE) untuk details.
+This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
 ## 📧 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/ml-algorithms-learning/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/ml-algorithms-learning/discussions)
+- **Issues**: [GitHub Issues](https://github.com/imam-db/ml-algo/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/imam-db/ml-algo/discussions)
 - **Contributing**: [Contributing Guidelines](CONTRIBUTING.md)
 - **Code of Conduct**: [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## 🌟 Acknowledgments
 
-- Terima kasih kepada semua contributors
+- Thanks to all contributors
 - Inspired by [scikit-learn](https://scikit-learn.org/) documentation
-- Educational resources dari [Andrew Ng](https://www.coursera.org/learn/machine-learning) dan [Fast.ai](https://www.fast.ai/)
+- Educational resources from [Andrew Ng](https://www.coursera.org/learn/machine-learning) and [Fast.ai](https://www.fast.ai/)
 
 ---
 
 **Happy Learning! 🎉**
 
-*Repository ini dibuat dengan ❤️ untuk pembelajar machine learning*
+*This repository is created with ❤️ for machine learning learners*
