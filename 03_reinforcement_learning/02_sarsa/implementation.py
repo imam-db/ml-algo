@@ -21,6 +21,7 @@ _spec = importlib.util.spec_from_file_location("qlearning_gridworld", _qlearning
 _qlearning_module = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_qlearning_module)
 GridWorldSPG = _qlearning_module.GridWorldSPG
+_QLearningAgent = _qlearning_module.QLearningAgent
 del _spec, _qlearning_module, _qlearning_impl_path
 
 
@@ -254,11 +255,9 @@ def compare_sarsa_vs_qlearning(env: GridWorldSPG,
         qlearning_agent: Trained Q-Learning agent
     """
     # Import Q-learning agent
-    sys.path.insert(0, _qlearning_dir)
-    try:
-        from implementation import QLearningAgent
-    finally:
-        sys.path.pop(0)
+    # Reuse the Q-learning module already loaded via importlib at the top of
+    # this file (avoids the name clash between the two implementation.py files).
+    QLearningAgent = _QLearningAgent
     
     print("Training SARSA Agent...")
     print("=" * 50)
@@ -268,8 +267,9 @@ def compare_sarsa_vs_qlearning(env: GridWorldSPG,
     print("\n" + "=" * 50)
     print("Training Q-Learning Agent...")
     print("=" * 50)
-    qlearning_agent = QLearningAgent(env, seed=seed)
-    qlearning_agent.train(n_episodes=n_episodes, verbose=True)
+    qlearning_agent = QLearningAgent(n_states=env.grid_size ** 2,
+                                     n_actions=len(env.actions), seed=seed)
+    qlearning_agent.train(env, n_episodes=n_episodes)
     
     # Evaluate both
     print("\n" + "=" * 50)
@@ -279,7 +279,9 @@ def compare_sarsa_vs_qlearning(env: GridWorldSPG,
     sarsa_reward, sarsa_steps = sarsa_agent.evaluate(n_episodes=100)
     print(f"SARSA - Avg Reward: {sarsa_reward:.2f}, Avg Steps: {sarsa_steps:.1f}")
     
-    qlearning_reward, qlearning_steps = qlearning_agent.evaluate(n_episodes=100)
+    qlearning_results = qlearning_agent.evaluate(env, n_episodes=100)
+    qlearning_reward = qlearning_results['mean_reward']
+    qlearning_steps = qlearning_results['mean_steps']
     print(f"Q-Learning - Avg Reward: {qlearning_reward:.2f}, Avg Steps: {qlearning_steps:.1f}")
     
     return sarsa_agent, qlearning_agent
@@ -305,7 +307,7 @@ def plot_training_comparison(sarsa_agent: SARSAAgent, qlearning_agent: object,
     window = 50
     
     sarsa_rewards = sarsa_agent.training_history['episode_rewards']
-    qlearning_rewards = qlearning_agent.training_history['episode_rewards']
+    qlearning_rewards = qlearning_agent.training_history['rewards']
     
     sarsa_smoothed = np.convolve(sarsa_rewards, np.ones(window)/window, mode='valid')
     qlearning_smoothed = np.convolve(qlearning_rewards, np.ones(window)/window, mode='valid')
@@ -321,7 +323,7 @@ def plot_training_comparison(sarsa_agent: SARSAAgent, qlearning_agent: object,
     # Steps
     ax = axes[1]
     sarsa_steps = sarsa_agent.training_history['episode_steps']
-    qlearning_steps = qlearning_agent.training_history['episode_steps']
+    qlearning_steps = qlearning_agent.training_history['steps']
     
     sarsa_smoothed_steps = np.convolve(sarsa_steps, np.ones(window)/window, mode='valid')
     qlearning_smoothed_steps = np.convolve(qlearning_steps, np.ones(window)/window, mode='valid')
