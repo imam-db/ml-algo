@@ -156,7 +156,8 @@ def example_4_combined_grid(X_train, X_test, y_train, y_test):
     C_values = [0.1, 1.0, 10.0, 100.0]
     gamma_values = [0.01, 0.1, 0.5, 1.0]
 
-    print(f"{'C \\ gamma':>12}", end="")
+    header = "C \\ gamma"
+    print(f"{header:>12}", end="")
     for gamma in gamma_values:
         print(f"{gamma:>10.3f}", end="")
     print()
