@@ -4,38 +4,38 @@
 
 ## What is SARSA?
 
-SARSA adalah algoritma **on-policy** Temporal Difference (TD) control untuk reinforcement learning. Nama SARSA berasal dari tuple yang digunakan untuk update: **(S, A, R, S', A')**.
+SARSA is algoritma **on-policy** Temporal Difference (TD) control for reinforcement learning. Nama SARSA comes from tuple that used for update: **(S, A, R, S', A')**.
 
 ### Perbedaan Fundamental: On-Policy vs Off-Policy
 
 | Aspek | SARSA (On-Policy) | Q-Learning (Off-Policy) |
 |-------|------------------|------------------------|
-| **Belajar dari** | Aksi yang **benar-benar diambil** | Aksi **optimal teoritis** |
+| **Belajar from** | Aksi that **actually taken** | Aksi **optimal teoritis** |
 | **Update rule** | Q(s,a) ← Q(s,a) + α[r + γ·Q(s',**a'**) - Q(s,a)] | Q(s,a) ← Q(s,a) + α[r + γ·**max** Q(s',a') - Q(s,a)] |
-| **a' adalah** | Aksi yang dipilih agent (bisa eksplorasi) | Aksi terbaik (greedy) |
-| **Policy** | Learns **behavior policy** (yang digunakan) | Learns **target policy** (optimal) |
-| **Konservatif?** | ✅ Ya, lebih hati-hati | ❌ Lebih agresif |
+| **a' is** | Aksi that chosen agent (bisa eksplorasi) | Aksi terbaik (greedy) |
+| **Policy** | Learns **behavior policy** (that used) | Learns **target policy** (optimal) |
+| **Konservatif?** | ✅ Ya, more careful | ❌ More aggressive |
 | **Good for** | Environment berbahaya, eksplorasi penting | Environment aman, konvergensi cepat |
 
 ---
 
 ## Analogi SPG (Sales Promotion Girl/Guy)
 
-Bayangkan dua SPG belajar rute terbaik mengunjungi outlet:
+Bayangkan dua SPG learns rute terbaik mengunjungi outlet:
 
 ### SPG SARSA (On-Policy)
-- **Belajar dari pengalaman nyata**: "Kemarin aku ambil jalan shortcuts melewati pasar, ternyata macet. Aku catat itu buruk."
-- **Mempertimbangkan eksplorasi**: Jika kadang masih coba-coba rute baru, Q-values mencerminkan hasil coba-coba itu juga
-- **Lebih konservatif**: Tidak assume dia akan selalu pilih rute optimal, jadi lebih hati-hati
+- **Belajar from pengalaman nyata**: "Kemarin aku ambil jalan shortcuts melewati pasar, ternyata macet. Aku catat itu buruk."
+- **Mempertimbangkan eksplorasi**: If sometimes masih coba-coba rute baru, Q-values mencerminkan trial results as well
+- **More conservative**: Doesn't assume it will always pilih rute optimal, jadi more careful
 
 ### SPG Q-Learning (Off-Policy)
-- **Belajar dari yang ideal**: "Seandainya aku selalu pilih rute terbaik, hasilnya akan begini"
-- **Mengabaikan eksplorasi**: Meski kadang coba rute baru, Q-values hanya fokus pada rute optimal
-- **Lebih optimis**: Assume dia akan selalu greedy di masa depan
+- **Belajar from that ideal**: "Seandainya aku always choose rute terbaik, results will be like this"
+- **Mengabaikan eksplorasi**: Although sometimes coba rute baru, Q-values only focuses at rute optimal
+- **More optimistic**: Assume dia will always greedy di masa depan
 
 **Hasil**:
-- Di environment **berbahaya** (ada lubang, jalan rusak): SARSA lebih aman karena aware dengan risikonya
-- Di environment **aman**: Q-Learning belajar lebih cepat karena langsung fokus ke optimal
+- Di environment **berbahaya** (ada lubang, jalan rusak): SARSA more aman because aware of risikonya
+- Di environment **aman**: Q-Learning learns more cepat because directly focuses to optimal
 
 ---
 
@@ -47,21 +47,21 @@ $$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot Q(s', a') - Q(s, a
 
 Di mana:
 - $s$ = state sekarang
-- $a$ = action yang diambil
-- $r$ = reward yang diterima
+- $a$ = action that taken
+- $r$ = reward that diterima
 - $s'$ = state berikutnya
-- **$a'$ = action yang BENAR-BENAR akan diambil di $s'$** (bisa eksplorasi!)
+- **$a'$ = action that BENAR-BENAR will be taken di $s'$** (bisa eksplorasi!)
 - $\alpha$ = learning rate
 - $\gamma$ = discount factor
 
-### Perbedaan dengan Q-Learning
+### Perbedaan with Q-Learning
 
 **Q-Learning**:
 $$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
 Perhatikan:
-- Q-Learning: $\max_{a'} Q(s', a')$ → selalu ambil yang terbaik (greedy)
-- SARSA: $Q(s', a')$ → ambil aksi yang benar-benar dipilih (bisa exploratory!)
+- Q-Learning: $\max_{a'} Q(s', a')$ → selalu ambil that terbaik (greedy)
+- SARSA: $Q(s', a')$ → ambil action that actually chosen (bisa exploratory!)
 
 ---
 
@@ -92,15 +92,15 @@ Perhatikan:
 3. Return learned Q-table
 ```
 
-**Kunci**: Step c.ii — kita **pilih dulu a'** sebelum update, dan gunakan Q(s', a') yang sesuai dengan aksi tersebut.
+**Key**: Step c.ii — we **choose a' first** before update, and gunakan Q(s', a') that sesuai with that action.
 
 ---
 
-## Kenapa SARSA Lebih Konservatif?
+## Kenapa SARSA More Conservative?
 
 ### Contoh: Cliff Walking
 
-Bayangkan grid-world dengan cliff (jurang):
+Bayangkan grid-world with cliff (jurang):
 
 ```
 [S][·][·][·][·][G]
@@ -116,14 +116,14 @@ Bayangkan grid-world dengan cliff (jurang):
 **Rute berisiko**: Jalan di pinggir cliff (cepat, tapi 1 kesalahan = jatuh)
 
 #### Q-Learning (Off-Policy)
-- Assume agent akan selalu greedy (tidak eksplorasi)
-- Belajar rute pinggir cliff karena itu **optimal teoritis**
-- **Masalah**: Jika masih ada epsilon exploration, agent kadang jatuh!
+- Assume agent will always greedy (not eksplorasi)
+- Belajar rute pinggir cliff because that **optimal teoritis**
+- **Masalah**: If still ada epsilon exploration, agent kadang jatuh!
 
 #### SARSA (On-Policy)
 - Aware bahwa agent kadang eksplorasi (random action)
-- Belajar rute aman di tengah karena **safer di praktek**
-- **Keuntungan**: Lebih robust terhadap noise dan eksplorasi
+- Belajar rute aman di tengah because **safer di praktek**
+- **Keuntungan**: More robust terhadap noise and eksplorasi
 
 ---
 
@@ -131,15 +131,15 @@ Bayangkan grid-world dengan cliff (jurang):
 
 ### Teorema Konvergensi SARSA
 
-SARSA konvergen ke optimal policy $Q^*$ jika:
+SARSA konvergen to optimal policy $Q^*$ if:
 
 1. Semua state-action pairs dikunjungi infinitely often
-2. Policy converges dalam limit ke greedy policy (epsilon → 0)
+2. Policy converges in limit to greedy policy (epsilon → 0)
 3. Learning rate $\alpha_t$ memenuhi:
-   - $\sum_{t=1}^{\infty} \alpha_t = \infty$ (tidak konvergen terlalu cepat)
-   - $\sum_{t=1}^{\infty} \alpha_t^2 < \infty$ (tidak diverge)
+   - $\sum_{t=1}^{\infty} \alpha_t = \infty$ (not konvergen terlalu cepat)
+   - $\sum_{t=1}^{\infty} \alpha_t^2 < \infty$ (not diverge)
 
-Praktisnya: Gunakan epsilon decay dan learning rate constant kecil (0.1).
+Praktisnya: Gunakan epsilon decay and learning rate constant kecil (0.1).
 
 ---
 
@@ -157,7 +157,7 @@ agent = SARSAAgent(env, learning_rate=0.1)
 
 ### Discount Factor (γ)
 
-- **γ = 0**: Myopic (hanya peduli immediate reward)
+- **γ = 0**: Myopic (only cares about immediate reward)
 - **γ = 0.9-0.95**: Balance (prefer sooner rewards)
 - **γ = 0.99**: Far-sighted (value future rewards almost equally)
 
@@ -169,7 +169,7 @@ agent = SARSAAgent(env, discount_factor=0.95)
 
 - **Start high** (1.0): Eksplorasi penuh di awal
 - **Decay gradually** (0.995 per episode): Reduce exploration
-- **End low** (0.01): Masih sedikit exploration untuk robustness
+- **End low** (0.01): Masih sedikit exploration for robustness
 
 ```python
 agent = SARSAAgent(env, 
@@ -184,27 +184,27 @@ agent = SARSAAgent(env,
 
 ### Gunakan SARSA ketika:
 
-✅ **Environment berbahaya** - Ada state dengan penalty besar
+✅ **Environment berbahaya** - Ada state with penalty besar
 ✅ **Eksplorasi penting** - Perlu balance exploration vs exploitation
-✅ **Konservatif lebih baik** - Prefer safe but slower learning
-✅ **Real-world applications** - Agent akan deploy dengan exploration
+✅ **Konservatif more good** - Prefer safe but slower learning
+✅ **Real-world applications** - Agent will deploy with exploration
 
 **Contoh**: Robotics (jatuh = bahaya), autonomous driving, medical treatment
 
 ### Gunakan Q-Learning ketika:
 
-✅ **Environment aman** - Tidak ada catastrophic failures
+✅ **Safe environment** - No catastrophic failures
 ✅ **Speed matters** - Butuh konvergensi cepat
-✅ **Optimal policy jelas** - Tidak banyak ambiguity
+✅ **Optimal policy jelas** - Not much ambiguity
 ✅ **Offline learning** - Training di simulator, deploy greedy policy
 
 **Contoh**: Game AI, recommendation systems, trading algorithms
 
 ---
 
-## Implementation dari Nol
+## Implementation from Nol
 
-See `implementation.py` untuk kode lengkap. Fungsi utama:
+See `implementation.py` for kode lengkap. Fungsi utama:
 
 ```python
 from implementation import SARSAAgent
@@ -242,7 +242,7 @@ print(f"Average Steps: {avg_steps:.1f}")
 ```python
 from implementation import compare_sarsa_vs_qlearning, plot_training_comparison
 
-# Environment yang sama
+# Environment that sama
 env = GridWorldSPG(grid_size=5, n_outlets=3, n_obstacles=3, seed=42)
 
 # Train both
@@ -259,9 +259,9 @@ plt.show()
 ```
 
 **Observasi**:
-- Kedua algoritma konvergen ke policy yang baik
-- Q-Learning **mungkin** belajar sedikit lebih cepat
-- SARSA **mungkin** lebih stabil (less variance)
+- Kedua algoritma converge to policy that good
+- Q-Learning **mungkin** learns sedikit more cepat
+- SARSA **mungkin** more stabil (less variance)
 - Perbedaan tergantung environment (safe vs risky)
 
 ---
@@ -270,21 +270,21 @@ plt.show()
 
 ### Expected SARSA
 
-Update dengan **expected value** over actions (weighted by policy):
+Update with **expected value** over actions (weighted by policy):
 
 $$Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \sum_{a'} \pi(a'|s') Q(s', a') - Q(s, a) \right]$$
 
-- Lebih stabil daripada SARSA
-- Mengurangi variance dari random action selection
+- More stable daripada SARSA
+- Mengurangi variance from random action selection
 - Masih on-policy
 
 ### SARSA(λ)
 
-Menggunakan **eligibility traces** untuk multi-step updates:
+Menggunakan **eligibility traces** for multi-step updates:
 
-- Eligibility trace $e_t(s,a)$ melacak "eligibility" setiap state-action untuk update
-- Update banyak state-action pairs sekaligus berdasarkan TD error
-- Lebih sample-efficient
+- Eligibility trace $e_t(s,a)$ melacak "eligibility" each state-action for update
+- Update many state-action pairs sekaligus based on TD error
+- More sample-efficient
 - Parameter $\lambda \in [0, 1]$:
   - $\lambda = 0$: SARSA biasa (1-step)
   - $\lambda = 1$: Monte Carlo (full episode)
@@ -295,17 +295,17 @@ Menggunakan **eligibility traces** untuk multi-step updates:
 
 ### ✅ Advantages SARSA
 
-1. **On-policy learning** - Belajar dari behavior yang benar-benar digunakan
-2. **Konservatif & safe** - Lebih hati-hati di risky environments
+1. **On-policy learning** - Belajar from behavior that actually used
+2. **Konservatif & safe** - More careful di risky environments
 3. **Robust terhadap exploration** - Q-values reflect actual behavior
 4. **Converges under reasonable conditions**
 
 ### ❌ Disadvantages SARSA
 
-1. **Belajar lebih lambat** daripada Q-Learning di banyak kasus
-2. **Terikat pada behavior policy** - Harus decay epsilon untuk konvergen ke optimal
-3. **Variance tinggi** karena random action selection di a'
-4. **Perlu tuning epsilon decay** dengan hati-hati
+1. **Belajar more lambat** daripada Q-Learning di many kasus
+2. **Terikat at behavior policy** - Harus decay epsilon for konvergen to optimal
+3. **Variance tinggi** because random action selection di a'
+4. **Perlu tuning epsilon decay** with hati-hati
 
 ---
 
@@ -313,7 +313,7 @@ Menggunakan **eligibility traces** untuk multi-step updates:
 
 ### On-Policy (SARSA)
 
-**Policy yang dipelajari = Policy yang digunakan**
+**Policy that dipelajari = Policy that used**
 
 ```
 Behavior Policy:  ε-greedy based on Q
@@ -321,12 +321,12 @@ Target Policy:    ε-greedy based on Q (same!)
 ```
 
 **Implikasi**:
-- Agent belajar value dari policy yang benar-benar digunakan (termasuk eksplorasi)
-- Konservatif: aware dengan risk dari exploratory actions
+- Agent learns value from policy that actually used (termasuk eksplorasi)
+- Konservatif: aware with risk from exploratory actions
 
 ### Off-Policy (Q-Learning)
 
-**Policy yang dipelajari ≠ Policy yang digunakan**
+**Policy that dipelajari ≠ Policy that used**
 
 ```
 Behavior Policy:  ε-greedy (for exploration)
@@ -334,9 +334,9 @@ Target Policy:    Greedy (optimal, no exploration)
 ```
 
 **Implikasi**:
-- Agent belajar value dari **optimal policy** (greedy)
-- Exploratory actions untuk learning saja, tidak masuk ke Q-values
-- Lebih optimis tentang future rewards
+- Agent learns value from **optimal policy** (greedy)
+- Exploratory actions for learning saja, not masuk to Q-values
+- More optimistic tentang future rewards
 
 ---
 
@@ -344,15 +344,15 @@ Target Policy:    Greedy (optimal, no exploration)
 
 - **Paper asli**: Rummery, G. A., & Niranjan, M. (1994). "On-line Q-learning using connectionist systems."
 - **Sutton & Barto**: "Reinforcement Learning: An Introduction" (Chapter 6.4 - SARSA)
-- **Comparison**: Cliff-walking example dari Sutton & Barto
+- **Comparison**: Cliff-walking example from Sutton & Barto
 
 ---
 
 ## File Terkait
 
-- `implementation.py` - Implementation SARSA dari nol + comparison dengan Q-Learning
+- `implementation.py` - Implementation SARSA from nol + comparison with Q-Learning
 - `exercise.ipynb` - Interactive exercises SARSA vs Q-Learning
 - `test_sarsa.py` - Unit tests
-- `../01_q_learning/` - Q-Learning implementation untuk perbandingan
+- `../01_q_learning/` - Q-Learning implementation for perbandingan
 
-**Selamat belajar! 🎓**
+**Selamat learns! 🎓**

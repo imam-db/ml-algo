@@ -2,25 +2,25 @@
 
 ## What is DBSCAN?
 
-DBSCAN adalah algoritma clustering yang berbeda dari K-Means. Alih-alih membentuk cluster bulat dengan ukuran seragam, **DBSCAN menemukan cluster berdasarkan kepadatan (density)** dan dapat:
+DBSCAN is algoritma clustering that different from K-Means. Alih-alih membentuk cluster bulat with ukuran seragam, **DBSCAN menemukan cluster based on kepadatan (density)** and can:
 
-1. ✅ Menemukan cluster dengan **bentuk arbitrary** (tidak harus bulat)
+1. ✅ Menemukan cluster with **bentuk arbitrary** (not must bulat)
 2. ✅ **Mendeteksi outlier** (noise points)
-3. ✅ **Tidak perlu menentukan jumlah cluster** di awal
-4. ❌ Sensitif terhadap parameter `eps` dan `min_samples`
+3. ✅ **Doesn't need to determine jumlah cluster** di awal
+4. ❌ Sensitif terhadap parameter `eps` and `min_samples`
 
 ### Analogi SPG (Sales Promotion Girl/Guy)
 
-Bayangkan Anda adalah koordinator SPG yang memetakan lokasi toko di kota:
+Bayangkan Anda is koordinator SPG that memetakan lokasi toko di kota:
 
-- **Cluster**: Area dengan banyak toko berdekatan (mall, kawasan perumahan, pusat bisnis)
-- **Outlier**: Toko terisolasi di pinggir kota atau area sepi
-- **Core Point**: Toko yang dikelilingi banyak toko lain (≥ min_samples dalam radius eps)
-- **Border Point**: Toko di pinggir cluster (dekat core point tapi tidak punya banyak tetangga)
+- **Cluster**: Area with many toko berdekatan (mall, kawasan perumahan, pusat bisnis)
+- **Outlier**: Toko terisolasi di pinggir kota or area sepi
+- **Core Point**: Toko that surrounded by many toko lain (≥ min_samples within radius eps)
+- **Border Point**: Toko di pinggir cluster (dekat core point tapi not punya many tetangga)
 
 DBSCAN membantu Anda mengidentifikasi:
-- Zona kerja SPG berdasarkan kepadatan toko
-- Toko mana yang terisolasi dan mungkin tidak efisien dikunjungi
+- Zona kerja SPG based on kepadatan toko
+- Toko mana that terisolasi and mungkin not efisien dikunjungi
 
 ---
 
@@ -29,26 +29,26 @@ DBSCAN membantu Anda mengidentifikasi:
 ### 1. Parameter Kunci
 
 #### `eps` (epsilon)
-- **Radius lingkungan**: Jarak maksimal antara dua titik agar dianggap tetangga
-- Dalam konteks SPG: Jarak (km) yang dianggap "dekat"
+- **Radius lingkungan**: Jarak maksimal antara dua points agar dianggap tetangga
+- In SPG context: Jarak (km) that dianggap "dekat"
 - Terlalu kecil → Banyak noise
-- Terlalu besar → Semua titik jadi satu cluster
+- Terlalu besar → Semua points jadi satu cluster
 
 #### `min_samples`
-- **Minimum jumlah tetangga**: Berapa banyak titik dalam radius `eps` agar sebuah titik dianggap core point
-- Termasuk titik itu sendiri
-- Dalam konteks SPG: Berapa toko minimal dalam radius `eps` agar area dianggap "padat"
+- **Minimum jumlah tetangga**: Berapa many points within radius `eps` agar sebuah points dianggap core point
+- Termasuk points itu sendiri
+- In SPG context: Berapa toko minimal within radius `eps` agar area dianggap "padat"
 
 ### 2. Tipe Titik
 
 ```
-Core Point (●): Punya ≥ min_samples tetangga dalam radius eps
-├─ Pusat dari cluster
-└─ Digunakan untuk expand cluster
+Core Point (●): Punya ≥ min_samples tetangga within radius eps
+├─ Pusat from cluster
+└─ Digunakan for expand cluster
 
-Border Point (○): Bukan core point, tapi ada dalam radius eps dari core point
+Border Point (○): Bukan core point, tapi ada within radius eps from core point
 ├─ Di pinggir cluster
-└─ Tidak digunakan untuk expand
+└─ Tidak used for expand
 
 Noise Point (×): Bukan core maupun border
 ├─ Outlier / anomaly
@@ -58,21 +58,21 @@ Noise Point (×): Bukan core maupun border
 ### 3. Algoritma
 
 ```
-1. Untuk setiap titik yang belum di-visit:
+1. For each points that belum di-visit:
    
-   a. Hitung tetangga dalam radius eps
+   a. Hitung tetangga within radius eps
    
    b. Jika jumlah tetangga < min_samples:
-      → Tandai sebagai noise (sementara)
+      → Tandai as noise (sementara)
    
    c. Jika jumlah tetangga ≥ min_samples:
       → Core point! Buat cluster baru
       → Expand cluster menggunakan BFS:
          - Tambahkan semua tetangga ke cluster
-         - Jika tetangga juga core point, expand dari situ
-         - Border points yang tadinya noise → masuk cluster
+         - Jika tetangga juga core point, expand from situ
+         - Border points that tadinya noise → masuk cluster
 
-2. Noise points yang tidak pernah di-claim → tetap noise
+2. Noise points that not pernah di-claim → tetap noise
 ```
 
 ---
@@ -83,29 +83,29 @@ Noise Point (×): Bukan core maupun border
 
 $$N_\varepsilon(p) = \{q \in D \mid \text{dist}(p, q) \leq \varepsilon\}$$
 
-Semua titik $q$ dalam dataset $D$ yang jaraknya dari $p$ ≤ $\varepsilon$.
+Semua points $q$ in dataset $D$ that jaraknya from $p$ ≤ $\varepsilon$.
 
 ### Core Point Condition
 
 $$|N_\varepsilon(p)| \geq \text{minPts}$$
 
-Titik $p$ adalah core point jika punya minimal `minPts` tetangga dalam radius $\varepsilon$.
+Titik $p$ is core point if has minimum `minPts` tetangga within radius $\varepsilon$.
 
 ### Directly Density-Reachable
 
-Titik $q$ directly density-reachable dari $p$ jika:
-1. $q \in N_\varepsilon(p)$, dan
-2. $p$ adalah core point
+Titik $q$ directly density-reachable from $p$ if:
+1. $q \in N_\varepsilon(p)$, and
+2. $p$ is core point
 
 ### Density-Reachable (Transitive)
 
-$q$ density-reachable dari $p$ jika ada chain: $p = p_1, p_2, \ldots, p_n = q$ di mana $p_{i+1}$ directly density-reachable dari $p_i$.
+$q$ density-reachable from $p$ if there is a chain: $p = p_1, p_2, \ldots, p_n = q$ di mana $p_{i+1}$ directly density-reachable from $p_i$.
 
 ### Density-Connected
 
-$p$ dan $q$ density-connected jika ada titik $o$ sehingga $p$ dan $q$ keduanya density-reachable dari $o$.
+$p$ and $q$ density-connected if there is a point $o$ such that $p$ and $q$ both density-reachable from $o$.
 
-**Cluster** = semua titik yang density-connected satu sama lain + border points mereka.
+**Cluster** = semua points that density-connected satu sama lain + border points mereka.
 
 ---
 
@@ -113,16 +113,16 @@ $p$ dan $q$ density-connected jika ada titik $o$ sehingga $p$ dan $q$ keduanya d
 
 ### Metode 1: K-Distance Graph
 
-1. Untuk setiap titik, hitung jarak ke tetangga ke-k terdekat (k = min_samples)
-2. Sort jarak ini secara descending
+1. For each points, calculate distance to k-th neighbor terdekat (k = min_samples)
+2. Sort jarak this secara descending
 3. Plot grafik
-4. Cari "elbow" (titik di mana kurva mulai naik tajam)
-5. Jarak pada elbow → nilai `eps` yang baik
+4. Cari "elbow" (points di mana kurva mulai naik tajam)
+5. Jarak at elbow → nilai `eps` that good
 
 ```python
 from sklearn.neighbors import NearestNeighbors
 
-k = 5  # min_samples yang diinginkan
+k = 5  # min_samples that desired
 nbrs = NearestNeighbors(n_neighbors=k).fit(X)
 distances, indices = nbrs.kneighbors(X)
 
@@ -138,14 +138,14 @@ plt.show()
 
 ### Metode 2: Domain Knowledge
 
-- **`eps`**: Berdasarkan pengetahuan domain tentang jarak "dekat"
-  - Untuk lokasi toko: 1-2 km mungkin masuk akal
-  - Untuk sensor data: tergantung unit pengukuran
+- **`eps`**: Berdasarkan pengetahuan domain about distance "dekat"
+  - For store locations: 1-2 km mungkin masuk akal
+  - For sensor data: tergantung unit pengukuran
 
 - **`min_samples`**: Rule of thumb
-  - `min_samples = 2 * dimensi` untuk kebanyakan kasus
-  - Minimal 3-5 untuk data 2D
-  - Lebih besar jika banyak noise
+  - `min_samples = 2 * dimensi` for kebanyakan kasus
+  - Minimal 3-5 for data 2D
+  - Larger if much noise
 
 ---
 
@@ -153,17 +153,17 @@ plt.show()
 
 ### ✅ Advantages
 
-1. **Tidak perlu tentukan jumlah cluster** di awal (berbeda dari K-Means)
-2. **Menemukan cluster bentuk arbitrary** (tidak harus bulat/convex)
-3. **Robust terhadap outlier** - mendeteksi dan mengabaikan noise
-4. **Hanya butuh 2 parameter** yang relatif intuitif
+1. **Don't need to determine jumlah cluster** di awal (different from K-Means)
+2. **Menemukan cluster bentuk arbitrary** (not must bulat/convex)
+3. **Robust terhadap outlier** - mendeteksi and mengabaikan noise
+4. **Only needs 2 parameter** that relatif intuitif
 
 ### ❌ Disadvantages
 
-1. **Sensitif terhadap parameter** - `eps` dan `min_samples` harus dipilih dengan hati-hati
-2. **Sulit untuk data dengan density bervariasi** - cluster dengan density berbeda bisa sulit dideteksi dengan satu nilai `eps`
+1. **Sensitif terhadap parameter** - `eps` and `min_samples` must chosen with hati-hati
+2. **Sulit for data with density bervariasi** - cluster with density different bisa sulit dideteksi with satu nilai `eps`
 3. **Curse of dimensionality** - jarak Euclidean kurang bermakna di dimensi tinggi
-4. **Kompleksitas tinggi** - O(n²) untuk naive implementation (bisa dipercepat dengan index structures)
+4. **Kompleksitas tinggi** - O(n²) for naive implementation (bisa dipercepat with index structures)
 
 ---
 
@@ -173,16 +173,16 @@ plt.show()
 |-------|--------|---------|
 | **Jumlah cluster** | Otomatis ditemukan | Harus ditentukan (k) |
 | **Bentuk cluster** | Arbitrary | Bulat (spherical) |
-| **Outlier handling** | Deteksi sebagai noise | Semua titik masuk cluster |
+| **Outlier handling** | Deteksi as noise | Semua points masuk cluster |
 | **Parameter** | eps, min_samples | k, max_iter |
-| **Kompleksitas** | O(n²) atau O(n log n) | O(nkdi) |
-| **Good for** | Data dengan noise, bentuk kompleks | Data terdistribusi normal, bulat |
+| **Kompleksitas** | O(n²) or O(n log n) | O(nkdi) |
+| **Good for** | Data with noise, bentuk kompleks | Data terdistribusi normal, bulat |
 
 ---
 
-## Implementation dari Nol
+## Implementation from Nol
 
-See `implementation.py` untuk kode lengkap. Fungsi utama:
+See `implementation.py` for kode lengkap. Fungsi utama:
 
 ```python
 from implementation import DBSCAN, generate_clustering_data
@@ -206,7 +206,7 @@ print(f"Noise points: {np.sum(labels == -1)}")
 # Data: koordinat 300 toko di kota
 X = generate_clustering_data(n_samples=300, random_state=42)
 
-# DBSCAN dengan eps=1.5 km, min_samples=5
+# DBSCAN with eps=1.5 km, min_samples=5
 dbscan = DBSCAN(eps=1.5, min_samples=5)
 dbscan.fit(X)
 
@@ -220,15 +220,15 @@ for cluster_id in range(dbscan.n_clusters_):
 ```
 
 **Interpretasi**:
-- Setiap cluster = zona kerja SPG yang efisien
-- Noise points = toko terisolasi yang mungkin perlu strategi khusus
+- Each cluster = zona kerja SPG that efisien
+- Noise points = toko terisolasi that mungkin perlu strategi khusus
 - Core points = toko di pusat zona (prioritas tinggi)
 
 ---
 
 ## Tuning Parameter
 
-### Eksperimen dengan Grid Search
+### Eksperimen with Grid Search
 
 ```python
 import numpy as np
@@ -244,7 +244,7 @@ for eps in eps_values:
         dbscan = DBSCAN(eps=eps, min_samples=min_samples)
         labels = dbscan.fit_predict(X)
         
-        # Evaluasi dengan silhouette score (jika ada cluster)
+        # Evaluasi with silhouette score (jika ada cluster)
         if dbscan.n_clusters_ > 0 and np.sum(labels != -1) > 1:
             from sklearn.metrics import silhouette_score
             mask = labels != -1  # Exclude noise
@@ -271,9 +271,9 @@ print(f"\nBest params: eps={best_params[0]}, min_samples={best_params[1]}")
 
 ## File Terkait
 
-- `implementation.py` - Implementation DBSCAN dari nol
-- `sklearn_example.py` - Perbandingan dengan sklearn
+- `implementation.py` - Implementation DBSCAN from nol
+- `sklearn_example.py` - Perbandingan with sklearn
 - `exercise.ipynb` - Interactive exercises
 - `test_dbscan.py` - Unit tests
 
-**Selamat belajar! 🎓**
+**Selamat learns! 🎓**
