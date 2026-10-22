@@ -5,15 +5,22 @@ Tests for Neural Networks implementation
 import numpy as np
 import pytest
 from pathlib import Path
+import importlib.util
 import sys
 
-# Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent.parent / '01_supervised_learning' / '08_neural_networks'))
+# Import using importlib to avoid conflicts with other implementation.py files
+_nn_impl_path = Path(__file__).parent.parent / '01_supervised_learning' / '08_neural_networks' / 'implementation.py'
+spec = importlib.util.spec_from_file_location("nn_implementation", _nn_impl_path)
+nn_module = importlib.util.module_from_spec(spec)
+sys.modules["nn_implementation"] = nn_module
+spec.loader.exec_module(nn_module)
 
-from implementation import (
-    MLPClassifier, ReLU, Sigmoid, Softmax,
-    gradient_check, generate_spg_outlet_data
-)
+MLPClassifier = nn_module.MLPClassifier
+ReLU = nn_module.ReLU
+Sigmoid = nn_module.Sigmoid
+Softmax = nn_module.Softmax
+gradient_check = nn_module.gradient_check
+generate_spg_outlet_data = nn_module.generate_spg_outlet_data
 
 
 class TestActivations:
