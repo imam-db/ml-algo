@@ -24,7 +24,7 @@ except ImportError:
 def load_spg_outlets_data(filepath=None):
     """Load the SPG outlets dataset (path is resolved relative to this script)."""
     if filepath is None:
-        filepath = Path(__file__).resolve().parent / 'datasets' / 'spg_outlets.csv'
+        filepath = Path(__file__).resolve().parent.parent / '01_kmeans' / 'datasets' / 'spg_outlets.csv'
     else:
         filepath = Path(filepath)
 
