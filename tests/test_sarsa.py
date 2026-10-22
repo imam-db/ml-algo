@@ -297,5 +297,30 @@ class TestEdgeCases:
         assert all(steps <= max_steps for steps in agent.training_history['episode_steps'])
 
 
+class TestCompareSarsaVsQLearning:
+    """Regression test for #24: compare_sarsa_vs_qlearning used an undefined name."""
+
+    def test_compare_runs(self):
+        env = GridWorldSPG(grid_size=3, n_outlets=1, n_obstacles=1, seed=42)
+        sarsa_agent, qlearning_agent = sarsa_module.compare_sarsa_vs_qlearning(
+            env, n_episodes=5, seed=0
+        )
+        assert isinstance(sarsa_agent, SARSAAgent)
+        assert type(qlearning_agent).__name__ == "QLearningAgent"
+        assert len(qlearning_agent.training_history["rewards"]) == 5
+
+    def test_plot_training_comparison(self):
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        env = GridWorldSPG(grid_size=3, n_outlets=1, n_obstacles=1, seed=42)
+        sarsa_agent, qlearning_agent = sarsa_module.compare_sarsa_vs_qlearning(
+            env, n_episodes=60, seed=0
+        )
+        fig = sarsa_module.plot_training_comparison(sarsa_agent, qlearning_agent)
+        assert fig is not None
+        plt.close(fig)
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
