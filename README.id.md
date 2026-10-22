@@ -43,7 +43,8 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - **🚧 05_svm** - Support Vector Machine (planned)
 - **[06_naive_bayes](./01_supervised_learning/06_naive_bayes/)** - Naive Bayes (Gaussian & Multinomial) ✅
 - **[07_knn](./01_supervised_learning/07_knn/)** - K-Nearest Neighbors (Classifier & Regressor) ✅
-- **🚧 08_neural_networks** - Neural Networks (planned)
+- **[08_neural_networks](./01_supervised_learning/08_neural_networks/)** - Neural Networks (Feedforward) ✅
+- **[09_gradient_boosting](./01_supervised_learning/09_gradient_boosting/)** - Gradient Boosting (Regression & Classification) ✅
 
 ### 2. **Unsupervised Learning** ([`02_unsupervised_learning/`](./02_unsupervised_learning/))
 - **[01_kmeans](./02_unsupervised_learning/01_kmeans/)** - K-Means Clustering ✅
