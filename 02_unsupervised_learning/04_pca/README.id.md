@@ -2,63 +2,63 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-**🏠 [Back to Main](../../README.md)** | **📁 [Unsupervised Learning](../README.md)** | **⬅️ [Previous: K-Means](../01_kmeans/README.md)**
+**🏠 [Kembali ke Utama](../../README.md)** | **📁 [Unsupervised Learning](../README.md)** | **⬅️ [Sebelumnya: K-Means](../01_kmeans/README.md)**
 
-## 🗺️ Quick Access
+## 🗺️ Akses Cepat
 
-| File | Description | Quick Run |
+| File | Deskripsi | Cara Menjalankan |
 |------|-------------|----------|
-| [`implementation.py`](./implementation.py) | From-scratch implementation | `python3 implementation.py` |
-| [`sklearn_example.py`](./sklearn_example.py) | Scikit-learn examples | `python3 sklearn_example.py` |
-| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
-| [`datasets/`](./datasets/) | SPG retail outlets dataset | - |
+| [`implementation.py`](./implementation.py) | Implementasi from-scratch | `python3 implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Contoh scikit-learn | `python3 sklearn_example.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Latihan interaktif | `jupyter lab exercise.ipynb` |
+| [`datasets/`](./datasets/) | Dataset outlet retail SPG | - |
 
-## 📖 Theory and Concepts
+## 📖 Teori dan Konsep
 
-### What is PCA?
+### Apa itu PCA?
 
-**Principal Component Analysis (PCA)** is an unsupervised learning technique for dimensionality reduction. It transforms data into a new coordinate system where the axes (principal components) are ordered by the amount of variance they explain. This allows you to:
+**Principal Component Analysis (PCA)** adalah teknik unsupervised learning untuk reduksi dimensi. PCA mentransformasi data ke sistem koordinat baru di mana sumbu (principal component) diurutkan berdasarkan besarnya variance yang dijelaskan. Hal ini memungkinkan Anda untuk:
 
-1. **Visualize** high-dimensional data in 2D or 3D
-2. **Reduce noise** by keeping only components with high variance
-3. **Speed up** machine learning algorithms by reducing features
-4. **Understand** which features contribute most to variance
+1. **Memvisualisasikan** data berdimensi tinggi dalam 2D atau 3D
+2. **Mengurangi noise** dengan hanya mempertahankan komponen bervariance tinggi
+3. **Mempercepat** algoritma machine learning dengan mengurangi fitur
+4. **Memahami** fitur mana yang paling berkontribusi terhadap variance
 
-### Mathematical Formulation
+### Formulasi Matematika
 
-Given data matrix **X** with shape (n_samples, n_features):
+Diberikan matriks data **X** dengan bentuk (n_samples, n_features):
 
-1. **Center the data:**
+1. **Pusatkan data:**
    ```
    X_centered = X - mean(X)
    ```
 
-2. **Compute covariance matrix:**
+2. **Hitung matriks kovarians:**
    ```
    Cov = (1/(n-1)) × X_centered^T × X_centered
    ```
 
-3. **Find eigenvalues λ and eigenvectors v:**
+3. **Temukan eigenvalue λ dan eigenvector v:**
    ```
    Cov × v = λ × v
    ```
 
-4. **Principal components** are eigenvectors ordered by eigenvalues (largest first)
+4. **Principal component** adalah eigenvector yang diurutkan berdasarkan eigenvalue (terbesar lebih dulu)
 
-### PCA via SVD (Our Implementation)
+### PCA melalui SVD (Implementasi Kami)
 
-More numerically stable approach using **Singular Value Decomposition**:
+Pendekatan yang lebih stabil secara numerik menggunakan **Singular Value Decomposition**:
 
 ```
 X_centered = U × Σ × V^T
 ```
 
-Where:
-- **U**: (n_samples, n_samples) left singular vectors
-- **Σ**: (min(n,p), min(n,p)) diagonal matrix of singular values σ
-- **V^T**: (n_features, n_features) right singular vectors (transposed)
+Keterangan:
+- **U**: (n_samples, n_samples) left singular vector
+- **Σ**: (min(n,p), min(n,p)) matriks diagonal dari singular value σ
+- **V^T**: (n_features, n_features) right singular vector (ditranspos)
 
-**Key insight:** The rows of V^T are the principal components!
+**Wawasan kunci:** Baris-baris dari V^T adalah principal component!
 
 **Explained variance:**
 ```
@@ -70,164 +70,164 @@ explained_variance_i = σ_i² / (n_samples - 1)
 explained_variance_ratio_i = explained_variance_i / Σ(explained_variance)
 ```
 
-### Transformation and Reconstruction
+### Transformasi dan Rekonstruksi
 
-**Transform (dimensionality reduction):**
+**Transform (reduksi dimensi):**
 ```
 X_transformed = X_centered × components^T
 ```
-Shape: (n_samples, n_components)
+Bentuk: (n_samples, n_components)
 
-**Inverse transform (reconstruction):**
+**Inverse transform (rekonstruksi):**
 ```
 X_reconstructed = X_transformed × components + mean
 ```
-Shape: (n_samples, n_features)
+Bentuk: (n_samples, n_features)
 
-**Note:** Reconstruction with fewer than all components loses information (some variance).
+**Catatan:** Rekonstruksi dengan komponen kurang dari seluruh komponen akan kehilangan informasi (sebagian variance).
 
-## 🎯 When to Use PCA?
+## 🎯 Kapan Menggunakan PCA?
 
-### ✅ Suitable for:
-- Visualizing high-dimensional data (reduce to 2D/3D)
-- Removing correlated/redundant features
-- Noise reduction (keep high-variance components)
-- Speeding up algorithms (fewer features)
-- Pre-processing before clustering or classification
+### ✅ Cocok untuk:
+- Memvisualisasikan data berdimensi tinggi (reduksi ke 2D/3D)
+- Menghapus fitur yang berkorelasi/redundan
+- Pengurangan noise (pertahankan komponen bervariance tinggi)
+- Mempercepat algoritma (lebih sedikit fitur)
+- Pre-processing sebelum clustering atau klasifikasi
 - Exploratory data analysis
 
-### ❌ Not suitable for:
-- When you need to interpret individual features (PCs are combinations)
-- When variance doesn't align with importance
-- Sparse data (PCA makes it dense)
-- Categorical data (needs numeric features)
-- When non-linear relationships dominate
+### ❌ Tidak cocok untuk:
+- Ketika Anda perlu menginterpretasikan fitur individual (PC adalah kombinasi)
+- Ketika variance tidak sejalan dengan kepentingan
+- Data sparse (PCA membuatnya menjadi dense)
+- Data kategorikal (membutuhkan fitur numerik)
+- Ketika hubungan non-linear mendominasi
 
-## 📊 Key Concepts
+## 📊 Konsep Kunci
 
 ### Explained Variance Ratio
 
-Tells you how much information (variance) each component captures:
+Memberi tahu Anda seberapa banyak informasi (variance) yang ditangkap setiap komponen:
 
 ```python
 explained_variance_ratio = [0.45, 0.25, 0.15, 0.10, 0.05]
 cumulative = [0.45, 0.70, 0.85, 0.95, 1.00]
 ```
 
-- PC1 captures 45% of variance
-- First 2 PCs capture 70% of variance
-- Need 4 PCs for 95% of variance
+- PC1 menangkap 45% variance
+- Dua PC pertama menangkap 70% variance
+- Butuh 4 PC untuk 95% variance
 
-**Rule of thumb:** Keep components that explain 90-95% of cumulative variance.
+**Aturan praktis:** Pertahankan komponen yang menjelaskan 90-95% cumulative variance.
 
-### Sign Ambiguity
+### Ambiguitas Tanda
 
-PCA components are only defined **up to sign** (direction can be flipped):
+Komponen PCA hanya terdefinisi **hingga tanda** (arahnya dapat dibalik):
 
 ```
 components = [v1, v2, v3, ...]  or  [-v1, -v2, -v3, ...]
 ```
 
-Both are mathematically equivalent! When comparing PCA results:
-- Components may have opposite signs
-- Use `np.allclose(abs(comp1), abs(comp2))` or correlation
-- Our implementation includes `compare_pca_sign_invariance()` helper
+Keduanya setara secara matematis! Saat membandingkan hasil PCA:
+- Komponen dapat memiliki tanda yang berlawanan
+- Gunakan `np.allclose(abs(comp1), abs(comp2))` atau korelasi
+- Implementasi kami menyertakan helper `compare_pca_sign_invariance()`
 
-### Feature Scaling is CRITICAL
+### Feature Scaling SANGAT PENTING
 
-PCA is sensitive to feature scales because it maximizes variance:
+PCA sensitif terhadap skala fitur karena memaksimalkan variance:
 
 ```python
-# Without scaling: features with larger ranges dominate
-X = [[1000000, 5],    # Sales (millions), Rating (1-5)
+# Tanpa scaling: fitur dengan rentang lebih besar akan mendominasi
+X = [[1000000, 5],    # Sales (jutaan), Rating (1-5)
      [2000000, 4]]
-# PCA will be dominated by Sales!
+# PCA akan didominasi oleh Sales!
 
-# Always scale first:
+# Selalu scale terlebih dahulu:
 from sklearn.preprocessing import StandardScaler
 X_scaled = StandardScaler().fit_transform(X)
 ```
 
-## 🔍 Advantages and Disadvantages
+## 🔍 Kelebihan dan Kekurangan
 
-### Advantages:
-- ✅ Reduces dimensionality while preserving variance
-- ✅ Removes correlated features automatically
-- ✅ Speeds up downstream algorithms
-- ✅ Great for visualization
-- ✅ Deterministic (same result each time)
-- ✅ Fast computation via SVD
+### Kelebihan:
+- ✅ Mengurangi dimensi sambil mempertahankan variance
+- ✅ Menghapus fitur yang berkorelasi secara otomatis
+- ✅ Mempercepat algoritma hilir
+- ✅ Sangat baik untuk visualisasi
+- ✅ Deterministik (hasil sama setiap kali)
+- ✅ Komputasi cepat melalui SVD
 
-### Disadvantages:
-- ❌ Principal components are harder to interpret
-- ❌ Assumes linear relationships
-- ❌ Sensitive to outliers
-- ❌ Requires feature scaling
-- ❌ May lose information with too few components
-- ❌ Sign ambiguity when comparing results
+### Kekurangan:
+- ❌ Principal component lebih sulit diinterpretasikan
+- ❌ Mengasumsikan hubungan linear
+- ❌ Sensitif terhadap outlier
+- ❌ Memerlukan feature scaling
+- ❌ Dapat kehilangan informasi jika komponen terlalu sedikit
+- ❌ Ambiguitas tanda saat membandingkan hasil
 
-## 🎯 Practical Scenario: Visualizing Outlet Segments
+## 🎯 Skenario Praktis: Memvisualisasikan Segmen Outlet
 
-### 🏪 Indonesian FMCG Retail Outlet Analysis
+### 🏪 Analisis Outlet Retail FMCG Indonesia
 
-**Dataset**: Same 500 retail outlets from K-Means example
+**Dataset**: 500 outlet retail yang sama dari contoh K-Means
 
-**Original features (5D):**
-- `monthly_sales_idr` - Monthly sales in IDR
-- `sku_count` - Number of SKUs
-- `visit_freq_per_month` - Visit frequency
-- `oos_rate` - Out-of-stock rate
-- `avg_basket_idr` - Average basket size
+**Fitur asli (5D):**
+- `monthly_sales_idr` - Penjualan bulanan dalam IDR
+- `sku_count` - Jumlah SKU
+- `visit_freq_per_month` - Frekuensi kunjungan
+- `oos_rate` - Tingkat out-of-stock
+- `avg_basket_idr` - Rata-rata ukuran basket
 
-**Problem:** Can't visualize 5D data or understand which features vary together.
+**Masalah:** Tidak dapat memvisualisasikan data 5D atau memahami fitur mana yang bervariasi bersama.
 
-**Solution:** Use PCA to:
-1. Reduce 5D data to 2D for visualization
-2. Understand how much variance 2D captures
-3. See which original features contribute to each PC
-4. Visualize K-Means clusters in 2D PCA space
+**Solusi:** Gunakan PCA untuk:
+1. Mengurangi data 5D menjadi 2D untuk visualisasi
+2. Memahami berapa banyak variance yang ditangkap 2D
+3. Melihat fitur asli mana yang berkontribusi pada setiap PC
+4. Memvisualisasikan cluster K-Means dalam ruang PCA 2D
 
-**Run the example:**
+**Jalankan contohnya:**
 ```bash
 python3 sklearn_example.py
 ```
 
-**What you'll learn:**
-- How to interpret explained variance ratio
-- When 2D projection is sufficient (check cumulative variance)
-- How to visualize clusters in reduced dimensions
-- Which original features contribute to each principal component
+**Yang akan Anda pelajari:**
+- Cara menginterpretasikan explained variance ratio
+- Kapan proyeksi 2D sudah cukup (periksa cumulative variance)
+- Cara memvisualisasikan cluster dalam dimensi yang direduksi
+- Fitur asli mana yang berkontribusi pada setiap principal component
 
-## 💡 Key Implementation Details
+## 💡 Detail Implementasi Penting
 
-### Important Parameters
+### Parameter Penting
 
 ```python
 PCA(
-    n_components=None,    # Number of components (or None for all)
-    whiten=False,        # Divide by sqrt(explained_variance)
-    svd_solver='auto'    # SVD algorithm: 'auto', 'full', 'arpack', 'randomized'
+    n_components=None,    # Jumlah komponen (atau None untuk semua)
+    whiten=False,        # Bagi dengan sqrt(explained_variance)
+    svd_solver='auto'    # Algoritma SVD: 'auto', 'full', 'arpack', 'randomized'
 )
 ```
 
-### Choosing n_components
+### Memilih n_components
 
-**By variance:**
+**Berdasarkan variance:**
 ```python
-pca = PCA(n_components=0.95)  # Keep 95% of variance
+pca = PCA(n_components=0.95)  # Pertahankan 95% variance
 ```
 
-**By number:**
+**Berdasarkan jumlah:**
 ```python
-pca = PCA(n_components=2)  # Keep exactly 2 components
+pca = PCA(n_components=2)  # Pertahankan tepat 2 komponen
 ```
 
-**Inspect after fitting:**
+**Periksa setelah fitting:**
 ```python
 pca = PCA()
 pca.fit(X)
 print(pca.explained_variance_ratio_.cumsum())
-# Choose n where cumulative ≥ 0.90
+# Pilih n di mana cumulative ≥ 0.90
 ```
 
 ### Feature Scaling
@@ -235,7 +235,7 @@ print(pca.explained_variance_ratio_.cumsum())
 ```python
 from sklearn.preprocessing import StandardScaler
 
-# Always scale before PCA!
+# Selalu scale sebelum PCA!
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
@@ -245,50 +245,50 @@ X_pca = pca.fit_transform(X_scaled)
 
 ### Reconstruction Error
 
-Measure information loss from dimensionality reduction:
+Mengukur kehilangan informasi akibat reduksi dimensi:
 
 ```python
-# Transform and reconstruct
+# Transform dan rekonstruksi
 X_pca = pca.transform(X_scaled)
 X_reconstructed = pca.inverse_transform(X_pca)
 
-# Compute MSE
+# Hitung MSE
 mse = np.mean((X_scaled - X_reconstructed) ** 2)
 ```
 
-With all components: MSE ≈ 0 (perfect reconstruction)
+Dengan semua komponen: MSE ≈ 0 (rekonstruksi sempurna)
 
-## 📚 References
+## 📚 Referensi
 
 - [Scikit-learn PCA](https://scikit-learn.org/stable/modules/decomposition.html#pca)
 - [Principal Component Analysis (Wikipedia)](https://en.wikipedia.org/wiki/Principal_component_analysis)
 - [Singular Value Decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition)
 - [Understanding PCA Visually](http://setosa.io/ev/principal-component-analysis/)
 
-## 🎓 Learning Progression
+## 🎓 Progres Pembelajaran
 
-### Prerequisites
-- Linear algebra basics (vectors, matrices, matrix multiplication)
-- Understanding of variance and covariance
-- NumPy fundamentals
+### Prasyarat
+- Dasar aljabar linear (vektor, matriks, perkalian matriks)
+- Pemahaman tentang variance dan covariance
+- Dasar-dasar NumPy
 
-### After PCA, explore:
+### Setelah PCA, jelajahi:
 
-1. **[t-SNE](../05_tsne/)** - Non-linear dimensionality reduction for visualization
-2. **Autoencoders** (`../../04_advanced_topics/02_deep_learning/`, direncanakan) - Non-linear PCA with neural networks
-3. **LDA** (`../07_lda/`, direncanakan) - Linear Discriminant Analysis (supervised version)
-4. **Factor Analysis** (`../08_factor_analysis/`, direncanakan) - Similar to PCA but models noise
+1. **[t-SNE](../05_tsne/)** - Reduksi dimensi non-linear untuk visualisasi
+2. **Autoencoders** (`../../04_advanced_topics/02_deep_learning/`, direncanakan) - PCA non-linear dengan neural network
+3. **LDA** (`../07_lda/`, direncanakan) - Linear Discriminant Analysis (versi supervised)
+4. **Factor Analysis** (`../08_factor_analysis/`, direncanakan) - Mirip PCA tetapi memodelkan noise
 
-### Combining with other algorithms
+### Menggabungkan dengan algoritma lain
 
 ```python
-# PCA before clustering
+# PCA sebelum clustering
 pca = PCA(n_components=0.95)
 X_reduced = pca.fit_transform(X_scaled)
 kmeans = KMeans(n_clusters=4)
 labels = kmeans.fit_predict(X_reduced)
 
-# PCA before classification (faster training)
+# PCA sebelum klasifikasi (training lebih cepat)
 pca = PCA(n_components=50)
 X_train_pca = pca.fit_transform(X_train)
 X_test_pca = pca.transform(X_test)
@@ -297,7 +297,7 @@ clf.fit(X_train_pca, y_train)
 
 ---
 
-## Ringkasan (ID)
+## Ringkasan
 
 **Principal Component Analysis (PCA)** adalah teknik unsupervised learning untuk reduksi dimensi. PCA mentransformasi data ke sistem koordinat baru di mana sumbu (principal components) diurutkan berdasarkan variance yang dijelaskan.
 
@@ -328,4 +328,4 @@ clf.fit(X_train_pca, y_train)
 
 ---
 
-**➡️ Next Step**: Explore **[t-SNE](../05_tsne/)** for non-linear dimensionality reduction!
+**➡️ Langkah Berikutnya**: Jelajahi **[t-SNE](../05_tsne/)** untuk reduksi dimensi non-linear!

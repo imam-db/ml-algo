@@ -2,15 +2,15 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-🏠 Back to Main: [`../README.md`](../README.md)
+🏠 Kembali ke Utama: [`../README.md`](../README.md)
 
-Unsupervised algorithms for discovering patterns without labels. Folder pattern:
-- `README.md` — theory overview and when to use
-- `implementation.py` — from-scratch (NumPy) implementation
-- `sklearn_example.py` — scikit-learn usage examples
-- `exercise.ipynb` — hands-on exercises
+Algoritma unsupervised untuk menemukan pola tanpa label. Pola folder:
+- `README.md` — ringkasan teori dan kapan digunakan
+- `implementation.py` — implementasi from-scratch (NumPy)
+- `sklearn_example.py` — contoh penggunaan scikit-learn
+- `exercise.ipynb` — latihan langsung
 
-Modules (available/planned):
+Modul (tersedia/direncanakan):
 - **[`01_kmeans/`](01_kmeans/)** — K-Means Clustering (tersedia)
 - **[`02_dbscan/`](02_dbscan/)** — DBSCAN (tersedia)
 - **[`03_hierarchical/`](03_hierarchical/)** — Hierarchical Clustering (tersedia)
@@ -18,10 +18,10 @@ Modules (available/planned):
 - **[`05_tsne/`](05_tsne/)** — t-SNE (tersedia)
 - **[`06_association_rules/`](06_association_rules/)** — Aturan Asosiasi (Apriori & FP-Growth) (tersedia)
 
-All six unsupervised modules are implemented; none are currently planned.
+Keenam modul unsupervised sudah diimplementasikan; tidak ada yang direncanakan saat ini.
 
-## Shared Dataset
+## Dataset Bersama
 
-[K-Means](01_kmeans/) and [PCA](04_pca/) modules use a shared dataset: **SPG (Sales Promoter) retail outlet data** for Indonesian FMCG. The dataset contains 500 outlets in Denpasar/Bali with features like monthly sales, SKU count, visit frequency, out-of-stock rate, and average basket size.
+Modul [K-Means](01_kmeans/) dan [PCA](04_pca/) menggunakan dataset bersama: **data outlet retail SPG (Sales Promoter)** untuk FMCG Indonesia. Dataset ini berisi 500 outlet di Denpasar/Bali dengan fitur seperti penjualan bulanan, jumlah SKU, frekuensi kunjungan, tingkat out-of-stock, dan rata-rata basket size.
 
-**Story:** A supervisor wants to segment outlets to optimize SPG visit planning. K-Means identifies natural segments, PCA visualizes them in 2D.
+**Cerita:** Seorang supervisor ingin menyegmentasikan outlet untuk mengoptimalkan perencanaan kunjungan SPG. K-Means mengidentifikasi segmen alami, PCA memvisualisasikannya dalam 2D.

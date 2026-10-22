@@ -2,15 +2,15 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-🏠 Back to Main: [`../README.md`](../README.md)
+🏠 Kembali ke Utama: [`../README.md`](../README.md)
 
-This section groups supervised learning algorithms under a consistent folder pattern:
-- `README.md` — theory overview and when to use
-- `implementation.py` — from-scratch (NumPy) implementation
-- `sklearn_example.py` — scikit-learn usage examples
-- `exercise.ipynb` — hands-on exercises
+Bagian ini mengelompokkan algoritma supervised learning dalam pola folder yang konsisten:
+- `README.md` — ringkasan teori dan kapan digunakan
+- `implementation.py` — implementasi from-scratch (NumPy)
+- `sklearn_example.py` — contoh penggunaan scikit-learn
+- `exercise.ipynb` — latihan langsung
 
-Modules (available/planned):
+Modul (tersedia/direncanakan):
 - **[`01_linear_regression/`](01_linear_regression/)** — Linear Regression (tersedia)
 - **[`02_logistic_regression/`](02_logistic_regression/)** — Logistic Regression (tersedia)
 - **[`03_decision_trees/`](03_decision_trees/)** — Decision Trees (tersedia)
@@ -20,6 +20,6 @@ Modules (available/planned):
 - **[`08_neural_networks/`](08_neural_networks/)** — Neural Networks (tersedia)
 - **[`09_gradient_boosting/`](09_gradient_boosting/)** — Gradient Boosting (tersedia)
 - **[`10_svm/`](10_svm/)** — Support Vector Machine (tersedia)
-- *`05_svm/` was renamed to [`10_svm/`](10_svm/).*
+- *`05_svm/` diganti namanya menjadi [`10_svm/`](10_svm/).*
 
-All listed modules are implemented; no supervised-learning modules are currently planned.
+Semua modul yang terdaftar sudah diimplementasikan; tidak ada modul supervised learning yang direncanakan saat ini.
