@@ -20,7 +20,7 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 | **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [Klasterisasi Hierarkis](./02_unsupervised_learning/03_hierarchical/) |
 | **Lanjutan** | [Evaluasi Model](./04_advanced_topics/03_model_evaluation/) | [Gradient Boosting](./01_supervised_learning/09_gradient_boosting/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
 | **🧠 Model Lainnya** | [Q-Learning](./03_reinforcement_learning/01_q_learning/) | [SVM](./01_supervised_learning/10_svm/) | [CNN & Computer Vision](./04_advanced_topics/05_cnn_computer_vision/) |
-| **📈 Deret Waktu** | [Peramalan](./04_advanced_topics/06_time_series_forecasting/) | [Gradient Boosting](./01_supervised_learning/09_gradient_boosting/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+| **📈 Deret Waktu** | [Peramalan](./04_advanced_topics/06_time_series_forecasting/) | [Deteksi Objek](./04_advanced_topics/07_object_detection/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
 | **🎮 Interaktif** | [Balapan Algoritma](./06_playground/README.id.md) | [Taman Bermain Parameter](./06_playground/README.id.md) | [Rekayasa Fitur](./06_playground/README.id.md) |
 
 **🤔 Bingung memilih algoritma?** ➡️ [**Panduan Memilih Algoritma**](./ALGORITHM_COMPARISON.md)
@@ -69,6 +69,7 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
 - **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (Conv2D im2col, MaxPool, CNN produk rak yang bisa dilatih, jembatan ke YOLO) ✅
 - **[06_time_series_forecasting](./04_advanced_topics/06_time_series_forecasting/)** - Peramalan Deret Waktu (Model Klasik, Fitur Lag & Backtesting) ✅
+- **[07_object_detection](./04_advanced_topics/07_object_detection/)** - Deteksi Objek (format box, IoU tervektorisasi, NMS, detektor grid mini YOLO-v1, mAP@0.5) ✅
 
 ### 5. **🚧 Dataset** (`05_datasets/`, direncanakan)
 Dataset bersama untuk belajar (saat ini setiap modul membuat data sintetisnya sendiri)

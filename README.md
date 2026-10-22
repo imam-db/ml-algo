@@ -20,7 +20,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 | **Unsupervised** | [K-Means](./02_unsupervised_learning/01_kmeans/) | [PCA](./02_unsupervised_learning/04_pca/) | [Hierarchical Clustering](./02_unsupervised_learning/03_hierarchical/) |
 | **Advanced** | [Model Evaluation](./04_advanced_topics/03_model_evaluation/) | [Gradient Boosting](./01_supervised_learning/09_gradient_boosting/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
 | **🧠 More Models** | [Q-Learning](./03_reinforcement_learning/01_q_learning/) | [SVM](./01_supervised_learning/10_svm/) | [CNN & Computer Vision](./04_advanced_topics/05_cnn_computer_vision/) |
-| **📈 Time Series** | [Forecasting](./04_advanced_topics/06_time_series_forecasting/) | [Gradient Boosting](./01_supervised_learning/09_gradient_boosting/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
+| **📈 Time Series** | [Forecasting](./04_advanced_topics/06_time_series_forecasting/) | [Object Detection](./04_advanced_topics/07_object_detection/) | [XGBoost](./04_advanced_topics/04_xgboost/) |
 | **🎮 Interactive** | [Algorithm Racing](./06_playground/) | [Parameter Playground](./06_playground/) | [Feature Engineering](./06_playground/) |
 
 **🤔 Not sure which algorithm to choose?** ➡️ [**Algorithm Selection Guide**](./ALGORITHM_COMPARISON.md)
@@ -69,6 +69,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
 - **[05_cnn_computer_vision](./04_advanced_topics/05_cnn_computer_vision/)** - CNN & Computer Vision (im2col Conv2D, MaxPool, trainable shelf-product CNN, YOLO bridge) ✅
 - **[06_time_series_forecasting](./04_advanced_topics/06_time_series_forecasting/)** - Time Series Forecasting (Classical Models, Lag Features & Backtesting) ✅
+- **[07_object_detection](./04_advanced_topics/07_object_detection/)** - Object Detection (box formats, vectorized IoU, NMS, mini YOLO-v1 grid detector, mAP@0.5) ✅
 
 ### 5. **🚧 Datasets** (`05_datasets/`, planned)
 Shared datasets for learning (each module currently generates its own synthetic data)
