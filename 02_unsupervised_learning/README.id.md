@@ -16,7 +16,7 @@ Modules (available/planned):
 - `03_dbscan/` — DBSCAN (coming soon)
 - **[`04_pca/`](04_pca/)** — Principal Component Analysis (available)
 - `05_tsne/` — t-SNE (coming soon)
-- `06_association_rules/` — Association Rules (coming soon)
+- **[`06_association_rules/`](06_association_rules/)** — Aturan Asosiasi (Apriori & FP-Growth) (tersedia)
 
 ## Shared Dataset
 

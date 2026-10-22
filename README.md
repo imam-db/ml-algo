@@ -55,7 +55,7 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - **[03_hierarchical](./02_unsupervised_learning/03_hierarchical/)** - Hierarchical (Agglomerative) Clustering ✅
 - **[04_pca](./02_unsupervised_learning/04_pca/)** - Principal Component Analysis ✅
 - **🚧 05_tsne** - t-SNE (planned)
-- **🚧 06_association_rules** - Association Rules (planned)
+- **[06_association_rules](./02_unsupervised_learning/06_association_rules/)** - Association Rules (Apriori & FP-Growth) ✅
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))
 - **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning (Off-Policy TD) ✅
