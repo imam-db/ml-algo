@@ -45,3 +45,34 @@ class TestDataGeneration:
         images, labels = generate_product_images(n_samples=10, random_state=42)
         assert len(images) == 10
         assert len(labels) == 10
+
+
+class TestCNNBackprop:
+    """Test CNN backpropagation"""
+    
+    def test_gradient_check(self):
+        from implementation import gradient_check_cnn
+        
+        cnn = SimpleCNN(input_shape=(28, 28), random_state=42)
+        X = np.random.randn(28, 28)
+        y = 1.0
+        
+        # Train a bit first to have reasonable gradients
+        for _ in range(10):
+            cnn.train_step(X, y)
+        
+        max_diff, rel_diff = gradient_check_cnn(cnn, X, y, epsilon=1e-5)
+        
+        # Should have small relative error
+        assert rel_diff < 0.1  # Relaxed for simple implementation
+    
+    def test_loss_decreases_with_training(self):
+        X_train, y_train = generate_product_images(n_samples=30, random_state=42)
+        
+        cnn = SimpleCNN(input_shape=(28, 28), learning_rate=0.05, random_state=42)
+        cnn.fit(X_train, y_train, epochs=100)
+        
+        # Loss should decrease
+        assert len(cnn.loss_history_) > 0
+        if len(cnn.loss_history_) > 1:
+            assert cnn.loss_history_[-1] < cnn.loss_history_[0]

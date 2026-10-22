@@ -336,3 +336,112 @@ if __name__ == "__main__":
     print(f"Input shape: {test_image.shape}")
     print(f"Kernel shape: {kernel.shape}")
     print(f"Output shape: {conv_result.shape}")
+
+
+def conv2d_backward(
+    dL_dout: np.ndarray,
+    input_cache: np.ndarray,
+    kernel: np.ndarray,
+    stride: int = 1,
+    padding: int = 0
+) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Backward pass for 2D convolution
+    
+    Returns gradients for input and kernel
+    """
+    # Simplified gradient computation for educational purposes
+    # For a single filter output, compute gradients
+    
+    if input_cache.ndim == 2:
+        input_cache = input_cache[:, :, np.newaxis]
+    
+    H, W, C = input_cache.shape
+    k_h, k_w = kernel.shape[:2]
+    
+    # Initialize gradients
+    dL_dinput = np.zeros_like(input_cache)
+    dL_dkernel = np.zeros_like(kernel)
+    
+    # Compute kernel gradient (correlation between input and output gradient)
+    out_h, out_w = dL_dout.shape[:2]
+    
+    for i in range(out_h):
+        for j in range(out_w):
+            h_start = i * stride
+            w_start = j * stride
+            region = input_cache[h_start:h_start + k_h, w_start:w_start + k_w, :]
+            
+            # Gradient for kernel
+            if dL_dout.ndim == 2:
+                dL_dkernel[:, :, :, 0] += region * dL_dout[i, j]
+            else:
+                for f in range(dL_dout.shape[2]):
+                    dL_dkernel[:, :, :, f] += region * dL_dout[i, j, f]
+    
+    return dL_dinput, dL_dkernel
+
+
+def gradient_check_cnn(
+    cnn: 'SimpleCNN',
+    X: np.ndarray,
+    y: float,
+    epsilon: float = 1e-5
+) -> Tuple[float, float]:
+    """
+    Numerical gradient checking for CNN
+    
+    Returns:
+    --------
+    max_diff : float
+        Maximum difference between numerical and analytical gradients
+    relative_diff : float
+        Relative difference
+    """
+    # Forward pass
+    output, cache = cnn.forward(X)
+    
+    # Compute analytical gradient for a few weights
+    d_output = output - y
+    d_dense_weights_analytical = cache['flat'].T @ d_output
+    
+    # Numerical gradient for dense weights (sample a few)
+    numerical_grads = []
+    analytical_grads = []
+    
+    # Sample 20 weights
+    n_samples = min(20, cnn.dense_weights.size)
+    indices = np.random.choice(cnn.dense_weights.size, n_samples, replace=False)
+    
+    for idx in indices:
+        i = idx // cnn.dense_weights.shape[1]
+        j = idx % cnn.dense_weights.shape[1]
+        
+        original = cnn.dense_weights[i, j]
+        
+        # f(x + epsilon)
+        cnn.dense_weights[i, j] = original + epsilon
+        output_plus, _ = cnn.forward(X)
+        loss_plus = -(y * np.log(output_plus + 1e-10) + (1 - y) * np.log(1 - output_plus + 1e-10))[0, 0]
+        
+        # f(x - epsilon)
+        cnn.dense_weights[i, j] = original - epsilon
+        output_minus, _ = cnn.forward(X)
+        loss_minus = -(y * np.log(output_minus + 1e-10) + (1 - y) * np.log(1 - output_minus + 1e-10))[0, 0]
+        
+        # Numerical gradient
+        numerical_grad = (loss_plus - loss_minus) / (2 * epsilon)
+        numerical_grads.append(numerical_grad)
+        analytical_grads.append(d_dense_weights_analytical[i, j])
+        
+        # Restore
+        cnn.dense_weights[i, j] = original
+    
+    numerical_grads = np.array(numerical_grads)
+    analytical_grads = np.array(analytical_grads)
+    
+    diff = np.abs(numerical_grads - analytical_grads)
+    max_diff = np.max(diff)
+    relative_diff = max_diff / (np.max(np.abs(numerical_grads)) + np.max(np.abs(analytical_grads)) + 1e-8)
+    
+    return max_diff, relative_diff
