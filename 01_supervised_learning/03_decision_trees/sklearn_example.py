@@ -8,8 +8,14 @@ Author: ML Learning Repository
 Date: 2024
 """
 
+import os
+
+os.environ.setdefault("MPLBACKEND", "Agg")
+
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
@@ -21,8 +27,8 @@ from sklearn.metrics import (
     r2_score, mean_absolute_error
 )
 from sklearn.datasets import (
-    make_classification, load_iris, load_wine, 
-    load_boston, make_regression
+    make_classification, load_iris, load_wine,
+    load_diabetes
 )
 import warnings
 warnings.filterwarnings('ignore')
@@ -202,22 +208,23 @@ def example_2_wine_quality_classification():
     return best_model, X_test, y_test
 
 
-def example_3_regression_with_boston_housing():
-    """Example 3: Regression with Boston Housing Dataset"""
+def example_3_regression_with_diabetes_dataset():
+    """Example 3: Regression with Diabetes Progression Dataset"""
     print("\n" + "=" * 80)
-    print("EXAMPLE 3: REGRESSION - BOSTON HOUSING DATASET")
+    print("EXAMPLE 3: REGRESSION - DIABETES PROGRESSION DATASET")
     print("=" * 80)
     
-    # Generate regression data (Boston housing is deprecated)
-    X, y = make_regression(
-        n_samples=506, n_features=13, noise=0.1, random_state=42
-    )
-    
-    # Create feature names
-    feature_names = [f'feature_{i}' for i in range(X.shape[1])]
+    # Load the diabetes dataset (bundled with scikit-learn, no download needed).
+    # The target is a quantitative measure of disease progression one year
+    # after baseline.
+    diabetes = load_diabetes()
+    X, y = diabetes.data, diabetes.target
+    feature_names = diabetes.feature_names
     
     print(f"Dataset shape: {X.shape}")
+    print(f"Features: {feature_names}")
     print(f"Target range: [{y.min():.2f}, {y.max():.2f}]")
+    print("Target: disease progression one year after baseline")
     
     # Split data
     X_train, X_test, y_train, y_test = train_test_split(
@@ -590,7 +597,7 @@ def main():
     # Run examples
     model1, X_test1, y_test1 = example_1_basic_classification()
     model2, X_test2, y_test2 = example_2_wine_quality_classification()
-    model3, X_test3, y_test3 = example_3_regression_with_boston_housing()
+    model3, X_test3, y_test3 = example_3_regression_with_diabetes_dataset()
     model4, grid_search = example_4_hyperparameter_tuning()
     optimal_depth = example_5_overfitting_analysis()
     

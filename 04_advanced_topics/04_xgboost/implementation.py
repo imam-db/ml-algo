@@ -81,14 +81,14 @@ def xgboost_classification_demo(show: bool = True):
         subsample=0.8,
         colsample_bytree=0.8,
         random_state=42,
-        eval_metric='logloss'
+        eval_metric='logloss',
+        early_stopping_rounds=10
     )
     
     # Fit with early stopping
     xgb_clf.fit(
         X_train, y_train,
         eval_set=[(X_train, y_train), (X_test, y_test)],
-        early_stopping_rounds=10,
         verbose=False
     )
     
@@ -201,14 +201,14 @@ def xgboost_regression_demo(show: bool = True):
         subsample=0.8,
         colsample_bytree=0.8,
         random_state=42,
-        eval_metric='rmse'
+        eval_metric='rmse',
+        early_stopping_rounds=10
     )
     
     # Fit with early stopping
     xgb_reg.fit(
         X_train, y_train,
         eval_set=[(X_train, y_train), (X_test, y_test)],
-        early_stopping_rounds=10,
         verbose=False
     )
     

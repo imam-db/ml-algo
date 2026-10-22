@@ -102,13 +102,20 @@ Quick references to accelerate learning and implementation:
 
 1. **Install Dependencies:**
    ```bash
-   uv sync
+   # Core + development dependencies
+   uv sync --extra dev
+   ```
+
+   For optional notebook dependencies, install every extra:
+   ```bash
+   uv sync --all-extras
    ```
 
 2. **Activate Virtual Environment:**
    ```bash
-   uv run python
+   source .venv/bin/activate
    ```
+   Or skip activation and run commands with `uv run` (for example, `uv run python`).
 
 3. **Run Jupyter Lab:**
    ```bash
@@ -193,13 +200,13 @@ This repository includes a comprehensive test suite:
 
 ```bash
 # Run all tests
-python -m pytest tests/ -v
+uv run pytest
 
 # Run specific test file
-python -m pytest tests/test_reinforcement_learning.py -v
+uv run pytest tests/test_reinforcement_learning.py -v
 
 # Run with coverage
-python -m pytest tests/ --cov --cov-report=html
+uv run pytest --cov
 ```
 
 **Test Coverage:** 200+ tests, all passing ✅
