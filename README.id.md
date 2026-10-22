@@ -54,7 +54,7 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - **[02_dbscan](./02_unsupervised_learning/02_dbscan/)** - DBSCAN (Klasterisasi Berbasis Kepadatan) ✅
 - **[03_hierarchical](./02_unsupervised_learning/03_hierarchical/)** - Klasterisasi Hierarkis (Aglomeratif) ✅
 - **[04_pca](./02_unsupervised_learning/04_pca/)** - Analisis Komponen Utama (PCA) ✅
-- **🚧 05_tsne** - t-SNE (direncanakan)
+- **[05_tsne](./02_unsupervised_learning/05_tsne/)** - t-SNE (t-Distributed Stochastic Neighbor Embedding) ✅
 - **[06_association_rules](./02_unsupervised_learning/06_association_rules/)** - Aturan Asosiasi (Apriori & FP-Growth) ✅
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))
