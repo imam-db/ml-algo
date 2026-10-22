@@ -1,5 +1,7 @@
 # Principal Component Analysis (PCA)
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../../README.md)** | **📁 [Unsupervised Learning](../README.md)** | **⬅️ [Previous: K-Means](../01_kmeans/README.md)**
 
 ## 🗺️ Quick Access

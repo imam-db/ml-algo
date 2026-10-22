@@ -1,5 +1,7 @@
 # 🎮 Algorithm Playground
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🔬 [Algorithm Comparison](../ALGORITHM_COMPARISON.md)**
 
 Interactive tools for experimenting with machine learning algorithms, visualizing their behavior, and understanding how they work under the hood.
