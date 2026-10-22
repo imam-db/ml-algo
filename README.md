@@ -2,7 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/YOUR_USERNAME/ml-algorithms-learning/actions)
+[![Tests](https://github.com/imam-db/ml-algo/actions/workflows/tests.yml/badge.svg)](https://github.com/imam-db/ml-algo/actions/workflows/tests.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 
@@ -25,7 +25,6 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 **🧾 Need quick references?** ➡️ [**Cheat Sheets Collection**](./08_cheat_sheets/README.md)
 
 **Essential Files:**
-- 📝 [WARP.md](./WARP.md) - Development guidance for Warp terminal
 - 📚 [GLOSSARY.md](./GLOSSARY.md) - Complete ML terminology reference
 - 🔬 [ALGORITHM_COMPARISON.md](./ALGORITHM_COMPARISON.md) - Algorithm selection guide
 - 🎯 [PROGRESS_TRACKER.md](./PROGRESS_TRACKER.md) - Learning progress and achievements
@@ -35,13 +34,13 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 ## 📋 Repository Structure
 
 ### 1. **Supervised Learning** ([`01_supervised_learning/`](./01_supervised_learning/))
-- **[01_linear_regression](./01_supervised_learning/01_linear_regression/)** - Linear Regression
-- **[02_logistic_regression](./01_supervised_learning/02_logistic_regression/)** - Logistic Regression  
-- **[03_decision_trees](./01_supervised_learning/03_decision_trees/)** - Decision Trees
-- **[04_random_forest](./01_supervised_learning/04_random_forest/)** - Random Forest
+- **[01_linear_regression](./01_supervised_learning/01_linear_regression/)** - Linear Regression ✅
+- **[02_logistic_regression](./01_supervised_learning/02_logistic_regression/)** - Logistic Regression ✅
+- **[03_decision_trees](./01_supervised_learning/03_decision_trees/)** - Decision Trees ✅
+- **[04_random_forest](./01_supervised_learning/04_random_forest/)** - Random Forest ✅
 - **🚧 05_svm** - Support Vector Machine (planned)
-- **🚧 06_naive_bayes** - Naive Bayes (planned)
-- **🚧 07_knn** - K-Nearest Neighbors (planned)
+- **[06_naive_bayes](./01_supervised_learning/06_naive_bayes/)** - Naive Bayes (Gaussian & Multinomial) ✅
+- **[07_knn](./01_supervised_learning/07_knn/)** - K-Nearest Neighbors (Classifier & Regressor) ✅
 - **🚧 08_neural_networks** - Neural Networks (planned)
 
 ### 2. **Unsupervised Learning** ([`02_unsupervised_learning/`](./02_unsupervised_learning/))
@@ -59,8 +58,8 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 ### 4. **Advanced Topics** ([`04_advanced_topics/`](./04_advanced_topics/))
 - **🚧 01_ensemble_methods** - Ensemble Methods (planned)
 - **🚧 02_deep_learning** - Deep Learning (planned)
-- **🚧 03_model_evaluation** - Model Evaluation (planned)
-- **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting)
+- **[03_model_evaluation](./04_advanced_topics/03_model_evaluation/)** - Model Evaluation (Metrics & Cross-Validation) ✅
+- **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
 
 ### 5. **Datasets** ([`05_datasets/`](./05_datasets/))
 Datasets used for learning
@@ -171,10 +170,10 @@ Each algorithm has the same folder structure:
 
 | Category | Implemented | Planned | Progress |
 |----------|-------------|---------|----------|
-| Supervised Learning | 4 | 4 | 🟢 50% |
+| Supervised Learning | 6 | 2 | 🟢 75% |
 | Unsupervised Learning | 2 | 4 | 🟡 33% |
 | Reinforcement Learning | 1 | 1 | 🟢 50% |
-| Advanced Topics | 1 | 3 | 🟡 25% |
+| Advanced Topics | 2 | 2 | 🟢 50% |
 
 ## 🧪 Testing
 
@@ -191,7 +190,7 @@ python -m pytest tests/test_reinforcement_learning.py -v
 python -m pytest tests/ --cov --cov-report=html
 ```
 
-**Test Coverage:** 52 tests, semua passing ✅
+**Test Coverage:** 107 tests, semua passing ✅
 
 ## 🤝 Contributing
 
