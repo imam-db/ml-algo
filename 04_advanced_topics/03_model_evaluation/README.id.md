@@ -194,7 +194,7 @@ Micro = Metric(all TP, all FP, all FN combined)
 ```
 Weighted = Σ(Metric_class × support_class) / total_support
 ```
-- Weighted by number of samples per class
+- Dibobot berdasarkan jumlah sampel per kelas
 - Best for imbalanced datasets
 
 ## 📈 ROC Curve dan AUC

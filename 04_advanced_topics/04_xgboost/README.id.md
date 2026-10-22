@@ -2,123 +2,123 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
-**🏠 [Back to Main](../../README.md)** | **📁 [Advanced Topics](../README.md)** | **⬅️ [Previous: Model Evaluation](../03_model_evaluation/README.md)**
+**🏠 [Kembali ke Utama](../../README.md)** | **📁 [Topik Lanjutan](../README.md)** | **⬅️ [Sebelumnya: Evaluasi Model](../03_model_evaluation/README.md)**
 
-## 🔑 Key Terms
-**Quick definitions for this algorithm** - 📚 [Full Glossary](../../GLOSSARY.md)
+## 🔑 Istilah Kunci
+**Definisi singkat untuk algoritma ini** - 📚 [Glosarium Lengkap](../../GLOSSARY.md)
 
-- **[XGBoost](../../GLOSSARY.md#boosting)** - eXtreme Gradient Boosting, advanced ensemble method
-- **[Ensemble Method](../../GLOSSARY.md#ensemble-method)** - Combining multiple models for better performance
-- **[Boosting](../../GLOSSARY.md#boosting)** - Sequential training where each model corrects previous errors
-- **[Hyperparameter Tuning](../../GLOSSARY.md#hyperparameter-tuning)** - Finding optimal algorithm configuration settings
-- **[Cross-Validation](../../GLOSSARY.md#cross-validation-cv)** - Technique to assess model performance robustly
-- **[Feature Importance](../../GLOSSARY.md#feature-importance)** - Measure of each feature's contribution to predictions
-- **[SHAP](../../GLOSSARY.md#shap-shapley-additive-explanations)** - Method to explain individual predictions
+- **[XGBoost](../../GLOSSARY.md#boosting)** - eXtreme Gradient Boosting, metode ensemble tingkat lanjut
+- **[Ensemble Method](../../GLOSSARY.md#ensemble-method)** - Menggabungkan beberapa model untuk performa yang lebih baik
+- **[Boosting](../../GLOSSARY.md#boosting)** - Pelatihan berurutan di mana setiap model memperbaiki kesalahan model sebelumnya
+- **[Hyperparameter Tuning](../../GLOSSARY.md#hyperparameter-tuning)** - Menemukan konfigurasi pengaturan algoritma yang optimal
+- **[Cross-Validation](../../GLOSSARY.md#cross-validation-cv)** - Teknik untuk menilai performa model secara robust
+- **[Feature Importance](../../GLOSSARY.md#feature-importance)** - Ukuran kontribusi setiap fitur terhadap prediksi
+- **[SHAP](../../GLOSSARY.md#shap-shapley-additive-explanations)** - Metode untuk menjelaskan prediksi individual
 
-## 🗺️ Quick Access
+## 🗺️ Akses Cepat
 
-| File | Description | Quick Run |
+| File | Deskripsi | Jalankan Cepat |
 |------|-------------|----------|
-| [`implementation.py`](./implementation.py) | Basic XGBoost usage | `uv run python implementation.py` |
-| [`sklearn_example.py`](./sklearn_example.py) | Comprehensive examples | `uv run python sklearn_example.py` |
-| `hyperparameter_tuning.py` (direncanakan) | Advanced tuning | — |
-| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `uv run jupyter lab exercise.ipynb` |
+| [`implementation.py`](./implementation.py) | Penggunaan dasar XGBoost | `uv run python implementation.py` |
+| [`sklearn_example.py`](./sklearn_example.py) | Contoh komprehensif | `uv run python sklearn_example.py` |
+| `hyperparameter_tuning.py` (direncanakan) | Tuning lanjutan | — |
+| [`exercise.ipynb`](./exercise.ipynb) | Latihan interaktif | `uv run jupyter lab exercise.ipynb` |
 
-## 📖 Theory and Concepts
+## 📖 Teori dan Konsep
 
-### What is XGBoost?
-[**XGBoost**](../../GLOSSARY.md#boosting) (eXtreme Gradient Boosting) is an advanced implementation of [**gradient boosting**](../../GLOSSARY.md#boosting) optimized for speed and performance. XGBoost is one of the most popular and successful [**algorithms**](../../GLOSSARY.md#algorithm) in machine learning competitions, especially for tabular data.
+### Apa itu XGBoost?
+[**XGBoost**](../../GLOSSARY.md#boosting) (eXtreme Gradient Boosting) adalah implementasi lanjutan dari [**gradient boosting**](../../GLOSSARY.md#boosting) yang dioptimalkan untuk kecepatan dan performa. XGBoost adalah salah satu [**algoritma**](../../GLOSSARY.md#algorithm) paling populer dan sukses dalam kompetisi machine learning, terutama untuk data tabular.
 
-### Gradient Boosting Concept
-[**Gradient Boosting**](../../GLOSSARY.md#boosting) is an [**ensemble method**](../../GLOSSARY.md#ensemble-method) that:
-1. Builds [**models**](../../GLOSSARY.md#model) sequentially
-2. Each new model tries to correct the errors of previous models
-3. Uses [**gradient descent**](../../GLOSSARY.md#gradient-descent) to minimize the [**loss function**](../../GLOSSARY.md#cost-function-loss-function)
+### Konsep Gradient Boosting
+[**Gradient Boosting**](../../GLOSSARY.md#boosting) adalah [**ensemble method**](../../GLOSSARY.md#ensemble-method) yang:
+1. Membangun [**models**](../../GLOSSARY.md#model) secara berurutan
+2. Setiap model baru berusaha memperbaiki kesalahan model sebelumnya
+3. Menggunakan [**gradient descent**](../../GLOSSARY.md#gradient-descent) untuk meminimalkan [**loss function**](../../GLOSSARY.md#cost-function-loss-function)
 
-### Mathematical Formula
-**Objective Function:**
+### Rumus Matematis
+**Fungsi Objektif:**
 ```
 Obj(θ) = Σ L(yi, ŷi) + Σ Ω(fk)
 ```
 
-Where:
-- `L(yi, ŷi)` = Loss function (training loss)
-- `Ω(fk)` = Regularization term
-- `ŷi = Σ fk(xi)` = Prediction (sum of trees)
+Di mana:
+- `L(yi, ŷi)` = Fungsi loss (loss pelatihan)
+- `Ω(fk)` = Suku regularisasi
+- `ŷi = Σ fk(xi)` = Prediksi (jumlah pohon)
 
-**XGBoost Innovation:**
-- **Second-order approximation** of loss function
-- **Regularization** terms in objective
-- **Optimized tree construction** algorithm
+**Inovasi XGBoost:**
+- **Aproksimasi orde dua** dari fungsi loss
+- Suku **regularisasi** dalam fungsi objektif
+- Algoritma **konstruksi pohon yang dioptimalkan**
 
 ## 🎯 Kapan Menggunakan XGBoost?
 
 ### ✅ Sangat Cocok untuk:
-- **Data tabular/structured data** 
-- **Kompetisi machine learning** (Kaggle, etc.)
+- **Data tabular/terstruktur**
+- **Kompetisi machine learning** (Kaggle, dll.)
 - **Data dengan missing values**
-- **Mixed data types** (numerical + categorical)
-- **Classification dan Regression tasks**
-- **Feature importance** analysis
+- **Tipe data campuran** (numerik + kategorikal)
+- **Tugas klasifikasi dan regresi**
+- Analisis **feature importance**
 - **Dataset berukuran menengah-besar**
 
 ### ❌ Tidak ideal untuk:
-- **Computer vision** (CNN lebih baik)
-- **Natural Language Processing** (Transformer lebih baik)  
-- **Dataset yang sangat kecil** (< 1000 samples)
-- **Real-time prediction** (latency tinggi)
+- **Visi komputer** (CNN lebih baik)
+- **Pemrosesan bahasa alami (NLP)** (Transformer lebih baik)
+- **Dataset yang sangat kecil** (< 1000 sampel)
+- **Prediksi real-time** (latensi tinggi)
 - **Data dengan struktur temporal kompleks**
 
 ## 🔍 Kelebihan dan Kekurangan
 
 ### Kelebihan:
-- ✅ **Performa excellent** pada data tabular
-- ✅ **Handle missing values** secara native
-- ✅ **Built-in regularization** (L1, L2)
+- ✅ **Performa sangat baik** pada data tabular
+- ✅ **Menangani missing values** secara native
+- ✅ **Regularisasi bawaan** (L1, L2)
 - ✅ **Feature importance** yang akurat
-- ✅ **Parallel processing** dan GPU support
-- ✅ **Cross-validation** built-in
+- ✅ **Pemrosesan paralel** dan dukungan GPU
+- ✅ **Cross-validation** bawaan
 - ✅ **Early stopping** untuk mencegah overfitting
-- ✅ **Robust terhadap outliers**
+- ✅ **Robust terhadap outlier**
 
 ### Kekurangan:
 - ❌ **Hyperparameter tuning** yang kompleks
-- ❌ **Memory intensive** untuk dataset besar
-- ❌ **Prone to overfitting** jika tidak di-tune dengan baik
-- ❌ **Black box model** (sulit interpretasi)
-- ❌ **Training time** relatif lama
-- ❌ **Sensitive to noisy data**
+- ❌ **Intensif memori** untuk dataset besar
+- ❌ **Rentan overfitting** jika tidak di-tune dengan baik
+- ❌ **Model black box** (sulit diinterpretasikan)
+- ❌ **Waktu pelatihan** relatif lama
+- ❌ **Sensitif terhadap data yang bising**
 
-## ⚙️ Hyperparameters Utama
+## ⚙️ Hyperparameter Utama
 
-### Tree-specific Parameters:
-- **n_estimators**: Jumlah trees (default: 100)
-- **max_depth**: Kedalaman maksimum tree (default: 6)
-- **min_child_weight**: Minimum sum of weights di leaf (default: 1)
-- **subsample**: Fraction of samples untuk setiap tree (default: 1)
-- **colsample_bytree**: Fraction of features untuk setiap tree (default: 1)
+### Parameter Khusus Pohon (Tree):
+- **n_estimators**: Jumlah pohon (default: 100)
+- **max_depth**: Kedalaman maksimum pohon (default: 6)
+- **min_child_weight**: Jumlah bobot minimum di leaf (default: 1)
+- **subsample**: Fraksi sampel untuk setiap pohon (default: 1)
+- **colsample_bytree**: Fraksi fitur untuk setiap pohon (default: 1)
 
-### Learning Parameters:
-- **learning_rate/eta**: Step size shrinkage (default: 0.3)
-- **objective**: Loss function (reg:squarederror, binary:logistic, etc.)
-- **eval_metric**: Evaluation metric (rmse, logloss, auc, etc.)
+### Parameter Pembelajaran:
+- **learning_rate/eta**: Penyusutan ukuran langkah (default: 0.3)
+- **objective**: Fungsi loss (reg:squarederror, binary:logistic, dll.)
+- **eval_metric**: Metrik evaluasi (rmse, logloss, auc, dll.)
 
-### Regularization Parameters:
-- **reg_alpha**: L1 regularization (default: 0)
-- **reg_lambda**: L2 regularization (default: 1)
-- **gamma**: Minimum loss reduction untuk split (default: 0)
+### Parameter Regularisasi:
+- **reg_alpha**: Regularisasi L1 (default: 0)
+- **reg_lambda**: Regularisasi L2 (default: 1)
+- **gamma**: Pengurangan loss minimum untuk split (default: 0)
 
-## 📊 XGBoost vs Other Algorithms
+## 📊 XGBoost vs Algoritma Lain
 
-| Aspek | XGBoost | Random Forest | Gradient Boosting | Linear Models |
+| Aspek | XGBoost | Random Forest | Gradient Boosting | Model Linear |
 |-------|---------|---------------|-------------------|---------------|
-| **Accuracy** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Speed** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Interpretability** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| **Overfitting Risk** | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
-| **Hyperparameter Tuning** | ⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Akurasi** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+| **Kecepatan** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Interpretabilitas** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| **Risiko Overfitting** | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ |
+| **Tuning Hyperparameter** | ⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
 
-## 🛠️ Instalasi dan Setup
+## 🛠️ Instalasi dan Penyiapan
 
 ### Instalasi XGBoost:
 ```bash
@@ -132,29 +132,29 @@ conda install -c conda-forge xgboost
 uv add xgboost
 ```
 
-### GPU Support (Optional):
+### Dukungan GPU (Opsional):
 ```bash
 # For CUDA support
 pip install xgboost[gpu]
 ```
 
-## 📈 Evaluation dan Model Selection
+## 📈 Evaluasi dan Pemilihan Model
 
-### Classification Metrics:
-- **Accuracy**: Overall correct predictions
-- **Precision/Recall**: Class-specific performance
-- **F1-Score**: Harmonic mean of precision/recall
-- **AUC-ROC**: Area under ROC curve
-- **Log Loss**: Probabilistic loss
+### Metrik Klasifikasi:
+- **Accuracy**: Prediksi benar secara keseluruhan
+- **Precision/Recall**: Performa per kelas
+- **F1-Score**: Rata-rata harmonik precision/recall
+- **AUC-ROC**: Area di bawah kurva ROC
+- **Log Loss**: Loss probabilistik
 
-### Regression Metrics:
+### Metrik Regresi:
 - **RMSE**: Root Mean Squared Error
 - **MAE**: Mean Absolute Error
-- **R²**: Coefficient of determination
+- **R²**: Koefisien determinasi
 - **MAPE**: Mean Absolute Percentage Error
 
 ### Cross-Validation:
-XGBoost memiliki built-in CV:
+XGBoost memiliki CV bawaan:
 ```python
 cv_results = xgb.cv(
     params, dtrain, num_boost_round=100,
@@ -162,177 +162,177 @@ cv_results = xgb.cv(
 )
 ```
 
-## 🎓 Best Practices
+## 🎓 Praktik Terbaik
 
-### 1. **Data Preparation**:
-- Handle missing values (XGBoost can handle, but preprocessing might help)
-- Encode categorical variables (LabelEncoder atau One-hot)
-- Feature scaling tidak wajib, tapi bisa membantu
+### 1. **Persiapan Data**:
+- Tangani missing values (XGBoost dapat menanganinya, tetapi prapemrosesan mungkin membantu)
+- Enkode variabel kategorikal (LabelEncoder atau One-hot)
+- Feature scaling tidak wajib, tetapi bisa membantu
 
-### 2. **Hyperparameter Tuning**:
-- Start dengan default parameters
-- Tune **n_estimators** dengan early stopping
-- Adjust **learning_rate** dan **max_depth**
-- Use **RandomizedSearchCV** atau **Optuna**
+### 2. **Tuning Hyperparameter**:
+- Mulai dengan parameter default
+- Lakukan tuning **n_estimators** dengan early stopping
+- Sesuaikan **learning_rate** dan **max_depth**
+- Gunakan **RandomizedSearchCV** atau **Optuna**
 
-### 3. **Overfitting Prevention**:
-- Use **early_stopping_rounds**
-- Apply **regularization** (reg_alpha, reg_lambda)
-- Reduce **learning_rate** dan increase **n_estimators**
-- Use **cross-validation** untuk monitoring
+### 3. **Pencegahan Overfitting**:
+- Gunakan **early_stopping_rounds**
+- Terapkan **regularisasi** (reg_alpha, reg_lambda)
+- Kurangi **learning_rate** dan tingkatkan **n_estimators**
+- Gunakan **cross-validation** untuk pemantauan
 
-### 4. **Feature Engineering**:
-- Create interaction features
-- Polynomial features untuk non-linear relationships
-- Domain-specific feature engineering
+### 4. **Rekayasa Fitur**:
+- Buat fitur interaksi
+- Fitur polinomial untuk hubungan non-linear
+- Rekayasa fitur spesifik domain
 
-### 5. **Model Interpretation**:
-- Plot **feature importance**
-- Use **SHAP** values untuk detailed interpretation
-- Analyze **learning curves**
+### 5. **Interpretasi Model**:
+- Buat plot **feature importance**
+- Gunakan nilai **SHAP** untuk interpretasi terperinci
+- Analisis **learning curves**
 
-## 📊 Workflow Tipikal
+## 📊 Alur Kerja Tipikal
 
-1. **Data Preparation** → Clean, encode, split
-2. **Baseline Model** → Default parameters
-3. **Hyperparameter Tuning** → GridSearch/RandomSearch
-4. **Cross-Validation** → Robust performance estimate  
-5. **Feature Importance** → Understanding model
-6. **Model Interpretation** → SHAP, partial dependence
-7. **Final Evaluation** → Test set performance
+1. **Persiapan Data** → Bersihkan, enkode, bagi
+2. **Model Baseline** → Parameter default
+3. **Tuning Hyperparameter** → GridSearch/RandomSearch
+4. **Cross-Validation** → Estimasi performa yang robust
+5. **Feature Importance** → Memahami model
+6. **Interpretasi Model** → SHAP, partial dependence
+7. **Evaluasi Akhir** → Performa pada test set
 
-## 🎯 Real-World Scenarios
+## 🎯 Skenario Dunia Nyata
 
-### 🏆 Scenario 1: Kaggle Competition Style
-**Dataset**: Tabular competition data (Titanic, House Prices)
-**Goal**: Maximize leaderboard score
-**Run**: `uv run python sklearn_example.py --scenario kaggle`
+### 🏆 Skenario 1: Gaya Kompetisi Kaggle
+**Dataset**: Data kompetisi tabular (Titanic, House Prices)
+**Tujuan**: Memaksimalkan skor papan peringkat
+**Jalankan**: `uv run python sklearn_example.py --scenario kaggle`
 
-**What you'll master:**
-- Feature engineering techniques
-- Cross-validation strategies
-- Ensemble methods with multiple models
-- Hyperparameter optimization
+**Yang akan Anda kuasai:**
+- Teknik rekayasa fitur
+- Strategi cross-validation
+- Metode ensemble dengan beberapa model
+- Optimasi hyperparameter
 
-### 💳 Scenario 2: Credit Risk Assessment
-**Dataset**: Customer financial data
-**Goal**: Predict loan default probability
-**Run**: `uv run python sklearn_example.py --scenario credit_risk`
+### 💳 Skenario 2: Penilaian Risiko Kredit
+**Dataset**: Data keuangan nasabah
+**Tujuan**: Memprediksi probabilitas gagal bayar pinjaman
+**Jalankan**: `uv run python sklearn_example.py --scenario credit_risk`
 
-**What you'll master:**
-- Handling imbalanced datasets
-- Feature importance analysis
-- Business-oriented metrics (precision/recall)
-- Model interpretability with SHAP
+**Yang akan Anda kuasai:**
+- Menangani dataset tidak seimbang
+- Analisis feature importance
+- Metrik berorientasi bisnis (precision/recall)
+- Interpretabilitas model dengan SHAP
 
-### 🏭 Scenario 3: E-commerce Sales Forecasting
-**Dataset**: Historical sales, seasonal data
-**Goal**: Predict monthly sales volume
-**Run**: `uv run python sklearn_example.py --scenario sales_forecast`
+### 🏭 Skenario 3: Peramalan Penjualan E-commerce
+**Dataset**: Data penjualan historis, data musiman
+**Tujuan**: Memprediksi volume penjualan bulanan
+**Jalankan**: `uv run python sklearn_example.py --scenario sales_forecast`
 
-**What you'll master:**
-- Time series feature engineering
-- Seasonal decomposition
-- Multi-step forecasting
-- Business impact evaluation
+**Yang akan Anda kuasai:**
+- Rekayasa fitur deret waktu
+- Dekomposisi musiman
+- Peramalan multi-langkah
+- Evaluasi dampak bisnis
 
-### 🎭 Scenario 4: Customer Churn Prediction
-**Dataset**: Customer behavior, usage patterns
-**Goal**: Identify customers likely to churn
-**Run**: `uv run python sklearn_example.py --scenario churn`
+### 🎭 Skenario 4: Prediksi Churn Pelanggan
+**Dataset**: Perilaku pelanggan, pola penggunaan
+**Tujuan**: Mengidentifikasi pelanggan yang kemungkinan akan churn
+**Jalankan**: `uv run python sklearn_example.py --scenario churn`
 
-**What you'll master:**
-- Behavioral feature engineering
-- Cost-sensitive learning
-- Actionable insights generation
-- Model monitoring strategies
+**Yang akan Anda kuasai:**
+- Rekayasa fitur perilaku
+- Pembelajaran cost-sensitive
+- Menghasilkan wawasan yang dapat ditindaklanjuti
+- Strategi pemantauan model
 
-### 🏏 Scenario 5: Medical Diagnosis Support
-**Dataset**: Patient symptoms, medical history
-**Goal**: Assist in disease diagnosis
-**Run**: `uv run python sklearn_example.py --scenario medical`
+### 🏏 Skenario 5: Dukungan Diagnosis Medis
+**Dataset**: Gejala pasien, riwayat medis
+**Tujuan**: Membantu diagnosis penyakit
+**Jalankan**: `uv run python sklearn_example.py --scenario medical`
 
-**What you'll master:**
-- High-stakes prediction scenarios
-- Confidence interval estimation
-- False positive/negative trade-offs
-- Regulatory compliance considerations
+**Yang akan Anda kuasai:**
+- Skenario prediksi berisiko tinggi
+- Estimasi interval kepercayaan
+- Trade-off false positive/negative
+- Pertimbangan kepatuhan regulasi
 
-### 🔍 Hyperparameter Tuning Scenarios
+### 🔍 Skenario Tuning Hyperparameter
 
 > 🚧 Skrip `hyperparameter_tuning.py` khusus masih direncanakan. Alur tuning di bawah belum dapat dijalankan; gunakan [`sklearn_example.py`](./sklearn_example.py) untuk contoh yang tersedia saat ini.
 
-#### Quick Tuning (5-10 minutes)
-Random Search dengan budget kecil.
+#### Tuning Cepat (5-10 menit)
+Random Search dengan anggaran kecil.
 
-#### Production Tuning (30-60 minutes)
-Pencarian berbasis Optuna dengan budget sedang.
+#### Tuning Produksi (30-60 menit)
+Pencarian berbasis Optuna dengan anggaran sedang.
 
-#### Competition Tuning (2-4 hours)
-Optimasi Bayesian dengan budget besar.
+#### Tuning Kompetisi (2-4 jam)
+Optimasi Bayesian dengan anggaran besar.
 
 ### [`implementation.py`](./implementation.py)
-- **Basic XGBoost workflows** for beginners
-- **Quick start examples** for each scenario
-- **Baseline model setup**
-- **Performance comparison** with other algorithms
+- **Alur kerja dasar XGBoost** untuk pemula
+- **Contoh mulai cepat** untuk setiap skenario
+- **Penyiapan model baseline**
+- **Perbandingan performa** dengan algoritma lain
 
 ### [`sklearn_example.py`](./sklearn_example.py)
-- **Production-ready implementations** for all 5 scenarios
-- **Advanced preprocessing** pipelines
-- **Feature engineering** automation
-- **Model evaluation** and **business metrics**
-- **SHAP interpretability** integration
+- **Implementasi siap produksi** untuk kelima skenario
+- Pipeline **prapemrosesan lanjutan**
+- Otomasi **rekayasa fitur**
+- **Evaluasi model** dan **metrik bisnis**
+- Integrasi **interpretabilitas SHAP**
 
 ### `hyperparameter_tuning.py` (direncanakan)
 - **Strategi tuning yang direncanakan**: Random Search, Bayesian, Optuna
-- **Budget-aware optimization**
-- **Parallel processing** for faster tuning
-- **Competition-grade** parameter spaces
+- **Optimasi yang sadar anggaran**
+- **Pemrosesan paralel** untuk tuning yang lebih cepat
+- Ruang parameter **sekualitas kompetisi**
 
 ### [`exercise.ipynb`](./exercise.ipynb)
-- **Interactive step-by-step** tutorials
-- **Real dataset exploration** and **EDA**
-- **Hyperparameter sensitivity** analysis
-- **Model interpretation** exercises
+- Tutorial **interaktif langkah demi langkah**
+- **Eksplorasi dataset nyata** dan **EDA**
+- Analisis **sensitivitas hyperparameter**
+- Latihan **interpretasi model**
 
-## 🎓 Learning Progression
+## 🎓 Progres Pembelajaran
 
-### Prerequisites
-- **Machine Learning Basics**: [Linear Regression](../../01_supervised_learning/01_linear_regression/), [Decision Trees](../../01_supervised_learning/03_decision_trees/)
-- **Ensemble Methods**: [Random Forest](../../01_supervised_learning/04_random_forest/)
-- **Model Evaluation**: [Evaluation Techniques](../03_model_evaluation/)
+### Prasyarat
+- **Dasar-dasar Machine Learning**: [Linear Regression](../../01_supervised_learning/01_linear_regression/), [Decision Trees](../../01_supervised_learning/03_decision_trees/)
+- **Metode Ensemble**: [Random Forest](../../01_supervised_learning/04_random_forest/)
+- **Evaluasi Model**: [Teknik Evaluasi](../03_model_evaluation/)
 
-### Recommended Learning Path
-1. **Start** with [`implementation.py`](./implementation.py) - Basic concepts
-2. **Practice** with [`exercise.ipynb`](./exercise.ipynb) - Interactive learning
-3. **Explore** [`sklearn_example.py`](./sklearn_example.py) - Real scenarios
-4. **Master** `hyperparameter_tuning.py` (direncanakan) - Advanced techniques
+### Jalur Pembelajaran yang Direkomendasikan
+1. **Mulai** dengan [`implementation.py`](./implementation.py) - Konsep dasar
+2. **Berlatih** dengan [`exercise.ipynb`](./exercise.ipynb) - Pembelajaran interaktif
+3. **Jelajahi** [`sklearn_example.py`](./sklearn_example.py) - Skenario nyata
+4. **Kuasai** `hyperparameter_tuning.py` (direncanakan) - Teknik lanjutan
 
-## 🏆 Competition Tips
+## 🏆 Tips Kompetisi
 
-1. **Feature Engineering** is king
-2. **Ensemble** with different seeds
-3. **Blend** XGBoost with LightGBM/CatBoost
-4. **Pseudo-labeling** for semi-supervised learning
-5. **Target encoding** for high-cardinality categorical
-6. **Stratified K-Fold** for robust CV
+1. **Rekayasa Fitur** adalah raja
+2. **Ensemble** dengan seed yang berbeda
+3. **Blend** XGBoost dengan LightGBM/CatBoost
+4. **Pseudo-labeling** untuk pembelajaran semi-supervised
+5. **Target encoding** untuk kategorikal berkardinalitas tinggi
+6. **Stratified K-Fold** untuk CV yang robust
 
-### Related Advanced Algorithms
+### Algoritma Lanjutan Terkait
 
-| Algorithm | Comparison | Use Case |
+| Algoritma | Perbandingan | Kasus Penggunaan |
 |-----------|------------|----------|
-| **LightGBM** (direncanakan) | Faster training | Large datasets |
-| **CatBoost** (direncanakan) | Better categorical handling | Mixed data types |
-| [**Random Forest**](../../01_supervised_learning/04_random_forest/) | More interpretable | Feature importance |
-| [**Neural Networks**](../../01_supervised_learning/08_neural_networks/) | More flexible | Complex patterns |
+| **LightGBM** (direncanakan) | Pelatihan lebih cepat | Dataset besar |
+| **CatBoost** (direncanakan) | Penanganan kategorikal lebih baik | Tipe data campuran |
+| [**Random Forest**](../../01_supervised_learning/04_random_forest/) | Lebih mudah diinterpretasikan | Feature importance |
+| [**Neural Networks**](../../01_supervised_learning/08_neural_networks/) | Lebih fleksibel | Pola kompleks |
 
-## 📚 References
+## 📚 Referensi
 
-- [XGBoost Documentation](https://xgboost.readthedocs.io/)
-- [XGBoost Paper](https://arxiv.org/abs/1603.02754)
-- [XGBoost Tutorials](https://xgboost.readthedocs.io/en/stable/tutorials/index.html)
-- [Interpretable ML - XGBoost](https://christophm.github.io/interpretable-ml-book/)
+- [Dokumentasi XGBoost](https://xgboost.readthedocs.io/)
+- [Makalah XGBoost](https://arxiv.org/abs/1603.02754)
+- [Tutorial XGBoost](https://xgboost.readthedocs.io/en/stable/tutorials/index.html)
+- [ML yang Dapat Diinterpretasikan - XGBoost](https://christophm.github.io/interpretable-ml-book/)
 
 ---
-**➡️ Next Step**: After mastering XGBoost, explore **LightGBM** and **CatBoost** for even more powerful ensemble methods!
+**➡️ Langkah Berikutnya**: Setelah menguasai XGBoost, jelajahi **LightGBM** dan **CatBoost** untuk metode ensemble yang bahkan lebih kuat!

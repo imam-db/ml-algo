@@ -225,26 +225,26 @@ self.rng_ = np.random.default_rng(random_state)
 
 ---
 
-## Ringkasan (ID)
+## Summary
 
-**K-Means Clustering** is algoritma unsupervised learning that divides data menjadi K groups (cluster) that not overlapping. Each data point is placed in cluster with centroid (average) terdekat.
+**K-Means Clustering** is an unsupervised learning algorithm that divides data into K non-overlapping groups (clusters). Each data point is placed in the cluster with the nearest centroid (mean).
 
 **How it Works:**
-1. Pilih K centroid awal (random or k-means++)
-2. Assign each points to centroid terdekat
-3. Update centroid as average from points that assigned
-4. Repeat until konvergen
+1. Choose K initial centroids (random or k-means++)
+2. Assign each point to the nearest centroid
+3. Update the centroid as the average of the points assigned to it
+4. Repeat until convergence
 
-**Metrik Evaluasi:**
-- **Inertia:** Jumlah jarak kuadrat from each points to centroid cluster-nya (semakin kecil semakin good)
-- **Elbow Method:** Plot inertia vs K, cari "siku" di mana penurunan melambat
-- **Silhouette Score:** Ukur seberapa good points cocok with cluster-nya (-1 until 1, semakin tinggi semakin good)
+**Evaluation Metrics:**
+- **Inertia:** The sum of squared distances from each point to its cluster centroid (the smaller, the better)
+- **Elbow Method:** Plot inertia vs K, look for the "elbow" where the decrease slows down
+- **Silhouette Score:** Measures how well points fit their cluster (-1 to 1, the higher, the better)
 
-**Penting:** Always do feature scaling before K-Means because this algorithm uses jarak Euclidean!
+**Important:** Always do feature scaling before K-Means because this algorithm uses Euclidean distance!
 
-**Studi Kasus:** Dataset berisi 500 outlet retail (warung, minimarket, grosir) di Denpasar/Bali that dikunjungi SPG. Supervisor ingin mengelompokkan outlet for mengoptimalkan jadwal kunjungan based on sales, jumlah SKU, frekuensi kunjungan, OOS rate, and average transaksi.
+**Case Study:** The dataset contains 500 retail outlets (warung, minimarket, grosir) in Denpasar/Bali visited by SPG. A supervisor wants to group outlets to optimize visit schedules based on sales, SKU count, visit frequency, OOS rate, and average transaction value.
 
-**Exercises:** Gunakan elbow method and silhouette score for memilih K optimal, lalu interpretasikan cluster menjadi strategi kunjungan (prioritas tinggi/sedang/rendah).
+**Exercises:** Use the elbow method and silhouette score to choose the optimal K, then interpret the clusters into a visit strategy (high/medium/low priority).
 
 ---
 

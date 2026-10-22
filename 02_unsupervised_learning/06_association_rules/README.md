@@ -526,7 +526,7 @@ confidence, lift, leverage, conviction
 ## 📁 Files in This Directory
 
 - **`README.md`** (this file) — theory and concepts in English
-- **`README.id.md`** — dokumentasi lengkap dalam Bahasa Indonesia
+- **`README.id.md`** — full documentation in Bahasa Indonesia
 - **`implementation.py`** — transaction encoding, support/confidence/lift/
   leverage/conviction, Apriori, FP-Growth, rule generation, synthetic warung
   data, and a `__main__` demo
