@@ -252,5 +252,30 @@ def test_kernel_svm_matches_sklearn_accuracy():
         f"sklearn={sklearn_accuracy:.3f}"
 
 
+def test_kernel_svm_dual_objective_matches_sklearn():
+    """SMO should reach (almost) the same dual optimum as libsvm"""
+    X_train, _, y_train, _ = _outlet_split(n_samples=240)
+    model = KernelSVM(C=1.0, kernel="rbf", gamma="scale", max_iter=100,
+                      random_state=42)
+    model.fit(X_train, y_train)
+
+    X_scaled = (X_train - model.mean_) / model.scale_
+    K = model._kernel_matrix(X_scaled, X_scaled)
+    y_pm = np.where(y_train == 1, 1.0, -1.0)
+
+    def dual(a):
+        ay = a * y_pm
+        return a.sum() - 0.5 * ay @ K @ ay
+
+    sk = SVC(C=1.0, kernel="rbf", gamma=model._gamma).fit(X_scaled, y_train)
+    alpha_sk = np.zeros(len(X_train))
+    alpha_sk[sk.support_] = np.abs(sk.dual_coef_[0])
+
+    # Equality constraint and near-optimal dual value.
+    assert abs(model.alpha_ @ y_pm) < 1e-6
+    assert dual(model.alpha_) == pytest.approx(dual(alpha_sk), rel=1e-2)
+    assert model.b_ == pytest.approx(sk.intercept_[0], abs=0.05)
+
+
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
