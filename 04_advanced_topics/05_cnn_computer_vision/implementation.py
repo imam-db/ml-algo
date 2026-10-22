@@ -34,7 +34,7 @@ Author: ML-Algo Repository
 from __future__ import annotations
 
 from collections.abc import Iterable, Sequence
-from typing import Self, Union
+from typing import Self
 
 import numpy as np
 
