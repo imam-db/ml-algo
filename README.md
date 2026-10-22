@@ -45,15 +45,16 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 
 ### 2. **Unsupervised Learning** ([`02_unsupervised_learning/`](./02_unsupervised_learning/))
 - **[01_kmeans](./02_unsupervised_learning/01_kmeans/)** - K-Means Clustering ✅
-- **🚧 02_hierarchical_clustering** - Hierarchical Clustering (planned)
-- **🚧 03_dbscan** - DBSCAN (planned)
+- **[02_dbscan](./02_unsupervised_learning/02_dbscan/)** - DBSCAN (Density-Based Clustering) ✅
+- **[03_hierarchical](./02_unsupervised_learning/03_hierarchical/)** - Hierarchical (Agglomerative) Clustering ✅
 - **[04_pca](./02_unsupervised_learning/04_pca/)** - Principal Component Analysis ✅
 - **🚧 05_tsne** - t-SNE (planned)
 - **🚧 06_association_rules** - Association Rules (planned)
 
 ### 3. **Reinforcement Learning** ([`03_reinforcement_learning/`](./03_reinforcement_learning/))
-- **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning ✅
-- **🚧 02_deep_q_networks** - Deep Q-Networks (planned)
+- **[01_q_learning](./03_reinforcement_learning/01_q_learning/)** - Q-Learning (Off-Policy TD) ✅
+- **[02_sarsa](./03_reinforcement_learning/02_sarsa/)** - SARSA (On-Policy TD) ✅
+- **🚧 03_deep_q_networks** - Deep Q-Networks (planned)
 
 ### 4. **Advanced Topics** ([`04_advanced_topics/`](./04_advanced_topics/))
 - **🚧 01_ensemble_methods** - Ensemble Methods (planned)
@@ -171,8 +172,8 @@ Each algorithm has the same folder structure:
 | Category | Implemented | Planned | Progress |
 |----------|-------------|---------|----------|
 | Supervised Learning | 6 | 2 | 🟢 75% |
-| Unsupervised Learning | 2 | 4 | 🟡 33% |
-| Reinforcement Learning | 1 | 1 | 🟢 50% |
+| Unsupervised Learning | 4 | 2 | 🟢 67% |
+| Reinforcement Learning | 2 | 1 | 🟢 67% |
 | Advanced Topics | 2 | 2 | 🟢 50% |
 
 ## 🧪 Testing
@@ -190,7 +191,7 @@ python -m pytest tests/test_reinforcement_learning.py -v
 python -m pytest tests/ --cov --cov-report=html
 ```
 
-**Test Coverage:** 107 tests, semua passing ✅
+**Test Coverage:** 160+ tests, semua passing ✅
 
 ## 🤝 Contributing
 
