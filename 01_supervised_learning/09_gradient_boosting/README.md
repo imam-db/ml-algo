@@ -412,7 +412,7 @@ Learning Rate = 1.0:        Learning Rate = 0.1:
 ## 📁 Files in This Directory
 
 - **`README.md`** (this file) - Comprehensive theory and concepts in English
-- **`README.id.md`** - Dokumentasi lengkap dalam Bahasa Indonesia
+- **`README.id.md`** - Full documentation in Bahasa Indonesia
 - **`implementation.py`** - Gradient Boosting from scratch with NumPy
 - **`sklearn_example.py`** - Practical examples using scikit-learn
 - **`exercise.ipynb`** - Hands-on exercises and experiments

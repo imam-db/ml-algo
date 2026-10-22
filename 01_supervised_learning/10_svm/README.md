@@ -307,7 +307,7 @@ A practical workflow:
 ## 📁 Files in This Directory
 
 - **`README.md`** (this file) — theory and concepts in English
-- **`README.id.md`** — dokumentasi lengkap dalam Bahasa Indonesia
+- **`README.id.md`** — full documentation in Bahasa Indonesia
 - **`implementation.py`** — `LinearSVM` (Pegasos), `KernelSVM` (simplified SMO),
   synthetic outlet data generator and a `__main__` demo
 - **`sklearn_example.py`** — scikit-learn `SVC` experiments showing the effect

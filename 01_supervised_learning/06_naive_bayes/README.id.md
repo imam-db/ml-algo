@@ -115,7 +115,7 @@ y = ['frequent', 'occasional', ...]
 
 **Untuk:** Binary features (0/1, True/False)
 
-**Contoh:** Email spam (word present or not)
+**Contoh:** Email spam (kata ada atau tidak)
 
 ## 💡 Kelebihan dan Kekurangan
 
@@ -350,7 +350,7 @@ print(f"Probabilities: {probability[0]}")
 | Speed | Very Fast | Fast | Fast | Slow |
 | Interpretability | High | High | Very High | Medium |
 | Probabilistic | Yes | Yes | No (standard) | Yes |
-| Feature Independence | Required | Not required | Not required | Not required |
+| Feature Independence | Diperlukan | Tidak diperlukan | Tidak diperlukan | Tidak diperlukan |
 | Small Data | Excellent | Good | Poor | Poor |
 | High Dimensions | Excellent | Good | Poor | Poor |
 | Text Classification | Excellent | Good | Poor | Poor |

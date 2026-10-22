@@ -6,109 +6,109 @@
 
 | File | Description | Run |
 |------|-----------|----------|
-| [`implementation.py`](./implementation.py) | Implementation from nol | `python3 implementation.py` |
+| [`implementation.py`](./implementation.py) | From-scratch implementation | `python3 implementation.py` |
 | [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
 
 ## 📖 Theory and Concepts
 
 ### What is Q-Learning?
 
-**Q-Learning** is algoritma reinforcement learning that learns kebijakan optimal for mengambil actions in an environment with cara mencoba and learns from pengalaman. Algoritma this not memerlukan environment model (model-free) and can learns kebijakan optimal melalui eksplorasi.
+**Q-Learning** is a reinforcement learning algorithm that learns an optimal policy for taking actions in an environment by trying things out and learning from experience. The algorithm does not require an environment model (model-free) and can learn an optimal policy through exploration.
 
-Bayangkan seorang SPG (Sales Promoter Girl) that must mengunjungi outlet-outlet di area grid for mempromosikan produk. Dia perlu learns rute terbaik for mengunjungi semua outlet sambil menghindari obstacles, with minimizing steps that taken.
+Imagine a SPG (Sales Promotion Girl) who must visit outlets in a grid area to promote a product. She needs to learn the best route for visiting all outlets while avoiding obstacles and minimizing the number of steps taken.
 
-### Formulasi Matematis
+### Mathematical Formulation
 
-**Fungsi Q (Q-function):** Mengestimasi nilai actions that taken at suatu state:
+**Q-function:** Estimates the value of actions taken in a given state:
 
 ```
-Q(s, a) = nilai that diharapkan from mengambil actions a at state s
+Q(s, a) = expected value of taking action a in state s
 ```
 
-**Update Rule Q-Learning:**
+**Q-Learning Update Rule:**
 
 ```
 Q(s,a) ← Q(s,a) + α[r + γ·max Q(s',a') - Q(s,a)]
                               a'
 ```
 
-Di mana:
-- `s` = state (posisi) saat this
-- `a` = action (actions) that taken
-- `s'` = state berikutnya setelah actions
-- `r` = reward that diterima
+Where:
+- `s` = current state (position)
+- `a` = action taken
+- `s'` = next state after the action
+- `r` = reward received
 - `α` (alpha) = learning rate (0 < α ≤ 1)
 - `γ` (gamma) = discount factor (0 ≤ γ ≤ 1)
-- `max Q(s',a')` = nilai Q maksimum for state berikutnya
+- `max Q(s',a')` = maximum Q-value for the next state
 
-### Komponen Utama
+### Main Components
 
-#### 1. **State (Keadaan)**
-Posisi agent dalam grid world. Dalam contoh SPG:
-- State = koordinat (baris, kolom) dalam grid
+#### 1. **State**
+The agent's position in the grid world. In the SPG example:
+- State = (row, column) coordinates in the grid
 - Total states = grid_size × grid_size
 
-#### 2. **Action (Tindakan)**
-Aksi that dapat dilakukan agent:
-- 0: Naik (↑)
-- 1: Kanan (→)
-- 2: Turun (↓)
-- 3: Kiri (←)
+#### 2. **Action**
+Actions the agent can take:
+- 0: Up (↑)
+- 1: Right (→)
+- 2: Down (↓)
+- 3: Left (←)
 
-#### 3. **Reward (Hadiah)**
-Umpan balik numerik from lingkungan:
-- **+10**: Mengunjungi outlet baru
-- **+50**: Bonus mengunjungi semua outlet
-- **-10**: Menabrak obstacles
-- **-0.1**: Penalti kecil each steps (mendorong efisiensi)
-- **0**: Mengunjungi outlet that sudah dikunjungi
+#### 3. **Reward**
+Numerical feedback from the environment:
+- **+10**: Visiting a new outlet
+- **+50**: Bonus for visiting all outlets
+- **-10**: Hitting an obstacle
+- **-0.1**: Small penalty per step (encourages efficiency)
+- **0**: Visiting an outlet that has already been visited
 
-#### 4. **Policy (Kebijakan)**
-Strategi for memilih actions:
-- **Epsilon-greedy**: Seimbangkan eksplorasi vs eksploitasi
-  - Dengan probabilitas ε: pilih actions random (eksplorasi)
-  - Dengan probabilitas (1-ε): pilih actions terbaik (eksploitasi)
-  - ε menurun seiring waktu (epsilon decay)
+#### 4. **Policy**
+Strategy for choosing actions:
+- **Epsilon-greedy**: Balances exploration vs exploitation
+  - With probability ε: choose a random action (exploration)
+  - With probability (1-ε): choose the best action (exploitation)
+  - ε decreases over time (epsilon decay)
 
 #### 5. **Q-Table**
-Tabel that menyimpan nilai Q for each pasangan (state, action):
-- Dimensi: [n_states × n_actions]
-- Diinisialisasi with nilai 0
-- Diperbarui selama training
+A table that stores Q-values for each (state, action) pair:
+- Dimensions: [n_states × n_actions]
+- Initialized with zeros
+- Updated during training
 
-### Algoritma Q-Learning
+### Q-Learning Algorithm
 
-1. **Inisialisasi:**
-   - Buat Q-table with nilai 0
-   - Set parameter (α, γ, ε)
+1. **Initialization:**
+   - Create a Q-table with zeros
+   - Set parameters (α, γ, ε)
 
-2. **Untuk each episode:**
-   - Reset lingkungan ke state awal
-   - Untuk each steps dalam episode:
-     - Pilih action menggunakan epsilon-greedy
-     - Eksekusi action, dapatkan reward and next state
-     - Update Q-value menggunakan Q-learning rule
-     - Update state
-     - Jika done, akhiri episode
-   - Kurangi epsilon (decay)
+2. **For each episode:**
+   - Reset the environment to the initial state
+   - For each step in the episode:
+     - Choose an action using epsilon-greedy
+     - Execute the action, obtain the reward and next state
+     - Update the Q-value using the Q-learning rule
+     - Update the state
+     - If done, end the episode
+   - Decrease epsilon (decay)
 
-3. **Evaluasi:**
-   - Gunakan kebijakan learned (ε = 0)
-   - Ukur performa
+3. **Evaluation:**
+   - Use the learned policy (ε = 0)
+   - Measure performance
 
 ### Exploration vs Exploitation
 
-**Dilema fundamental dalam RL:**
+**Fundamental dilemma in RL:**
 
-- **Exploration (Eksplorasi):**
-  - Mencoba actions baru for menemukan strategi that more good
-  - Penting di awal training
-  - Dikendalikan by epsilon (ε)
+- **Exploration:**
+  - Trying new actions to find better strategies
+  - Important at the beginning of training
+  - Controlled by epsilon (ε)
 
-- **Exploitation (Eksploitasi):**
-  - Menggunakan pengetahuan that sudah dipelajari
-  - Penting saat evaluasi
-  - Memilih actions with Q-value tertinggi
+- **Exploitation:**
+  - Using knowledge that has already been learned
+  - Important during evaluation
+  - Choosing the action with the highest Q-value
 
 **Epsilon-Greedy Strategy:**
 ```python
@@ -119,32 +119,32 @@ else:
 ```
 
 **Epsilon Decay:**
-- Mulai with ε = 1.0 (100% eksplorasi)
-- Turunkan bertahap: ε = ε × decay_rate
-- Minimum: ε_min = 0.01 (1% eksplorasi)
+- Start with ε = 1.0 (100% exploration)
+- Decrease gradually: ε = ε × decay_rate
+- Minimum: ε_min = 0.01 (1% exploration)
 
-### Hyperparameter
+### Hyperparameters
 
 #### Learning Rate (α)
-Seberapa many Q-value baru menggantikan that lama:
-- **α = 0**: Tidak learns (Q-value not berubah)
-- **α = 1**: Hanya pakai informasi terbaru
+How much new Q-values replace the old ones:
+- **α = 0**: Does not learn (Q-values do not change)
+- **α = 1**: Uses only the most recent information
 - **Typical: α = 0.1 - 0.3**
-- α besar: learns cepat, tapi kurang stabil
-- α kecil: learns lambat, more stabil
+- Large α: learns quickly, but less stable
+- Small α: learns slowly, more stable
 
 #### Discount Factor (γ)
-Seberapa penting reward masa depan:
-- **γ = 0**: Hanya peduli reward langsung
-- **γ = 1**: Reward masa depan sama penting
+How important future rewards are:
+- **γ = 0**: Only cares about immediate rewards
+- **γ = 1**: Future rewards are equally important
 - **Typical: γ = 0.9 - 0.99**
-- γ besar: pertimbangkan long-term rewards
-- γ kecil: focuses at short-term rewards
+- Large γ: considers long-term rewards
+- Small γ: focuses on short-term rewards
 
 #### Epsilon (ε)
-Tingkat eksplorasi:
-- **ε = 1.0**: 100% random (full eksplorasi)
-- **ε = 0.0**: 100% greedy (full eksploitasi)
+Exploration rate:
+- **ε = 1.0**: 100% random (full exploration)
+- **ε = 0.0**: 100% greedy (full exploitation)
 - **Decay rate: 0.99 - 0.999**
 - **Minimum: 0.01**
 
@@ -152,34 +152,34 @@ Tingkat eksplorasi:
 
 ### ✅ Good for:
 - **Discrete state and action spaces**
-  - Grid worlds, game sederhana
+  - Grid worlds, simple games
 - **Model-free learning**
-  - Tidak perlu tahu dinamika lingkungan
+  - No need to know the environment dynamics
 - **Off-policy learning**
-  - Bisa learns from pengalaman orang lain
+  - Can learn from others' experience
 - **Tabular RL problems**
-  - State space not terlalu besar
+  - State space is not too large
 - **Optimal control problems**
-  - Mencari kebijakan optimal
+  - Finding an optimal policy
 
 ### ❌ Less suitable for:
 - **Continuous state/action spaces**
-  - Gunakan Deep Q-Networks (DQN)
+  - Use Deep Q-Networks (DQN)
 - **Very large state spaces**
-  - Q-table jadi terlalu besar
-  - Gunakan function approximation
+  - The Q-table becomes too large
+  - Use function approximation
 - **Partial observability**
-  - Gunakan POMDP solvers
+  - Use POMDP solvers
 - **Multi-agent scenarios**
-  - Perlu algoritma multi-agent
+  - Requires multi-agent algorithms
 - **Real-time requirements**
-  - Training bisa lama
+  - Training can be slow
 
-## 💡 Contoh Implementation
+## 💡 Example Implementation
 
 ### Grid World SPG
 
-Environment that used dalam implementasi:
+Environment used in the implementation:
 
 ```
 Grid 5×5 with:
@@ -189,7 +189,7 @@ Grid 5×5 with:
 - SPG: Posisi agent saat this
 ```
 
-**Contoh Grid:**
+**Example Grid:**
 ```
 S  .  .  O  .
 .  X  .  .  .
@@ -198,33 +198,33 @@ O  .  .  .  X
 .  .  .  .  .
 ```
 
-**Tujuan:** SPG must mengunjungi semua outlet (O) sambil menghindari obstacles (X) with jalur seefisien mungkin.
+**Goal:** The SPG must visit all outlets (O) while avoiding obstacles (X) with the most efficient route possible.
 
-### Hasil Training
+### Training Results
 
-Setelah training 1000 episode:
-- **Q-table konvergen** menunjukkan actions optimal
-- **Reward meningkat** from random ke optimal
-- **Steps menurun** seiring agent learns jalur efisien
-- **Success rate tinggi** (>90%)
+After training for 1000 episodes:
+- **Converged Q-table** shows optimal actions
+- **Reward increases** from random to optimal
+- **Steps decrease** as the agent learns an efficient route
+- **High success rate** (>90%)
 
-**Learning Curve menunjukkan:**
-1. **Fase Eksplorasi** (episode 0-200):
-   - Reward volatile
-   - Epsilon tinggi
-   - Agent mencoba berbagai strategi
+**The learning curve shows:**
+1. **Exploration Phase** (episodes 0-200):
+   - Volatile reward
+   - High epsilon
+   - Agent tries various strategies
 
-2. **Fase Transisi** (episode 200-500):
-   - Reward mulai stabil
-   - Epsilon menurun
-   - Agent menemukan strategi that good
+2. **Transition Phase** (episodes 200-500):
+   - Reward starts to stabilize
+   - Epsilon decreases
+   - Agent finds good strategies
 
-3. **Fase Eksploitasi** (episode 500-1000):
-   - Reward stabil and tinggi
-   - Epsilon rendah
-   - Agent konsisten menggunakan strategi optimal
+3. **Exploitation Phase** (episodes 500-1000):
+   - Stable and high reward
+   - Low epsilon
+   - Agent consistently uses the optimal strategy
 
-### Perbandingan with Random Policy
+### Comparison with Random Policy
 
 | Metric | Q-Learning | Random | Improvement |
 |--------|-----------|--------|-------------|
@@ -232,19 +232,19 @@ Setelah training 1000 episode:
 | Mean Steps | ~15-20 | ~50-100 | -70% |
 | Success Rate | 90-100% | <10% | +90 pts |
 
-## 🔬 Eksperimen and Variasi
+## 🔬 Experiments and Variations
 
 ### 1. Grid Size
-- **Small (3×3)**: Belajar cepat, tapi terbatas
-- **Medium (5×5)**: Balance antara kompleksitas and speed
-- **Large (10×10)**: More challenging, training more lama
+- **Small (3×3)**: Learns quickly, but limited
+- **Medium (5×5)**: Balance between complexity and speed
+- **Large (10×10)**: More challenging, longer training
 
 ### 2. Number of Outlets/Obstacles
-- More many outlet: task more sulit, reward more besar
-- More many obstacle: perlu strategi more hati-hati
+- More outlets: harder task, larger reward
+- More obstacles: requires a more careful strategy
 
 ### 3. Reward Shaping
-Coba variasi reward:
+Try reward variations:
 ```python
 # Dense rewards (more many feedback)
 - Reward kecil for mendekati outlet
@@ -267,49 +267,49 @@ alpha = alpha_initial / (1 + episode * decay_rate)
 alpha = f(state_visit_count)
 ```
 
-## 📊 Metrik Evaluasi
+## 📊 Evaluation Metrics
 
 ### 1. Episode Reward
 - Total reward per episode
-- Mengukur kualitas kebijakan
-- Target: maksimalisasi reward
+- Measures the quality of the policy
+- Target: maximize reward
 
 ### 2. Steps per Episode
-- Jumlah steps hingga selesai
-- Mengukur efisiensi
-- Target: minimalisasi steps
+- Number of steps until completion
+- Measures efficiency
+- Target: minimize steps
 
 ### 3. Success Rate
-- Persentase episode that berhasil
-- Mengukur reliability
-- Target: mendekati 100%
+- Percentage of successful episodes
+- Measures reliability
+- Target: close to 100%
 
 ### 4. Convergence Speed
-- Episode hingga konvergen
-- Mengukur learning efficiency
-- More cepat = more good
+- Episodes until convergence
+- Measures learning efficiency
+- Faster = better
 
 ### 5. Q-Value Stability
-- Variance Q-values over time
-- Mengukur stabilitas learning
-- Rendah = stabil
+- Variance of Q-values over time
+- Measures learning stability
+- Low = stable
 
-## 🔗 Hubungan with Algoritma Lain
+## 🔗 Relationship to Other Algorithms
 
 ### Q-Learning vs SARSA
-- **Q-Learning**: Off-policy (learns optimal policy)
-- **SARSA**: On-policy (learns policy that used)
-- Q-Learning more agresif, SARSA more aman
+- **Q-Learning**: Off-policy (learns the optimal policy)
+- **SARSA**: On-policy (learns the policy being used)
+- Q-Learning is more aggressive, SARSA is safer
 
 ### Q-Learning vs Deep Q-Networks (DQN)
 - **Q-Learning**: Tabular (Q-table)
 - **DQN**: Neural network approximation
-- DQN for state space besar
+- DQN for large state spaces
 
 ### Q-Learning vs Policy Gradient
-- **Q-Learning**: Value-based (learns Q-function)
-- **Policy Gradient**: Policy-based (learns policy langsung)
-- Q-Learning more sample-efficient for discrete actions
+- **Q-Learning**: Value-based (learns the Q-function)
+- **Policy Gradient**: Policy-based (learns the policy directly)
+- Q-Learning is more sample-efficient for discrete actions
 
 ## 📚 Learning Resources
 
@@ -320,13 +320,13 @@ alpha = f(state_visit_count)
 ## 🎓 Exercises
 
 See [`exercise.ipynb`](./exercise.ipynb) for hands-on practice:
-1. Eksperimen with hyperparameters
-2. Modifikasi reward structure
-3. Buat environment custom
-4. Visualisasi learned policy
-5. Bandingkan with algoritma lain
+1. Experiment with hyperparameters
+2. Modify the reward structure
+3. Build a custom environment
+4. Visualize the learned policy
+5. Compare with other algorithms
 
-## 💻 Run Kode
+## 💻 Run the Code
 
 ```bash
 # Run implementasi from nol
