@@ -120,7 +120,7 @@ class AlgorithmRecommender:
             'svm': {
                 'name': 'Support Vector Machine',
                 'type': 'classification',
-                'path': './01_supervised_learning/05_svm/',
+                'path': './01_supervised_learning/10_svm/',
                 'scenarios': ['high_dimensional', 'text_classification'],
                 'best_for': ['high_dimensional', 'kernel_tricks', 'robust'],
                 'min_samples': 100,

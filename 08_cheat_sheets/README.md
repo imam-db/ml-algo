@@ -17,10 +17,10 @@ Quick reference guides and cheat sheets for machine learning algorithms, Python 
 | **📊 [Math & Stats](./03_math_statistics/)** | Essential formulas | [Essential Formulas](./03_math_statistics/essential_formulas.md) |
 | **📈 [Model Evaluation](./04_model_evaluation/)** | Metrics & validation | [Classification Metrics](./04_model_evaluation/classification_metrics.md) |
 | **🔧 [Data Preprocessing](./05_data_preprocessing/)** | Cleaning & features | [Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md) |
-| **📊 [Visualization](./06_visualization/)** | Plotting references | Coming soon |
+| **📊 Visualization** | Plotting references | Visualization cheat sheet (planned) |
 | **🐛 [Troubleshooting](./07_troubleshooting/)** | Common errors & fixes | [Common Errors & Solutions](./07_troubleshooting/common_errors_solutions.md) |
-| **📝 [Templates](./08_templates/)** | Reusable templates | Coming soon |
-| **⚡ [Interactive Generator](./09_interactive_generator/)** | Generate sheets | Coming soon |
+| **📝 Templates** | Reusable templates | Templates (planned) |
+| **⚡ Interactive Generator** | Generate sheets | Generator scripts (planned) |
 
 ---
 
@@ -34,20 +34,29 @@ Quick reference guides and cheat sheets for machine learning algorithms, Python 
 
 ### **📚 By Learning Level**
 
+Each level lists available sheets first, followed by planned topics.
+
 #### **🟢 Beginner**
-- [Python Basics for ML](./02_python_sklearn/python_ml_basics.md)
-- [Linear Regression Cheat Sheet](./01_algorithms/linear_regression.md)
-- [Basic Statistics Formulas](./03_math_statistics/basic_statistics.md)
+- [Scikit-Learn Quick Reference](./02_python_sklearn/sklearn_quick_reference.md)
+- [Pandas & NumPy Essentials](./02_python_sklearn/pandas_numpy_essentials.md)
+- [Algorithm Selection Flowchart](./01_algorithms/algorithm_selection_flowchart.md)
+- [Algorithms Quick Reference](./01_algorithms/algorithms_quick_reference.md)
+- Python basics for ML (planned)
 
 #### **🟡 Intermediate**
-- [Feature Engineering Techniques](./05_data_preprocessing/feature_engineering.md)
-- [Cross-Validation Methods](./04_model_evaluation/cross_validation.md)
-- [Advanced Sklearn Usage](./02_python_sklearn/sklearn_advanced.md)
+- [Classification Metrics](./04_model_evaluation/classification_metrics.md)
+- [Data Preprocessing Pipeline](./05_data_preprocessing/preprocessing_pipeline.md)
+- [Common Errors & Solutions](./07_troubleshooting/common_errors_solutions.md)
+- Feature engineering techniques (planned)
+- Cross-validation methods (planned)
+- Advanced scikit-learn usage (planned)
 
 #### **🔴 Advanced**
-- [Ensemble Methods Guide](./01_algorithms/ensemble_methods.md)
-- [Custom Transformer Creation](./08_templates/custom_transformers.py)
-- [Model Optimization Strategies](./07_troubleshooting/optimization_strategies.md)
+- [Essential Math & Statistics](./03_math_statistics/essential_formulas.md)
+- Hyperparameter tuning guide (planned)
+- Ensemble methods guide (planned)
+- Custom transformer templates (planned)
+- Model optimization strategies (planned)
 
 ---
 
@@ -65,7 +74,7 @@ ls 08_cheat_sheets/02_python_sklearn/
 ```
 
 ### **📱 Interactive Generation**
-Coming soon (generator scripts in development).
+Planned (generator scripts in development).
 
 ### **📖 Print-Friendly Versions**
 All cheat sheets are designed to be:

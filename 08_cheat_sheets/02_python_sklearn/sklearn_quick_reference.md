@@ -405,7 +405,7 @@ scores = cross_val_score(model, X, y, cv=5, scoring='f1_weighted')
 - **[Algorithm Selection Guide](../01_algorithms/algorithm_selection_flowchart.md)** - Choose the right algorithm
 - **[Data Preprocessing](../05_data_preprocessing/preprocessing_pipeline.md)** - Complete preprocessing workflow  
 - **[Model Evaluation](../04_model_evaluation/classification_metrics.md)** - All evaluation metrics
-- **[Hyperparameter Tuning](../07_troubleshooting/optimization_strategies.md)** - Optimization strategies
+- **Hyperparameter Tuning** (`07_troubleshooting/optimization_strategies.md`, planned) - Optimization strategies
 
 ---
 

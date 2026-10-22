@@ -248,7 +248,7 @@ uv run python model_visualizer.py --interactive
 
 ### **Integration Points**
 - **Algorithm Implementations**: Uses algorithms from `01_supervised_learning/`, `02_unsupervised_learning/`
-- **Datasets**: Can load data from `05_datasets/`
+- **Datasets**: Can load CSV data; the shared `05_datasets/` folder is planned
 - **Progress Tracking**: Integration with `progress_tracker.py`
 - **Terminology**: Links to `GLOSSARY.md` for explanations
 
@@ -355,7 +355,7 @@ uv run python feature_lab.py --data circles_data.csv --transform polynomial --de
 - **[Model Evaluation](../04_advanced_topics/03_model_evaluation/)** - Performance metrics
 
 ### **Development Tools**
-- **[WARP.md](../WARP.md)** - Development workflow
+- **Development workflow** (`WARP.md`, planned)
 - **Jupyter Notebooks** - Interactive development environment
 
 ---

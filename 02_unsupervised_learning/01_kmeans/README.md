@@ -218,8 +218,8 @@ self.rng_ = np.random.default_rng(random_state)
 
 ### After K-Means, explore:
 
-1. **[Hierarchical Clustering](../02_hierarchical_clustering/)** - No need to specify K
-2. **[DBSCAN](../03_dbscan/)** - Finds arbitrarily-shaped clusters
+1. **[Hierarchical Clustering](../03_hierarchical/)** - No need to specify K
+2. **[DBSCAN](../02_dbscan/)** - Finds arbitrarily-shaped clusters
 3. **[PCA](../04_pca/)** - Visualize high-dimensional clusters in 2D
 4. **[Gaussian Mixture Models](../../04_advanced_topics/)** - Soft clustering
 

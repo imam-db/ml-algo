@@ -2,7 +2,7 @@
 
 **🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
 
-🏠 Back to Main: `../README.md`
+🏠 Back to Main: [`../README.md`](../README.md)
 
 Unsupervised algorithms for discovering patterns without labels. Folder pattern:
 - `README.md` — theory overview and when to use
@@ -12,16 +12,16 @@ Unsupervised algorithms for discovering patterns without labels. Folder pattern:
 
 Modules (available/planned):
 - **[`01_kmeans/`](01_kmeans/)** — K-Means Clustering (available)
-- `02_hierarchical_clustering/` — Hierarchical Clustering (coming soon)
-- `03_dbscan/` — DBSCAN (coming soon)
+- **[`02_dbscan/`](02_dbscan/)** — DBSCAN (available)
+- **[`03_hierarchical/`](03_hierarchical/)** — Hierarchical Clustering (available)
 - **[`04_pca/`](04_pca/)** — Principal Component Analysis (available)
 - **[`05_tsne/`](05_tsne/)** — t-SNE (available)
 - **[`06_association_rules/`](06_association_rules/)** — Association Rules (Apriori & FP-Growth) (available)
 
+All six unsupervised modules are implemented; none are currently planned.
+
 ## Shared Dataset
 
-K-Means and PCA modules use a shared dataset: **SPG (Sales Promoter) retail outlet data** for Indonesian FMCG. The dataset contains 500 outlets in Denpasar/Bali with features like monthly sales, SKU count, visit frequency, out-of-stock rate, and average basket size.
+[K-Means](01_kmeans/) and [PCA](04_pca/) modules use a shared dataset: **SPG (Sales Promoter) retail outlet data** for Indonesian FMCG. The dataset contains 500 outlets in Denpasar/Bali with features like monthly sales, SKU count, visit frequency, out-of-stock rate, and average basket size.
 
 **Story:** A supervisor wants to segment outlets to optimize SPG visit planning. K-Means identifies natural segments, PCA visualizes them in 2D.
-
-If a link is not yet available, the content is under development.

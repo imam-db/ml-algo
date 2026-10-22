@@ -334,7 +334,7 @@ def quick_model_comparison(X, y, problem_type='classification'):
 
 - **[Scikit-Learn Quick Reference](../02_python_sklearn/sklearn_quick_reference.md)** - Implementation syntax
 - **[Classification Metrics](../04_model_evaluation/classification_metrics.md)** - How to evaluate results
-- **[Hyperparameter Tuning](../07_troubleshooting/hyperparameter_tuning.md)** - Optimize your chosen algorithm
+- **Hyperparameter Tuning** (`07_troubleshooting/hyperparameter_tuning.md`, planned) - Optimize your chosen algorithm
 - **[Data Preprocessing](../05_data_preprocessing/preprocessing_pipeline.md)** - Prepare data for algorithms
 
 ---
@@ -358,4 +358,4 @@ def quick_model_comparison(X, y, problem_type='classification'):
 
 ---
 
-**🏠 [Back to Cheat Sheets](../README.md)** | **🎮 [Try Interactive Tools](../../06_playground/)** | **📚 [Algorithm Details](../../02_algorithm_explanations/)**
+**🏠 [Back to Cheat Sheets](../README.md)** | **🎮 [Try Interactive Tools](../../06_playground/)** | **📚 Algorithm Details** (`02_algorithm_explanations/`, planned)

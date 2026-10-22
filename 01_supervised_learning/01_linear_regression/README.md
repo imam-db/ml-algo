@@ -195,16 +195,16 @@ uv run python implementation.py --compare-methods
 ### After Linear Regression, explore:
 
 1. **[Logistic Regression](../02_logistic_regression/)** - Classification extension
-2. **[Polynomial Features](../../06_utils/)** - Non-linear relationships  
+2. **Polynomial Features** (`06_utils/`, planned) - Non-linear relationships  
 3. **[Model Evaluation](../../04_advanced_topics/03_model_evaluation/)** - Advanced metrics
-4. **[Regularization](../05_svm/)** - Ridge/Lasso regression
+4. **[Regularization](../10_svm/)** - Ridge/Lasso regression
 
 ### Related Algorithms
 
 | Algorithm | Similarity | When to Use |
 |-----------|------------|-------------|
 | [**Logistic Regression**](../02_logistic_regression/) | Same math, different output | Classification problems |
-| [**SVM Regression**](../05_svm/) | Linear boundary | Robust to outliers |
+| [**SVM Regression**](../10_svm/) | Linear boundary | Robust to outliers |
 | [**Neural Networks**](../08_neural_networks/) | Extension | Complex non-linear patterns |
 | [**Random Forest**](../04_random_forest/) | Ensemble approach | Feature importance |
 

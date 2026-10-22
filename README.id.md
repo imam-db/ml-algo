@@ -33,7 +33,7 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - 🔬 [ALGORITHM_COMPARISON.md](./ALGORITHM_COMPARISON.md) - Panduan memilih algoritma
 - 🎯 [PROGRESS_TRACKER.md](./PROGRESS_TRACKER.md) - Kemajuan belajar dan pencapaian
 - 📁 [Struktur Proyek](#-struktur-repositori) - Susunan folder secara rinci
-- 🚀 [Mulai Cepat](#-mulai-cepat) - Siap jalan dalam 3 langkah
+- 🚀 [Mulai Cepat](#-mulai-cepat) - Siap jalan dalam 4 langkah
 
 ## 📋 Struktur Repositori
 
@@ -190,9 +190,10 @@ Setiap algoritma memiliki struktur folder yang sama:
 | Kategori | Sudah Ada | Direncanakan | Kemajuan |
 |----------|-----------|--------------|----------|
 | Supervised Learning | 9 | 0 | 🟢 100% |
-| Unsupervised Learning | 4 | 2 | 🟢 67% |
+| Unsupervised Learning | 6 | 0 | 🟢 100% |
 | Reinforcement Learning | 2 | 1 | 🟢 67% |
 | Topik Lanjutan | 4 | 2 | 🟢 67% |
+| **Total** | **21** | **3** | **🟢 88%** |
 
 ## 🧪 Pengujian
 
@@ -209,7 +210,7 @@ uv run pytest tests/test_reinforcement_learning.py -v
 uv run pytest --cov
 ```
 
-**Cakupan Pengujian:** 200+ pengujian, semuanya lulus ✅
+**Cakupan Pengujian:** 270+ pengujian, semuanya lulus ✅
 
 ## 🤝 Kontribusi
 
