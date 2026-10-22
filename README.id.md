@@ -65,6 +65,7 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - **🚧 02_deep_learning** - Deep Learning (planned)
 - **[03_model_evaluation](./04_advanced_topics/03_model_evaluation/)** - Model Evaluation (Metrics & Cross-Validation) ✅
 - **[04_xgboost](./04_advanced_topics/04_xgboost/)** - XGBoost (eXtreme Gradient Boosting) ✅
+- **[06_time_series_forecasting](./04_advanced_topics/06_time_series_forecasting/)** - Time Series Forecasting (Classical Models, Lag Features & Backtesting) ✅
 
 ### 5. **Datasets** ([`05_datasets/`](./05_datasets/))
 Datasets used for learning
