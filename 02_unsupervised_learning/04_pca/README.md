@@ -299,32 +299,32 @@ clf.fit(X_train_pca, y_train)
 
 ## Ringkasan (ID)
 
-**Principal Component Analysis (PCA)** adalah teknik unsupervised learning untuk reduksi dimensi. PCA mentransformasi data ke sistem koordinat baru di mana sumbu (principal components) diurutkan berdasarkan variance yang dijelaskan.
+**Principal Component Analysis (PCA)** is teknik unsupervised learning for reduksi dimensi. PCA transforms data to coordinate system baru where sumbu (principal components) sorted based on variance that explained.
 
-**Cara Kerja:**
+**How it Works:**
 1. Center data (kurangi mean)
 2. Hitung SVD: X_centered = U × Σ × V^T
-3. Principal components = baris dari V^T
+3. Principal components = baris from V^T
 4. Explained variance = σ²/(n-1)
 
 **Transformasi:**
 - **Transform:** X_transformed = X_centered × components^T (reduksi dimensi)
 - **Inverse Transform:** X_reconstructed = X_transformed × components + mean
 
-**Explained Variance Ratio:** Persentase informasi yang dipertahankan oleh setiap component. Contoh: [0.45, 0.25, 0.15, 0.10, 0.05] berarti PC1 menjelaskan 45% variance, PC1+PC2 menjelaskan 70%.
+**Explained Variance Ratio:** Persentase informasi that retained by each component. Contoh: [0.45, 0.25, 0.15, 0.10, 0.05] berarti PC1 menjelaskan 45% variance, PC1+PC2 menjelaskan 70%.
 
 **Penting:** 
-- SELALU lakukan feature scaling sebelum PCA!
-- Sign ambiguity: components bisa bernilai positif atau negatif (keduanya valid)
-- Gunakan cumulative variance ≥ 90-95% untuk memilih n_components
+- ALWAYS do feature scaling before PCA!
+- Sign ambiguity: components bisa bernilai positif or negatif (keduanya valid)
+- Gunakan cumulative variance ≥ 90-95% for memilih n_components
 
-**Studi Kasus:** Dataset 500 outlet retail dengan 5 fitur (sales, SKU, visit freq, OOS rate, basket). Gunakan PCA untuk:
-1. Reduksi dari 5D ke 2D untuk visualisasi
-2. Cek berapa % variance yang dipertahankan 2 PC
+**Studi Kasus:** Dataset 500 outlet retail with 5 fitur (sales, SKU, visit freq, OOS rate, basket). Gunakan PCA for:
+1. Reduce from 5D to 2D for visualization
+2. Cek berapa % variance that retained 2 PC
 3. Visualisasi hasil clustering K-Means di ruang 2D
-4. Pahami fitur mana yang berkontribusi ke setiap PC
+4. Pahami fitur mana that berkontribusi to each PC
 
-**Latihan:** Tentukan jumlah components yang cukup untuk capture 90% variance, lalu interpretasikan loading (kontribusi fitur asli) di setiap PC.
+**Exercises:** Tentukan jumlah components that cukup for capture 90% variance, lalu interpretasikan loading (kontribusi fitur asli) di each PC.
 
 ---
 

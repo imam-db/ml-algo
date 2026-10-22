@@ -13,14 +13,15 @@ from typing import Tuple, List, Dict, Optional
 import sys
 import os
 
-# Import GridWorldSPG from Q-learning module
+# Import GridWorldSPG from Q-learning module using importlib to avoid conflicts
 _current_dir = os.path.dirname(os.path.abspath(__file__))
-_qlearning_dir = os.path.join(_current_dir, '../01_q_learning')
-sys.path.insert(0, _qlearning_dir)
-try:
-    from implementation import GridWorldSPG
-finally:
-    sys.path.pop(0)
+_qlearning_impl_path = os.path.join(_current_dir, '../01_q_learning/implementation.py')
+import importlib.util
+_spec = importlib.util.spec_from_file_location("qlearning_gridworld", _qlearning_impl_path)
+_qlearning_module = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_qlearning_module)
+GridWorldSPG = _qlearning_module.GridWorldSPG
+del _spec, _qlearning_module, _qlearning_impl_path
 
 
 class SARSAAgent:

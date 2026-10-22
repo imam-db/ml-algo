@@ -1,138 +1,341 @@
 # Q-Learning
 
-**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+**🏠 [Back to Main](../../README.md)** | **📁 [Reinforcement Learning](../README.md)**
 
-## What is Q-Learning?
+## 🗺️ Quick Access
 
-Q-Learning is an **off-policy** reinforcement learning algorithm that learns optimal action-value function Q*(s,a) through interaction with environment.
+| File | Description | Run |
+|------|-----------|----------|
+| [`implementation.py`](./implementation.py) | Implementation from nol | `python3 implementation.py` |
+| [`exercise.ipynb`](./exercise.ipynb) | Interactive exercises | `jupyter lab exercise.ipynb` |
 
-### Key Concept
+## 📖 Theory and Concepts
 
-- **Off-policy**: Learns optimal policy regardless of actions actually taken
-- **Model-free**: Doesn't need environment model
-- **Value-based**: Learns values of state-action pairs
+### What is Q-Learning?
 
-### SPG Analogy
+**Q-Learning** is algoritma reinforcement learning that learns kebijakan optimal for mengambil actions in an environment with cara mencoba and learns from pengalaman. Algoritma this not memerlukan environment model (model-free) and can learns kebijakan optimal melalui eksplorasi.
 
-Imagine an SPG learning the best route to visit outlets:
-- **State**: Current location
-- **Action**: Direction to move
-- **Reward**: Points for visiting outlets, penalties for obstacles
-- **Q-value**: Expected total reward from taking action in state
+Bayangkan seorang SPG (Sales Promoter Girl) that must mengunjungi outlet-outlet di area grid for mempromosikan produk. Dia perlu learns rute terbaik for mengunjungi semua outlet sambil menghindari obstacles, with minimizing steps that taken.
 
----
+### Formulasi Matematis
 
-## Q-Learning Update Rule
-
-$$Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
-
-Where:
-- $Q(s, a)$ = value of taking action $a$ in state $s$
-- $\alpha$ = learning rate
-- $r$ = immediate reward
-- $\gamma$ = discount factor
-- $\max_{a'} Q(s', a')$ = maximum Q-value in next state (off-policy)
-
----
-
-## Algorithm
+**Fungsi Q (Q-function):** Mengestimasi nilai actions that taken at suatu state:
 
 ```
-1. Initialize Q(s,a) = 0 for all states and actions
-
-2. For each episode:
-   a. Start at initial state s
-   
-   b. Repeat until terminal state:
-      i.   Choose action a using ε-greedy policy
-      ii.  Take action a, observe reward r and next state s'
-      iii. Update: Q(s,a) ← Q(s,a) + α[r + γ·max Q(s',a') - Q(s,a)]
-      iv.  s ← s'
-   
-   c. Decay ε (reduce exploration over time)
-
-3. Return learned Q-table
+Q(s, a) = nilai that diharapkan from mengambil actions a at state s
 ```
 
----
+**Update Rule Q-Learning:**
 
-## Key Parameters
+```
+Q(s,a) ← Q(s,a) + α[r + γ·max Q(s',a') - Q(s,a)]
+                              a'
+```
 
-- **Learning rate (α)**: 0.1 - 0.3 typical
-- **Discount factor (γ)**: 0.9 - 0.99 for long-term rewards
-- **Epsilon (ε)**: Start at 1.0, decay to 0.01
-- **Epsilon decay**: 0.995 per episode typical
+Di mana:
+- `s` = state (posisi) saat this
+- `a` = action (actions) that taken
+- `s'` = state berikutnya setelah actions
+- `r` = reward that diterima
+- `α` (alpha) = learning rate (0 < α ≤ 1)
+- `γ` (gamma) = discount factor (0 ≤ γ ≤ 1)
+- `max Q(s',a')` = nilai Q maksimum for state berikutnya
 
----
+### Komponen Utama
 
-## Implementation from Scratch
+#### 1. **State (Keadaan)**
+Posisi agent dalam grid world. Dalam contoh SPG:
+- State = koordinat (baris, kolom) dalam grid
+- Total states = grid_size × grid_size
 
-See `implementation.py` for complete code:
+#### 2. **Action (Tindakan)**
+Aksi that dapat dilakukan agent:
+- 0: Naik (↑)
+- 1: Kanan (→)
+- 2: Turun (↓)
+- 3: Kiri (←)
 
+#### 3. **Reward (Hadiah)**
+Umpan balik numerik from lingkungan:
+- **+10**: Mengunjungi outlet baru
+- **+50**: Bonus mengunjungi semua outlet
+- **-10**: Menabrak obstacles
+- **-0.1**: Penalti kecil each steps (mendorong efisiensi)
+- **0**: Mengunjungi outlet that sudah dikunjungi
+
+#### 4. **Policy (Kebijakan)**
+Strategi for memilih actions:
+- **Epsilon-greedy**: Seimbangkan eksplorasi vs eksploitasi
+  - Dengan probabilitas ε: pilih actions random (eksplorasi)
+  - Dengan probabilitas (1-ε): pilih actions terbaik (eksploitasi)
+  - ε menurun seiring waktu (epsilon decay)
+
+#### 5. **Q-Table**
+Tabel that menyimpan nilai Q for each pasangan (state, action):
+- Dimensi: [n_states × n_actions]
+- Diinisialisasi with nilai 0
+- Diperbarui selama training
+
+### Algoritma Q-Learning
+
+1. **Inisialisasi:**
+   - Buat Q-table with nilai 0
+   - Set parameter (α, γ, ε)
+
+2. **Untuk each episode:**
+   - Reset lingkungan ke state awal
+   - Untuk each steps dalam episode:
+     - Pilih action menggunakan epsilon-greedy
+     - Eksekusi action, dapatkan reward and next state
+     - Update Q-value menggunakan Q-learning rule
+     - Update state
+     - Jika done, akhiri episode
+   - Kurangi epsilon (decay)
+
+3. **Evaluasi:**
+   - Gunakan kebijakan learned (ε = 0)
+   - Ukur performa
+
+### Exploration vs Exploitation
+
+**Dilema fundamental dalam RL:**
+
+- **Exploration (Eksplorasi):**
+  - Mencoba actions baru for menemukan strategi that more good
+  - Penting di awal training
+  - Dikendalikan by epsilon (ε)
+
+- **Exploitation (Eksploitasi):**
+  - Menggunakan pengetahuan that sudah dipelajari
+  - Penting saat evaluasi
+  - Memilih actions with Q-value tertinggi
+
+**Epsilon-Greedy Strategy:**
 ```python
-from implementation import GridWorldSPG, QLearningAgent
+if random() < epsilon:
+    action = random_action()  # Eksplorasi
+else:
+    action = argmax(Q[state])  # Eksploitasi
+```
 
-# Create SPG grid world
-env = GridWorldSPG(grid_size=5, n_outlets=3, n_obstacles=3, seed=42)
+**Epsilon Decay:**
+- Mulai with ε = 1.0 (100% eksplorasi)
+- Turunkan bertahap: ε = ε × decay_rate
+- Minimum: ε_min = 0.01 (1% eksplorasi)
 
-# Create Q-Learning agent
-n_states = env.grid_size ** 2
-n_actions = len(env.actions)
-agent = QLearningAgent(n_states, n_actions, seed=42)
+### Hyperparameter
 
-# Train
-agent.train(env, n_episodes=1000)
+#### Learning Rate (α)
+Seberapa many Q-value baru menggantikan that lama:
+- **α = 0**: Tidak learns (Q-value not berubah)
+- **α = 1**: Hanya pakai informasi terbaru
+- **Typical: α = 0.1 - 0.3**
+- α besar: learns cepat, tapi kurang stabil
+- α kecil: learns lambat, more stabil
 
-# Evaluate
-results = agent.evaluate(env, n_episodes=100)
-print(f"Average reward: {results['mean_reward']:.2f}")
+#### Discount Factor (γ)
+Seberapa penting reward masa depan:
+- **γ = 0**: Hanya peduli reward langsung
+- **γ = 1**: Reward masa depan sama penting
+- **Typical: γ = 0.9 - 0.99**
+- γ besar: pertimbangkan long-term rewards
+- γ kecil: focuses at short-term rewards
+
+#### Epsilon (ε)
+Tingkat eksplorasi:
+- **ε = 1.0**: 100% random (full eksplorasi)
+- **ε = 0.0**: 100% greedy (full eksploitasi)
+- **Decay rate: 0.99 - 0.999**
+- **Minimum: 0.01**
+
+## 🎯 When to Use Q-Learning?
+
+### ✅ Good for:
+- **Discrete state and action spaces**
+  - Grid worlds, game sederhana
+- **Model-free learning**
+  - Tidak perlu tahu dinamika lingkungan
+- **Off-policy learning**
+  - Bisa learns from pengalaman orang lain
+- **Tabular RL problems**
+  - State space not terlalu besar
+- **Optimal control problems**
+  - Mencari kebijakan optimal
+
+### ❌ Less suitable for:
+- **Continuous state/action spaces**
+  - Gunakan Deep Q-Networks (DQN)
+- **Very large state spaces**
+  - Q-table jadi terlalu besar
+  - Gunakan function approximation
+- **Partial observability**
+  - Gunakan POMDP solvers
+- **Multi-agent scenarios**
+  - Perlu algoritma multi-agent
+- **Real-time requirements**
+  - Training bisa lama
+
+## 💡 Contoh Implementation
+
+### Grid World SPG
+
+Environment that used dalam implementasi:
+
+```
+Grid 5×5 with:
+- S: Start (posisi awal SPG)
+- O: Outlet (tujuan, reward +10)
+- X: Obstacle (obstacles, penalty -10)
+- SPG: Posisi agent saat this
+```
+
+**Contoh Grid:**
+```
+S  .  .  O  .
+.  X  .  .  .
+.  .  O  X  .
+O  .  .  .  X
+.  .  .  .  .
+```
+
+**Tujuan:** SPG must mengunjungi semua outlet (O) sambil menghindari obstacles (X) with jalur seefisien mungkin.
+
+### Hasil Training
+
+Setelah training 1000 episode:
+- **Q-table konvergen** menunjukkan actions optimal
+- **Reward meningkat** from random ke optimal
+- **Steps menurun** seiring agent learns jalur efisien
+- **Success rate tinggi** (>90%)
+
+**Learning Curve menunjukkan:**
+1. **Fase Eksplorasi** (episode 0-200):
+   - Reward volatile
+   - Epsilon tinggi
+   - Agent mencoba berbagai strategi
+
+2. **Fase Transisi** (episode 200-500):
+   - Reward mulai stabil
+   - Epsilon menurun
+   - Agent menemukan strategi that good
+
+3. **Fase Eksploitasi** (episode 500-1000):
+   - Reward stabil and tinggi
+   - Epsilon rendah
+   - Agent konsisten menggunakan strategi optimal
+
+### Perbandingan with Random Policy
+
+| Metric | Q-Learning | Random | Improvement |
+|--------|-----------|--------|-------------|
+| Mean Reward | ~35-45 | ~-50 | +170% |
+| Mean Steps | ~15-20 | ~50-100 | -70% |
+| Success Rate | 90-100% | <10% | +90 pts |
+
+## 🔬 Eksperimen and Variasi
+
+### 1. Grid Size
+- **Small (3×3)**: Belajar cepat, tapi terbatas
+- **Medium (5×5)**: Balance antara kompleksitas and speed
+- **Large (10×10)**: More challenging, training more lama
+
+### 2. Number of Outlets/Obstacles
+- More many outlet: task more sulit, reward more besar
+- More many obstacle: perlu strategi more hati-hati
+
+### 3. Reward Shaping
+Coba variasi reward:
+```python
+# Dense rewards (more many feedback)
+- Reward kecil for mendekati outlet
+- Penalty bertingkat for obstacle
+
+# Sparse rewards (more realistis)
+- Hanya reward saat mencapai goal
+- More sulit, tapi more general
+```
+
+### 4. Learning Rate Schedule
+```python
+# Constant learning rate
+alpha = 0.1
+
+# Decaying learning rate
+alpha = alpha_initial / (1 + episode * decay_rate)
+
+# Adaptive learning rate
+alpha = f(state_visit_count)
+```
+
+## 📊 Metrik Evaluasi
+
+### 1. Episode Reward
+- Total reward per episode
+- Mengukur kualitas kebijakan
+- Target: maksimalisasi reward
+
+### 2. Steps per Episode
+- Jumlah steps hingga selesai
+- Mengukur efisiensi
+- Target: minimalisasi steps
+
+### 3. Success Rate
+- Persentase episode that berhasil
+- Mengukur reliability
+- Target: mendekati 100%
+
+### 4. Convergence Speed
+- Episode hingga konvergen
+- Mengukur learning efficiency
+- More cepat = more good
+
+### 5. Q-Value Stability
+- Variance Q-values over time
+- Mengukur stabilitas learning
+- Rendah = stabil
+
+## 🔗 Hubungan with Algoritma Lain
+
+### Q-Learning vs SARSA
+- **Q-Learning**: Off-policy (learns optimal policy)
+- **SARSA**: On-policy (learns policy that used)
+- Q-Learning more agresif, SARSA more aman
+
+### Q-Learning vs Deep Q-Networks (DQN)
+- **Q-Learning**: Tabular (Q-table)
+- **DQN**: Neural network approximation
+- DQN for state space besar
+
+### Q-Learning vs Policy Gradient
+- **Q-Learning**: Value-based (learns Q-function)
+- **Policy Gradient**: Policy-based (learns policy langsung)
+- Q-Learning more sample-efficient for discrete actions
+
+## 📚 Learning Resources
+
+- [Sutton & Barto - Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html)
+- [OpenAI Spinning Up - Q-Learning](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html)
+- [UC Berkeley CS188 - Reinforcement Learning](https://inst.eecs.berkeley.edu/~cs188/)
+
+## 🎓 Exercises
+
+See [`exercise.ipynb`](./exercise.ipynb) for hands-on practice:
+1. Eksperimen with hyperparameters
+2. Modifikasi reward structure
+3. Buat environment custom
+4. Visualisasi learned policy
+5. Bandingkan with algoritma lain
+
+## 💻 Run Kode
+
+```bash
+# Run implementasi from nol
+python3 implementation.py
+
+# Buka notebook latihan
+jupyter lab exercise.ipynb
 ```
 
 ---
 
-## Advantages and Disadvantages
-
-### ✅ Advantages
-
-1. **Off-policy** - Can learn optimal policy while exploring
-2. **Simple** - Easy to understand and implement
-3. **Proven convergence** - Guaranteed to converge to optimal under conditions
-4. **No model needed** - Learns directly from experience
-
-### ❌ Disadvantages
-
-1. **Discrete only** - Requires discrete state/action spaces
-2. **Doesn't scale** - Q-table grows exponentially with states
-3. **Slow learning** - Can take many episodes to converge
-4. **No generalization** - Each state learned independently
-
----
-
-## Q-Learning vs SARSA
-
-| Aspect | Q-Learning | SARSA |
-|--------|-----------|-------|
-| **Type** | Off-policy | On-policy |
-| **Update** | Uses max Q(s',a') | Uses actual Q(s',a') |
-| **Learning** | Learns optimal policy | Learns behavior policy |
-| **Convergence** | Faster (usually) | More stable |
-| **Best for** | Safe environments | Dangerous environments |
-
----
-
-## References
-
-- **Original paper**: Watkins, C.J.C.H. (1989). "Learning from Delayed Rewards"
-- **Sutton & Barto**: "Reinforcement Learning: An Introduction" (Chapter 6.5)
-
----
-
-## Related Files
-
-- `implementation.py` - Q-Learning and grid world from scratch
-- `exercise.ipynb` - Interactive exercises
-- `../02_sarsa/` - SARSA (on-policy) for comparison
-
-**Happy Learning! 🎓**
-
-*[🇮🇩 Baca dalam Bahasa Indonesia](README.id.md)*
+**Happy Learning Q-Learning! 🎮🤖**
