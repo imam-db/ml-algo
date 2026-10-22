@@ -135,4 +135,4 @@ print(f"Average reward: {results['mean_reward']:.2f}")
 
 **Happy Learning! 🎓**
 
-*[🇮🇩 Baca dalam Bahasa Indonesia](README.id.md)*
+*[🇮🇩 Indonesian version](README.id.md)*

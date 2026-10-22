@@ -48,7 +48,7 @@ Where:
 - `ε` = error/noise
 
 ### Cost Function
-Linear regression menggunakan **Mean Squared Error (MSE)** sebagai cost function:
+Linear regression uses **Mean Squared Error (MSE)** as the cost function:
 ```
 MSE = (1/n) * Σ(yi - ŷi)²
 ```

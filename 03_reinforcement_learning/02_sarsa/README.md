@@ -247,4 +247,4 @@ plt.show()
 
 **Happy Learning! 🎓**
 
-*[🇮🇩 Baca dalam Bahasa Indonesia](README.id.md)*
+*[🇮🇩 Indonesian version](README.id.md)*

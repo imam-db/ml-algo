@@ -127,4 +127,4 @@ predictions = knn_reg.predict(X_test)
 
 **Happy Learning! 🎓**
 
-*[🇮🇩 Baca dalam Bahasa Indonesia](README.id.md)*
+*[🇮🇩 Indonesian version](README.id.md)*

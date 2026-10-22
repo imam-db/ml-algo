@@ -2,206 +2,155 @@
 
 **🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
 
-## Apa itu Hierarchical Clustering?
+## What is Hierarchical Clustering?
 
-Hierarchical clustering membangun **hirarki cluster** dalam bentuk tree (dendrogram), bukan langsung membagi data ke sejumlah cluster tetap. Ada dua pendekatan:
+Hierarchical clustering builds a **hierarchy of clusters** in tree form (dendrogram), rather than directly dividing data into a fixed number of clusters. There are two approaches:
 
-1. **Agglomerative (bottom-up)** ⬆️ - Mulai dengan setiap titik sebagai cluster, merge secara iteratif
-2. **Divisive (top-down)** ⬇️ - Mulai dengan satu cluster besar, split secara iteratif
+1. **Agglomerative (bottom-up)** ⬆️ - Start with each point as cluster, merge iteratively
+2. **Divisive (top-down)** ⬇️ - Start with one big cluster, split iteratively
 
-Implementasi ini fokus pada **agglomerative**, yang lebih umum digunakan.
+This implementation focuses on **agglomerative**, which is more commonly used.
 
-### Analogi SPG (Sales Promotion Girl/Guy)
+### SPG Analogy
 
-Bayangkan Anda mengelompokkan outlet SPG di kota dengan pendekatan hirarki:
+Imagine grouping SPG outlets in a city with a hierarchical approach:
 
-1. **Level paling bawah**: Setiap outlet adalah "cluster" sendiri
-2. **Merge bertahap**: Outlet terdekat digabung → menjadi sub-district
-3. **Merge lagi**: Sub-districts digabung → menjadi district
-4. **Hingga**: Semua outlet dalam satu kota
+1. **Lowest level**: Each outlet is its own "cluster"
+2. **Gradual merging**: Nearest outlets merged → become sub-districts
+3. **Merge again**: Sub-districts merged → become districts
+4. **Until**: All outlets in one city
 
-**Keunggulan**: Anda bisa **memotong pohon hirarki di level manapun** untuk mendapat jumlah cluster yang diinginkan (2 district? 5 sub-district? 10 zones?).
+**Advantage**: You can **cut the hierarchy tree at any level** to get desired number of clusters (2 districts? 5 sub-districts? 10 zones?).
 
 ---
 
-## Konsep Utama
+## Key Concepts
 
-### 1. Algoritma Agglomerative
+### 1. Agglomerative Algorithm
 
 ```
-1. Start: Setiap sampel = satu cluster (n clusters)
+1. Start: Each sample = one cluster (n clusters)
 
-2. Repeat until n_clusters dicapai:
-   a. Hitung jarak antara semua pasangan cluster
-   b. Merge dua cluster terdekat
+2. Repeat until n_clusters reached:
+   a. Calculate distance between all cluster pairs
+   b. Merge two closest clusters
    c. Update distance matrix
 
-3. Stop: Ketika jumlah cluster = n_clusters
+3. Stop: When number of clusters = n_clusters
 ```
 
 ### 2. Linkage Criteria
 
-**Bagaimana menghitung jarak antara dua cluster?**
+**How to calculate distance between two clusters?**
 
 #### Single Linkage (Nearest Point)
 
-$$d_{\text{single}}(C_i, C_j) = \min_{x \in C_i, y \in C_j} \text{dist}(x, y)$$
-
-- Jarak = jarak **terpendek** antara semua pasangan titik
-- **Kelebihan**: Menemukan cluster elongated/chain-like
-- **Kekurangan**: Sensitif terhadap noise (chaining effect)
-
-```
-Cluster A: ●---●
-                   ← min distance
-Cluster B:     ●---●
-```
+- Distance = **shortest** distance between all point pairs
+- **Advantage**: Finds elongated/chain-like clusters
+- **Disadvantage**: Sensitive to noise (chaining effect)
 
 #### Complete Linkage (Farthest Point)
 
-$$d_{\text{complete}}(C_i, C_j) = \max_{x \in C_i, y \in C_j} \text{dist}(x, y)$$
-
-- Jarak = jarak **terjauh** antara semua pasangan titik
-- **Kelebihan**: Menghasilkan cluster compact/spherical
-- **Kekurangan**: Sensitif terhadap outlier
-
-```
-Cluster A: ●---●
-           ↑       ↑
-           └───────┘ max distance
-Cluster B: ●---●
-```
+- Distance = **longest** distance between all point pairs
+- **Advantage**: Produces compact/spherical clusters
+- **Disadvantage**: Sensitive to outliers
 
 #### Average Linkage
 
-$$d_{\text{average}}(C_i, C_j) = \frac{1}{|C_i| \cdot |C_j|} \sum_{x \in C_i} \sum_{y \in C_j} \text{dist}(x, y)$$
-
-- Jarak = **rata-rata** semua jarak antar-titik
-- **Balanced**: Tidak terlalu sensitif terhadap noise atau outlier
-- **Umum digunakan**: Trade-off yang baik
+- Distance = **average** of all inter-point distances
+- **Balanced**: Not too sensitive to noise or outliers
+- **Commonly used**: Good trade-off
 
 ### 3. Dendrogram
 
-**Dendrogram** = visualisasi pohon hirarki.
+**Dendrogram** = visualization of hierarchy tree.
 
-```
-      ┌─────────┴────────┐
-      │                  │
-   ┌──┴──┐            ┌──┴──┐
-   │     │            │     │
- ┌─┴─┐ ┌─┴─┐        ┌─┴─┐ ┌─┴─┐
- 1   2 3   4        5   6 7   8
-```
+- **Y-axis**: Distance/dissimilarity at merge
+- **X-axis**: Individual samples
+- **Horizontal cut**: Determines number of clusters
 
-- **Sumbu Y**: Jarak/dissimilarity saat merge
-- **Sumbu X**: Sampel individual
-- **Memotong horizontal**: Tentukan jumlah cluster
-
-**Cara membaca**:
-- Dua branch yang merge rendah = mirip
-- Merge tinggi = berbeda
-- Cut dendrogram di ketinggian tertentu = tentukan n_clusters
+**How to read**:
+- Two branches merge low = similar
+- Merge high = different
+- Cut dendrogram at certain height = determine n_clusters
 
 ---
 
-## Kelebihan dan Kekurangan
+## Advantages and Disadvantages
 
-### ✅ Kelebihan
+### ✅ Advantages
 
-1. **Tidak perlu tentukan k di awal** - Dendrogram menunjukkan struktur hirarki lengkap
-2. **Interpretable** - Visualisasi hirarki membantu pemahaman struktur data
-3. **Fleksibel** - Bisa cut di level manapun untuk mendapat jumlah cluster berbeda
-4. **Deterministic** - Tidak ada randomness, hasil selalu sama
+1. **No need to specify k upfront** - Dendrogram shows complete hierarchical structure
+2. **Interpretable** - Hierarchy visualization aids understanding
+3. **Flexible** - Can cut at any level for different cluster counts
+4. **Deterministic** - No randomness, consistent results
 
-### ❌ Kekurangan
+### ❌ Disadvantages
 
-1. **Kompleksitas tinggi** - O(n³) untuk naive implementation, O(n² log n) untuk optimized
-2. **Tidak scalable** - Lambat untuk dataset besar (> 10,000 sampel)
-3. **Sensitif terhadap noise** (terutama single linkage)
-4. **Tidak bisa undo merge** - Sekali merge, tidak bisa dipisah lagi (greedy)
+1. **High complexity** - O(n³) for naive implementation, O(n² log n) for optimized
+2. **Not scalable** - Slow for large datasets (> 10,000 samples)
+3. **Sensitive to noise** (especially single linkage)
+4. **Cannot undo merges** - Once merged, cannot separate (greedy)
 
 ---
 
 ## Linkage Method Comparison
 
-| Linkage | Jarak Cluster | Bentuk Cluster | Sensitif Noise | Sensitif Outlier |
-|---------|---------------|----------------|----------------|------------------|
-| **Single** | MIN pasangan | Elongated/chain | ⚠️ Tinggi | ✅ Rendah |
-| **Complete** | MAX pasangan | Compact/spherical | ✅ Rendah | ⚠️ Tinggi |
-| **Average** | MEAN pasangan | Balanced | ✅ Medium | ✅ Medium |
+| Linkage | Cluster Distance | Cluster Shape | Noise Sensitive | Outlier Sensitive |
+|---------|-----------------|---------------|-----------------|-------------------|
+| **Single** | MIN of pairs | Elongated/chain | ⚠️ High | ✅ Low |
+| **Complete** | MAX of pairs | Compact/spherical | ✅ Low | ⚠️ High |
+| **Average** | MEAN of pairs | Balanced | ✅ Medium | ✅ Medium |
 
-**Rekomendasi**:
-- **Single**: Data dengan cluster bentuk arbitrary/elongated
-- **Complete**: Data dengan cluster compact, hindari chaining
+**Recommendation**:
+- **Single**: Data with arbitrary/elongated cluster shapes
+- **Complete**: Data with compact clusters, avoid chaining
 - **Average**: Default choice, balanced trade-off
 
 ---
 
 ## Hierarchical vs K-Means
 
-| Aspek | Hierarchical | K-Means |
-|-------|--------------|---------|
-| **K di awal?** | Tidak perlu (bisa cut later) | Harus tentukan |
-| **Dendrogram** | Ya, visualisasi hirarki | Tidak |
-| **Kompleksitas** | O(n² log n) - O(n³) | O(nkdi) |
-| **Scalability** | Buruk (< 10k samples) | Baik (millions) |
-| **Deterministic** | Ya | Tidak (random init) |
-| **Bentuk cluster** | Tergantung linkage | Spherical |
-| **Cocok untuk** | Analisis eksploratori, dataset kecil | Produksi, dataset besar |
+| Aspect | Hierarchical | K-Means |
+|--------|--------------|---------|
+| **K upfront?** | Not needed (cut later) | Must specify |
+| **Dendrogram** | Yes, hierarchy viz | No |
+| **Complexity** | O(n² log n) - O(n³) | O(nkdi) |
+| **Scalability** | Poor (< 10k samples) | Good (millions) |
+| **Deterministic** | Yes | No (random init) |
+| **Cluster shape** | Depends on linkage | Spherical |
+| **Best for** | Exploratory analysis, small datasets | Production, large datasets |
 
 ---
 
-## Cara Memilih Jumlah Cluster
+## Choosing Number of Clusters
 
-### 1. Visual Inspection dari Dendrogram
+### 1. Visual Inspection from Dendrogram
 
-Cari **gap terbesar** pada sumbu Y (tinggi merge).
+Find **largest gap** on Y-axis (merge height).
 
-```python
-# Plot dendrogram
-from scipy.cluster.hierarchy import dendrogram, linkage
-
-Z = linkage(X, method='average')
-plt.figure(figsize=(12, 6))
-dendrogram(Z)
-plt.axhline(y=threshold, color='r', linestyle='--')
-plt.show()
-```
-
-Cut di threshold yang memaksimalkan gap → jumlah cluster optimal.
+Cut at threshold that maximizes gap → optimal cluster count.
 
 ### 2. Silhouette Score
 
-Coba berbagai n_clusters, pilih yang maksimalkan silhouette score.
-
-```python
-from sklearn.metrics import silhouette_score
-
-scores = []
-for n in range(2, 11):
-    hc = AgglomerativeClustering(n_clusters=n)
-    labels = hc.fit_predict(X)
-    scores.append(silhouette_score(X, labels))
-
-best_n = np.argmax(scores) + 2
-```
+Try various n_clusters, choose one that maximizes silhouette score.
 
 ### 3. Domain Knowledge
 
-Gunakan pengetahuan bisnis:
-- Untuk SPG: Berapa banyak tim/zona yang bisa Anda manage?
-- Untuk segmentasi pelanggan: Berapa kategori yang masuk akal?
+Use business knowledge:
+- For SPG: How many teams/zones can you manage?
+- For customer segmentation: How many categories make sense?
 
 ---
 
-## Implementasi dari Nol
+## Implementation from Scratch
 
-Lihat `implementation.py` untuk kode lengkap. Fungsi utama:
+See `implementation.py` for complete code. Main functions:
 
 ```python
 from implementation import AgglomerativeClustering, generate_hierarchical_data
 
-# Generate data outlet SPG
+# Generate SPG outlet data
 X = generate_hierarchical_data(n_samples=150, random_state=42)
 
 # Fit hierarchical clustering
@@ -215,115 +164,66 @@ for i in range(hc.n_clusters_):
 
 ---
 
-## Contoh Kasus: Segmentasi Outlet SPG
+## Example: SPG Outlet Segmentation
 
 ```python
-# Data: koordinat 150 outlet
+# Data: coordinates of 150 outlets
 X = generate_hierarchical_data(n_samples=150, random_state=42)
 
-# Hierarchical clustering dengan 4 zona
+# Hierarchical clustering with 4 zones
 hc = AgglomerativeClustering(n_clusters=4, linkage='average')
 hc.fit(X)
 
-# Visualisasi
+# Visualize
 from implementation import plot_clustering_results, plot_dendrogram
 
 # Clustering result
 fig = plot_clustering_results(X, hc.labels_, "SPG Outlet Zones")
 plt.show()
 
-# Dendrogram (hirarki merge)
+# Dendrogram (hierarchy of merges)
 fig = plot_dendrogram(hc, "Outlet Hierarchy")
 plt.show()
 ```
 
-**Interpretasi**:
-- Dendrogram menunjukkan bagaimana outlet dikelompokkan secara bertahap
-- Setiap cluster = zona kerja SPG
-- Anda bisa cut di level berbeda untuk jumlah zona berbeda (2, 3, 4, ...)
+**Interpretation**:
+- Dendrogram shows how outlets grouped gradually
+- Each cluster = SPG work zone
+- You can cut at different levels for different zone counts (2, 3, 4, ...)
 
 ---
 
-## Perbandingan Linkage Methods
+## When to Use Hierarchical Clustering?
 
-```python
-import matplotlib.pyplot as plt
-from implementation import AgglomerativeClustering
+### ✅ Use when:
 
-linkages = ['single', 'complete', 'average']
-fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+- Small to medium dataset (< 10,000 samples)
+- Need to **explore hierarchical structure** of data
+- Uncertain about optimal cluster count
+- Interpretability important (dendrogram helps communication)
+- Data has **natural hierarchical structure** (e.g., products → categories → sub-categories)
 
-for ax, linkage in zip(axes, linkages):
-    hc = AgglomerativeClustering(n_clusters=4, linkage=linkage)
-    labels = hc.fit_predict(X)
-    
-    for i in range(4):
-        mask = labels == i
-        ax.scatter(X[mask, 0], X[mask, 1], s=50, alpha=0.7)
-    
-    ax.set_title(f'{linkage.capitalize()} Linkage', fontweight='bold')
-    ax.grid(True, alpha=0.3)
+### ❌ Avoid when:
 
-plt.tight_layout()
-plt.show()
-```
-
-**Observasi**:
-- **Single**: Cluster bisa elongated/chain
-- **Complete**: Cluster lebih compact
-- **Average**: Balanced
+- Very large dataset (> 100,000 samples) - use K-Means or Mini-Batch K-Means
+- Need fast predictions in production - hierarchical clustering inefficient for inference
+- Clusters need online/incremental updates
 
 ---
 
-## Advanced: Cutting Dendrogram di Berbagai Level
-
-```python
-from scipy.cluster.hierarchy import fcluster, linkage
-
-# Buat linkage matrix
-Z = linkage(X, method='average')
-
-# Cut di berbagai threshold
-for threshold in [2.0, 3.0, 4.0]:
-    labels = fcluster(Z, threshold, criterion='distance')
-    n_clusters = len(np.unique(labels))
-    print(f"Threshold {threshold}: {n_clusters} clusters")
-```
-
-Ini memberi fleksibilitas: **satu model, banyak pilihan jumlah cluster**.
-
----
-
-## Kapan Gunakan Hierarchical Clustering?
-
-### ✅ Gunakan ketika:
-
-- Dataset kecil hingga medium (< 10,000 sampel)
-- Perlu **eksplorasi struktur hirarki** data
-- Tidak yakin berapa jumlah cluster optimal
-- Interpretability penting (dendrogram membantu komunikasi)
-- Data memiliki **struktur hirarki natural** (misalnya: produk → kategori → sub-kategori)
-
-### ❌ Hindari ketika:
-
-- Dataset sangat besar (> 100,000 sampel) - gunakan K-Means atau Mini-Batch K-Means
-- Butuh prediksi cepat di production - hierarchical clustering tidak efisien untuk inference
-- Cluster harus diupdate secara online/incremental
-
----
-
-## Referensi
+## References
 
 - **Sklearn**: [`sklearn.cluster.AgglomerativeClustering`](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
 - **Scipy**: [`scipy.cluster.hierarchy`](https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html)
 
 ---
 
-## File Terkait
+## Related Files
 
-- `implementation.py` - Implementasi hierarchical clustering dari nol
-- `sklearn_example.py` - Perbandingan dengan sklearn
-- `exercise.ipynb` - Latihan interaktif dengan dendrogram
-- `test_hierarchical.py` - Unit tests
+- `implementation.py` - Hierarchical clustering implementation from scratch
+- `sklearn_example.py` - Comparison with sklearn
+- `exercise.ipynb` - Interactive exercises with dendrograms
 
-**Selamat belajar! 🎓**
+**Happy Learning! 🎓**
+
+*[🇮🇩 Indonesian version](README.id.md)*
