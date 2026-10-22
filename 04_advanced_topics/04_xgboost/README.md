@@ -1,5 +1,7 @@
 # XGBoost (eXtreme Gradient Boosting)
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../../README.md)** | **📁 [Advanced Topics](../README.md)** | **⬅️ [Previous: Model Evaluation](../03_model_evaluation/README.md)**
 
 ## 🔑 Key Terms

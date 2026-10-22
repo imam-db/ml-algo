@@ -1,5 +1,7 @@
 # Reinforcement Learning
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 🏠 Back to Main: `../README.md`
 
 Learning by interaction between an agent and environment. Folder pattern:

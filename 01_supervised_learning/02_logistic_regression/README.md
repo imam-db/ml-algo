@@ -1,5 +1,7 @@
 # Logistic Regression
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 🏠 Back to Supervised Index: `../README.md`
 
 Logistic Regression is a fundamental classification algorithm that uses the logistic function to model the probability of class membership. Despite its name, it's used for classification, not regression.

@@ -1,5 +1,7 @@
 # DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 ## Apa itu DBSCAN?
 
 DBSCAN adalah algoritma clustering yang berbeda dari K-Means. Alih-alih membentuk cluster bulat dengan ukuran seragam, **DBSCAN menemukan cluster berdasarkan kepadatan (density)** dan dapat:

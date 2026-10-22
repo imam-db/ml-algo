@@ -1,5 +1,7 @@
 # Linear Regression
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)** | **➡️ [Next: Logistic Regression](../02_logistic_regression/README.md)**
 
 ## 🔑 Key Terms

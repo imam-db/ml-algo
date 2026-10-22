@@ -1,5 +1,7 @@
 # Hierarchical Clustering (Agglomerative)
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 ## Apa itu Hierarchical Clustering?
 
 Hierarchical clustering membangun **hirarki cluster** dalam bentuk tree (dendrogram), bukan langsung membagi data ke sejumlah cluster tetap. Ada dua pendekatan:

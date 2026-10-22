@@ -1,5 +1,7 @@
 # Unsupervised Learning
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 🏠 Back to Main: `../README.md`
 
 Unsupervised algorithms for discovering patterns without labels. Folder pattern:

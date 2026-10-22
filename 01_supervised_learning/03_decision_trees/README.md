@@ -1,5 +1,7 @@
 # Decision Trees
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 🏠 Back to Supervised Index: `../README.md`
 
 Decision Trees are one of the most intuitive and interpretable machine learning algorithms. They create a model that predicts target values by learning simple decision rules inferred from data features.

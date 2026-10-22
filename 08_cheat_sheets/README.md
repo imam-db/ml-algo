@@ -1,5 +1,7 @@
 # 📋 Machine Learning Cheat Sheets Collection
 
+**🇬🇧 English | [🇮🇩 Bahasa Indonesia](README.id.md)**
+
 **🏠 [Back to Main](../README.md)** | **🎯 [Progress Tracker](../PROGRESS_TRACKER.md)** | **🎮 [Algorithm Playground](../06_playground/)**
 
 Quick reference guides and cheat sheets for machine learning algorithms, Python libraries, and essential concepts.
