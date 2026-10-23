@@ -120,7 +120,7 @@ Master machine learning step by step with personalized progress tracking and gam
 
 #### **Deep Dive Track**
 1. **Mathematical Foundations** → Implement algorithms from scratch
-2. **Optimization Theory** → Understand gradient descent variants
+2. **Optimization Theory** → Understand gradient descent variants ([Optimizers module](./04_advanced_topics/08_optimizers/))
 3. **Statistical Learning** → Model selection and validation
 4. **Advanced Ensembles** → Stacking, blending, meta-learning
 

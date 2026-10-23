@@ -140,6 +140,7 @@ nav:
       - CNN & Computer Vision: 04_advanced_topics/05_cnn_computer_vision/index.md
       - Time Series Forecasting: 04_advanced_topics/06_time_series_forecasting/index.md
       - Object Detection: 04_advanced_topics/07_object_detection/index.md
+      - Optimizers: 04_advanced_topics/08_optimizers/index.md
   - Playground: 06_playground/index.md
   - Cheat Sheets:
       - 08_cheat_sheets/index.md
