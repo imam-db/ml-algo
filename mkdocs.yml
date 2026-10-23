@@ -1,0 +1,160 @@
+# Documentation site: https://imam-db.github.io/ml-algo/
+# Build locally:
+#   pip install -r requirements-docs.txt
+#   python scripts/build_docs.py && mkdocs serve
+site_name: ML Algorithms Learning
+site_description: Machine learning algorithms from scratch, with theory, exercises, and notebooks (English & Bahasa Indonesia).
+site_url: https://imam-db.github.io/ml-algo/
+repo_url: https://github.com/imam-db/ml-algo
+repo_name: imam-db/ml-algo
+edit_uri: ""
+docs_dir: docs_src
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: id
+          name: Bahasa Indonesia
+          build: true
+          site_name: Belajar Algoritma ML
+          nav_translations:
+            Home: Beranda
+            Supervised Learning: Supervised Learning
+            Unsupervised Learning: Unsupervised Learning
+            Reinforcement Learning: Reinforcement Learning
+            Advanced Topics: Topik Lanjutan
+            Playground: Playground
+            Cheat Sheets: Cheat Sheet
+            Guides: Panduan
+            Community: Komunitas
+            Overview: Ringkasan
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+validation:
+  omitted_files: warn
+  absolute_links: info
+  unrecognized_links: info
+  anchors: info
+
+nav:
+  - Home: index.md
+  - Supervised Learning:
+      - 01_supervised_learning/index.md
+      - Linear Regression: 01_supervised_learning/01_linear_regression/index.md
+      - Linear Regression Exercise: 01_supervised_learning/01_linear_regression/exercise_EN.md
+      - Logistic Regression: 01_supervised_learning/02_logistic_regression/index.md
+      - Decision Trees: 01_supervised_learning/03_decision_trees/index.md
+      - Random Forest: 01_supervised_learning/04_random_forest/index.md
+      - Naive Bayes: 01_supervised_learning/06_naive_bayes/index.md
+      - K-Nearest Neighbors: 01_supervised_learning/07_knn/index.md
+      - Neural Networks: 01_supervised_learning/08_neural_networks/index.md
+      - Gradient Boosting: 01_supervised_learning/09_gradient_boosting/index.md
+      - Support Vector Machines: 01_supervised_learning/10_svm/index.md
+  - Unsupervised Learning:
+      - 02_unsupervised_learning/index.md
+      - K-Means: 02_unsupervised_learning/01_kmeans/index.md
+      - DBSCAN: 02_unsupervised_learning/02_dbscan/index.md
+      - Hierarchical Clustering: 02_unsupervised_learning/03_hierarchical/index.md
+      - PCA: 02_unsupervised_learning/04_pca/index.md
+      - t-SNE: 02_unsupervised_learning/05_tsne/index.md
+      - Association Rules: 02_unsupervised_learning/06_association_rules/index.md
+  - Reinforcement Learning:
+      - 03_reinforcement_learning/index.md
+      - Q-Learning: 03_reinforcement_learning/01_q_learning/index.md
+      - SARSA: 03_reinforcement_learning/02_sarsa/index.md
+  - Advanced Topics:
+      - 04_advanced_topics/index.md
+      - Model Evaluation: 04_advanced_topics/03_model_evaluation/index.md
+      - XGBoost: 04_advanced_topics/04_xgboost/index.md
+      - CNN & Computer Vision: 04_advanced_topics/05_cnn_computer_vision/index.md
+      - Time Series Forecasting: 04_advanced_topics/06_time_series_forecasting/index.md
+      - Object Detection: 04_advanced_topics/07_object_detection/index.md
+  - Playground: 06_playground/index.md
+  - Cheat Sheets:
+      - 08_cheat_sheets/index.md
+      - Algorithm Selection Flowchart: 08_cheat_sheets/01_algorithms/algorithm_selection_flowchart.md
+      - Algorithms Quick Reference: 08_cheat_sheets/01_algorithms/algorithms_quick_reference.md
+      - Pandas & NumPy Essentials: 08_cheat_sheets/02_python_sklearn/pandas_numpy_essentials.md
+      - Scikit-learn Quick Reference: 08_cheat_sheets/02_python_sklearn/sklearn_quick_reference.md
+      - Essential Formulas: 08_cheat_sheets/03_math_statistics/essential_formulas.md
+      - Classification Metrics: 08_cheat_sheets/04_model_evaluation/classification_metrics.md
+      - Preprocessing Pipeline: 08_cheat_sheets/05_data_preprocessing/preprocessing_pipeline.md
+      - Common Errors & Solutions: 08_cheat_sheets/07_troubleshooting/common_errors_solutions.md
+  - Guides:
+      - Algorithm Comparison: ALGORITHM_COMPARISON.md
+      - Glossary: GLOSSARY.md
+      - Progress Tracker: PROGRESS_TRACKER.md
+  - Community:
+      - Contributing: CONTRIBUTING.md
+      - Code of Conduct: CODE_OF_CONDUCT.md

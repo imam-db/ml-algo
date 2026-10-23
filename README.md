@@ -35,6 +35,19 @@ Welcome to the machine learning algorithms learning repository! 🤖📚
 - 📁 [Project Structure](#-repository-structure) - Detailed folder organization
 - 🚀 [Quick Start](#-quick-start) - Get running in 4 steps
 
+## 🌐 Documentation Site
+
+Prefer reading in the browser? All modules are published as a searchable website with math rendering, dark mode, and an English/Indonesian language toggle:
+
+**➡️ https://imam-db.github.io/ml-algo/**
+
+To preview it locally:
+
+```bash
+pip install -r requirements-docs.txt
+python scripts/build_docs.py && mkdocs serve
+```
+
 ## 📋 Repository Structure
 
 ### 1. **Supervised Learning** ([`01_supervised_learning/`](./01_supervised_learning/))
