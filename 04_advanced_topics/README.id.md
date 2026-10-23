@@ -14,5 +14,6 @@ Submodul:
 - **[`05_cnn_computer_vision/`](05_cnn_computer_vision/)** — CNN & Computer Vision (tersedia)
 - **[`06_time_series_forecasting/`](06_time_series_forecasting/)** — Time Series Forecasting (tersedia)
 - **[`07_object_detection/`](07_object_detection/)** — Deteksi Objek (tersedia)
+- **[`08_optimizers/`](08_optimizers/)** — Optimizer (tersedia)
 
 Mulai dengan [XGBoost](04_xgboost/) untuk materi dan demo lengkap.
