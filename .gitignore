@@ -236,3 +236,6 @@ uv.lock
 temp/
 tmp/
 *.temp
+# Documentation site build output
+docs_src/
+site/

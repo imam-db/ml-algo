@@ -35,6 +35,19 @@ Selamat datang di repositori pembelajaran algoritma machine learning! 🤖📚
 - 📁 [Struktur Proyek](#-struktur-repositori) - Susunan folder secara rinci
 - 🚀 [Mulai Cepat](#-mulai-cepat) - Siap jalan dalam 4 langkah
 
+## 🌐 Situs Dokumentasi
+
+Lebih suka membaca di browser? Semua modul tersedia sebagai situs web dengan pencarian, rumus matematika, mode gelap, dan tombol ganti bahasa Inggris/Indonesia:
+
+**➡️ https://imam-db.github.io/ml-algo/id/**
+
+Untuk melihatnya secara lokal:
+
+```bash
+pip install -r requirements-docs.txt
+python scripts/build_docs.py && mkdocs serve
+```
+
 ## 📋 Struktur Repositori
 
 ### 1. **Supervised Learning** ([`01_supervised_learning/`](./01_supervised_learning/))
