@@ -581,6 +581,7 @@ class TestMeanAveragePrecision:
 
 
 class TestTraining:
+    @pytest.mark.slow
     def test_loss_decreases_and_map_beats_trivial(self):
         images, annotations = generate_shelf_dataset(n_samples=48, seed=11)
         train_images, train_annotations = images[:36], annotations[:36]

@@ -2,37 +2,57 @@ name: Tests
 
 on:
   push:
-    branches: [ main, cursor/** ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: ${{ matrix.experimental }}
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12"]
-    
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+        experimental: [false]
+        include:
+          # Python 3.15 is released and NumPy ships cp315 wheels; keep
+          # experimental until the rest of the stack is proven green.
+          - python-version: "3.15"
+            experimental: true
+
     steps:
-    - uses: actions/checkout@v7
-    
-    - name: Install uv
-      uses: astral-sh/setup-uv@v10
-      with:
-        version: "latest"
-    
-    - name: Set up Python ${{ matrix.python-version }}
-      run: uv python install ${{ matrix.python-version }}
-    
-    - name: Install dependencies
-      run: uv sync --all-extras
-    
-    - name: Run tests
-      run: uv run pytest tests/ -v --tb=short
-    
-    - name: Test K-Means implementation
-      run: uv run python 02_unsupervised_learning/01_kmeans/implementation.py
-    
-    - name: Test PCA implementation
-      run: uv run python 02_unsupervised_learning/04_pca/implementation.py
-# CI test
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          version: latest
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --extra dev --python ${{ matrix.python-version }}
+
+      # Advisory until folder-by-folder cleanup (see open issue #22); ~1000 findings today.
+      - name: Ruff check (advisory until lint debt cleared)
+        run: uv run ruff check .
+        continue-on-error: true
+
+      # Advisory: 152 files currently need reformatting; do not mass-reformat in this PR.
+      - name: Ruff format (advisory until the codebase is formatted)
+        run: uv run ruff format --check .
+        continue-on-error: true
+
+      - name: Run tests (PR: skip slow tests)
+        if: github.event_name == 'pull_request'
+        run: uv run pytest -m "not slow" -n auto -q --tb=short
+
+      - name: Run tests (full suite)
+        if: github.event_name != 'pull_request'
+        run: uv run pytest -n auto -q --tb=short

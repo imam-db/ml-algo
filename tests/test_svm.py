@@ -131,6 +131,7 @@ def test_linear_svm_rejects_non_binary_labels():
         model.fit(X, y)
 
 
+@pytest.mark.slow
 def test_kernel_svm_supported_kernels():
     """Test that all three kernels fit and predict reasonably"""
     X_train, X_test, y_train, y_test = _outlet_split()
@@ -221,6 +222,7 @@ def test_kernel_svm_rejects_invalid_kernel():
         KernelSVM(kernel="sigmoid")
 
 
+@pytest.mark.slow
 def test_kernel_svm_matches_sklearn_accuracy():
     """Test that our SMO solver is close to sklearn's SVC on outlet data"""
     X_train, X_test, y_train, y_test = _outlet_split(n_samples=400)
