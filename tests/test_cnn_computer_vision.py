@@ -437,6 +437,7 @@ class TestDataGeneration:
 # End-to-end training
 # ---------------------------------------------------------------------------
 class TestTraining:
+    @pytest.mark.slow
     def test_training_reduces_loss_and_beats_chance(self):
         X_train, X_test, y_train, y_test = _small_dataset(240, 80, random_state=0)
 
