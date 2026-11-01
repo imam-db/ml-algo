@@ -15,21 +15,35 @@ Author: ML Learning Project
 Date: 2024
 """
 
+import warnings
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+from sklearn.datasets import (
+    fetch_california_housing,
+    load_breast_cancer,
+    load_iris,
+    load_wine,
+    make_classification,
+)
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
-from sklearn.model_selection import (train_test_split, cross_val_score, 
-                                   GridSearchCV, RandomizedSearchCV)
-from sklearn.metrics import (classification_report, confusion_matrix, 
-                           mean_squared_error, r2_score, roc_auc_score, roc_curve)
-from sklearn.datasets import (make_classification, make_regression, 
-                            load_iris, load_wine, load_breast_cancer,
-                            fetch_california_housing)
-from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.feature_selection import SelectFromModel
-import warnings
+from sklearn.metrics import (
+    classification_report,
+    confusion_matrix,
+    mean_squared_error,
+    r2_score,
+    roc_auc_score,
+    roc_curve,
+)
+from sklearn.model_selection import (
+    GridSearchCV,
+    RandomizedSearchCV,
+    cross_val_score,
+    train_test_split,
+)
+
 warnings.filterwarnings('ignore')
 
 def basic_classification_example():
@@ -60,24 +74,24 @@ def basic_classification_example():
     
     # Make predictions
     y_pred = rf.predict(X_test)
-    y_proba = rf.predict_proba(X_test)
+    
     
     # Evaluate model
     accuracy = rf.score(X_test, y_test)
     train_accuracy = rf.score(X_train, y_train)
     
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"Training Accuracy: {train_accuracy:.4f}")
     print(f"Test Accuracy: {accuracy:.4f}")
     print(f"OOB Score: {rf.oob_score_:.4f}")
     
     # Feature importance
-    print(f"\nFeature Importance:")
+    print("\nFeature Importance:")
     for i, importance in enumerate(rf.feature_importances_):
         print(f"{iris.feature_names[i]}: {importance:.4f}")
     
     # Classification report
-    print(f"\nClassification Report:")
+    print("\nClassification Report:")
     print(classification_report(y_test, y_pred, target_names=iris.target_names))
     
     return rf, X_test, y_test, y_pred
@@ -116,14 +130,14 @@ def advanced_classification_example():
     rf.fit(X_train, y_train)
     
     # Predictions
-    y_pred = rf.predict(X_test)
+    
     y_proba = rf.predict_proba(X_test)[:, 1]  # Probability of positive class
     
     # Metrics
     accuracy = rf.score(X_test, y_test)
     auc_score = roc_auc_score(y_test, y_proba)
     
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"Test Accuracy: {accuracy:.4f}")
     print(f"OOB Score: {rf.oob_score_:.4f}")
     print(f"ROC AUC Score: {auc_score:.4f}")
@@ -134,7 +148,7 @@ def advanced_classification_example():
         'importance': rf.feature_importances_
     }).sort_values('importance', ascending=False)
     
-    print(f"\nTop 10 Most Important Features:")
+    print("\nTop 10 Most Important Features:")
     print(feature_importance.head(10))
     
     # Plot feature importance
@@ -170,7 +184,7 @@ def regression_example():
     X, y = housing.data, housing.target
     
     print(f"Dataset: {X.shape[0]} samples, {X.shape[1]} features")
-    print(f"Target: Median house value (in hundreds of thousands of dollars)")
+    print("Target: Median house value (in hundreds of thousands of dollars)")
     print(f"Features: {housing.feature_names}")
     
     # Split data
@@ -201,7 +215,7 @@ def regression_example():
     rmse = np.sqrt(mse)
     r2 = r2_score(y_test, y_pred)
     
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"Mean Squared Error: {mse:.4f}")
     print(f"Root Mean Squared Error: {rmse:.4f}")
     print(f"R² Score: {r2:.4f}")
@@ -213,7 +227,7 @@ def regression_example():
         'importance': rf_reg.feature_importances_
     }).sort_values('importance', ascending=False)
     
-    print(f"\nFeature Importance:")
+    print("\nFeature Importance:")
     print(feature_importance)
     
     # Plot predictions vs actual
@@ -304,7 +318,7 @@ def hyperparameter_tuning_example():
     grid_accuracy = np.mean(grid_pred == y_test)
     random_accuracy = np.mean(random_pred == y_test)
     
-    print(f"\nTest Set Results:")
+    print("\nTest Set Results:")
     print(f"Grid Search Accuracy: {grid_accuracy:.4f}")
     print(f"Random Search Accuracy: {random_accuracy:.4f}")
     
@@ -355,7 +369,7 @@ def feature_selection_example():
     rf_selected.fit(X_train_selected, y_train)
     selected_score = rf_selected.score(X_test_selected, y_test)
     
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"Original features accuracy: {original_score:.4f}")
     print(f"Selected features accuracy: {selected_score:.4f}")
     print(f"Feature reduction: {(1 - X_train_selected.shape[1] / X.shape[1]) * 100:.1f}%")
@@ -393,7 +407,7 @@ def cross_validation_example():
     wine = load_wine()
     X, y = wine.data, wine.target
     
-    print(f"Dataset: Wine classification")
+    print("Dataset: Wine classification")
     print(f"Samples: {X.shape[0]}, Features: {X.shape[1]}, Classes: {len(wine.target_names)}")
     
     # Different Random Forest configurations
@@ -425,7 +439,7 @@ def cross_validation_example():
     stds = [results[name]['std'] for name in names]
     
     plt.subplot(1, 2, 1)
-    bars = plt.bar(names, means, yerr=stds, capsize=5, alpha=0.7)
+    plt.bar(names, means, yerr=stds, capsize=5, alpha=0.7)
     plt.ylabel('Cross-Validation Accuracy')
     plt.title('Model Comparison - Mean CV Accuracy')
     plt.xticks(rotation=45)
