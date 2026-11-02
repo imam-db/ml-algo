@@ -23,6 +23,7 @@ RandomForestClassifier = random_forest_impl.RandomForestClassifier
 RandomForestRegressor = random_forest_impl.RandomForestRegressor
 
 
+@pytest.mark.slow
 def test_random_forest_classifier_accuracy():
     """Test RF classifier accuracy is reasonable"""
     # Generate sample data
@@ -56,6 +57,7 @@ def test_random_forest_classifier_accuracy():
     assert our_accuracy > 0.7
 
 
+@pytest.mark.slow
 def test_random_forest_oob_score():
     """Test OOB score is close to sklearn"""
     # Generate sample data
@@ -114,6 +116,7 @@ def test_random_forest_feature_importances():
     assert importance_sum == pytest.approx(1.0, abs=1e-6) or importance_sum == 0
 
 
+@pytest.mark.slow
 def test_random_forest_regressor():
     """Test RF regressor is implemented and works"""
     # Generate sample data

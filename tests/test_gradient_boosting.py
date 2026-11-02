@@ -24,6 +24,7 @@ GradientBoostingRegressor = gradient_boosting_impl.GradientBoostingRegressor
 GradientBoostingClassifier = gradient_boosting_impl.GradientBoostingClassifier
 
 
+@pytest.mark.slow
 def test_gradient_boosting_regressor_monotonic_loss():
     """Test that training loss decreases monotonically for regressor"""
     # Generate sample data
@@ -59,6 +60,7 @@ def test_gradient_boosting_regressor_monotonic_loss():
         "First training loss should be higher than final loss"
 
 
+@pytest.mark.slow
 def test_gradient_boosting_classifier_monotonic_loss():
     """Test that training loss decreases monotonically for classifier"""
     # Generate sample data
@@ -91,6 +93,7 @@ def test_gradient_boosting_classifier_monotonic_loss():
         "First training loss should be higher than final loss"
 
 
+@pytest.mark.slow
 def test_gradient_boosting_regressor_vs_sklearn():
     """Test that our regressor achieves similar performance to sklearn"""
     # Generate sample data
@@ -137,6 +140,7 @@ def test_gradient_boosting_regressor_vs_sklearn():
     assert sklearn_r2 > 0.7, f"Sklearn R² should be > 0.7, got {sklearn_r2:.3f}"
 
 
+@pytest.mark.slow
 def test_gradient_boosting_classifier_vs_sklearn():
     """Test that our classifier achieves similar performance to sklearn"""
     # Generate sample data
@@ -179,6 +183,7 @@ def test_gradient_boosting_classifier_vs_sklearn():
     assert sklearn_acc > 0.7, f"Sklearn accuracy should be > 0.7, got {sklearn_acc:.3f}"
 
 
+@pytest.mark.slow
 def test_early_stopping_regressor():
     """Test that early stopping works correctly for regressor"""
     # Generate data with more noise to trigger early stopping
@@ -209,6 +214,7 @@ def test_early_stopping_regressor():
     assert gb_early.n_estimators_ <= 100, "n_estimators_ should not exceed max"
 
 
+@pytest.mark.slow
 def test_early_stopping_classifier():
     """Test that early stopping works correctly for classifier"""
     # Generate data with more features to make early stopping more likely
@@ -240,6 +246,7 @@ def test_early_stopping_classifier():
     assert gb_early.n_estimators_ <= 100, "n_estimators_ should not exceed max"
 
 
+@pytest.mark.slow
 def test_regressor_improves_with_more_trees():
     """Test that adding more trees improves performance"""
     # Generate data
@@ -276,6 +283,7 @@ def test_regressor_improves_with_more_trees():
         f"MSE(100 trees)={mse_many:.2f}"
 
 
+@pytest.mark.slow
 def test_subsample_effect():
     """Test that subsample parameter works"""
     # Generate data
@@ -313,6 +321,7 @@ def test_classifier_binary_only():
         gb.fit(X, y)
 
 
+@pytest.mark.slow
 def test_predict_proba_sums_to_one():
     """Test that predicted probabilities sum to 1"""
     # Generate data
@@ -371,6 +380,7 @@ def test_staged_predict_regressor():
         assert pred.shape == (5,), f"Prediction shape should be (5,), got {pred.shape}"
 
 
+@pytest.mark.slow
 def test_learning_rate_effect():
     """Test that learning rate affects convergence speed"""
     # Generate data
@@ -405,6 +415,7 @@ def test_learning_rate_effect():
         f"loss_low={final_loss_low:.2f}"
 
 
+@pytest.mark.slow
 def test_max_depth_effect():
     """Test that max_depth affects model complexity"""
     # Generate data

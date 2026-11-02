@@ -33,6 +33,7 @@ dependencies = [
 dev = [
     "pytest>=7.0.0",
     "pytest-cov>=4.0.0",
+    "pytest-xdist>=3.5.0",
     "ruff>=0.6.0",
 ]
 extras = [
@@ -43,6 +44,9 @@ extras = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = [
+    "slow: long-running tests skipped on pull requests",
+]
 
 [tool.ruff]
 line-length = 100

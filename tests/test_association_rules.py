@@ -252,6 +252,7 @@ def test_apriori_respects_max_len():
     }
 
 
+@pytest.mark.slow
 def test_apriori_matches_brute_force_on_generated_data():
     transactions = ar.generate_warung_transactions(180, random_state=7)
     min_support = 0.05
