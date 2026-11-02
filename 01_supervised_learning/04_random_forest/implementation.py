@@ -13,13 +13,11 @@ Author: ML Learning Project
 Date: 2024
 """
 
-import numpy as np
-import pandas as pd
 from collections import Counter
-from math import sqrt, log2
-import matplotlib.pyplot as plt
-import seaborn as sns
-from typing import List, Tuple, Optional, Union
+from math import log2, sqrt
+
+import numpy as np
+
 
 class DecisionTreeNode:
     """Node class for decision tree used in Random Forest"""
@@ -37,12 +35,12 @@ class DecisionTreeRF:
     """Decision Tree implementation optimized for Random Forest"""
     
     def __init__(self, 
-                 max_depth: Optional[int] = None,
+                 max_depth: int | None = None,
                  min_samples_split: int = 2,
                  min_samples_leaf: int = 1,
-                 max_features: Optional[Union[int, str]] = None,
+                 max_features: int | str | None = None,
                  criterion: str = 'gini',
-                 random_state: Optional[int] = None):
+                 random_state: int | None = None):
         
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
@@ -77,7 +75,7 @@ class DecisionTreeRF:
         if len(y) == 0:
             return 0
         
-        classes, counts = np.unique(y, return_counts=True)
+        _, counts = np.unique(y, return_counts=True)
         probabilities = counts / len(y)
         gini = 1 - np.sum(probabilities ** 2)
         return gini
@@ -87,7 +85,7 @@ class DecisionTreeRF:
         if len(y) == 0:
             return 0
         
-        classes, counts = np.unique(y, return_counts=True)
+        _, counts = np.unique(y, return_counts=True)
         probabilities = counts / len(y)
         entropy = -np.sum(probabilities * np.log2(probabilities + 1e-10))
         return entropy
@@ -111,7 +109,7 @@ class DecisionTreeRF:
         # Return random subset of feature indices using instance RNG
         return self.rng.choice(n_features, size=max_features, replace=False)
     
-    def _find_best_split(self, X: np.ndarray, y: np.ndarray, feature_indices: np.ndarray) -> Tuple[int, float, float]:
+    def _find_best_split(self, X: np.ndarray, y: np.ndarray, feature_indices: np.ndarray) -> tuple[int, float, float]:
         """Find the best split among random features"""
         best_feature = None
         best_threshold = None
@@ -276,12 +274,12 @@ class DecisionTreeRegRF:
     """Decision Tree Regressor implementation optimized for Random Forest"""
     
     def __init__(self, 
-                 max_depth: Optional[int] = None,
+                 max_depth: int | None = None,
                  min_samples_split: int = 2,
                  min_samples_leaf: int = 1,
-                 max_features: Optional[Union[int, str, float]] = None,
+                 max_features: str | float | None = None,
                  criterion: str = 'mse',
-                 random_state: Optional[int] = None):
+                 random_state: int | None = None):
         
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
@@ -328,7 +326,7 @@ class DecisionTreeRegRF:
         # Return random subset of feature indices using instance RNG
         return self.rng.choice(n_features, size=max_features, replace=False)
     
-    def _find_best_split(self, X: np.ndarray, y: np.ndarray, feature_indices: np.ndarray) -> Tuple[int, float, float]:
+    def _find_best_split(self, X: np.ndarray, y: np.ndarray, feature_indices: np.ndarray) -> tuple[int, float, float]:
         """Find the best split among random features for regression"""
         best_feature = None
         best_threshold = None
@@ -494,14 +492,14 @@ class RandomForestClassifier:
     def __init__(self,
                  n_estimators: int = 100,
                  criterion: str = 'gini',
-                 max_depth: Optional[int] = None,
+                 max_depth: int | None = None,
                  min_samples_split: int = 2,
                  min_samples_leaf: int = 1,
                  max_features: str = 'sqrt',
                  bootstrap: bool = True,
                  oob_score: bool = False,
-                 n_jobs: Optional[int] = None,
-                 random_state: Optional[int] = None,
+                 n_jobs: int | None = None,
+                 random_state: int | None = None,
                  verbose: int = 0):
         
         self.n_estimators = n_estimators
@@ -536,7 +534,7 @@ class RandomForestClassifier:
         self.bootstrap_indices = []
         self.oob_indices = []
     
-    def _bootstrap_sample(self, X: np.ndarray, y: np.ndarray, sample_idx: int) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def _bootstrap_sample(self, X: np.ndarray, y: np.ndarray, sample_idx: int) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """Create bootstrap sample of the data"""
         n_samples = X.shape[0]
         
@@ -623,7 +621,7 @@ class RandomForestClassifier:
         y = np.array(y)
         
         # Store basic information
-        self.classes_, y_encoded = np.unique(y, return_inverse=True)
+        self.classes_ = np.unique(y)
         self.n_classes_ = len(self.classes_)
         self.n_features_ = X.shape[1]
         
@@ -719,13 +717,13 @@ class RandomForestRegressor:
     def __init__(self,
                  n_estimators: int = 100,
                  criterion: str = 'mse',
-                 max_depth: Optional[int] = None,
+                 max_depth: int | None = None,
                  min_samples_split: int = 2,
                  min_samples_leaf: int = 1,
-                 max_features: Union[str, float] = 1.0,  # sklearn default for regression
+                 max_features: str | float = 1.0,  # sklearn default for regression
                  bootstrap: bool = True,
                  oob_score: bool = False,
-                 random_state: Optional[int] = None,
+                 random_state: int | None = None,
                  verbose: int = 0):
         
         self.n_estimators = n_estimators
@@ -756,7 +754,7 @@ class RandomForestRegressor:
         self.bootstrap_indices = []
         self.oob_indices = []
     
-    def _bootstrap_sample(self, X: np.ndarray, y: np.ndarray, sample_idx: int) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def _bootstrap_sample(self, X: np.ndarray, y: np.ndarray, sample_idx: int) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """Create bootstrap sample of the data"""
         n_samples = X.shape[0]
         
@@ -959,7 +957,7 @@ def demonstrate_random_forest():
     accuracy = rf.score(X_test, y_test)
     train_accuracy = rf.score(X_train, y_train)
     
-    print(f"\nResults:")
+    print("\nResults:")
     print(f"Training Accuracy: {train_accuracy:.4f}")
     print(f"Test Accuracy: {accuracy:.4f}")
     if rf.oob_score_:
@@ -967,12 +965,12 @@ def demonstrate_random_forest():
     
     # Show feature importance
     if rf.feature_importances_ is not None:
-        print(f"\nFeature Importances:")
+        print("\nFeature Importances:")
         for i, importance in enumerate(rf.feature_importances_):
             print(f"Feature {i}: {importance:.4f}")
     
     # Show some predictions
-    print(f"\nSample Predictions (first 10):")
+    print("\nSample Predictions (first 10):")
     print(f"True:      {y_test[:10]}")
     print(f"Predicted: {y_pred[:10]}")
     print(f"Probabilities (class 1): {y_proba[:10, 1]}")
@@ -1008,7 +1006,7 @@ def compare_with_single_tree():
     # Train Random Forest
     rf = RandomForestClassifier(n_estimators=50, max_depth=10, random_state=42)
     rf.fit(X_train, y_train)
-    rf_pred = rf.predict(X_test)
+  
     rf_acc = rf.score(X_test, y_test)
     
     print(f"Single Decision Tree Accuracy: {tree_acc:.4f}")

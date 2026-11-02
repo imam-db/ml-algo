@@ -9,15 +9,12 @@ Author: ML Learning Project
 Date: 2024
 """
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.datasets import make_classification, make_regression, make_blobs
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, LabelEncoder
 import os
 import warnings
+
+import numpy as np
+import pandas as pd
+
 warnings.filterwarnings('ignore')
 
 def generate_customer_churn_dataset(n_samples=2000, save_csv=True):
