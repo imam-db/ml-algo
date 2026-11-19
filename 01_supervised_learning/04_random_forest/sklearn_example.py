@@ -23,6 +23,7 @@ import pandas as pd
 from sklearn.datasets import (
     fetch_california_housing,
     load_breast_cancer,
+    load_diabetes,
     load_iris,
     load_wine,
     make_classification,
@@ -179,26 +180,32 @@ def regression_example():
     print("\n🏠 Random Forest Regression - Housing Prices")
     print("=" * 60)
     
-    # Load California housing dataset
-    housing = fetch_california_housing()
+    # Load California housing dataset (fall back to bundled diabetes dataset if offline)
+    try:
+        housing = fetch_california_housing()
+        target_desc = "Median house value (in hundreds of thousands of dollars)"
+    except Exception:
+        print("(California housing download unavailable; falling back to bundled diabetes dataset)")
+        housing = load_diabetes()
+        target_desc = "Quantitative measure of disease progression"
     X, y = housing.data, housing.target
-    
+
     print(f"Dataset: {X.shape[0]} samples, {X.shape[1]} features")
-    print("Target: Median house value (in hundreds of thousands of dollars)")
+    print(f"Target: {target_desc}")
     print(f"Features: {housing.feature_names}")
-    
+
     # Split data
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
-    
+
     # Create Random Forest Regressor
     rf_reg = RandomForestRegressor(
         n_estimators=100,
         max_depth=15,
         min_samples_split=10,
         min_samples_leaf=4,
-        max_features='auto',  # For regression, auto = n_features
+        max_features=1.0,  # For regression, 1.0 = all n_features
         bootstrap=True,
         oob_score=True,
         random_state=42,
@@ -507,7 +514,7 @@ def imbalanced_dataset_example():
         print(f"  Accuracy: {accuracy:.4f}")
         print(f"  ROC AUC: {auc:.4f}")
         print("  Classification Report:")
-        print(classification_report(y_test, y_pred, indent=4))
+        print(classification_report(y_test, y_pred))
     
     # Plot ROC curves
     plt.figure(figsize=(10, 6))
