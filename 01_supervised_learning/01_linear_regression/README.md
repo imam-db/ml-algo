@@ -4,6 +4,8 @@
 
 **🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)** | **➡️ [Next: Logistic Regression](../02_logistic_regression/README.md)**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/01_linear_regression/exercise.ipynb)
+
 ## 🔑 Key Terms
 **Quick definitions for this algorithm** - 📚 [Full Glossary](../../GLOSSARY.md)
 

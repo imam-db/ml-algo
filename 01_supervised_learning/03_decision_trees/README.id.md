@@ -4,6 +4,8 @@
 
 🏠 Kembali ke Indeks Supervised: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/03_decision_trees/exercise.ipynb)
+
 Decision Trees adalah salah satu algoritma machine learning yang paling intuitif dan mudah diinterpretasikan. Algoritma ini membuat model yang memprediksi nilai target dengan mempelajari aturan keputusan sederhana yang diturunkan dari fitur-fitur data.
 
 ## 📚 Daftar Isi

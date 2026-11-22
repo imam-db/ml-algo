@@ -4,6 +4,8 @@
 
 🏠 Kembali ke Indeks Supervised: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/10_svm/exercise.ipynb)
+
 Support Vector Machine adalah classifier berbasis margin. SVM tidak hanya
 mencari batas keputusan yang memisahkan kelas, tetapi mencari batas dengan
 margin terbesar di sekitarnya. Dengan trik kernel, ide yang sama dapat

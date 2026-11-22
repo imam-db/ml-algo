@@ -4,6 +4,8 @@
 
 **🏠 [Back to Main](../../README.md)** | **📁 [Supervised Learning](../README.md)**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/06_naive_bayes/exercise.ipynb)
+
 ## 🗺️ Quick Access
 
 | File | Description | Run |

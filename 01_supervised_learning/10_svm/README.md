@@ -4,6 +4,8 @@
 
 🏠 Back to Supervised Index: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/10_svm/exercise.ipynb)
+
 Support Vector Machines are margin-based classifiers. Instead of only fitting a
 decision boundary that separates the classes, an SVM looks for the boundary with
 the largest possible margin around it. With the kernel trick, the same idea can

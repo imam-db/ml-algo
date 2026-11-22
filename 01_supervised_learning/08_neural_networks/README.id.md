@@ -2,6 +2,8 @@
 
 **[🇬🇧 English](README.md) | 🇮🇩 Bahasa Indonesia**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/08_neural_networks/exercise.ipynb)
+
 ## Gambaran Umum
 
 Neural Networks (khususnya Multi-Layer Perceptron) adalah algoritma supervised learning yang terinspirasi dari jaringan saraf biologis. Mereka belajar pola non-linear yang kompleks melalui beberapa layer neuron yang saling terhubung.
