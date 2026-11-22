@@ -4,6 +4,8 @@
 
 🏠 Back to Supervised Index: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/09_gradient_boosting/exercise.ipynb)
+
 Gradient Boosting is a powerful ensemble learning technique that builds models sequentially, where each new model corrects the errors made by previous models. It's one of the most effective machine learning algorithms for both regression and classification tasks.
 
 ## 📚 Table of Contents

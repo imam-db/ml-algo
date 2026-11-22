@@ -2,6 +2,8 @@
 
 **🏠 [Kembali ke Menu Utama](../../README.md)** | **📁 [Supervised Learning](../README.md)**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/07_knn/exercise.ipynb)
+
 ## 🗺️ Akses Cepat
 
 | File | Deskripsi | Jalankan |

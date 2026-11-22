@@ -4,6 +4,8 @@
 
 🏠 Kembali ke Indeks Supervised: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/04_random_forest/exercise.ipynb)
+
 Random Forest adalah metode ensemble learning yang kuat yang menggabungkan beberapa decision tree untuk membentuk model yang lebih kokoh dan akurat. Random Forest merupakan salah satu algoritma machine learning paling populer dan efektif.
 
 ## 📚 Daftar Isi

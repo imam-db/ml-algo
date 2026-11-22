@@ -4,6 +4,8 @@
 
 🏠 Kembali ke Indeks Supervised: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/02_logistic_regression/exercise.ipynb)
+
 Logistic Regression adalah algoritma klasifikasi fundamental yang menggunakan fungsi logistik untuk memodelkan probabilitas keanggotaan suatu kelas. Meskipun namanya mengandung "regression", algoritma ini digunakan untuk klasifikasi, bukan regresi.
 
 ## 📚 Daftar Isi

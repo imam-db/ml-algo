@@ -4,6 +4,8 @@
 
 🏠 Back to Supervised Index: `../README.md`
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/02_logistic_regression/exercise.ipynb)
+
 Logistic Regression is a fundamental classification algorithm that uses the logistic function to model the probability of class membership. Despite its name, it's used for classification, not regression.
 
 ## 📚 Table of Contents

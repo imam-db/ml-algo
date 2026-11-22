@@ -2,6 +2,8 @@
 
 **🇬🇧 English | [🇮🇩 Indonesian version](README.id.md)**
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imam-db/ml-algo/blob/main/01_supervised_learning/08_neural_networks/exercise.ipynb)
+
 ## Overview
 
 Neural Networks (specifically Multi-Layer Perceptrons) are supervised learning algorithms inspired by biological neural networks. They learn complex non-linear patterns through multiple layers of interconnected neurons.
